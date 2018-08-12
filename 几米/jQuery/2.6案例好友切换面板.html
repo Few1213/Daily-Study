@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.1.js"></script>
+    <script>
+    //添加页面加载事件
+    $(function () {
+        //设置div中的直接子元素ul中的li全部隐藏
+        $("#ul>li>ul").hide();
+        //获取id为ul中的直接子元素li,添加点击事件
+        $("#ul>li").click(function () {
+            //设置当前被点击的li的所有兄弟元素中的ul隐藏
+            $(this).siblings("li").children("ul").hide(500);
+            //设置当前点击中的li中的ul显示
+            $(this).children("ul").show(500);
+
+          });
+      });
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

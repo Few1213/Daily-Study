@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="显示" id="btn"/>
+<div id="dv"></div>
+<script>
+    var obj = document.getElementById("btn");
+    obj.onclick = function () {
+        if (this.value == "显示") {
+            document.getElementById("dv").style.disply = "block";
+            this.value = "隐藏";
+        } else if (this.value == "隐藏") {
+            document.getElementById("dv").style.display = "none";
+            this.value = "显示";
+        }
+    };
+</script>
+</body>
+</html>

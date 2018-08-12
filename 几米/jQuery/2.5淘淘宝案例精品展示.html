@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.1.js"></script>
+    <script>
+        $(function () {
+                    //左边所有的列表,添加鼠标进入事件
+                    $("#left>li").mouseenter(function () {
+                            //先获取当前鼠标进入li的索引值
+                            var index = $(this).index();
+                            //隐藏所有的li
+                            $("#center>li").hide();
+                            //设置对应位置的li的显示
+                            $("#left>li:eq("+index+")").show();
+                            });
+                    //右边所有的列表,添加鼠标进入事件
+                    $("#right>li").mouseenter(function(){
+                        //先获取当前鼠标进入li的索引值
+                        var index=$(this).index()+9;
+                        //隐藏所有的li
+                        $("#center>li").hide();
+                        //设置对应位置的li的显示
+                        $("right>li:eq("+index+")").show();
+                    });
+                    });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

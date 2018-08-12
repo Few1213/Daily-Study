@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5a91d097-7068-4d83-9a7b-1da95c6acacb" name="默认的" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="webstorm" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="4.0为内置对象的原型对象中添加方法.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/几米/Javascript知识/Javascript高级/4.0为内置对象的原型对象中添加方法.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="30正则表达式对象.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/几米/Javascript知识/Javascript高级/30正则表达式对象.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Html5" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>setAtt</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/HTML和CSS/CSS/1.0CSS内容.css" />
+        <option value="$PROJECT_DIR$/旧的练习/31元素创建的三种方法.html" />
+        <option value="$PROJECT_DIR$/Javascript知识/DOM/6.1元素绑定时间及兼容代码.html" />
+        <option value="$PROJECT_DIR$/Javascript知识/DOM/6.3 事件冒泡.html" />
+        <option value="$PROJECT_DIR$/Javascript知识/DOM/6.3 事件冒泡和事件冒泡兼容代码.html" />
+        <option value="$PROJECT_DIR$/Javascript知识/DOM/6.4时间的三个阶段及总结.html" />
+        <option value="$PROJECT_DIR$/HTML和CSS/HTML/第二天作业/四大名著/index.html" />
+        <option value="$PROJECT_DIR$/HTML和CSS/HTML/第二天作业/百度效果/baidu.html" />
+        <option value="$PROJECT_DIR$/HTML和CSS/HTML/第二天作业/百度效果/index.html" />
+        <option value="$PROJECT_DIR$/Javascript知识/DOM/6.4事件的三个阶段及总结.html" />
+        <option value="$PROJECT_DIR$/Javascript知识/DOM/6.5 为同一个元素注册多个不同的事件指向同一个事件处理函数.html" />
+        <option value="$PROJECT_DIR$/Javascript知识/BOM/1.0BOM知识点.html" />
+        <option value="$PROJECT_DIR$/旧的练习/36案例协议按钮禁用.html" />
+        <option value="$PROJECT_DIR$/旧的练习/37案例div的渐变.html" />
+        <option value="$PROJECT_DIR$/旧的练习/38案例div变宽.html" />
+        <option value="$PROJECT_DIR$/旧的练习/39案例移动元素.html" />
+        <option value="$PROJECT_DIR$/旧的练习/40案例封装动画函数.html" />
+        <option value="$PROJECT_DIR$/common.js" />
+        <option value="$PROJECT_DIR$/旧的练习/lainxi.html" />
+        <option value="$PROJECT_DIR$/旧的练习/common.js" />
+        <option value="$PROJECT_DIR$/Javascript知识/BOM/common.js" />
+        <option value="$PROJECT_DIR$/Javascript知识/BOM/10.简单的轮播图.html" />
+        <option value="$PROJECT_DIR$/Javascript知识/DOM/1.0Dom元素创建" />
+        <option value="$PROJECT_DIR$/Javascript知识/BOM/9.0案例封装动画函数.html" />
+        <option value="$PROJECT_DIR$/HTML和CSS/CSS/第一天/综合案例/index.css" />
+        <option value="$PROJECT_DIR$/HTML和CSS/CSS/第一天/综合案例/index.html" />
+        <option value="$PROJECT_DIR$/HTML和CSS/CSS/第一天/作业/百度首页/index1.html" />
+        <option value="$PROJECT_DIR$/HTML和CSS/CSS/第一天/作业/搜索关键字/index.html" />
+        <option value="$PROJECT_DIR$/HTML和CSS/CSS/第一天/作业/百度首页/index.css" />
+        <option value="$PROJECT_DIR$/HTML和CSS/CSS/第一天/作业/百度首页/index2.html" />
+        <option value="$PROJECT_DIR$/HTML和CSS/CSS/第一天/作业/百度首页/index2.css" />
+        <option value="$PROJECT_DIR$/练习/41轮播图.html" />
+        <option value="$PROJECT_DIR$/Javascript知识/BOM/10.轮播图.html" />
+        <option value="$PROJECT_DIR$/Javascript知识/BOM/10.0轮播图左右及按钮.html" />
+        <option value="$PROJECT_DIR$/练习/lainxi.html" />
+        <option value="$PROJECT_DIR$/Javascript知识/BOM/10.1轮播图总.html" />
+        <option value="$PROJECT_DIR$/HTML和CSS/CSS/第二天/作业/购物车/index.html" />
+        <option value="$PROJECT_DIR$/HTML和CSS/CSS/第二天/作业/五彩导航/index.html" />
+        <option value="$PROJECT_DIR$/Javascript知识/BOM/lunbotu.js" />
+        <option value="$PROJECT_DIR$/Javascript知识/BOM/10.0轮播图总.html" />
+        <option value="$PROJECT_DIR$/HTML和CSS/CSS/第一天/作业/世纪佳缘/index1.html" />
+        <option value="$PROJECT_DIR$/HTML和CSS/CSS/第一天/作业/世纪佳缘/index2.html" />
+        <option value="$PROJECT_DIR$/Javascript知识/BOM/lunbotu.css" />
+        <option value="$PROJECT_DIR$/Javascript知识/BOM/carousel.js" />
+        <option value="$PROJECT_DIR$/页面练习/小米首页/css/common.css" />
+        <option value="$PROJECT_DIR$/页面练习/小米首页/index.html" />
+        <option value="$PROJECT_DIR$/页面练习/京东首页/index.html" />
+        <option value="$PROJECT_DIR$/Javascript知识/BOM/10.2轮播图总.html" />
+        <option value="$PROJECT_DIR$/Javascript知识/BOM/carousel1.js" />
+        <option value="$PROJECT_DIR$/单个练习/46拷贝继承.html" />
+        <option value="$PROJECT_DIR$/单个练习/47继承复习.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <other-services-enabled>false</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="32" />
+    <option name="y" value="30" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>CoffeeScript</id>
+          </State>
+          <State>
+            <id>DOM issuesJavaScript</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript validity issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Probable bugsCSS</id>
+          </State>
+          <State>
+            <id>Probable bugsCoffeeScript</id>
+          </State>
+          <State>
+            <id>Probable bugsJavaScript</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>CoffeeScript</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <showMembers ProjectPane="true" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="webstorm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webstorm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webstorm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webstorm" type="462c0819:PsiDirectoryNode" />
+              <item name="几米" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webstorm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webstorm" type="462c0819:PsiDirectoryNode" />
+              <item name="几米" type="462c0819:PsiDirectoryNode" />
+              <item name="Javascript知识" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webstorm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webstorm" type="462c0819:PsiDirectoryNode" />
+              <item name="几米" type="462c0819:PsiDirectoryNode" />
+              <item name="Javascript知识" type="462c0819:PsiDirectoryNode" />
+              <item name="Javascript高级" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webstorm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webstorm" type="462c0819:PsiDirectoryNode" />
+              <item name="课程" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="FullScreen" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="HTML" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="recentsLimit" value="5" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\webstorm\Javascript知识\DOM" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\webstorm\练习" />
+      <recent name="C:\Users\Administrator\Desktop\webstorm\Javascript知识\BOM" />
+      <recent name="C:\Users\Administrator\Desktop\webstorm\Javascript知识\Javascript高级" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.2.0点击按钮设置DIV的宽高和背景颜色.html">
+    <configuration name="2.0点击按钮设置DIV的宽高和背景颜色.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webstorm/Javascript知识/DOM/2.0点击按钮设置DIV的宽高和背景颜色.html" />
+    <configuration name="test.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webstorm/Javascript知识/DOM/test.html" />
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <method />
+    </configuration>
+    <configuration default="true" type="JsTestDriver-test-runner" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter />
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.2.0点击按钮设置DIV的宽高和背景颜色.html" />
+      <item itemvalue="JavaScript Debug.test.html" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.test.html" />
+        <item itemvalue="JavaScript Debug.2.0点击按钮设置DIV的宽高和背景颜色.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5a91d097-7068-4d83-9a7b-1da95c6acacb" name="默认的" comment="" />
+      <created>1529992846982</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1529992846982</updated>
+      <workItem from="1529992848496" duration="42000" />
+      <workItem from="1529992998887" duration="49000" />
+      <workItem from="1529993546945" duration="9504000" />
+      <workItem from="1530005357213" duration="4475000" />
+      <workItem from="1530144121658" duration="12696000" />
+      <workItem from="1530253897761" duration="3163000" />
+      <workItem from="1530274903003" duration="7000" />
+      <workItem from="1530323701558" duration="14011000" />
+      <workItem from="1530358551609" duration="3313000" />
+      <workItem from="1530414889301" duration="11029000" />
+      <workItem from="1530451293925" duration="1351000" />
+      <workItem from="1530496456329" duration="100000" />
+      <workItem from="1530496582084" duration="9486000" />
+      <workItem from="1530527618227" duration="6160000" />
+      <workItem from="1530582388748" duration="2488000" />
+      <workItem from="1530613490707" duration="4173000" />
+      <workItem from="1530698082180" duration="639000" />
+      <workItem from="1530698859526" duration="2894000" />
+      <workItem from="1530709695473" duration="306000" />
+      <workItem from="1530710171470" duration="218000" />
+      <workItem from="1530754245621" duration="6856000" />
+      <workItem from="1530774597119" duration="628000" />
+      <workItem from="1530882470915" duration="8000" />
+      <workItem from="1530948293731" duration="7000" />
+      <workItem from="1530952279437" duration="41000" />
+      <workItem from="1531041805096" duration="203000" />
+      <workItem from="1531042051564" duration="2460000" />
+      <workItem from="1531058419743" duration="36000" />
+      <workItem from="1531105778050" duration="223000" />
+      <workItem from="1531126969597" duration="7587000" />
+      <workItem from="1531137643503" duration="69000" />
+      <workItem from="1531137743154" duration="567000" />
+      <workItem from="1531138333223" duration="6568000" />
+      <workItem from="1531210206753" duration="513000" />
+      <workItem from="1531231111002" duration="2882000" />
+      <workItem from="1531278179612" duration="351000" />
+      <workItem from="1531278593478" duration="40000" />
+      <workItem from="1531278714012" duration="3553000" />
+      <workItem from="1531285570465" duration="7437000" />
+      <workItem from="1531579282793" duration="30000" />
+      <workItem from="1531579734192" duration="234000" />
+      <workItem from="1531580093258" duration="614000" />
+      <workItem from="1531615347723" duration="6092000" />
+      <workItem from="1531637885290" duration="4815000" />
+      <workItem from="1531701067782" duration="2267000" />
+      <workItem from="1531704703438" duration="25629000" />
+      <workItem from="1531749926943" duration="70000" />
+      <workItem from="1531750033840" duration="136000" />
+      <workItem from="1531750272685" duration="603000" />
+      <workItem from="1531752860607" duration="3804000" />
+      <workItem from="1531787098532" duration="5439000" />
+      <workItem from="1531793182638" duration="10017000" />
+      <workItem from="1531808800722" duration="4943000" />
+      <workItem from="1531828955225" duration="1279000" />
+      <workItem from="1531830327649" duration="3387000" />
+      <workItem from="1531876250621" duration="15837000" />
+      <workItem from="1531915644957" duration="7007000" />
+      <workItem from="1532338820246" duration="25000" />
+      <workItem from="1532865086155" duration="102000" />
+      <workItem from="1532865223393" duration="61000" />
+      <workItem from="1532998053348" duration="426000" />
+      <workItem from="1533603169377" duration="11000" />
+      <workItem from="1533688359905" duration="303000" />
+      <workItem from="1533689129033" duration="602000" />
+      <workItem from="1533691721652" duration="505000" />
+      <workItem from="1533708445471" duration="55000" />
+      <workItem from="1533718810228" duration="47000" />
+      <workItem from="1533864830997" duration="36000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="226582000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" x="693" y="100" width="214" height="582" id="Project" order="2" sideWeight="0.49315068" visible="true" weight="0.14880952" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3281787" />
+      <window_info anchor="bottom" id="调试" order="7" weight="0.3270869" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3298969" />
+      <window_info anchor="bottom" id="运行" order="8" />
+      <window_info id="Favorites" order="3" side_tool="true" weight="0.3296131" />
+      <window_info anchor="bottom" id="找到" order="9" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Application Servers" order="7" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="版本控制" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/练习/41轮播图.html</url>
+          <line>105</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Javascript知识/BOM/lunbotu.js</url>
+          <line>58</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Javascript知识/BOM/carousel.js</url>
+          <line>32</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Javascript知识/BOM/carousel1.js</url>
+          <line>29</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="8" />
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="webstorm" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="webstorm" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/练习/38案例div变宽.html" />
+    <entry file="file://$PROJECT_DIR$/练习/39案例移动元素.html" />
+    <entry file="file://$PROJECT_DIR$/练习/40案例封装动画函数.html" />
+    <entry file="file://$PROJECT_DIR$/common.js" />
+    <entry file="file://$PROJECT_DIR$/练习/common.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript知识/BOM/common.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript知识/DOM/common.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript知识/DOM/4.8节点.html" />
+    <entry file="file://$PROJECT_DIR$/Javascript知识/DOM/4.6innerText和textContent的兼容代码.html" />
+    <entry file="file://$PROJECT_DIR$/Javascript知识/DOM/4.7自定义属性.html" />
+    <entry file="file://$PROJECT_DIR$/Javascript知识/DOM/1.0Dom元素创建" />
+    <entry file="file://$PROJECT_DIR$/HTML和CSS/CSS/第一天/作业/搜索关键字/index.html" />
+    <entry file="file://$PROJECT_DIR$/HTML和CSS/CSS/第一天/作业/百度首页/index.css" />
+    <entry file="file://$PROJECT_DIR$/HTML和CSS/CSS/第一天/作业/百度首页/index1.html" />
+    <entry file="file://$PROJECT_DIR$/HTML和CSS/CSS/第一天/作业/百度首页/index2.css" />
+    <entry file="file://$PROJECT_DIR$/HTML和CSS/CSS/第一天/作业/百度首页/index2.html" />
+    <entry file="file://$PROJECT_DIR$/练习/41轮播图.html" />
+    <entry file="file://$PROJECT_DIR$/Javascript知识/BOM/8.0案例移动元素.html" />
+    <entry file="file://$PROJECT_DIR$/练习/lainxi.html" />
+    <entry file="file://$PROJECT_DIR$/HTML和CSS/CSS/第二天/作业/购物车/110.png" />
+    <entry file="file://$PROJECT_DIR$/HTML和CSS/CSS/第二天/作业/购物车/index.html" />
+    <entry file="file://$PROJECT_DIR$/HTML和CSS/CSS/第二天/作业/五彩导航/index.html" />
+    <entry file="file://$PROJECT_DIR$/Javascript知识/BOM/lunbotu.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript知识/BOM/10.1轮播无缝滚动.html" />
+    <entry file="file://C:/feiq/Recv Files/随机点名.html" />
+    <entry file="file://$USER_HOME$/Pictures/新建文件夹/1783830818/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="3" column="57" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Pictures/新建文件夹/1783830818/ribbon.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3795" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Pictures/新建文件夹/1783830818/ribbon.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-342" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Javascript知识/BOM/10.0轮播图左右及按钮.html" />
+    <entry file="file://$PROJECT_DIR$/HTML和CSS/CSS/第一天/作业/世纪佳缘/index1.html" />
+    <entry file="file://$PROJECT_DIR$/HTML和CSS/CSS/第一天/作业/世纪佳缘/demo.html" />
+    <entry file="file://$PROJECT_DIR$/HTML和CSS/CSS/第一天/作业/世纪佳缘/index2.html" />
+    <entry file="file://$PROJECT_DIR$/HTML和CSS/CSS/第一天/作业/世纪佳缘/login.html" />
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="4553" column="61" lean-forward="true" selection-start-line="4553" selection-start-column="61" selection-end-line="4553" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="13526" column="37" lean-forward="true" selection-start-line="13526" selection-start-column="37" selection-end-line="13526" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Javascript知识/BOM/carousel.css" />
+    <entry file="file://$PROJECT_DIR$/页面练习/京东首页/css/common.css" />
+    <entry file="file://$PROJECT_DIR$/页面练习/京东首页/index.html" />
+    <entry file="file://$PROJECT_DIR$/Javascript知识/BOM/carousel.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript知识/BOM/carousel1.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript知识/BOM/10.2轮播图总.html" />
+    <entry file="file://$PROJECT_DIR$/单个练习/46拷贝继承.html" />
+    <entry file="file://$PROJECT_DIR$/单个练习/45组合继承.html" />
+    <entry file="file://$PROJECT_DIR$/单个练习/common.js" />
+    <entry file="file://$PROJECT_DIR$/单个练习/47继承复习.html" />
+    <entry file="file://$PROJECT_DIR$/Javascript知识/Javascript高级/1.0案例贪吃蛇.html" />
+    <entry file="file://$PROJECT_DIR$/Javascript知识/Javascript高级/函数作为返回值使用的案例.html" />
+    <entry file="file://$PROJECT_DIR$/Javascript知识/Javascript高级/三种创建方式的对象.html" />
+    <entry file="file://$PROJECT_DIR$/几米/Javascript知识/Javascript高级/4.0为内置对象的原型对象中添加方法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="862" column="4" selection-start-line="862" selection-start-column="4" selection-end-line="862" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/几米/Javascript知识/Javascript高级/30正则表达式对象.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

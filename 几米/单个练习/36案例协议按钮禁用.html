@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<textarea>协议</textarea>	
+<input type="button" value="请仔细阅读协议(5)" id="btn" disabled="disabled"/>
+<script src="common.js"></script>
+<script>
+	// 设置定时器
+	var time=5;
+	var timeId=setInterval(function(){
+		time--;
+        my$("btn").value="请仔细阅读协议("+time+")";
+		if (time<=0) {
+			clearInterval(timeId);
+			my$("btn").disabled=false;
+			my$("btn").value="同意";
+		}
+
+	},1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // function Person(age) {
+    //     this.age=age;
+    //     this.sayHi=function(){
+    //         console.log("雅酷玛塔塔");
+    //         //打招呼的同事直接调用吃的方法
+    //         this.eat();
+    //     };
+    //     this.eat=function(){
+    //         console.log("麦当劳听说在做活动");
+    //     };
+    //   }
+
+    // //   实例化对象,并初始化
+    // var per=new Person(17);
+    // //调用方法
+    // per.sayHi();
+    // // per.eat();
+    
+    //原型中的方法是可以互相访问的
+    function Animal(name,age) {
+        this.name=name;
+        this.age=age;
+      }
+    //在原型中添加方法
+    Animal.prototype={
+        constructor:Animal,
+        eat:function(){
+            console.log("动物吃东西");
+            this.play();
+        },
+        play:function(){
+            console.log("玩球");
+            this.sleep();
+        },
+        sleep:function(){
+            console.log("睡觉");
+        }
+    };
+
+    //实例化对象,并初始化
+    var cat=new Animal("十月",1);
+    cat.eat();
+    
+    //原型对象中的方法可以相互调用
+
+    
+    </script>
+    <script>
+    //构造函数
+    function Person(name,age){
+        this.name=name;
+        this.age=age;
+    }
+    // 为原型对象添加属性和方法
+    Person.prototype.play=function(){
+        console.log("玩游戏");
+        this.talk();
+    };
+    Person.prototype.talk=function(){
+        console.log("你怕不是个傻逼吧");
+        this.move();
+    };
+    Person.prototype.move=function(){
+        console.log("去金华");
+
+    };
+
+    // 实例化对象并初始化
+    var per=new Person("小苏",20);
+    per.play();
+
+    
+    //原型中的方法是可以互相访问的 
+    </script>
+</body>
+</html>

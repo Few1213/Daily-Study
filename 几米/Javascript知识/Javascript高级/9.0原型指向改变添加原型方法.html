@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //如果原型的指向改变了,name就应该在原型指向改变后添加原型方法
+     function Person(age){
+         this.age=age;
+     }
+     //先添加原型方法
+     Person.prototype.sayHi=function(){
+         console.log("你好");
+     };
+
+     Person.prototype={
+         eat:function(){
+             console.log("吃");
+         };
+     };
+
+     var per =new Person(10);
+     per.sayHi();//此时因为原型的对象发生改变而不能调用
+    
+    
+    </script>
+</body>
+</html>

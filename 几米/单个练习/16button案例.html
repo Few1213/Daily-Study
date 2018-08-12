@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16button案例</title>
+</head>
+<body>
+<input type="button" value="没怀孕"/>
+<input type="button" value="没怀孕"/>
+<input type="button" value="没怀孕"/>
+<input type="button" value="没怀孕"/>
+<input type="button" value="没怀孕"/>
+<input type="button" value="没怀孕"/>
+<input type="button" value="没怀孕"/>
+<input type="button" value="没怀孕"/>
+<script>
+var btnObjs = document.getElementsByTagName("input");
+for (var i = 0; i < btnObjs.length; i++) {
+    btnObjs[i].onclick = function () {
+        for (var j = 0; j < btnObjs.length; j++) {
+        btnObjs[j].value = "没怀孕";
+}
+this.value = "怀孕了";
+};
+}
+function my$(id) {
+return document.getElementById("id");
+}
+my$("btn").onclick=function () {
+my$("im").src="";
+};
+</script>
+<input type="button" value="选择性别" id="btn1"/>
+<input type="radio" value="1" name="性别"/>男
+<input type="radio" value="2" name="性别" id="ak"/>女
+<input type="radio" value="3" name="性别"/>保密
+<br/>
+<input type="button" value="选择兴趣" id="btn2"/>
+<input type="checkbox" value="1" name="兴趣"/>吃饭
+<input type="checkbox" value="2" name="兴趣"/>睡觉
+<input type="checkbox" value="3" name="兴趣"/>打玟子
+<input type="checkbox" value="4" name="兴趣"/>亲玟子
+<input type="checkbox" value="5" name="兴趣" id="ck1"/>睡玟子
+<script>
+    function my$(id) {
+        return document.getElementById(id);
+    }
+    my$("btn1").onclick = function () {
+        my$("ak").checked = true;
+    };
+    my$("btn2").onclick = function () {
+        my$("ck1").checked = true;
+    };
+</script>
+</body>
+</html>

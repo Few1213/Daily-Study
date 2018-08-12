@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 300px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="点击就送" id="btn">
+<div id="dv"></div>
+<script src="common.js"></script>
+
+<script>
+    //第一种方法
+    //document.write()创建元素，缺陷：如果是在页面加载完毕后，此时通过这种方式创建元素，
+    // 那么页面上存在的所有内容全部被干掉。
+    my$("btn").onclick=function () {
+        document.write("<p>第一种方法</p>");
+    };
+    //第二种元素创建方式.对象.innerHTML="标签代码及内容"
+    my$("btn").onclick=function () {
+        my$("dv").innerHTML="<p>亲爱的小玟子</p>"
+    };
+
+    //第三种元素创建方式
+    //document.createElement("标签名字");对象
+    //把元素-----追加------到父级元素中
+    my$("btn").onclick=function () {
+        var pObj=document.createElement("p");
+        setInnerText(pObj,"这是一个p");
+        my$("dv").appendChild(pObj);
+    };
+
+</script>
+</body>
+</html>

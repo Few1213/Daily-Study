@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //为内置对象添加原型方法
+    // var arr=new Array(10,20,30,40,50);
+    // arr.join("|");
+    // console.dir(arr);
+
+    // var str=new String("偶没有噶的");
+    // str.indexOf("哦");
+    // console.dir(str);
+
+    //实例对象的方法如果没有,去创建该实例对象的构造函数的原型对象中找
+
+    //我们可以为系统的对象中的原型添加方法,相当于在改变源码
+    //例子 为字符串添加一个倒叙字符串的方法
+        
+    String.prototype.myReverse=function(){
+        for(var i=this.length-1;i>=0;i--){
+            console.log(this[i]);
+        }
+    };    
+    var str="abcdefg";
+    str.myReverse();
+    
+    //为Array内置对象 的原型对象中添加方法
+    Array.prototype.mySort=function(){
+        for(var i=0;i<this.length-1;i++){
+            for(var j=0;j<this.length-1-i;j++){
+                if(this[j]<this[j-1]){
+                    var temp=this[j];
+                    this[j]=this[j-1];
+                    this[j-1]=temp;
+                }//end if
+            }//end for
+        }//end for
+    };
+
+    var arr =[1,5,40,60,5,8,30,6];
+    arr.mySort();
+    console.log(arr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+	// year
+	// 代表年份的整数值。为了避免2000年问题最好指定4位数的年份; 使用 1998, 而不要用 98.
+	// month
+	// 代表月份的整数值从0（1月）到11（12月）。
+	// day
+	// 代表一个月中的第几天的整数值，从1开始。
+	// hour
+	// 代表一天中的小时数的整数值 (24小时制)。
+	// minute
+	// 分钟数。
+	// second
+	// 秒数。
+	// millisecond
+	// 表示时间的毫秒部分的整数值。
+	var dt1=new Date();
+	//当前的时间---当前的服务器
+	console.log(dt1);
+
+	var dt2=new Date("2018-07-05");
+	//传入的时间
+	console.log(dt2);
+
+	var dt3=new Date("2018/07/05");
+	//传入的时间
+	console.log(dt3);
+	//获取时间的对象
+
+	var dt4=Date.now();
+	//毫秒
+	console.log(dt4);
+
+	//获取年月日
+	var dt5=new Date();
+	console.log(dt5.getFullYear());
+	console.log(dt5.getMonth());// 月份从0开始，真实月份需要+1
+	console.log(dt5.getDate());
+	console.log(dt5.getHours());
+	console.log(dt5.getMinutes());
+	console.log(dt5.getSeconds());
+	console.log(dt5.getMilliseconds());
+
+
+	var dt=new Date();
+	console.log(dt);
+	console.log(dt.toString());
+	console.log(dt.toDateString()); //英文日期
+	console.log(dt.toLocaleDateString());//数字格式--日期
+	console.log(dt.toTimeString());//小时分钟秒
+	console.log(dt.toLocaleDateString());//小时分钟秒
+	console.log(dt.valueOf());//毫秒值
+
+	// 不支持H5的浏览器可以用以下方法
+	// var now=+new Date();
+	
+
+
+</script>
+</body>
+</html>

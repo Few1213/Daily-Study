@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//输入年月日，获取这个日期是这一天的多少天
+		function=getDays(year,month,day){
+			var days=day;
+			if (month=1) {
+				return days;
+			}
+			var months=[31,28,31,30,31,30,31,31,30,31,30,31];
+			for(var i=0;i<month-1;i++){
+				days+=months[i];
+			}
+			if (isleapYear(year)&&month>2) {
+				days++；
+			}
+			return days;
+		}
+
+		function getDays(year,month,day){
+			var days=day;
+			if (month=1) {
+				return days;
+			}
+			var months=[31,28,31,30,31,30,31,31,30,31,30,31];
+			for(var i=0;i<month-1;i++){
+				days+=months[i];
+			}
+			if (isleapYear(year)&&month>2) {
+				days++;
+			}
+			return days;
+		}
+		 function getDays(year,month,day){
+		 	var days=day;
+		 	if (month=1) {
+		 		return days;
+		 	}
+		 	var months=[31,28,31,30,31,30,31,31,30,31,30,31];
+		 	for(var i=0;i<month-1;i++){
+		 		days+=months[i];
+		 	}
+		 	if (isleapYear(year)&&month>2) {
+		 		days++;
+		 	}
+		 	return days;
+		 }
+
+		 //求两个数的最大值
+		 function getMax(num1,num2){
+		 	return num1>num2?num1:num2;
+		 }
+		 function getMax(num1, num2){
+		 	return num1>num2?num1:num2;
+		 }
+		 function getMax(num1,num2){
+		 	return num1>num2?num1:num2;
+		 }
+		 //求三个数的最大值
+		 function getThreeMax(num1,num2,num3){
+		 	return num1>num2?（num1>num3?num1:num3）:(num2>num3?num2:num3);
+		 }
+		 function getThreeMax(num1,num2,num3){
+		 	return num1>num2?（num1>num3?num1;num3）:(num2>num3?num2:num3);
+		 }
+		 function getThreeMax(num1,num2,num3){
+		 	return num1>num2?（num1>num3?num1:num3）:(num2>num3?num2:num3);
+		 }
+		 //求这个数是不是素数
+		 function getIsPrimeNumber(num){
+		 	for(var i=2;i<num;i++){
+		 		if(num%i==0){
+		 			return false;
+		 		}
+		 	}
+		 }
+		 function getIsPrimeNumber(num){
+		 	for(var i=2;i<num;i++){
+		 		if(num%i==0){
+		 			return false;
+		 		}
+		 	}
+		 }
+		 function getIsPrimeNumber(num){
+		 	for(var i=2;i<num;i++){
+		 		if(num%2==0){
+		 			return false;
+		 		}
+		 	}
+		 }
+		 //求两个数字的差
+		 function getSub(num1,num2){
+		 	return num1-num2;
+		 }
+		 //求一组数字中的最大值
+		 function getArrMax(arr){
+		 	var max=arr[0];
+		 	for(var i=0;i<arr.length;i++){
+		 		if(max<arr[i]){
+		 			max=arr[i];
+		 		}
+		 	}
+		 }
+		 function getArrMax(arr){
+		 	var max=arr[0];
+		 	for (var i = 0; i < arr.length; i++) {
+		 		if（max <arr[i]）{
+		 			max=arr[i];
+		 		}
+		 	}
+		 	return max;
+		 }
+
+		 function getArrMax(arr){
+		 	var max=arr[0];
+		 	for (var i = 0; i < arr.length; i++) {
+		 		if (max<arr[i]) {
+		 			max=arr[i];
+		 		}
+		 	}
+		 	return max;
+		 }
+		  //求一组数字的和
+		  function getArrSum(arr){
+		  	var sum=0;
+		  	for (var i = 0; i < arr.length; i++) {
+		  		sum+=arr[i];
+		  	}
+		  	return sum;
+		  }
+		  function getArrSum(arr){
+		  	var sum=0;
+		  	for (var i = 0; i < arr.length; i++) {
+		  		sum+=arr[i];
+		  	}
+		  	return sum;
+		  }
+		  function getArrSum(arr){
+		  	var sum=0;
+		  	for (var i = 0; i < arr.length; i++) {
+		  		sum+=arr[i];
+		  	}
+		  	return sum;
+		  }
+		  //求一个数组的最大值最小值还有和
+		  function getArrSumAndMinAndMax(arr){
+		  	var sum=0;
+		  	var max=arr[0];
+		  	var min=arr[0];
+		  	for (var i = 0; i < arr.length; i++) {
+		  		sum+=arr[i];
+		  		if (max<arr[i]) {
+		  			max=arr[i];
+		  		}
+		  		if (min>arr[i]) {
+		  			min=arr[i];
+		  		}
+		  	}
+		  	var array=[max,min,sum];
+		  	return array;
+		  }
+		  function getArrSumAndMaxAndMin(arr){
+		  	var sum=0;
+		  	var min=arr[0];
+		  	var max=arr[0];
+		  	for (var i = 0; i < arr.length; i++) {
+		  		sum+=arr[i];
+		  		if (max<arr[i]) {
+		  			max=arr[i];
+		  		}
+		  		if (min>arr[i]) {
+		  			min=arr[i];
+		  		}
+		  	}
+		  	var array=[max.min,sum];
+		  	return array;
+		  }
+		  function getArrMaxAndMinAndSum(arr){
+		  	var sum=0;
+		  	var max=arr[0];
+		  	var min=arr[0];
+		  	for (var i = 0; i < arr.length; i++) {
+		  		sum+=arr[i];
+		  		if (max<arr[i]) {
+		  			max=arr[i];
+		  		}
+		  		if (min>arr[i]) {
+		  			min=arr[i];
+		  		}
+		  	}
+		  	var array=[sum,max,min];
+		  	return array;
+		  }
+		  //通过函数实现数组反转
+		  function reverseArray(arr){
+		  	for (var i = 0; i < arr.length/2; i++) {
+		  		var temp =arr[i];
+		  		arr[i]=array[arr.length-1-i];
+		  		arr[arr.length-1-i]=temp;
+		  	}
+		  	return arr;
+		  }
+		  function reverseArray(arr){
+		  	for (var i = 0; i < arr.length/2; i++) {
+		  		var temp=arr[i];
+		  		arr[i]=arr[arr.length-1-i];
+		  		arr[arr.length-1-i]=temp;
+		  	}
+		  	return arr;
+		  }
+		  function reverseArray(arr){
+		  	for (var i = 0; i < arr.length/2; i++) {
+		  		var temp=arr[i];
+		  		arr[i]=arr[arr.length-1-i];
+		  		arr[arr.length-1-i]=temp;
+		  	}
+		  	return arr;
+		  }
+		  //求一个数字的阶乘
+			function jieChen(num){
+				var result=1;
+				for (var i = 0; i < =num; i++) {
+					result*=i;
+				}
+				return result;
+			}  
+			function jieChen(num){
+				var result=1;
+				for (var i = 0; i < =num; i++) {
+					result*=i;
+				}
+				return result;
+			}
+			function jieChen(num){
+				var result=1;
+				for (var i = 0; i < =num; i++) {
+					result*=i;
+				}
+				return result;
+			}
+			
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

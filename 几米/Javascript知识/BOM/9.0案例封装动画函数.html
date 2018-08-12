@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        input {
+            margin-top: 10px;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin-top: 10px;
+            position: absolute;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="400px" id="btn1"/>
+<input type="button" value="800px" id="btn2"/>
+<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+    my$("btn1").onclick = function () {
+        animate(my$("dv"), 400);
+    };
+    my$("btn2").onclick = function () {
+        animate(my$("dv"), 800);
+    };
+
+    function animate(element, target) {
+        clearInterval(element.timeId);
+        element.timeId = setInterval(function () {
+            var current = element.offsetLeft;
+            var step = 10;
+            step = current < target ? step : -step;
+            current += step;
+            if (Math.abs(current - target) > Math.abs(step)) {
+                element.style.left = current + "px";
+            } else {
+                clearInterval(element.timeId);
+                element.style.left = target + "px";
+            }
+        }, 20);
+    }
+
+    //从一个位置移动到另一个位置的封装函数
+    function animate(element, target) {
+        //清除定时器  值创建一次定时器
+        clearInterval(timeId);
+        //设置定时器
+        element.timeId = setInterval(function () {
+            //获取当前位置
+            var current = element.offsetLeft;
+            //设置每次移动的距离
+            var step = 20;
+            step = target - current > 0 ? step : -step;
+            current+=step;
+            //判断当前位置和目标距离的距离是否比每次要移动的距离大
+            if (Math.abs(current-target)>Math.abs(step)){
+                //当前的位置
+                element.style.left=current+"px";
+            } else{
+                //此时当前位置的距离和目标之间的距离比每次行走的距离要小 清除定时器并设置立刻到达
+                clearInterval(timeId);
+                element.style.left=target+"px";
+            }
+
+        }, 20);
+    }
+    
+    function animate(element,target) {
+        clearInterval(timeId);
+        element.timeId=setInterval(function () {
+            var current=element.offsetWidth;
+            var step=20;
+            step=target-current>0?step:-step;
+            current+=step;
+            if (Math.abs(current-target)>Math.abs(step)){
+                element.style.left=current+"px";
+            } else{
+                clearInterval(timeId);
+                element.style.left=target+"px";
+            }
+        },200);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+ //String对象---字符串对象
+ //string-----字符串类型----基本类型
+ //String------字符串类型----引用类型
+ var str="hello";
+ //JS里没有字符类型,在JS中字符串可以使用单引号和双引号
+ 
+ for (var i = 0; i < str.length; i++) {
+	console.log(str[i]);//字符串可以看成一个数组进行遍历
+ }
+//    \0	空字符
+//    \'	单引号
+//    \"	双引号
+//    \\	反斜杠
+//    \n	换行
+//    \r	回车
+//    \v	垂直制表符
+//    \t	水平制表符
+//    \b	退格
+//    \f	换页
+
+//JS的字符串具有不可变性
+//字符串的值是不能改变的
+var str="小玟子";
+str="小许子";//小许子 重新赋值
+
+var str="hello";
+srt[1]="w";s
+console.log(str);// 输出的值为hello，字符串可以通过索引访问某个值
+//但是，是可以访问---读取----只读
+//设置：就是可以改变
+//字符串的值之所以看起来是改变的，那是因为指向改变了，并不是真的值改变了 
+/**
+ *实例方法----必须通过new的方式创建对象	（实例对象）来调用的方法
+ *静态方法-----直接通过大写的构造函数的名字调用的方法（直接通过大写的对象的名字调用）
+ * 
+ */
+//字符串的常用属性
+String.length //.length ------>字符串的长度
+String.charAt();//.charAt(索引)，返回值是指定索引位置的字符串，超出索引，结果是控字符串
+String.fromCharCode();//String.fromCharCode(数字值可以是多个参数);返回的是ASCII码对应的参值
+String.concat();//.concat(字符串1，字符串2,......)返回的是拼接后的新的字符串
+String.indexOf();//.indexOf(要找的字符串，从某个位置开始的索引)返回的是这个字符串的索引值，没找到的话返回的是-1
+String.lastIndexOf();//.lasIndexOf(要找的字符串)；要从后向前找，但索引仍是从左到右的方式，没有找到的返回值仍是-1
+String.replace();//.replace("原来的字符串","新字符串");用来替换字符串的
+String.slice();//.slice(num1,num2);从索引num1的位置开始提取，到索引num2的前一个位置结束，并返回这个提取后的字符串
+String.split();//.split("要干掉的字符串",切割后留下的个数);切割字符串
+String.substr();//.substr(开始的位置，个数);返回的是截取后的新的字符串
+String.substring();//.substring(开始的位置（索引），结束索引);返回截取后的字符串，不包含结束的索引
+String.toLocaleLowerCase();//转小写
+String.toLowerCase();//转小写
+String.toLocaleUpperCase();//转大写
+String.toUpperCase();//转大写
+String.trim();//干掉字符串两端的空格
+</script>
+</body>
+</html>

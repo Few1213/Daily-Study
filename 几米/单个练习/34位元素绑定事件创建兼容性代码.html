@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn" />
+<script src="common.js"></script>
+<script>
+    function addEventListener(element,type,fn) {
+        if (element.addEventListener){
+            element.addEventListener(type,fn,flase);
+        }else if(element.attachEvent){
+            element.attachEvent("on"+type,fn)
+        }else{
+            element["on"+type]=fn;
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        input {
+            margin-top: 10px;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin-top: 10px;
+            position: absolute;
+            left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="400px" id="btn1" />
+    <input type="button" value="800px" id="btn2" />
+    <div id="dv"></div>
+    <script src="common.js"></script>
+    <script>
+        my$("btn1").onclick = function () {
+            animate(my$("dv"), 400);
+        };
+        my$("btn2").onclick = function () {
+            animate(my$("dv"), 800);
+        };
+
+        function animate(element, target) {
+            clearInterval(element.timeId);
+            element.timeId = setInterval(function () {
+                var current = element.offsetLeft;
+                var step = (target - current) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                current += step;
+                element.style.left = current + "px";
+                if (current == target) {
+                    clearInterval(element.timeId);
+                }
+                //测试
+                console.log("目标:" + target + "======" + "当前:" + current + "======" + "剩余距离:" + step);
+            }, 20);
+        }
+    </script>
+</body>
+
+</html>

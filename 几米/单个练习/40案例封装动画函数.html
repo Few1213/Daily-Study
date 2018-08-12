@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        input {
+            margin-top: 10px;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin-top: 10px;
+            position: absolute;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="400px" id="btn1"/>
+<input type="button" value="800px" id="btn2"/>
+<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+    my$("btn1").onclick = function () {
+        animate(my$("dv"), 400);
+    };
+    my$("btn2").onclick = function () {
+        animate(my$("dv"), 800);
+    };
+
+    function animate(element, target) {
+        clearInterval(element.timeId);//去掉这段话就可以实现
+        element.timeId = setInterval(function () {
+            var current = element.offsetLeft;
+            var step = 10;
+            step = current < target ? step : -step;
+            current += step;
+            if (Math.abs(current - target) > Math.abs(step)) {
+                element.style.left = current + "px";
+            } else {
+                clearInterval(element.timeId);
+                element.style.left = target + "px";
+            }
+        }, 20);
+    }
+
+</script>
+</body>
+</html>

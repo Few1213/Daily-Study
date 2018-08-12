@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- <input type="button" value="设置P的内容" id="btn" />
+	<p id="p1">我是一个p标签</p>
+<script>
+	 document.getElementById("btn").onclick=function(){
+	 	document.getElementById("p1").innerText="这是一个P";
+	 };
+
+</script> -->
+
+
+	<!-- <input type="button" value="修改" id="btn" />
+	<a href="http://www.baidu.com" id="ak">百度</a>
+<script>
+	document.getElementById("btn").onclick=function(){
+		var aObj=document.getElementById("ak");
+		aObj.href="http://www.taobao.com";
+		aObj.innerText="淘宝";
+	};
+</script> -->
+
+<!-- 	<input type="button" value="显示效果" id="btn" />
+	<p>小玟子你这个傻子又不理我</p> 
+	<p>小玟子你这个傻子又不理我</p>
+	<p>小玟子你这个傻子又不理我</p>
+	<p>小玟子你这个傻子又不理我</p>
+	<p>小玟子你这个傻子又不理我</p>
+<script>
+	document.getElementById("btn").onclick=function(){
+		var pObjs=document.getElementsByTagName("p");
+		for(var i=0;i<pObjs.length;i++){
+			pObjs[i].innerText="我们都是p";
+		}
+	};
+
+
+</script> -->
+	<!-- <input type="button" value="显示效果" id="btn" />
+	<img src="1.png" alt="哈哈" title="gaga" />
+<script>
+	document.getElementById("btn").onclick=function(){
+		var imgObjs=document.getElementsByTagName("img");
+		imgObjs[0].alt="hhh";
+		imgObjs[0].title="aaaa";
+	};
+</script>
+ -->
+	<input type="button" value="修改所有文本框的值" id="btn" /><br />
+	<input type="text" value="" /><br />
+	<input type="text" value="" /><br />
+	<input type="text" value="" /><br />
+	<input type="text" value="" /><br />
+	<input type="text" value="" /><br />
+	<input type="text" value="" /><br />
+	<input type="text" value="" /><br />
+	<input type="text" value="" /><br />
+<script>
+	document.getElementById("btn").onclick.function(){
+		var inputs=document.getElementsByTagName("input");
+			for(var i=0;i<inputs.length;i++){
+				if (inputs[i].type!="button") {
+					inputs[i].value="亲爱的小玟子";
+			}
+		}
+	};
+</script>
+</body>
+</html> 

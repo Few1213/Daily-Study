@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="按钮" id="btn"/>
+<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+    var arr = [{name: "百度", href: "http://www.baidu.com"}, {name: "百度", href: "http://www.baidu.com"}, {
+        name: "百度", href: "http://www.baidu.com"
+    }, {name: "百度", href: "http://www.baidu.com"}]
+    my$("btn").onclick = function () {
+        var tableObj = document.createElement("table");
+        tableObj.border="1";
+        tableObj.cellPadding="0";
+        tableObj.cellSpacing="0";
+        my$("dv").appendChild(tableObj);
+        for (var i = 0; i < arr.length; i++) {
+            var dt = arr[i];
+            var trObj = document.createElement("tr");
+            tableObj.appendChild(trObj);
+            var td1 = document.createElement("td");
+            td1.innerText = dt.name;
+            trObj.appendChild(td1);
+            var td2 = document.createElement("td");
+            td2.innerHTML = "<a href=" + dt.href + ">" + dt.name + "</a>";
+            trObj.appendChild(td2);
+        }
+    };
+</script>
+</body>
+</html>

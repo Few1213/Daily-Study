@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10自定义构造函数创建对象</title>
+    <script>
+        function Person() {
+            this.name="小明";
+            this.age=18;
+            this.sayHi=function () {
+                console.log("我叫"+this.name+"我的年龄是"+this.age);
+            }
+        }
+        var obj1=new Person();
+        obj1.sayHi();
+
+        function Person(name,age) {
+            this.name=name;
+            this.age=age;
+            this.sayHi=function () {
+                console.log("我叫"+this.name+"我的年龄是"+this.age);
+            }
+        }
+        var obj1=new Person("小明",18);
+        obj1.sayHi();
+
+        function Person(name,age) {
+            this.name=name;
+            this.age=age;
+            this.sayHi=function () {
+                console.log("我叫"+this.name+"我的年龄是"+this.age);
+            }
+        }
+        var per1=new Person("小玟子",18);
+        per1.sayHi();
+
+        function Person(name,age) {
+            this.name=name;
+            this.age=age;
+            this.sayHi=function () {
+                console.log(5201314);
+            }
+        }
+        var per3=new Person();
+        per3.sayHi();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

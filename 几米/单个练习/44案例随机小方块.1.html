@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .map {
+            width: 800px;
+            height: 800px;
+            background-color: #ccc;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="map">
+    </div>
+    <script src="common.js"></script>
+    <script>
+        // 产生随机数对象
+        (function (window) { //自调用函数 这里的window指得是形参
+            function Random() {} //创建一个自定义构造函数
+            Random.prototype.getRandom = function (min, max) {
+                return Math.floor(Math.random() * (max - min) + min);
+            }; //在创建的自定义的构造函数的原型里添加方法,返回值是向下取整的随机数
+            // 把全局对象暴露给windows顶级对象,就成了全局对象,可以理解为把window.Random设置为一个新的对象?
+            window.Random = new Random();
+        })(window); //这里的window指的是实参
+
+        //   产生小方块对象
+        (function (window) {
+            //获取元素,这里可以使用多种获取元素的方式
+            var map = document.querySelector(".map");
+
+            //创建食物,食物的构造函数
+            function Food(width, height, color) {
+                this.width = width || 20; //设置小方块的宽,如果没有设置则默认小方块的宽为20
+                this.height = height || 20; //设置小方块的高,如果没有设置则默认小方块的高为20
+                this.x = 0; //小方块的横坐标
+                this.y = 0; //小方块的纵坐标
+                this.color = color; //设置小方块的颜色
+                this.element = document.createElement("div"); //小方块的创建
+            }
+            //初始化小方块的显示的效果及位置---显示在地图上
+            Food.prototype.init = function (map) { //给food这个构造函数的原型中添加方法,参数是之前创建的地图
+                //设置小方块的样式
+                var div = this.element; //this.element指的是food这个构造函数的实例化对象?
+                div.style.position = "absolute"; //脱离文档流
+                div.style.width = this.width + "px";
+                div.style.height = this.height + "px";
+                div.style.backgroundColor = this.color;
+                // 把小方块加入到map地图中
+                map.appendChild(div);
+                this.render(map); //在原型的方法中调用另一个原型中的方法,this指的是这个实例化的对象,这个实例化对象调用了这个方法
+            };
+            // 产生随机位置
+            Food.prototype.render = function (map) {
+                //随机产生横纵坐标
+                var x = Random.getRandom(0, map.offsetWidth / this.width) * this.width;
+                var y = Random.getRandom(0, map.offsetHeight / this.height) * this.height;
+                this.x = x;
+                this.y = y;
+                var div = this.element;  
+                div.style.left = this.x + "px";
+                div.style.top = this.y + "px";
+            };
+
+            var fd = new Food(20, 20, "green");//创建实例化对象
+            fd.init(map);//调用这个方法
+            console.log(fd.x + "=====" + fd.y);
+        })(window);
+    </script>
+</body>
+
+</html>

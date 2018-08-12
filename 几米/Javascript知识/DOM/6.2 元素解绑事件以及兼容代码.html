@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	用什么事件绑定函数,用什么事件解绑函数
+    1 第一种方法
+    对象.on事件名字=null;
+    my$("btn").onclick=function(){};
+    my$("btn").onclick=null;
+    2 第二种方法 removeaddEventListener
+    对象.removeaddEventListener("没有on的事件类型",函数名字,false)
+    my$("btn2").onclick=function(){
+        my$("btn").removeEventListener("click",f1,false);
+    };
+    3.第三种方法 detachEvent
+    对象.detachEvent("on事件类型",函数的名字);
+    my$("btn2").onclick= function () {
+        my$("btn").detachEvent(onclick,f1);
+    };
+    移除绑定事件的兼容代码
+	<script src="common.js"></script>
+	<script>
+		function removeEventListener(element,type,fnName){
+			if (element.removeEventListener) {
+				element.removeEventListener(type,f1,false);
+			}else if (element.detachEvent) {
+				element.detachEvent("on"+type,f1);
+			}else{
+				my$("btn")["on"+type]=null;
+			}
+		}
+	</script>
+</body>
+</html>

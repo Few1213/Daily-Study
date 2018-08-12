@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<a href="images/1.JPG" id="ak"><img src="images/2.JPG" id="ap"></a>	
+<script>
+	var imgObj=document.getElementById("ap");
+	imgObj.onclick=function(){
+		var aObj=document.getElementById("ak");
+		this.src=aObj.href;
+		return false;//设置点击事件的超链接不跳转
+	};
+</script>
+</body>
+</html>

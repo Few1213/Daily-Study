@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn" />
+<select>
+	<option>红烧小玟子<option>
+	<option id="sp">清蒸小玟子<option>
+	<option>水煮小玟子<option>
+	<option>油炸小玟子<option>
+</select>
+<script src="common.js"></script>
+<script>
+	my$("btn").onclick=function(){
+		my$("sp").selected=true;
+	};
+</script>
+</body>
+</html>

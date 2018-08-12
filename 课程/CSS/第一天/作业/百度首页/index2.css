@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.contain {
+    width: 422px;
+    margin: auto;
+    text-align: center;
+}
+a{
+    cursor: pointer;
+}
+ul{
+    list-style: none;
+}
+
+.nav{
+    /*position: relative;*/
+    height: 15px;
+}
+.nav ul{
+    /*position: absolute;*/
+    /*top: 8px;*/
+    /*left: -56px;*/
+
+}
+.nav ul li{
+    float: left;
+    display: inline-block;
+    margin-left: 15px;
+
+}
+.nav li a {
+    font-size: 16px;
+}
+.nav li a:hover{
+    color: black;
+    text-decoration: none;
+}
+.search{
+    position: relative;
+    height: 34px;
+    margin-top: 15px;
+}
+.ip1{
+    /*position: absolute;*/
+    width: 420px;
+    height: 34px;
+    /*top: 0;*/
+    /*left: -81px;*/
+}
+.btn{
+    position: absolute;
+    height: 30px;
+    width: 100px;
+    top: 4px;
+    right: -109px;
+}
+.nav2{
+    margin-top: 25px;
+    height: 21px;
+}
+.nav2 ul{
+    margin-left:  116px;
+}
+.nav2 ul li{
+    float: left;
+}
+.nav2 li a{
+    display: inline-block;
+    padding: 0 8px;
+}
+.nav3{
+    margin-top: 125px;
+}
+.nav3 a{
+    font-size: 12px;
+}
+.footer{
+    height: 24px;
+}
+.footer ul{
+    margin-left:60px;
+    margin-top: 12px;
+}
+.footer ul li{
+    float: left;
+    padding: 0 9px;
+}
+.footer li a{
+    font-size: 12px;
+}
+div p{
+    height: 13px;
+    font-size: 12px;
+    color: rgb(102,102,102);
+}

@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 600px;
+    height: 800px;
+    vertical-align: top;
+}
+
+.box {
+    width: 600px;
+    height: 800px;
+    margin: 100px auto;
+    padding: 5px;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+.inner {
+    width: 600px;
+    height: 800px;
+    background-color: pink;
+    position: relative;
+    overflow: hidden;
+}
+
+.inner ul {
+    width: 1000%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.inner ul li {
+    float: left;
+}
+
+.corner {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+}
+
+.corner span {
+    float: left;
+    width: 20px;
+    margin-right: 5px;
+    height: 21px;
+    line-height: 21px;
+    background-color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.corner .current {
+    background-color: red;
+}
+.focus{
+    width: 600px;
+    position: absolute;
+    top: 300px ;
+    left: 5px;
+}
+.left{
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 40px;
+    float: left;
+    background-color: rgba(255,255,255,0.2);
+    margin-right: 0;
+    cursor: pointer;
+
+}
+.right{
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 40px;
+    float: right;
+    background-color: rgba(255,255,255,0.2);
+    margin-right: 0;
+    cursor: pointer;
+}

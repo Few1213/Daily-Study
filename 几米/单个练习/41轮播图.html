@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        .box {
+            width: 600px;
+            height: 800px;
+            margin: 100px auto;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .inner {
+            width: 600px;
+            height: 800px;
+            background-color: pink;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .inner ul {
+            width: 1000%;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        .inner ul li {
+            float: left;
+        }
+
+        .square {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        span {
+            float: left;
+            width: 20px;
+            margin-right: 5px;
+            height: 21px;
+            background-color: #cccccc;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .current {
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box" class="box">
+    <div class="inner"><!--相框-->
+        <ul>
+            <li><a href="#"><img src="images/1.JPG" alt=""></a></li>
+            <li><a href="#"><img src="images/2.JPG" alt=""></a></li>
+            <li><a href="#"><img src="images/3.JPG" alt=""></a></li>
+        </ul>
+        <div class="square">
+            <span class="current">1</span>
+            <span>2</span>
+            <span>3</span>
+        </div>
+    </div>
+
+</div>
+<script src="common.js"></script>
+<script>
+    var box=my$("box");
+    var inner=my$("box").children[0];
+    var ulObj=inner.children[0];
+    var spanObjs=inner.children[1].children;
+    var imgWidth=inner.offsetWidth;
+    //循环遍历
+    for (var i=0;i<spanObjs.length;i++){
+        //设置鼠标进入事件
+        spanObjs[i].setAttribute("index",i);
+        spanObjs[i].onmouseover=function () {
+          //清除所有的span的样式
+          for (var j=0;j<spanObjs.length;j++){
+              spanObjs[j].removeAttribute("class");
+          }
+          this.className="current";
+          var index=this.getAttribute("index");
+          animate(ulObj,-index*imgWidth);
+        };
+    }
+    function animate(element, target) {
+        clearInterval(element.timeId);
+        element.timeId = setInterval(function () {
+            var current = element.offsetLeft;
+            var step = 10;
+            step = current < target ? step : -step;
+            current += step;
+            if (Math.abs(current - target) > Math.abs(step)) {
+                element.style.left = current + "px";
+            } else {
+                clearInterval(element.timeId);
+                element.style.left = target + "px";
+            }
+        }, 10);
+    }
+</script>
+</body>
+</html>

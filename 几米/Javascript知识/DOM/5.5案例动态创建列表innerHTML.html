@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 200px;
+			height: 500px;
+			background-color: green;
+		}
+		ul{
+			list-style-type: none;
+			cursor: pointer;
+		}
+
+	</style>
+</head>
+<body>
+<input type="button" value="创建列表" id="btn" name="" />
+<div id="dv">
+</div>
+<script src="common.js"></script>
+<script>
+	// my$("btn").onclick=function(){
+	// 	my$("dv").innerHTML="<ul><li>知道</li><li>不知道</li></ul>";
+	// };
+	var names=["杨过","郭靖","张无忌","小龙女"];
+	my$("btn").onclick=function(){
+		var str="<ul>";
+		//根据循环创建对应对数的li
+		for(var i=0;i<names.length;i++){
+			str+="<li>"+names[i]+"</li>";
+		}
+		str+="</ul>";
+		my$("dv").innerHTML=str;
+	};
+	
+	var list=my$("dv").getElementsByTagName("li");
+	for(var i=0;i<list.length;i++){
+		//添加鼠标进入事件
+		list[i].onmouseover=function(){
+			this.style.backgroundColor="red";
+		};
+		//添加鼠标离开事件
+		list[i].onmouseout=function(){
+			this.style.backgroundColor="yellow";
+		};
+	}
+
+</script>	
+</body>
+</html>

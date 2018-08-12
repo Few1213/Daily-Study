@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //通过构造函数创建对象
+
+        //字面量的方式创建对象
+
+        //正则表达式的作用 匹配对象
+        var reg = new RegExp(/\d{5}/);
+        //调用方法验证字符创是否匹配
+        var flag = reg.test("我的电话是10086");
+        console.log(flag);
+
+
+
+        var reg1=/\d{1,5}/;
+        var flag1=reg.test("sada11111");
+        console.log(flag1);
+    </script>
+</body>
+
+</html>

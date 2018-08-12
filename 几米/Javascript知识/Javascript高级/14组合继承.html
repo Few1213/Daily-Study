@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //原型实现继承
+        //借用构造函数实现继承
+        // 组合继承:原型继承+借用构造函数继承
+
+        function Person(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        Person.prototype.eat = function () {
+            console.log("吃");
+        };
+
+        function Student(name,age,sex,score) {
+            //借用构造函数继承
+            Person,
+            call(this, name, age, sex);
+            this.score = score;
+        }
+        //改变了原型的指向
+        Student.prototype=new Person();//不传值
+        Student.prototype.sayHi=function(){
+            console.log("nihao");
+        };
+        
+
+        //属性和方法都被继承了
+        var stu=new Student("小明",10,"男","100");
+        console.log(stu.name,stu.age,stu.sex,stu.score);
+        stu.eat();
+        stu.sayHi();
+
+
+    </script>
+</body>
+
+</html>

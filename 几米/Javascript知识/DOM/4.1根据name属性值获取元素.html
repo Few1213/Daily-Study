@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn" />
+<input type="text" value="1111111s" name="class" />
+<input type="text" value="1111111s" name="class1" />
+<input type="text" value="1111111s" name="class" />
+<input type="text" value="1111111s" name="class1" />
+<input type="text" value="1111111s" name="class" />
+<input type="text" value="1111111s" name="class1" />
+<script src="common.js"></script>
+<script>
+    my$("btn").onclick=function () {
+        var inputs=document.getElementsByName("class1");
+        for(var i=0;i<inputs.length;i++){
+            inputs[i].value="可还行";
+        }
+    };
+
+</script>
+</body>
+</html>

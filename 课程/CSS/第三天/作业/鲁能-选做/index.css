@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    font-size: 12px;
+    line-height: 12px;
+    text-decoration: none;
+    color: #9999b3;
+}
+/* title开始 */
+.title a:hover{
+    text-decoration: underline;
+}
+.box{
+    text-align: center;
+    width: 642px;
+    height: 1106px;
+    margin: 100px auto ;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-top: 3px solid #094683;
+    padding:0 20px;
+   
+}
+.title{
+    height: 83px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+h3{
+    height: 22px; 
+    line-height: 22px;    
+    font-size: 22px;
+    font-weight: 400;
+    padding: 18px 0 17px 0;
+}
+.title-text {
+    font-size: 12px;
+    color:#9999b3;
+}
+.title-text1 {
+    padding: 0 12px;
+}
+.title-text2 {
+    padding-left: 23px;
+}
+.title-text3 {
+    padding-left: 23px;
+}
+.red{
+    color:#b60c0c;
+}
+.blue{
+    color:#5554a7;
+}
+/* title结束 */
+/* main开始 */
+.main{
+    text-align: left;
+    padding: 0 9px 0 19px;  
+}
+.main div{
+    font-size: 14px;
+    color: #333333;
+    text-align: left;
+}
+p{
+    font-size: 14px;
+    color: #333333;
+    text-align: left;
+}
+.p1{
+    text-align: center;
+    font-size: 12px;
+    height: 42px;
+    line-height: 42px;
+    color: #666666;
+
+}
+.dv1,.dv4,.dv5{
+    text-indent: 2em;
+    line-height: 22px;
+}
+.dv2{
+   
+    border:1px dashed #ccc;
+    padding: 16px 10px;
+}
+.dv2 .dv3{
+    text-align: right;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.dv4 ,.dv5{
+    padding-top: 24px;
+}
+.dv6{
+    padding: 15px 0;
+}
+.dv6 a{
+    font-size: 14px;
+    color: #0454a7;
+}
+.dv6 a:hover{
+
+    text-decoration: underline;
+}
+.dv6 span{
+    font-weight: 700;
+}
+.main .dv7{
+    width: 520px;
+    height: 28px;
+    background-color: #dee2f3;
+    box-sizing: border-box;
+    border: 1px solid #0454a7;
+    text-align: center;
+    line-height: 28px;
+    margin-left: 20px;
+}
+.main .dv7 a{
+    color: #0454a7;
+    font-size: 14px;
+}
+.main .dv7 a:hover{
+    text-decoration: underline;
+}
+/* main结束 */

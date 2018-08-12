@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="uu">
+    <li>第1个</li>
+    <li>第2个</li>
+    <li>第3个</li>
+    <li>第4个</li>
+    <li>第5个</li>
+    <li>第6个</li>
+</ul>
+<script src="common.js"></script>
+<script>
+    //获取任意一个父级元素的第一个子级元素
+    function getFirstElementChild(element) {
+        if (element.firstElementChild){
+            return element.firstElementChild;
+        }else{
+            //return element.firstChild;
+            var node=element.firstChild;
+            while(node&&node.nodeType!=1){
+                node=node.nextSibling;
+            }
+            return node;
+        }
+    }
+    //获取任意一个父级元素的最后一个子级元素
+    function getLastElementChild(element) {
+        if (element.lastElementChild){
+            retuen element.lastElementChild;
+        }else{
+            var node=element.lastChild;
+            while(node&&node.nodeType!=1){
+                node=node.previousSibling;
+            }
+            return node;
+        }
+    }
+    //某个元素的前一个元素
+    function getPreviousElementSibling(element) {
+        if (element.previousElementSibling){
+            return element.previousElementSibling;
+        }else{
+            var node=element.previousSibling;
+            while (node&&node.nodeType!=1){
+                node =element.previousSibling;
+            }
+            return node;
+        }
+    }
+    //某个元素的后一个元素
+    function getNextElementSibling(element) {
+        if (element.nextElementSibling){
+            return element.nextElementSibling;
+        }else{
+            var node=element.nextSibling;
+            if (node&&node.nodeType!=1){
+                node=node.nextSibling;
+            }
+            return node;
+        }
+    }
+    //某个元素的兄弟元素
+    function getChildnodes(element) {
+        //找到该元素的父元素
+        var element=element.parentNode;
+        var nodes=element.childNodes;
+        //找出该父元素的所有子元素
+        for(var i=1;i<nodes.length;i++){
+            while (node[i]&&node[i].nodeType!=1){
+                console.log(nodes[i]);
+            }
+        }
+        var arr=[];
+    } ??????????
+ </script>
+</body>
+</html>

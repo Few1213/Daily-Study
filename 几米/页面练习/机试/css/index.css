@@ -1,0 +1,211 @@
+.box {
+    width: 780px;
+    height: 650px;
+    background-color: #5d5d5d;
+    margin: 100px;
+    padding: 36px 36px 20px;
+    position: relative;
+}
+
+/* 左侧开始 */
+
+.box .side {
+    /* position: absolute; */
+    width: 252px;
+    height: 612px;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 6px 8px 7px 9px;
+    border: 1px solid #e1e1e1;
+    /* position: relative;
+    top: -18px;
+    left: 0; */
+}
+
+.box .side .side-bottom {
+    width: 235px;
+    height: 203px;
+    background-color: #092f84;
+    box-sizing: border-box;
+    padding-top: 21px;
+    padding-left: 5px;
+    position: relative;
+}
+
+.box .side-bottom div {
+    overflow: hidden;
+    width: 223px;
+    border: 1px solid #8497c2;
+}
+
+.box .side div ul {
+    margin: 0;
+    padding: 4px 3px 3px 2px;
+}
+
+.box .side div ul li {
+    list-style: none;
+    width: 217px;
+    height: 22px;
+    font-size: 10px;
+    background-color: #01285f;
+    color: #beddff;
+    box-sizing: border-box;
+    border: 1px solid #4e698f;
+    margin-bottom: 2px;
+    padding-right: 0;
+}
+
+.box .side div ul li a {
+    height: 22px;
+    line-height: 22px;
+    color: #beddff;
+    text-decoration: none;
+    float: left;
+}
+
+.box .side div ul li .side-last {
+    float: right;
+    text-decoration: underline;
+    margin-right: 10px;
+}
+
+.box .side li span {
+    display: block;
+    margin: 10px 7px 9px 7px;
+    width: 3px;
+    height: 3px;
+    background-color: #fff;
+    float: left;
+}
+
+.box .side .im {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    border: 0;
+}
+
+/* 左侧结束 */
+
+/* 右侧开始 */
+
+.main {
+    width: 456px;
+    height: 605px;
+    background-color: #fff;
+    position: relative;
+    top: 7px;
+    left: -1px;
+}
+
+.main-top {
+    height: 38px;
+    padding: 4px 0 0 1px;
+    border-top: 1px solid #a6a6a6;
+    border-bottom: 2px solid #a6a6a6;
+}
+
+.main-top ul li {
+    float: left;
+    height: 32px;
+    background-color: #1a5fad;
+    text-align: center;
+    margin-right: 1px;
+    padding: 0 14px;
+}
+
+.main-top ul li a {
+    height: 32px;
+    line-height: 32px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.main-center {
+    width: 450px;
+    height: 263px;
+    border: 1px solid #a6a6a6;
+    margin-top: 31px;
+}
+
+.centent-left {
+    width: 260px;
+    height: 97px;
+    margin-top: 20px;
+    margin-left: 18px;
+}
+
+.main-center-top div p {
+    font-size: 12px;
+}
+
+.main-center-top div a {
+    text-decoration: underline;
+    font-size: 12px;
+    float: right;
+}
+
+.main-center-top img {
+    margin-top: 10px;
+    margin-right: 6px;
+}
+
+.main-center-bottom {
+    border-top: 1px solid #fff;
+    box-sizing: border-box;
+}
+
+.main-center-bottom div p {
+    font-size: 12px;
+}
+
+.main-center-bottom div a {
+    text-decoration: underline;
+    font-size: 12px;
+    float: right;
+}
+
+.main-center-bottom img {
+    margin-top: 20px;
+    margin-right: 6px;
+}
+
+.main-bottom {
+    margin-top: 35px;
+    width: 450px;
+    height: 203px;
+    background-color: pink;
+}
+.main-bottom-t {
+    height: 90px;
+}
+.main-bottom-t div {
+    width: 330px;
+    height: 70px;
+}
+
+.main-bottom-t div p {
+    font-size: 12px;
+}
+
+.main-bottom-t div a {
+    font-size: 14px;
+}
+.main-bottom-b{
+    height: 90px;
+}
+.main-bottom-b div {
+    width: 330px;
+    height: 70px;
+}
+
+.main-bottom-b div p {
+    font-size: 12px;
+}
+
+.main-bottom-b div a {
+    font-size: 14px;
+}
+
+/* 右侧结束 */

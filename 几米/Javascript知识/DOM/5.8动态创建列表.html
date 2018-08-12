@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: green;
+		}
+		ul{
+			list-style: none;
+			cursor: pointer;
+		}
+
+	</style>
+</head>
+<body>
+<input type="button"  value="按钮"  id="btn" name="" />
+<div id="dv">
+</div>
+<script src="common.js"></script>	
+<script>
+	var nodes=["1","2","3","4","5"];
+	//设置点击事件,把ul加入到div之中
+	my$("btn").onclick=function(){
+		var pObj=document.createElement("ul");
+		//把ul加入到div这个父级元素中
+		my$("dv").appendChild(pObj);
+		//动态的创建li并添加到ul之中
+		for(var i=0;i<nodes.length;i++){
+			var liObj=document.createElement("li");
+			liObj.innerText=nodes[i];
+			pObj.appendChild(liObj);
+			liObj.onmouseover=mouseoverHandle;
+			liObj.onmouseout=mouseoutHandle;
+		}//end for
+	};//end function
+	function mouseoverHandle(){
+		this.style.backgroundColor="red";
+	}
+	function mouseoutHandle(){
+		this.style.backgroundColor="";
+	}
+
+	//在循环里添加时间会导致该事件多次循环，浪费空间
+	//如果是循环的方式添加时间，推荐使用命名函数
+	//如果不是循环的方式添加时间，推荐使用匿名函数
+</script>
+</body>
+</html>

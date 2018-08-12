@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+	//构造函数
+	var arr=new Array();
+	//字面量的方式
+	var arr=[];
+	//Array.isArray(对象)---判断这个对象是不是数组
+	console.log(Array.isArray(obj));
+	// instanceof 关键字
+	var obj=[];
+	console.log(obj instanceof Array); 
+	//Array.concat(数组，数组，数组.....)用于合并两个或者多个数组
+	var arr1=[1,2,3];
+	var arr2=[2,3,4];
+	console.log(Array.concat(arr1,arr2));
+	//Array.every(函数)--返回值是布尔类型，函数作为参数使用，函数中有三个参数，第一个参数是元素的值，第二个参数是元素的索引值，第三个参数是原数组（无用）
+	//如果这个数组中的每个数组的值都符合条件，则最后返回true	
+	////可以用every();这个方法进行筛选
+	var arr1=[1,2,3];
+	//a元素的值 b 索引的值 c谁调用了这个方法，就是谁---arr
+	var flag=arr.every(function(a,b,c){
+		return a>2;//数组中的每个元素值都要大于2000的情况，最后才返回true
+	}); 
+	//Array.filter(函数);返回的是数组中每一个元素都符合条件的元素组成的新数组
+	var arr=[1,2,3,4,5];
+	var newArr=arr.filter(function(ele){
+		return ele>2;
+	});
+	console.log(newArr);//newArr=[3,4,5]; 
+
+
+
+	//重要，必须记
+	//.push(值)---吧值追加到数组中，加到数组的最后，返回值是插入后的数组长度
+	//.pop();---删除数组中的最后一个元素，返回值就是删除的这个值
+	//.shift();---删除数组中的第一个元素，返回值就是删除的这个值
+	//.unshift;----想数组的第一个元素前面插入一个新的元素，返回值是插入后的数组长度
+	
+
+
+
+	//.foreach(函数);---方法--遍历函数用，相当于for循环(可以在网络上寻找低版本浏览器兼容代码)
+	Array.foreach();
+	//.indexOf(元素值);返回的是索引，找不到返回的就是-1
+	Array.indexOf();
+	//.join("字符串");--返回的是字符串
+	Array.join();
+	//.map(函数);数组中的每个元素都要执行这个函数，把执行后的结果重新的全部的放在一个新的数组中
+	Array.map();
+	//Array.reverse();---反转数组
+	Array.reverse();
+	//Array.sort();数组排序，可能不稳定，如果不稳定，请写以下方法
+	Array.sort(function(a,b){
+		if (a>b) {
+			return 1;
+		}else if(a==b){
+			return 0;
+		}else{
+			return -1;
+		}
+	});
+	//.slice(开始的索引，结束的索引);吧截取后的数组的值放在一个新的数组中不包含结束额索引对应的元素值
+	Array.slice();
+	//.splice(开始的位置，要删除的个数，替换元素的值);一般是用于删除数组中的元素，或者替换元素，或者是插入元素
+
+	 
+</script>
+</body>
+</html>

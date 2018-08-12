@@ -1,0 +1,25 @@
+p{
+    text-indent: 2em;
+    line-height: 28px;
+}
+h2{
+    font: 400 28px "微软雅黑";
+}
+div span{
+    font-size: 14px;
+}
+.center{
+    text-align: center;
+}
+.gray{
+    color: #cccccc;
+}
+.green{
+    color: green;
+}
+.red{
+    color: #990000;
+}
+.blue{
+    color: skyblue;
+}

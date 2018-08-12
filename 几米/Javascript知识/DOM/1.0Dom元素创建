@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    1.0获取元素的方式
+        1.1document.getElementById("id属性的值");//根据id属性的值获取元素，返回来的是一个对象
+        1.2document.getElementsByTagName("标签名字");//根据标签名字获取元素，返回来的是一个伪数组，里面保存了多个DOM对象
+        下面几个有的浏览器不支持
+        1.3document.getElementsByClassName("类样式的名字");//据类样式的名字获取元素，返回来的是一个伪数组，里面保存了多个DOM对象
+        1.4document.getElementsByName("name属性的值");//根据name属性的值获取元素，返回来的是一个伪数组，里面保存了多个DOM对象
+        1.5document.querySelector();//根据选择器获取元素，返回来的是一个元素对象
+    2.0return false;//阻止超链接跳转
+
+    3.0 innerText和textContent的区别
+    //设置标签中的文本内容，应该使用textContent属性，火狐，谷歌支持，IE8不支持
+    //设置标签中的文本内容，应该使用innerText属性，火狐，谷歌支持，IE8支持
+
+    //如果这个属性在浏览器中不支持，那么这个属性的类型是underfined
+    //判断这个属性的类型 是不是underfined,就知道浏览器是否支持
+
+    4.0 innerText和textContent的兼容代码
+    //设置任意的标签中间的任意文本内容
+    function setInnerText(element,text) {
+        if (typeof element.textContent=="underfined"){//不支持
+            element.innerText=text;
+        }else{//支持
+            element.textContent=text;
+        }
+    }
+    //获取任意的标签中间的任文本内容
+    function getInnerText(element) {
+        if (typeof element.textContent=="underfined"){
+            return element.innerText;
+        }else{
+            return element.textContent;
+        }
+    }
+    //测试
+    my$("btn").onclick=function () {
+        //console.log(getInnerText(my$("dv")));
+        setInnerText(my$("dv"),"小玟子");
+    };
+
+    5.0innerText和innerHTML的区别
+    innerText
+        innerText主要是设置文本的，设置镖标签内容是没有标签效果的
+    innerHTML
+        innerHTML是可以设置文本内容，主要的作用是在标签中设置新的html标签内容，是有标签效果的
+    总结：想要设置标签内容使用innerText,想要设置文本内容，使用innerText和textContent，或者innerHTML，推荐用innerHTML
+    获取的时候
+    innerText可以获取标签中间的文本内容，但是标签中如果还有标签，name最里面的文本内容也能获取-----获取不到标签但是能获取标签内容
+    innerHTML可以获取标签中所有的内容
+
+    结论：
+    如果想要标签及内容使用innerHTML
+    如果想要设置标签页使用innerHTML
+    如果仅仅想要设置文本内容使用innerText或者innerHTML或者textContent
+
+    6.0自定义属性的操作getAttribute
+    在html标签中添加的自定义属性，如果想要获取这个属性的值，需要使用getAttribute("自定义属性的名字")才能获取这个属性的值
+    设置自定义属性：setAttribute("属性的名字","属性的值");
+    获取自定义属性的值：getAttribute("属性的名字");
+
+    7.0移除自定义属性的操作 removeAttibute("属性的名字");
+    可以移除元素的类样式
+    值会被移除但是属性还在
+    也可以移除元素自带的属性
+
+    8.0节点
+    文档：doucment
+    元素：页面中所有的标签，元素 ---element,标签---元素---对象
+    节点：页面中所有的内容（标签，文本，属性（文字，换行，空格，回车）），node
+    根元素：html
+
+    节点的属性:(可以使用标签---元素.出来,可以使用属性节点.点出来，文本节点.点出来)
+    nodeType:节点的类型：1--标签，2---属性，3---文本
+    nodeName:节点的名字：标签节点--大写的标签名字，属性节点---小写的属性名字，文本节点---#text
+    nodeValue:节点的值：标签节点---null，属性节点---属性值，文本节点---文本内容
+
+    if(nodes[i].nodeType==1&&nodes[i].nodeName=="LI");//获取li标签！！！！！！
+   
+    8.1节点类型
+    parentNode//父级节点
+    parentElement//父级元素
+    childNodes//子节点
+    children//子元素
+
+    从子节点和兄弟节点开始，凡是获取节点的代码在IE8中得到的是元素，凡是获取元素的代码，
+    在IEE8中的得到的是underfind元素的代码，iE中不支持
+    firstChild//第一个子节点
+    getFirstElementChild//第一个子元素
+    lastChild//最后一个子节点
+    lastElementChild//最后一个子元素
+    previousSibling//某一个元素的前一个兄弟节点
+    getPreviousElementSibling//某一个元素的前一个兄弟元素
+    nextSibling//某一个元素的后一个兄弟节点
+    nextElemenrSibling//某一个元素的后一个兄弟元素
+
+    凡是获取节点的代码，在谷歌和火狐中得到的都是相关的节点
+    凡是获取元素的代码，在谷歌和火狐中得到的都是相关的元素
+
+    8.2封装节点兼容代码
+    //获取任意一个父级元素的第一个子级元素
+    function getFirstElementChild(element) {
+        if (element.firstElementChild){
+            return element.firstElementChild;
+        }else{
+            //return element.firstChild;
+            var node=element.firstChild;
+            while(node&&node.nodeType!=1){
+                node=node.nextSibling;
+            }
+            return node;
+        }
+    }
+    //获取任意一个父级元素的最后一个子级元素
+    function getLastElementChild(element) {
+        if (element.lastElementChild){
+            retuen element.lastElementChild;
+        }else{
+            var node=element.lastChild;
+            while(node&&node.nodeType!=1){
+                node=node.previousSibling;
+            }
+            return node;
+        }
+    }
+    //某个元素的前一个元素
+    function getPreviousElementSibling(element) {
+        if (element.previousElementSibling){
+            return element.previousElementSibling;
+        }else{
+            var node=element.previousSibling;
+            while (node&&node.nodeType!=1){
+                node =element.previousSibling;
+            }
+            return node;
+        }
+    }
+    //某个元素的后一个元素
+    function getNextElementSibling(element) {
+        if (element.nextElementSibling){
+            return element.nextElementSibling;
+        }else{
+            var node=element.nextSibling;
+            if (node&&node.nodeType!=1){
+                node=node.nextSibling;
+            }
+            return node;
+        }
+    }
+    //某个元素的兄弟元素
+    function getChildnodes(element) {
+        //找到该元素的父元素
+        var element=element.parentNode;
+        var nodes=element.childNodes;
+        //找出该父元素的所有子元素
+        for(var i=1;i<nodes.length;i++){
+            while (node[i]&&node[i].nodeType!=1){
+                console.log(nodes[i]);
+            }
+        }
+        var arr=[];
+    } 
+    9.0 背景图片的更换---bankgroundImage（重要）
+    my$("bd").style.backgroundImage="url("+this.src+")";
+
+    10.0元素创建的三种方式
+    元素创建---挺高用户体验
+    1.document.write("标签的代码及内容");
+    2.对象.innerHTML="标签及代码";
+    3.document.createElement();添加元素，然后把元素追加到父级元素中
+
+    11.0 元素相关的操作方法
+    父级元素.appendChild();//追加子元素
+    父级元素.insertBefore(新的元素,父级元素).firstElementChild;//把新的元素插入到第一个子元素之前
+    父级元素.replaceChild();//替代子元素
+    父级元素.removeChind父级元素.firsrElementChild;//移除父级元素中的第一个子元素
+
+    12.0只创建一个元素
+    通过循环遍历实现 遵循有则删除无则创建原则
+
+    13.0元素绑定事件及其兼容性代码
+    13.1 第一种方式
+    //参数1:事件的类型---事件的名字,没有on
+    //参数2:事件的处理函数--函数(命名函数,匿名函数)
+    //参数3:布尔类型---目前就写false
+    my$("btn").addEventListener("没有on的事件",f1,false);
+    谷歌和火狐支持,IE8不支持
+    13.2 第二种方式
+    // 参数1:事件的类型---事件的名字有on
+    // 参数2:时间处理函数--函数(命名函数,匿名函数)
+    my$("btn").attachEvent("有on的事件类型",事件处理函数);
+    IE8支持,谷歌火狐不支持
+    13.3 元素绑定事件兼容性代码
+    function addEventListener(element,type,fn){
+        //判断浏览器是否支持这个方法
+        if (element.addEventListener) {
+            element.addEventListener(type,fn,false);
+        }else if(element.attachEvent){
+            element.attachEvent("on"+type,fn);
+        }else{
+            my$("btn")["on"+type]=fn;
+        }
+    }
+    绑定事件的区别
+    addEventListener();
+    attachEvent();
+    相同点:都是为元素绑定事件
+    不同点:
+    1.方法名不一样
+    2.参数个数不一样
+    3.对浏览器支持情况不一样
+    4.this不同,addEventListener的this是当前事件的绑定对象
+    attachEvent中的this是window
+    5.addEventListener中的事件类型(事件的名字)没有on
+    attachEvent中的事件类型(事件的名字)有on
+
+    13.4为元素解绑事件
+    用什么事件绑定函数,用什么事件解绑函数
+    1 第一种方法
+    对象.on事件名字=null;
+    my$("btn").onclick=function(){};
+    my$("btn").onclick=null;
+    2 第二种方法 removeaddEventListener
+    对象.removeaddEventListener("没有on的事件类型",函数名字,false)
+    my$("btn2").onclick=function(){
+        my$("btn").removeEventListener("click",f1,false);
+    };
+    3.第三种方法 detachEvent
+    对象.detachEvent("on事件类型",函数的名字);
+    my$("btn2").onclick= function () {
+        my$("btn").detachEvent(onclick,f1);
+    };
+    移除绑定事件的兼容代码
+    function removeEventListener(element,type,fnName){
+            if (element.removeEventListener) {
+                element.removeEventListener(type,f1,false);
+            }else if (element.detachEvent) {
+                element.detachEvent("on"+type,f1);
+            }else{
+                my$("btn")["on"+type]=null;
+            }
+        }
+    14.0 事件冒泡
+    事件冒泡:多个元素镶嵌,有层次关系,这些元素都注册了点击事件,如果里面的元素事件触发了,外面元素的该事件自动触发
+    阻止事件冒泡:
+            window.event.cancelBubble=true; IE谷歌支持 谷歌不支持
+            e.stopPropagation();谷歌火狐支持,IE不支持
+    事件有三个阶段
+    1.事件捕获阶段 true
+    2.事件目标阶段
+    3.事件冒泡阶段 false
+    array.foreach(); e.eventPhase
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // apply和call的使用
+        //可以改变this的指向
+        function f1(x,y) { 
+            console.log("结果是:"+(x+y)+this);
+            console.dir(this);
+         }
+
+         f1(10,20);//函数的调用
+
+         console.log("======");
+         //此时的f1实际上是当成对象来使用的,对象可以调用方法
+        //  apply和call也是函数的调用的方式
+        f1.call();
+        console.log("=======");
+        f1.apply(null);
+        f1.call(null);
+
+        //apply和call方法中如果没有传入参数或者说传入的是null,name调用该方法的函数对象中的this就是默认的window
+        
+        f1.apply(null,[100,200]);
+        f1.call(null,100,200);
+
+        // apply和call都可以让函数或者方法来调用,传入参数和函数自己调用的写法不一样,但是效果是一样的
+        
+
+    </script>
+</body>
+</html> 

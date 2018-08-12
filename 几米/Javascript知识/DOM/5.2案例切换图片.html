@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-image: url("images/1.JPG");
+			background-repeat: no-repeat;
+			background-position: center top;
+		}
+		#dv{
+			background-color: rgba(255,255,255,0.3);
+			height: 200px;
+			text-align: center;
+			
+
+		}
+		img{
+			width: 150px;
+			height: 200px;
+			margin-right: 5px;
+		}
+	</style>
+</head>
+<body id="bd">
+<div id="dv">
+	<img src="images/1.JPG" />
+	<img src="images/2.JPG" />
+	<img src="images/3.JPG" />
+</div>	
+<script src="common.js"></script>
+<script>
+	//获取全部的img标签并设置点击事件
+	var imgObjs=my$("dv").children;
+	for (var i = 0; i < imgObjs.length; i++) {
+		imgObjs[i].onclick=function(){
+			my$("bd").style.backgroundImage="url("+this.src+")";
+		};
+	}
+	//backgroundImage="url("+this.src+")";
+	//backgroundImage="url("+this.src+")";
+	//backgroundImage="url("+this.src+")";
+	//backgroundImage="url("+this.src+")";
+</script>
+</body>
+</html>

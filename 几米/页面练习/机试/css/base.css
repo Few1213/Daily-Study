@@ -1,0 +1,81 @@
+/* 申明当前css文件是UTF-8字符编码 */
+@charset "UTF-8";
+/* 清除所有元素内外间距 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, img {
+  margin: 0;
+  padding: 0;
+}
+
+img, input, button, textarea {
+  border: none;
+  padding: 0;
+  margin: 0;
+  /*去掉input默认的蓝色边框*/
+  outline-style: none;
+}
+
+/* 去掉li默认的样式 */
+li {
+  list-style: none;
+}
+
+input {
+  font-family: "Microsoft YaHei";
+}
+
+select, input, textarea {
+  font-size: 12px;
+  margin: 0;
+}
+
+/* 去掉文本域可以被拉大的效果 */
+textarea {
+  resize: none;
+}
+
+img {
+  border: 0;
+  display:block; /*去除底边的像素*/
+}
+
+
+/*清除浮动最现代、最流行的方式*/
+ .clearfix::after {
+   content: "";
+   display: block;
+   height:0;
+   clear: both;
+}
+/*兼容IE67*/
+.clearfix {
+  *zoom: 1;
+}
+/* 去掉a的默认底线 */
+a{
+  text-decoration: none;
+  color:#000;
+}
+
+
+/* 去掉h1- h6的标签默认样式 */
+h1, h2, h3, h4, h5, h6 {
+  text-decoration: none;
+  font-weight: normal; 
+  font-size: 100%;
+}
+
+/* 版心 */
+
+.fl{
+  float:left;
+}
+.fr{
+  float:right;
+}
+
+
+
+
+
+
+

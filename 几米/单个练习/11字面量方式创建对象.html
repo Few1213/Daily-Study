@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11字面量方式创建对象</title>
+    <script>
+//        var obj=new Person();这句话做了四件事情
+//        1.在内存中申请一块空闲的空间。储存新的创建对象。
+//        2.把this设置为当前的对象。
+//        3.设置对象的属性和方法。
+//        4.把this这个对象返回。
+        var obj={};//空对象
+        obj.name="小白";
+        obj.age=10;
+        obj.play=function () {
+            console.log(111);
+        };
+        obj.play();
+        //优化后的写法
+        var obj1={
+            name:"小明",
+            age:20,
+            sayHi:function () {
+                console.log(111);
+            }
+        };
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

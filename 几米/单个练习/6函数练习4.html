@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数练习4</title>
+    <script>
+        //通过函数实现数组反转
+        function reverseArray(array) {
+            for (var i = 0; i < array.length / 2; i++) {
+                var temp = array[i];
+                array[i] = array[array.length - 1 - i];
+                array[array.length - 1 - i] = temp;
+            }
+            return array;
+        }
+        var resultArray = reverseArray([1, 5, 1, 2, 4, 8, 9, 4, 5, 3]);
+        console.log(resultArray);
+
+        function reseverArray(array) {
+            for (var i = 0; i < array.length / 2; i++) {
+                var temp = array[i];
+                array[i] = array[array.length - 1 - i];
+                array[array.length - 1 - i] = temp;
+            }
+            return array;
+        }
+        console.log(reseverArray([1, 5, 4, 5, 1, 2, 45, 5]));
+
+        function reverseArray(arr) {
+            for (var i = 0; i < arr.length / 2; i++) {
+                var temp = arr[i];
+                arr[i] = arr[arr.length - 1 - i];
+                arr[arr.length - 1 - i] = temp;
+            }
+            return arr;
+        }
+        console.log(reseverArray([1, 5, 4, 2, 1, 2, 1, 7]));
+
+        //用函数实现冒泡排序
+        function sortArray(arr) {
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - 1 - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }//end if
+                }//end for
+            }//end for
+            return arr;
+        }
+        console.log(sortArray([1, 5, 4, 7, 9, 1, 6]));
+
+        function sortArray(arr) {
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - 1 - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        console.log(sortArray([2, 4, 5, 4, 1, 6, 7, 5, 1]));
+
+        function softArray(arr) {
+            for(var i=0;i<arr.length-1;i++){
+                for(var j=0;j<arr.length-1-i;j++){
+                    if(arr[j]>arr[j+1]){
+                        var temp=arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=temp;
+                    }// end if
+                }//end for
+            }//end for
+            return arr;
+        }//end function
+        console.log(softArray([10,50,1,5,4]));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

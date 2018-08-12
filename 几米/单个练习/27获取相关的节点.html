@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="dv">
+    <ul id="uu">
+        <li>红烧小玟子</li>
+        <li>油炸小玟子</li>
+        <li id="three">爆炒小玟子</li>
+        <li>糖醋小玟子</li>
+        <li>清蒸小玟子</li>
+        <li>水煮小玟子</li>
+    </ul>
+</div>
+<script src="common.js"></script>
+<script>
+    var ulObjs=my$("uu");
+//    父级节点
+    console.log(ulObjs.parentNode);
+//    父级元素
+    console.log(ulObjs.parentElement);
+//    子节点
+    console.log(ulObjs.childNodes);
+//    子元素
+    console.log(ulObjs.children);
+
+    //===================================================================
+//    第一个子节点
+    console.log(ulObjs.firstChild);
+//    第一个子元素
+    console.log(ulObjs.firstElementChild);
+//    最后一个子节点
+    console.log(ulObjs.lastChild);
+//    最后一个子元素
+    console.log(ulObjs.lastElementChild);
+//    某一个元素的前一个兄弟节点
+    console.log(my$("three").previousSibling);
+//    某一个元素的前一个兄弟元素
+    console.log(my$("three").previousElementSibling);
+//    某一个元素的后一个兄弟节点
+    console.log(my$("three").nextSibling;
+//    某一个元素的后一个兄弟元素
+    console.log(my$("three").nextElementSibling);
+
+    //凡是获取节点的代码在谷歌和火狐中得到的都是       相关的节点
+    //凡是获取元素的代码在谷歌和火狐得到的都是         相关的元素
+    //从子节点和兄弟节点开始，凡是获取节点的代码在IE8中得到的是元素，凡是获取元素的代码，在IE8中的得到的是underfind----元素的代码，iE中不支持
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(){
+
+        }
+        Person.prototype.age=10;
+        Person.prototype.sex="男";
+        Person.prototype.height=100;
+        Person.prototype.play=function(){
+            console.log("玩的好开心啊");
+        };
+        var obj2={};
+        //Person =的构造中有原型prototype,prototype也是一个对象,name里面的name,age,sex,height,play都是该对象中的属性或者方法
+
+        for(var key in Person.prototype){
+            obj2[key]=Person.prototype[key];
+        }
+        console.dir(Person);
+        console.dir(obj2);
+    </script>
+</body>
+</html>

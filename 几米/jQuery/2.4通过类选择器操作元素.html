@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .cls{
+        width: 200px;
+        height: 100px;
+        background-color: pink;
+    }
+    </style>
+    <script src="./jquery-1.12.1.js"></script>
+    <script>
+    //类选择器:$(".类样式的名字")-----某个或者多个
+    //.css("属性","值");----设置某个元素的css样式属性
+    //页面加载事件
+    $(function () {
+        //根据id选择器获取按钮,添加点击事件
+        $("#btn").click(function () {
+            //获取所有应用cls类样式的元素,改变背景颜色
+            $(".cls").css("backgroundColor","yellow");
+          });
+      });
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn">
+    <div class="cls"></div>
+    <p class="cls">这个是一个p</p>
+    <p>有点奇怪啊</p>
+</body>
+</html>

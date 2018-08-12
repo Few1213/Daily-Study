@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 600px; 
+			height: 600px;
+			border:1px solid red;
+		}	
+
+	</style>
+</head>
+<body>
+	<input type="button" value="按钮" id="btn" name="" />
+	<div id="dv">
+	</div>
+<script src="common.js"></script>
+<script>
+	var arr=[
+	{name:"百度",href:"http://www.baidu.com"},
+	{name:"百度",href:"http://www.baidu.com"},
+	{name:"百度",href:"http://www.baidu.com"},
+	{name:"百度",href:"http://www.baidu.com"},
+	{name:"百度",href:"http://www.baidu.com"},
+	{name:"百度",href:"http://www.baidu.com"},
+	{name:"百度",href:"http://www.baidu.com"},
+	];
+	//获取按钮设置点击事件
+	my$("btn").onclick=function(){
+		//创建table标签并加入到div之中
+		var tableObj=document.createElement("table");
+		//设置table的属性
+		tableObj.border="1px";
+		tableObj.cellPadding=0;
+		tableObj.cellSpacing=0;
+		my$("dv").appendChild(tableObj);
+		//循环添加，每次一行两列
+		for(var i=0;i<arr.length;i++){
+			var dt=arr[i];
+		//添加行
+			var trObj=document.createElement("tr");
+			tableObj.appendChild(trObj);	
+		//添加列
+			var td1=document.createElement("td");
+			//添加第一列的内容
+			td1.innerText=dt.name;
+			trObj.appendChild(td1);
+			var td2=document.createElement("td");
+			// 添加第二列的内容
+			td2.innerHTML="<a href="+dt.href+">"+dt.name+"</a>";// 输出的文本内容为<a href="http://www.baidu.com">百度<a>
+			trObj.appendChild(td2);
+		}
+	};
+
+	//思路是先创建表格, 循环遍历,每次循环创建一行两列
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj1 = {
+            age: 10,
+            sex: "男",
+            car: ["奔驰", "宝马", "特斯拉0"]
+        };
+        //另一个对象
+        var obj2 = {};
+        obj2["age"]=obj1.age;
+        //写一个函数,作用:把一个对象的属性复制到另一个对象中,这种叫做浅拷贝
+        //把a对象的所有属性复制到b对象中
+        function extend(a,b) {
+            for (var key in a){
+                b[key]=a[key];
+            }
+          }
+          extend(obj1,obj2);
+          console.dir(obj2);
+          console.dir(obj1);
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //函数的角色:
+    //函数的声明
+    function f1() { 
+        console.log("我是函数");
+     };
+     f1();
+     //函数的表达式
+     var ff=function(){
+         console.log("我也是一个函数");
+     };
+     ff();
+
+
+    // 区别
+    //函数的声明如果放在if-else语句中,在IE8的浏览器中会出问题,因为预解析的原因声明提前了
+    //以后宁愿用函数表达式都不用函数的声明
+    </script>
+</body>
+</html>

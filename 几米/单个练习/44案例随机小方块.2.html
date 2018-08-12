@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .map {
+            width: 800px;
+            height: 800px;
+            background-color: #ccc;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="map">
+    </div>
+    <script src="common.js"></script>
+    <script>
+        // 产生随机数的对象
+        (function(window){
+            function Random(){}
+            Random.prototype.getRandom=function(min,max){
+                return Math.floor(Math.random()*(max-min)+min);
+            };
+            window.Random=new Random();
+            })(window);
+            //产生小方块对象
+            (function (window) {
+                var map=document.querySelector(".map");
+                function Food(width) { 
+
+                 }
+              })(window);
+    </script>
+</body>
+
+</html>

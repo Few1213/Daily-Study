@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            width: 200px;
+            list-style: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="按钮" id="btn" />
+<ul id="uu">
+    <li>11111</li>
+    <li>11111</li>
+    <li>11111</li>
+    <li>11111</li>
+    <li>11111</li>
+    <li>11111</li>
+</ul>
+<script src="common.js"></script>
+<script>
+    my$("btn").onclick=function () {
+        var list=document.getElementsByTagName("li");
+        for(var i=0;i<list.length;i++){
+           list[i].style.backgroundColor=i%2==0?"yellow":"red";
+        }
+    };
+</script>
+</body>
+</html>

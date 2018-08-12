@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button"value="点击" id="btn" />
+<div id="dv">
+    <p>很矮很矮的傲娇</p>
+    <p>很矮很矮的傲娇</p>
+    <p>很矮很矮的傲娇</p>
+    <p>很矮很矮的傲娇</p>
+    <p>很矮很矮的傲娇</p>
+    <p>很矮很矮的傲娇</p>
+</div>
+<script>
+    //设置点击事件
+    document.getElementById("btn").onclick=function () {
+        //获取所有的p标签
+        var obj=document.getElementsByTagName("p");
+        //遍历所有的噗标签设置文本内容
+        for(var i=0;i<obj.length;i++){
+            obj[i].innerText="很美很美的玟子";
+        }
+    };
+</script>
+</body>
+</html>

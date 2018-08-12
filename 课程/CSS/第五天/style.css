@@ -1,0 +1,296 @@
+/*
+* @Author: luodianlei
+* @Date:   2018-07-22 15:17:49
+* @Last Modified by:   luodianlei
+* @Last Modified time: 2018-07-22 18:28:26
+*/
+/* 整个页面的背景颜色 */
+body{
+	background-color: #f3f5f7;
+	/* 只是开发时为了查看方便而写,写完之后删除掉 */
+	height:1500px;
+}
+/* 头部开始 */
+.head{
+	height: 101px;
+	/* 只是布局的时候为了观察盒子的位置,后面页面布局完成会注释掉 */
+	/* background-color: red; */
+}
+
+.head .w{
+	height:101px;
+	/* background-color: pink; */
+}
+
+.head .w>img{
+	margin-top:30px;
+}
+
+.head .w .nav{
+	width: 264px;
+	height: 101px;
+	/* background-color: yellow; */
+	margin-left:64px;
+
+}
+
+.head .w .nav li{
+	float:left;
+	height:101px;
+	/* 为了让li里面的文字垂直居中 */
+	line-height:101px;
+}
+
+.head .w .nav li a{
+
+	padding: 11px 7px;
+	margin-right:28px;
+
+}
+.head .w .nav li a:hover{
+	border-bottom:2px solid #00a4ff;
+}
+
+
+.head .w .search{
+	width: 411px;
+	height: 40px;
+	/* background-color: skyblue; */
+	margin-left:86px;
+	margin-top:31px;
+}
+
+.head .w .search .txt{
+	width: 362px;
+	height: 40px;
+	border:1px solid #00a4ff;
+	/* 自动内减 */
+	box-sizing:border-box;
+	padding-left:20px;
+
+}
+.head .w .search  .btn{
+	width: 49px;
+	height: 40px;
+	background-color:  black;
+	background-image: url("images/btn.png");
+}
+
+.head .w .user{
+	width: 128px;
+	height: 101px;
+	/* background-color: green; */
+	margin-left:31px;
+}
+.head .w .user img{
+	margin-top:35px;
+	margin-right:6px;
+}
+
+.head .w .user span{
+	height: 101px;
+	line-height:101px;
+}
+
+
+/* 头部结束 */
+
+/* banner 开始 */
+.banner{
+	height: 420px;
+	background-color: #1c036c;
+}
+
+.banner .w{
+	height:420px;
+	/* background-color: pink; */
+	background-image: url("images/banner2.jpg");
+}
+
+.banner .w .aside{
+	width: 190px;
+	height: 420px;
+	background-color: rgba(0,0,0, .3);
+}
+
+.banner .w .aside ul{
+	padding-left:20px;
+	padding-top:12px;
+}
+
+.banner .w .aside li{
+	height:44px;
+	/* background-color: pink; */
+	line-height:44px;
+}
+
+.banner .w .aside a{
+	color:#fff;
+}
+
+.banner .w .aside  a:hover{
+	color:red;
+}
+
+.banner .w .aside a span.fr{
+	margin-right:21px;	
+}
+
+
+
+.banner .w .course{
+	width: 228px;
+	height: 300px;
+	background-color: #fff;
+	margin-top:50px;
+}
+
+.banner .w .course .title{
+	height: 48px;
+	background-color: #9bceea;
+	line-height:48px;
+	text-align:center;
+	font-size:18px;
+	color:#fff;
+	font-weight:700;
+}
+
+.banner .w .course .courselist{
+	height:194px;
+	padding:10px 18px 0;
+	/* background-color: hotpink; */
+}
+
+.banner .w .course .courselist li{
+	height: 61px;
+	border-bottom:1px dashed #ccc;
+	line-height:60px;
+	padding-top:12px;
+	box-sizing:border-box;
+
+}
+
+.banner .w .course .all{
+	display:block;
+	width: 200px;
+	height: 40px;
+	border: 1px solid #22b0ff;
+	box-sizing:border-box;
+	margin:0 14px;
+	line-height:40px;
+	font-size:18px;
+	text-align:center;
+	color:#22b0ff;
+}
+
+
+
+/* banner 结束 */
+
+/* navigator开始 */
+.navigator{
+	height:60px;
+	background-color: #fff;
+	margin-top:8px;
+	line-height:60px;
+	box-shadow:1px 2px 21px -4px;
+}
+
+.navigator li{
+	float:left;
+	width:123px;
+	padding-left:34px;
+	box-sizing:border-box;
+	/* border-right:1px solid gray; */
+}
+.navigator li a{
+	float:left;
+}
+.navigator li span.line{
+	float:right;
+	width: 1px;
+	height: 16px;
+	background-color: gray;
+	margin-top:22px;
+}
+
+.navigator a.fr{
+	margin-right:30px;
+}
+
+
+/* navigator结束 */
+
+/* good 开始 */
+
+.good{
+	/* height:596px; */
+	margin-top:37px;
+	/* background-color: yellow; */
+}
+
+.good .top{
+	height:40px;
+	/* background-color: green; */
+}
+.good .body ul{
+	width: 1215px;
+
+}
+
+.good .body li{
+	width: 228px;
+	height: 269px;
+	background-color: pink;
+	float:left;
+	margin-right:15px;
+	margin-bottom:15px;
+}
+.good .body li img{
+	width:228px;
+
+}
+
+.good .body li .content  h4{
+
+	width: 184px;
+	margin-top:23px;
+	margin-left:24px;
+	font-weight:700;
+
+}
+.good .body li .content  p{
+	margin-left:24px;
+	margin-top:16px;
+}
+/* good 结束 */
+
+/* foot开始 */
+.foot{
+	background-color:#fff;
+	height:413px;
+
+}
+.foot img{
+	margin-top:35px;
+	margin-bottom:25px;
+}
+
+.foot a{
+	display:block;
+	width: 120px;
+	height: 36px;
+	border:1px solid blue;
+	line-height:36px;
+	text-align:center;
+	margin-top:15px;
+}
+
+.foot .right{
+	padding-right:30px;
+}
+
+.foot .right dl{
+	margin-top:35px;
+	padding-left:100px;
+}

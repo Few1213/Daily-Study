@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            float: left;
+            margin-left: 10px;
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<script src="common.js"></script>
+<script>
+    var dvObjs = document.getElementsByTagName("div");
+    for (var i = 0; i < dvObjs.length; i++) {
+        //添加鼠标进入高亮显示
+        dvObjs[i].onmouseover = function () {
+            this.style.border = "2px solid red";
+        };
+        //添加鼠标移除事件
+        dvObjs[i].onmouseout = function () {
+            this.style.border = "";
+        };
+    }
+</script>
+</body>
+</html>

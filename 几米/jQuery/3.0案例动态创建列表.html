@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+        lis
+    }
+    </style>
+    <script src="./jquery-1.12.1.js"></script>
+    <script>
+        //创建列表
+        //页面加载时间
+        var names = ["小1", "小2", "小3", "小4", "小5"];
+        $(function () {
+            // 添加按钮的点击事件
+            $("#btn").click(function () {
+                //创建ul标签并加入到div当中
+                var ulObj = $("<ul style='list-style-type:none;cursor:pointer'></ul>").appendTo($("#dv"));
+                //遍历数组   
+                var length = names.length;
+                for (var i = 0; i < length; i++) {
+                    //添加li标签
+                    $("<li>" + names[i] + "</li>").appendTo(ulObj).mouseenter(function () {
+                        $(this).css("backgroundColor", "green");
+                    }).mouseleave(function () {
+                        $(this).css("backgroundColor", "");
+                    });
+                }
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <input type="button" value="按钮" id="btn">
+    <div id="dv"></div>
+</body>
+
+</html>

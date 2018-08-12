@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.1.js"></script>
+    <script>
+        //页面加载时间
+        $(function () {
+            //根据id选择器获取标签,添加点击事件
+            $("#btn").click(function () {
+                //根据标签选择器获取p标签
+                $("p").text("我们都是一个p");
+              });
+          });
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn">
+    <p>佐助</p>
+    <p>鸣人</p>
+    <p>佐助</p>
+    <p>卡卡西</p>
+    <p>佐助</p>
+</body>
+</html>

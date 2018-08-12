@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//创建系统对象
+		var obj=new Object(name);
+		//创建属性
+		obj.name=name;
+		//创建方法
+		obj.play=function(){}
+		//===================================================
+		//自定义构造函数创建对象
+		function Person(name){
+			//创建属性
+			this.name=name;
+			//创建方法
+			this.play=function(){
+			}
+
+		}
+		//字面量方式创建对象
+		var  obj={
+			obj.nanme="小玟子";
+			obj.play=function(){
+			}
+		};
+
+	</script>
+</body>
+</html>

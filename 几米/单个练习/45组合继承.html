@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=scripyx, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    //组合继承的注意事项:
+    // 改变原型的指向可以继承属性和方法,但是不能更改在构造函数中已经定义的属性和子啊原型对象中定义的方法
+    //借用构造函数可以解决属性重复的问题但是不能继承方法
+    //组合继承可以解决以上的问题,既继承方法也继承属性
+
+
+
+    
+    //构造函数
+    function Person(name,age,sex) {
+        this.name=name;
+        this.age=age;
+        this.sex=sex;
+      }
+      //在原型中添加方法
+      Person.prototype.sayHi=function(){
+          console.log("你好");
+      };
+      //构造函数
+      function Student(name,age,sex,score){
+          //借用构造函数,解决属性值重复的问题
+          Person.call(this,name,age,sex);
+          this.score=score;
+      }
+      //改变原型的指向------ 继承
+      Student.prototype=new Person();//不传值
+      Student.prototype.eat=function(){
+          console.log("吃东西");
+      };
+      var stu=new Student("小黑",20,"男","100分");
+      console.log(stu.name,stu.age,stu.sex,stu.score);
+      stu.sayHi();
+      stu.eat();
+    
+      var stu2=new Student("小黑1",20,"男ren","1000分");
+      console.log(stu2.name,stu2.age,stu2.sex,stu2.score);
+      stu2.sayHi();
+      stu2.eat();
+    
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="1111" id="btn" />
+	<div id="dv"></div>
+	<script>
+		//添加按钮的点击事件
+		document.getElementById("btn").onclick=function(){
+			var str="#";
+			//设置一个16进制的数组
+			var arr=["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"];
+			for (var i = 0; i < 6; i++) {
+				//尝试的每一个随机数都是一个索引，根据索引找到数组中对应的值
+				var num=parseInt(Math.random()*16);
+				str+=arr[num];
+			}
+			//设置div的背景颜色为当前获取的随机的颜色
+			document.getElementById("dv").style.backgroundColor=str;
+		};
+	</script>
+</body>
+</html>

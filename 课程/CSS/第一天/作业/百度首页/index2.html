@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度首页</title>
+    <link rel="stylesheet" href="index2.css">
+</head>
+<body>
+<div class="contain"><img src="bdlogo.gif" alt=""></div>
+<div class="nav contain" id="nav">
+    <ul>
+        <li><a href="#">新 闻</a></li>
+        <li><a href="#">网 页</a></li>
+        <li><a href="#">贴 吧</a></li>
+        <li><a href="#">知 道</a></li>
+        <li><a href="#">音 乐</a></li>
+        <li><a href="#">图 片</a></li>
+        <li><a href="#">视 频</a></li>
+        <li><a href="#">地 图</a></li>
+    </ul>
+</div>
+<div class="search contain">
+    <input type="text" class="ip1">
+    <input type="button" value="百度一下" class="btn">
+</div>
+<div class="nav2 contain">
+    <ul>
+        <li><a href="#">百科</a></li>
+        <li><a href="#">文库</a></li>
+        <li><a href="#">hao123</a></li>
+        <li><a href="#" style="border-left: 1px solid grey">更多>></a></li>
+    </ul>
+</div>
+<div class="nav3 contain">
+    <a href="#">把百度设为主页</a>&nbsp<a href="#">安装百度浏览器</a>
+</div>
+<div class="footer contain">
+    <ul>
+        <li><a href="#">加入百度推广</a></li>
+        <li><a href="#">搜索风云榜</a></li>
+        <li><a href="#">关于百度</a></li>
+        <li><a href="#">About Baidu</a></li>
+    </ul>
+</div>
+<div class="contain">
+    <p>2013 Baidu 使用百度前必读 京ICP证030173号</p>
+</div>
+<script>
+    var box=document.getElementById("nav");
+    var ulObj=box.children[0];
+    var aObjs=ulObj.children;
+    for (var i=0;i<aObjs.length;i++){
+        //设置鼠标进入事件
+        aObjs[i].onmouseover=function () {
+          this.style.fontWeight="700";
+        };
+        aObjs[i].onmouseout=function () {
+          this.style.fontWeight="400";
+        };
+    }
+</script>
+</body>
+</html>

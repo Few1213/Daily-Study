@@ -1,0 +1,106 @@
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.nav {
+    height: 92px;
+    position: relative;
+}
+
+.logo {
+    margin: 21px 28px 0 0;
+    width: 168px;
+    height: 46px;
+    border: 1px solid #ccc;
+}
+
+.shortcut li {
+    width: 68px;
+    height: 92px;
+    float: left;
+    text-align: center;
+    line-height: 92px;
+}
+
+.shortcut li:hover {
+    background-color: #31c27c;
+}
+
+.shortcut li:hover a {
+    color: #fff;
+}
+
+.search {
+    position: absolute;
+    top: 26px;
+    left: 695px;
+    width: 220px;
+    height: 38px;
+    color: #ccc;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding-left: 13px;
+}
+.search-img {
+    position: absolute;
+    top: 30px;
+    left: 878px;
+}
+.login {
+    /* width: 260px; */
+    position: absolute;
+    top: 25px;
+    right: 0;
+}
+
+.login a {
+    margin: 12px;
+}
+
+.login span {
+    display: inline-block;
+    width: 85px;
+    height: 37px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 37px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+}
+
+.login span:hover {
+    background-color: #31c27c;
+    color: #fff;
+}
+
+.main {
+    height: 50px;
+    border-top: 1px solid #ccc;
+    border-bottom: 9px solid #ccc;
+}
+
+.main ul {
+    margin-left: 207px;
+}
+
+.main li {
+    float: left;
+}
+
+.main a {
+    display: inline-block;
+    margin: 16px 23px;
+}
+
+.main a:hover {
+    color: #31c27c;
+}
+.current{
+    color: #31c27c;
+}
+.bgcurrent{
+    background-color: #31c27c;
+    color: #fff;
+}

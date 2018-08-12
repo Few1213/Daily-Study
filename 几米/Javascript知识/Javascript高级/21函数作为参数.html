@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function f1(fn){
+        console.log("f1的函数");
+        fn();//次时代fn当成一个函数来使用的
+    }
+    //fn是参数,最后作为函数使用了,函数是可以作为参数使用的
+    //传入匿名函数
+    f1(function () { 
+        console.log("我是匿名函数");
+     });
+     //命名函数
+     function f2() {
+         console.log("f2的函数");
+
+       }
+       f1(f2);
+       //函数作为参数使用的时候,如果命名函数name只传入命名参数的名字,没有括号
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="点击我" id="btn"/>
+<div id="dv"></div>
+<script>
+    //点击按钮设置DIV的宽高和背景颜色
+    document.getElementById("btn").onclick = function () {
+
+        var obj = document.getElementById("dv");
+        obj.style.width = "200px";
+        obj.style.height = "200px";
+        obj.style.backgroundColor = "red";
+    };
+
+
+</script>
+
+</body>
+</html>

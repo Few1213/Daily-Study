@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	document.write("<p>第一种方法</p>");
+	//document.write();创建元素
+	//缺陷：如果在页面加载完毕后，此时通过这种方式创建元素，name页面上的所有内容将被干掉
+	
+	document.getElementById("id的值").innerHTML="<p>第二种方法</p>";
+
+	var obj=document.createElement("p");
+	setInnerText(obj."这是第三种方法");
+	父元素.appendChild(obj);
+	//document.createElement("标签名字");
+	//把对象追加到父级元素中
+
+</script>	
+</body>
+</html>

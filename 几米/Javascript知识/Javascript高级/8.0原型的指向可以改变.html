@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //构造函数中的this就是实例对象
+    //原型对象方法中的this就是实例对象
+    function Person(age){
+        this.age=age;
+        console.log(this);
+        //这里的this指向的是实例化对象
+    }
+    Person.prototype.eat=function(){
+        console.log(this);
+        // 这里的this指向的是实例化的对象
+        console.log("吃了");
+    };
+    function Student(){
+
+    }
+    Student.prototype.study=function(){
+        console.log("学习");
+    };
+
+
+    Student.prototype=new Person(10);
+    </script>
+    <script>
+    //人的构造函数
+    function Person(age){
+        this.age=age;
+    }
+    //人的原型对象方法
+    Person.prototype.eat=function(){
+        console.log("吃东西");
+    };
+    //学生的构造函数
+    function Student( ) {
+
+      }
+      //学生的原型,指向了一个人的实例对象
+      Student.prototype=new Person(10);
+      var stu= new Student();
+      stu.eat();
+      console.dir(stu);
+      //原型的指向可以改变
+      //实例对象的原型__proto__指向的是该对象所在的构造函数的原型对象   
+      //构造函数的原型对象prototype指向如果改变了,实例对象的原型的指向也会发生改变
+
+      //原型的指向是可以改变的
+      //实例对象和原型对象的关系是通过__proto__原型联系起来的,这个关系就是原型链
+
+      //实例对象中有__proto__原型
+      //构造函数中有prototype原型
+      //prototype是对象
+      //所以prototype这个对象中也有__protot__这个原型
+      //实例对象的原型是想的是构造函数中的prototype
+      //所以构造函数中的prototype指向的是某个构造函数的prototype
+
+      //per 实例对象的__proto__   ------->Person.prototype  而这个对象------>Object.prototype的__proto__是null
+
+    
+    
+    </script>
+</body>
+</html>

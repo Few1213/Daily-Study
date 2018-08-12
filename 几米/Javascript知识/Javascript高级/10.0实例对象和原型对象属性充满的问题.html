@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(age,sex){
+        this.age=age;m
+        this.sex=sex;
+    }
+    Person.prototype.sex="女";
+    var per =new Person(10,"男");
+    console.log(per.sex);
+    //因为JS是一门动态类型的语言,对象没有什么,只要点了,name对象就有了这个东西,没有属性,只要对象.属性名字,对象就有这个属性了,但是如果该属性没有赋值,那么结果就是underfind
+
+
+
+    //实例对象访问这个属性,应该先从实例对象中找,找到了就直接调用,找不到就去指向的原型对象中找,找到了使用
+    //通过实例对象不能改变原型对象中的属性值
+    //想要改变原型对象中的属性的值可以直接通过原型对象.属性=值来改变
+
+    
+    
+    </script>
+</body>
+</html>

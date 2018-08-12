@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 400px;
+            border: 1px solid red;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+        li{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="点击按钮" id="btn"/>
+<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+
+    var arr = [1, 2, 3, 4, 5, 6];
+    my$("btn").onclick = function () {
+        var ulObj = document.createElement("ul");
+        my$("dv").appendChild(ulObj);
+        for (var i = 0; i < arr.length; i++) {
+            var liObj = document.createElement("li");
+            liObj.innerHTML = arr[i];
+            ulObj.appendChild(liObj);
+            liObj.onmouseover = onmouseoverHandle;
+            liObj.onmouseout = onmouseoutHandle;
+        }
+
+    };
+    function onmouseoverHandle() {
+        this.style.backgroundColor = "red";
+    }
+    function onmouseoutHandle() {
+        this.style.backgroundColor = "";
+    }
+
+</script>
+</body>
+</html>

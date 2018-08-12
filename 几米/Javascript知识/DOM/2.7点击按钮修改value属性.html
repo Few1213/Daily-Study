@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn" />
+<script>
+    document.getElementById("btn").onclick=function () {
+        this.value="点击";//在元素的点击事件中，this就是指这个元素 this=document.getEementById("btn")
+
+    };
+</script>
+</body>
+</html>

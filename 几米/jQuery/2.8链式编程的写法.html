@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.1.js"></script>
+    <script>
+        //页面加载事件
+        $(function () {
+            //点击按钮,设置p标签的内容和样式
+            $("#btn").click(function () {
+                //以下就是简单链式编程的写法 !!注意的是在方法里有些是要写function和;的
+                $("p").text("噢噢噢噢").css("width", "200px").css("height", "200px").css("backgroundColor",
+                    "yellow").mouseenter(function () {
+                    $(this).css("backgroundColor", "blue");
+                }).mouseleave(function () {
+                    $(this).css("backgroundColor", "green");
+                }).click(function () {
+                    $(this).css("fontSize", "20px");
+                });
+            });
+        });
+    </script> 
+</head>
+
+<body>
+    <input type="button" value="按钮" id="btn">
+    <p>这是一个p</p>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="隔行变色" id="btn"/>
+<ul id="uu">
+    <li>小玟子</li>
+    <li>小玟子</li>
+    <li>小玟子</li>
+    <li>小玟子</li>
+    <li>小玟子</li>
+    <li>小玟子</li>
+</ul>
+<script src="common.js"></script>
+<script>
+    my$("btn").onclick = function () {
+        var list = my$("uu").getElementsByTagName("li");
+        for (var i = 0; i < list.length; i++) {
+            if (i % 2 == 0) {
+                list[i].style.backgroundColor = "yellow";
+            } else {
+                list[i].style.backgroundColor = "red";
+            }
+            //list[i].style.backgroundColor = i % 2 == 0 ? "red" : "yellow";
+        }
+    }
+    ;
+</script>
+</body>
+</html>

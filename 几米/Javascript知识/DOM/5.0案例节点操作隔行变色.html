@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul{
+			list-style: none;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<input type="button" value="按钮"  id="btn" name="" />
+<ul id="uu">
+	<li>11111</li>
+	<li>111112222</li>
+	<li>11111</li>
+	<li>111112222</li>
+	<li>11111</li>
+	<li>111112222</li>
+</ul>
+<script src="common.js"></script>
+<script>
+//设置按钮的点击事件
+my$("btn").onclick=function(){
+	//获取所有的li标签
+	var lists=my$("uu").childNodes;
+	var count=0;
+	for (var i = 0; i < lists.length; i++) {
+		//获取所有偶数li标签
+		if (lists[i].nodeType==1&&lists[i].nodeName=="LI") {
+			lists[i].style.backgroundColor=count % 2==0?"red":"yellow";
+			count++;
+		}
+	} 
+};
+
+	//设置按钮的点击事件
+	doucment.getElementById("btn").onclick=function(){
+		//获取ul中所有的节点
+		var nodes=document.getElementById("uu").childNodes;
+		var count=0;
+	//循环遍历
+		for (var i = 0; i < nodes.length; i++) {
+			//找出所有的li标签
+			if (nodes[i].nodeType==1&&nodes[i].nodeName=="LI") {
+				//更改标签颜色
+				nodes[i].style.backgroundColor=count%2==0?"red":"yellow";
+				count++;
+			}
+		}
+	
+	my$("btn").onclick=function(){
+		var nodes=my$("uu").childNodes;
+		var count=0;
+		for (var i = 0; i < nodes.length; i++) {
+			if (nodes[i].nodeType==1&&nodes[i].nodeName=="LI") {
+				nodes[i].style.backgroundColor=count%2==0?"red":"yellow";
+				count++;
+			}
+		}
+	};
+</script>	
+	};
+	
+</body>
+</html>

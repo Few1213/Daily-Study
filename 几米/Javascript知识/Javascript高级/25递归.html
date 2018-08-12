@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //递归:函数中调用函数自己,此时就是递归,递归一定要有结束的条件
+        var i = 0;
+
+        function f1() {
+            i++;
+            if (i <= 5) {
+                f1();
+            }
+            console.log("hahaha");
+        }
+
+        f1();
+
+        //递归实现:求n个数字的和
+        function getSum(x) {
+            if (x == 1) {
+                return 1;
+            }
+            return x + getSum(x - 1);
+        }
+        console.log(getSum(100));
+
+
+
+        //递归案例:求斐波那契数列
+        function getFib(x) {
+            if (x == 1 || x == 2) {
+                return 1;
+            }
+            return getFib(x - 1) + getFib(x - 2);
+        }
+        console.log(getFib(12));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="点击变色" id="btn"/>
+<ul id="uu">
+    <li>红烧小玟子</li>
+    <li>油炸小玟子</li>
+    <li>爆炒小玟子</li>
+    <li>糖醋小玟子</li>
+    <li>清蒸小玟子</li>
+    <li>水煮小玟子</li>
+</ul>
+<script src="common.js"></script>
+<script>
+    my$("btn").onclick = function () {
+        var nodes = my$("uu").childNodes;
+        var count = 0;//为什么不能用i
+         for (var i = 0; i < nodes.length; i++) {
+            if (nodes[i].nodeType == 1 && nodes[i].nodeName == "LI") {
+                nodes[i].style.backgroundColor = count % 2 == 0 ? "red" : "yellow";
+                count++;
+            }
+        }
+    };
+</script>
+</body>
+</html>

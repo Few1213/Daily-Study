@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //实例对象
+        var per1 = {
+            name: "卡卡西",
+            age: 18,
+            sex: "男",
+            eat: function () {
+                console.log("吃臭豆腐");
+            }
+        }
+        console.log(per1);
+        // 调用系统的构造函数
+        var per2 = new Object();
+        per2.name = "大蛇丸";
+        per2.age = 20;
+        per2.sex = "男";
+        per2.eat = function () {
+            console.log("吃泡面");
+        };
+        console.log(per2);
+        // 自定义构造函数
+        function Person(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.play = function () {
+                console.log("玩个球");
+            };
+        }
+        var per3 = new Person("雏田", 18, "女");
+        console.log(per3);
+    </script>
+</body>
+
+</html>

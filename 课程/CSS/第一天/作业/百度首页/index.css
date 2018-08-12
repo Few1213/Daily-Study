@@ -1,0 +1,17 @@
+a{
+    display: inline-block;
+    font-size: 14px;
+}
+.contain{
+    text-align: center;
+}
+
+.ip1{
+    width: 425px;
+    height: 23px;
+
+}
+.ip2{
+    width: 100px;
+    height: 30px;
+}

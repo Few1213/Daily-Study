@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width: 200px;
+            height: 300px;s
+        }
+    </style>
+</head>
+<body>
+<img src="images/1.JPG" alt="显示不出来" id="img1" />
+<img src="images/2.JPG" alt="显示不出来" id="img2" />
+<img src="images/3.JPG" alt="显示不出来" id="img3" />
+<script>
+//    document.getElementsById("img1").onclick=function () {
+//      alert("被点了");
+//    };
+    var imgObjs=document.getElementsByTagName("img");
+    for(var i=0;i<imgObjs.length;i++){
+        imgObjs[i].onclick=function () {
+          alert("被点了");
+        };
+    }
+</script>
+</body>
+</html>

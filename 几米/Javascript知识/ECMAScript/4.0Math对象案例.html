@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+
+console.log(Math.E);//Math.E 属性表示自然对数的底数（或称为基数），e，约等于 2.718
+console.log(Math.LN10);//Math.LN10 属性表示 10 的自然对数，约为 2.302
+console.log(Math.LN2);//Math.LN2 属性表示 2 的自然对数，约为 0.693
+console.log(Math.LOG2E);// 以2为底E的对数, 约等于 1.443.
+console.log(Math.LOG10E);// 以10为底E的对数, 约等于 0.434.
+console.log(Math.PI);// 圆周率，一个圆的周长和直径之比，约等于 3.14159.
+console.log(Math.SQRT1_2);// 1/2的平方根, 约等于 0.707.
+console.log(Math.SQRT2);// 2的平方根,约等于 1.414.
+//===============================================================
+// Math.abs(x)
+// 返回x的绝对值.
+console.log(Math.abs('-1')) ; // 1
+console.log(Math.abs(-2));  // 2
+console.log(Math.abs(null));  // 0
+console.log(Math.abs("string")); // NaN
+console.log(Math.abs()) ; // NaN
+// Math.ceil(x)
+// 返回x向上取整后的值.
+console.log(Math.ceil(.95));    // 1
+console.log(Math.ceil(4));      // 4
+console.log(Math.ceil(7.004));  // 8
+console.log(Math.ceil(-0.95));  // -0
+console.log(Math.ceil(-4));     // -4
+console.log(Math.ceil(-7.004)); // -7
+// Math.floor(x)
+// 返回小于x的最大整数。(向下取整数)
+console.log(Math.floor( 45.95)); 
+//45 
+console.log(Math.floor( 45.05)); 
+// 45 
+console.log(Math.floor( 4 )); 
+// 4 
+console.log(Math.floor(-45.05)); 
+// -46 
+console.log(Math.floor(-45.95)); 
+// -46
+// Math.max([x[,y[,…]]])
+// 返回0个到多个数值中最大值.
+// Math.max(10, 20);   //  20
+// Math.max(-10, -20); // -10
+// Math.max(-10, 20);  //  20
+
+// Math.min([x[,y[,…]]])
+// 返回0个到多个数值中最小值.
+var x = 10, y = -20;
+var z = Math.min(x, y);
+console.log(z);
+// Math.random()
+// 返回0到1之间的伪随机数.
+function getRandom() {
+  return Math.random();
+}
+console.log(getRandom());
+
+// Math.round(x)
+// 返回四舍五入后的整数.
+console.log(Math.round(2.3));
+console.log(Math.round(2.5));
+</script>	
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            list-style: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>小玟子</li>
+    <li>小玟子</li>
+    <li>小玟子</li>
+    <li>小玟子</li>
+    <li>小玟子</li>
+    <li>小玟子</li>
+</ul>
+<script src="common.js"></script>
+<script>
+    var list=document.getElementsByTagName("li");
+    for(var i=0;i<list.length;i++){
+        //设置鼠标放置标签为黄色
+        list[i].onmouseover=function () {
+            this.style.backgroundColor="yellow";
+        };
+        //恢复到这个标签默认的颜色
+        list[i].onmouseout=function () {
+            this.style.backgroundColor="";
+        };
+    }
+</script>
+</body>
+</html>

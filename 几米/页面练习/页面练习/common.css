@@ -1,0 +1,129 @@
+/* 基本样式 */
+
+body {
+    margin: 0;
+    padding: 0;
+    font: 12px "微软雅黑";
+    background: #fff;
+}
+
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+blockquote,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+table,
+td,
+tr,
+th {
+    font-size: 12px;
+}
+
+li {
+    list-style-type: none;
+}
+
+img {
+    vertical-align: top;
+    border: 0;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+address,
+cite,
+code,
+em,
+th {
+    font-weight: normal;
+    font-style: normal;
+}
+
+.fB {
+    font-weight: bold;
+}
+
+.f12px {
+    font-size: 12px;
+}
+
+.f14px {
+    font-size: 14px;
+}
+
+a {
+    color: #2b2b2b;
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ba2636;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #ba2636;
+}
+
+.red {
+    color: #ff0000;
+}
+.blue{
+    color:#16b2ed;
+}
+
+/* 基本样式结束 */
+.w{
+    width: 1280px;
+    margin: 0 auto;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+/* 清除浮动 */
+.clearfix::after{
+    content: "";
+    height: 0;
+    display: block;
+    clear: both;
+    
+}

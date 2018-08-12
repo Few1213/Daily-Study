@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="按钮" id="btn" name="">
+	<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+//有则删除无则创建
+my$("btn").onclick=function(){
+	if(my$("btn2")){
+		my$("dv").removeChild(my$("btn2"));
+	}
+	var dvObj=document.createElement("input");
+	dvObj.type="button";
+	dvObj.value="按钮";
+	dvObj.id="btn2";
+	my$("dv").appendChild(dvObj);
+	
+};
+my$("btn").onclick=function(){
+	if(!my$("btn2")){
+		 var dvObj=document.createElement("input");
+		dvObj.type="button";
+		dvObj.value="按钮";
+		dvObj.id="btn2";
+		my$("dv").appendChild(dvObj);
+	}
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //使用对象---->使用对象中的属性和对象中的方法,使用对象就要先有构造函数
+    //构造函数
+    function Person(name,age) {
+        this.name=name;
+        this.age=age;
+        this.eat=function(){
+            console.log("吃夜宵");
+        };
+      }    
+    //添加共享的属性
+    Person.prototype.sex="男";
+    //添加共享的方法
+    Person.prototype.sayHi=function(){
+        console.log("你怕不是个傻子吧");
+    };
+    //实例化对象并初始化
+    var per =new Person("小苏",20);
+    console.dir(per);
+    console.dir(Person);
+
+    //实例对象的原型__prpto__和构造函数的原型prototype的指向是相同的
+
+    //实例对象肿的__proto__原型指向的是构造函数中的原型prototype
+    console.log(per.__proto__==Person.prototype);
+
+
+
+    //原型链:是一种关系,实例对象和原型对象之间的关系,关系是通过原型联系的.
+</script>
+</body>
+</html>

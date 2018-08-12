@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #dv1{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+        #dv2{
+            width: 150px;
+            height: 150px;
+            background-color: blue;
+        }
+        #dv3{
+            width: 75px;
+            height: 75px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<div id="dv1">
+    <div id="dv2">
+        <div id="dv3"></div>
+    </div>
+</div>
+<script src="common.js"></script>
+<script>
+    my$("dv1").onclick=function(){
+        console.log(this.id);
+    };
+    my$("dv2").onclick=function(e){
+        console.log(this.id);
+        e.stopPropagation();//第二种 谷歌火狐支持 IE8不支持
+    };
+    my$("dv3").onclick=function(){
+        console.log(this.id);
+        window.event.canceBubble=true;//第一种 谷歌IE8支持,火狐不支持
+    };
+    document.body.onclick=function(){
+        console.log("lalallalalal");
+    };
+
+</script>
+</body>
+</html>

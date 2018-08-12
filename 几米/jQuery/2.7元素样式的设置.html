@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.1.js"></script>
+    <script>
+        $(function () {
+            //第一种 
+            $("#btn").click(function () {
+                $("#dv").css("width", "200px");
+                $("#dv").css("height", "200px");
+                $("#dv").css("backgroundColor", "hotpink");
+            });
+        });
+        //第二种
+        $(function () {
+            $("#btn").click(function () {
+                $("#dv").css("width", "200px").css("height", "200px").css("backgroundColor", "yellow");
+            });
+        });
+        //第三种
+        $(function () { 
+            var json={"width":"200px","height":"200px","backgroundColor":"green"};
+            $("#btn").click(function () {
+                $("#dv").css(json);
+              });
+         });
+    </script>
+</head>
+
+<body>
+    <input type="button" value="按钮" id="btn">
+    <div id="dv"></div>
+</body>
+
+</html>

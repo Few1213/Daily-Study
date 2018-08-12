@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //产生随机数对象的,通过自调用函数产生一个随机数对象,在自调用函数外面,调用该随机数对象方法产生的随机数
+    (function(window){
+        function Random(){
+
+        }
+        Random.prototype.getRandom=function(min,max){
+            return Math.floor(Math.random()*(max-min)+min);
+        };
+        // 把局部对象暴露给window顶级对象,就成了全局对象
+        window.Random=new Random();
+    }(window));//自调用狗子哦啊函数的方式,分号一定要加上
+    
+    
+    </script>
+</body>
+</html>

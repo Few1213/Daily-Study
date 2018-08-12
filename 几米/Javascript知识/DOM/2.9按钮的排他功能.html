@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> </title>
+</head>
+<body>
+<input type="button" value="很矮很矮的傲娇" />
+<input type="button" value="很矮很矮的傲娇" />
+<input type="button" value="很矮很矮的傲娇" />
+<input type="button" value="很矮很矮的傲娇" />
+<input type="button" value="很矮很矮的傲娇" />
+<input type="button" value="很矮很矮的傲娇" />
+<script>
+	//获取对象，设置按钮的点击事件
+	var inputs=document.getElementsByTagName("input");
+	for (var i = 0; i < inputs.length; i++) {
+		inputs[i].onclick=function(){
+			for (var j = 0; j < inputs.length; j++) {
+				inputs[j].value="很矮很矮的傲娇";
+			}
+			this.value="很美很美的玟子";	
+		};
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn1" />
+<input type="button" value="按钮" id="btn2" />
+<script src="common.js"></script>
+<script>
+    function f1() {
+        console.log("第一个");
+    }
+    function f2() {
+        console.log("第二个");
+    }
+
+    my$("btn1").addEventListener("click",f1,false);
+    my$("btn1").addEventListener("click",f2,false);
+    my$("btn2").onclick=function () {
+        my$("btn1").removeEventListener("click",f1,false);
+    };
+
+    //解绑事件兼容代码
+    function removeEventListener(element,type,fnName) {
+        if (element.removeEventListener){
+            element.removeEventListener(type,fnName,false);
+        }else if(element.detachEvent){
+            element.detachEvent("on"+type,fnName);
+        }else{
+            element["on"+type]=null;
+        }
+    }
+
+
+</script>
+</body>
+</html>

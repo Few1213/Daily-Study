@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工厂模式创建对象</title>
+    <script>
+        //       function createObject() {
+        //           var obj=new Object();
+        //           obj.name="小玟子";
+        //           obj.age=18;
+        //           obj.sayHi=function () {
+        //               console.log("你好，我叫"+this.name+"我今年："+obj.age)
+        //           }
+        //           return obj;
+        //       }
+        //       var per1=createObject();
+        //       var per2=createObject();
+
+        function createObject(name, age) {
+            var obj = new Object();
+            obj.name = name;
+            obj.age = age;
+            obj.sayHi = function () {
+                console.log("你好，我叫" + this.name + "我今年：" + obj.age)
+            }
+            return obj;
+        }
+        var per1 = createObject("小玟子", 18);
+        per1.sayHi();
+        var per2 = createObject("小许子", 19);
+        per2.sayHi();
+
+        /*function createObject(name,age) {
+            var obj1=new Object();
+            obj1.name=name;
+            obj1.age=age;
+            obj1.play=function () {
+                console.log("我叫"+this.name+"我今年"+this.age);
+            }
+            return obj1;
+        }
+        var per3=createObject("小玟子",18);
+        per3.play();*/
+
+        function createObject(name,age) {
+            var obj=new Object();
+            obj.name=name;
+            obj.age=age;
+            obj.play=function () {
+                console.log(11111);
+            }
+            return obj;
+        }
+        var per1=createObject(111,222);
+        per1.play();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

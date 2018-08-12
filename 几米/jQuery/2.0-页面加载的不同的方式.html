@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.1.js"></script>
+</head>
+
+<body>
+    <script>
+        //  jQuery中的页面加载事件 
+        // 第一种
+        $(window).load(function () {
+            console.log("第一种");
+        });
+
+        //第二种 比上面的快,页面基本元素加载后就触发
+        $(document).ready(function () {
+            console.log("第二种");
+        });
+        //第三种,页面基本元素加载后就触发
+        jQuery(function () {
+            console.log("第三种");
+        });
+        //第四种,页面基本元素加载后就触发
+        $(function () {
+            console.log("第四种");
+        });
+    </script>
+</body>
+
+</html>

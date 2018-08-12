@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+    }
+    </style>
+    <script src="./jquery-1.12.1.js"></script>
+    <script>
+    //第一种方式 //点击按钮创建另一个按钮
+    $(function () {
+        $("#btn").click(function () {
+            $("<input type='button' value='按钮'>").appendTo($("#dv"));
+          });
+      
+      });
+    //第二种方式
+    $(function () {
+        $("#btn").click(function () {
+            $("#dv").html("<input type='button' value='按钮'>");    
+          });
+       
+      });
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn">
+    <div id="dv"></div>
+</body>
+</html>

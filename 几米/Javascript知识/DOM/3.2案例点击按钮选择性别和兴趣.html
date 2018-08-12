@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn" name="" />
+<input type="checkbox" value="1" name="ap" />吃饭
+<input type="checkbox" value="2" name="ap" />睡觉
+<input type="checkbox" value="3" name="ap" id="ak" />喝水
+<input type="checkbox" value="4" name="ap" />游戏
+<script type="text/javascript" src="common.js"></script>
+<script>
+	my$("btn").onclick=function(){
+		my$("ak").checked="checked";
+	};
+</script>
+</body>
+</html>

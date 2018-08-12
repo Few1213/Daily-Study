@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		img{
+			width: 200px;
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+<img src="images/1.JPG" id="img" />
+<script>
+	//点击图片修改自身的宽和高
+	document.getElementById("img").onclick=function(){
+		this.style.width="300px";
+		this.style.height="400px";
+	};
+</script>
+</body>
+</html>

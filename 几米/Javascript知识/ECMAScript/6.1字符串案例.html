@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	var str="小玟子真是太蠢了";
+	//console.log("小玟");
+	var key=prompt("请您输入呀截取的内容");
+	//获取先要截取字符的索引位置
+	var index=str.indexOf(key);
+	//从指定位置开始窃取，截取个数
+	str=str.substring(index,2);
+	console.log(str);
+
+	var str="小玟子你真的是太蠢了";
+	var key="真";
+	var index=str.indexOf(key);
+	str=str.substring(index,3);
+	console.log(str);
+
+	var str="小玟子你真的是真的是太蠢了";
+	var key=prompt("请输入你要截取的字符开始的位置");
+	var index=str.indexOf(key);
+	str=str.substring(index,4);
+	console.log(str);
+
+	var str2="hello wod odd fbo ntno";
+	var key="o";//要找的字符串
+	var index=0;//开始的位置
+	while(index=str2.indexOf(key,index)!=-1)//如果是-1，说明找完了
+	{
+		console.log(index);
+		index+=key.length;
+	}
+
+	var srt2=" hello world my jjo";
+	var index=0;
+	var key="o";
+	while(index=srr2.indexOf(key,index)){
+		console.log(index);
+		index+=key.length;
+	}
+
+	var str2="hello wod odd fbo ntno";
+	var key="o";
+	var index=0;
+	while(index=str2.indexOf(key,index)){
+		console.log(index);
+		index+=key.length;	
+	}
+
+	//案例3找到这个字符串中每个字符出现了多少次
+	var str="skdfjldksjflkdnmcmffhhfhds";
+	//把所有的字母变成大写或者小写
+	str=str.toLocaleLowerCase();
+	//创建一个空对象，目的：把字母作为键，次数作为值
+	var obj={};
+	//遍历字符串，获取每个子母
+	for (var i = 0; i < str.length; i++) {
+		var key=str[i];//每个子母
+		if(obj[key]){
+			//对象中有这个字母
+			obj[key]++;
+		}else{
+			obj[key]=1;
+		}
+	}
+	for(var key in obj){
+		console.log("key"+这个字母出现了+"obj[key]");
+	}
+	
+	var str="sakldjlafalkjlsadjsld";
+	str=str.toLocaleLowerCase();
+	var obj={};
+	for(var i=0;i<str.length;i++){
+		var key=str[i];
+		if (str[key]) {
+			str[key]++;
+
+		}else{
+			str[i]=1;
+		}
+	}
+	for( var key in obj ){
+		console.log("key"+出现了+"obj[key]");
+	}
+
+	var str="kdfksjdfkdsjflsdf";
+	str=str.toLocaleLowerCase();
+	var  obj={};
+	for (var i = 0; i < str.length; i++) {
+		var key=str[i];
+		if (obj[key]) {
+			obj[key]++;
+		}else{
+			obj[key]=1;
+		}
+	}
+	for (var key in obj){
+		console.log("key"+出现了+"obj[key]");
+	}
+</script>	
+</body>
+</html>

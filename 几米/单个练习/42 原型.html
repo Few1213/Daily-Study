@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //构造函数
+    function Student(name,age,sex){
+        this.name =name;
+        this.age=age;
+        this.sex=sex;
+    }
+    //简单的原型写法
+    Student.prototype={
+        //手动修改构造器的指向
+        constructor:Student,
+        height:"188",
+        weight:"55kg",
+        study:function(){
+            console.log("沉迷学习不可自拔");
+        }
+    }
+    //实例化对象
+    var stu=new Student("xiaowenzi",18,"nv");
+    stu.study();
+
+</script>
+</body>
+</html>

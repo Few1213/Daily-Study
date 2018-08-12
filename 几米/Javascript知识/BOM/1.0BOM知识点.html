@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	定时器setInterval(function(){},1000);
+
+	1.BOM Browser Object Model 浏览器对象模型
+	2.浏览器中有个顶级对象：window----皇上
+	3.页面中的顶级对象：document----总管太监
+	4.页面中所有的内容都是属于浏览器的，页面中的内容也都是window的
+	5.变量是window的，因为所有的内容都是window的，所以window可以省略
+	6.	window.alert();//以后不用，测试的时候使用
+		window.prompt();
+		window.confirm();
+
+	//页面加载的时候，按钮还没有出现，页面还没有加载完毕
+	7.页面加载完毕了，再获取按钮
+	onload=function () {
+
+    };
+	只要页面加载完毕了，这个事件就会触发------页面中所有的内容，标签，文本，属性，包括外部引入的js文件
+	扩展事件----页面关闭后才触发的时间
+	8.window.onunload=function () {
+		
+    };
+	9.扩展事件----页面关闭前触发的
+	window.onbeforeunload(){
+
+	};
+
+
+	10.对象中的属性和方法
+	location对象
+	window.location.hash//地址栏上#及后面的内容
+	window.location.host//主机名和端口号
+	window.location.hostname//主机名
+	window.location.pathname//文件的路径--相对路径
+	window.location.port//端口号
+	window.location.protocol//协议
+	window.location.search//搜索的内容
+
+	11 window.location
+	//设置跳转的页面的地址
+	location.href=""//属性
+	location.assign("");//方法
+	location.reload();//重新加载 相当于刷新
+	location.replace();//跳转没有历史记录
+
+	12 window.history
+	window.history.back();
+	window.history.forword()
+	window.history.go();
+
+	13 window.navigator
+	window.navigator.platform//可以判断浏览器所在系统的平台类型
+	window.navigator.userAgent//判断用户浏览器的类型
+
+	14 轮播图 offset系列
+
+	15 跟着鼠标移动 onmousemove  
+	 clientX  可视区域的横坐标
+	 clientY  可视区域的纵坐标
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="uu">
+		<li>1111</li>
+		<li>1111</li>
+		<li>1111</li>
+		<li>1111</li>
+		<li></li>
+	</ul>
+<script>
+	// 第一个节点和第一个元素的获取代码在IE8中可能不支持
+	function getFirstElementChild(element){
+		if (typeof element.firstElementChild !="underfined") {
+			return element.firstElementChild;
+		}else{
+			var node=element.firstChild;
+			while(node&&node.nodeType!=1){
+				node=node.nextSibling;
+			}
+			return node;
+		}
+	}
+	// 最后一个节点和最后一个元素的获取代码在IE8中可能不支持
+	function getlastElementChild(element){
+		if (element.lastElementChild) {
+			return element.lastElementChild;
+		}else{
+			var node=element.lastChild;
+			while(node&&node.nodeType!=1){
+				node=node.previousSibling;
+			}
+			return node;
+		}
+	}
+	// 前一个节点和前一个元素的获取代码在IE8中可能不支持
+	function getPreviousElementSibling(element){
+		if (previousElementSibling) {
+			return previousElementSibling;
+		}else{
+			var node=previousSibling;
+			while(node&&node.nodeType!=1){
+				node=node.previousSibling;
+			}
+			return node;
+		}
+	}
+	// 后一个节点和第后一个元素的获取代码在IE8中可能不支持
+	function getNextElementSibling(element){
+		if(element.nextElementSibling){
+			return element.nextElementSibling;
+		}else{
+			var node=element.nextSibling;
+			while(node&&node.nodeType!=1){
+				node=nextSibling;
+			}
+			return node;
+		}
+	}
+	 
+</script>	
+</body>
+</html>

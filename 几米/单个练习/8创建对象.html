@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建对象</title>
+    <script>
+        var obj=new Object();
+        obj.name="小玟子";
+        obj.age=18;
+        obj.sex="女";
+        obj.eat=function(){
+            console.log("小玟子喜欢小许子");
+        }
+        obj.play=function () {
+            console.log("小许子喜欢小玟子")
+        }
+        console.log(obj.name);
+        console.log(obj.age);
+        console.log(obj.sex);
+        obj.eat();
+        obj.play();
+
+        var dog=new Object();
+        dog.name="大黄";
+        dog.color="黄色";
+        dog.age=3;
+        dog.weight=250;
+        dog.like=function () {
+            console.log("喜欢吃大骨头");
+        }
+        dog.walk=function () {
+            console.log("走路很慢")；
+        }
+        dog.like();
+        dog.walk();
+
+        var phone=new Object();
+        phone.size="iphoneX";
+        phone.color="黑色";
+        phone.call=function () {
+            console.log("打电话");
+        }
+        phone.sendMessage=function () {
+            console.log("发短信");
+        }
+        phone.call();
+        phone.sendMessage();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

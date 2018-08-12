@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn" name="" />
+<script src="common.js"></script>
+<script>
+	//第三种方式创建元素
+	my$("btn").onclick=function(){
+		var pObj=document.createElement("p");
+		setInnerText(pObj,"这是一个p");
+		//把后面的子元素追加到父级元素中
+		my$("dv").appendChild(pObj);
+	};
+</script>	
+</body>
+</html> 
