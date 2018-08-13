@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		div {
+			margin-top: 200px;
+			margin-left: 200px;
+		}
+
+		th {
+			background-color: blue;
+			height: 40px;
+			width: 200px;
+			text-align: center;
+		}
+
+		td {
+
+			text-align: center;
+		}
+	</style>
+	<script src="./jquery-1.12.1.js"></script>
+	<script>
+		//页面加载事件
+		$(function () {
+			//thead标签中的复选框---全选和全不选
+			$("#ck").click(function () {
+				$("#tableTbody").find("input").prop("checked", $(this).prop("checked"));
+			});
+			//每个复选框都要注册点击事件
+			$("#tableTbody").find("input").click(function () {
+				//先获取所有复选框的个数
+				var ckLength = $("#tableTbody").find("input").length;
+				//获取所有选中的复选框的额个数
+				var checkedLength = $("#tableTbody :checked").length;
+				if (ckLength == checkedLength) {
+					$("#ck").prop("checked", true);
+				} else {
+					$("#ck").prop("checked", false);
+				}
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="dv">
+		<table border="1" cellpadding="0" cellspacing="0">
+			<thead id="tableThead">
+				<tr>
+					<th>
+						<input type="checkbox" name="" id="ck">
+					</th>
+					<th>菜名</th>
+					<th>饭店</th>
+				</tr>
+			</thead>
+			<tbody id="tableTbody">
+				<tr>
+					<td>
+						<input type="checkbox" name="">
+					</td>
+					<td>红烧肉</td>
+					<td>食堂</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox" name="">
+					</td>
+					<td>西红柿鸡蛋</td>
+					<td>食堂</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox" name="">
+					</td>
+					<td>水煮肥牛</td>
+					<td>食堂</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox" name="">
+					</td>
+					<td>水煮肉片</td>
+					<td>食堂</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- <script src="common.js"></script>
+<script>
+	//获取全选的复选框
+	var ckAll=my$("ck");
+	//获取单选的复选框
+	var cks=my$("tableTbody").getElementsByTagName("input");
+	// 设置全选的点击事件
+	ckAll.onclick=function(){
+		for (var i = 0; i < cks.length; i++) {
+			cks[i].checked=this.checked;
+		}
+	};  
+	//设置单选的点击事件
+	for (var i = 0; i < cks.length; i++) {
+		cks[i].onclick=function(){
+			var flag=true;//默认都被选中
+			//判断所有复选框都被选中
+			for(var j=0;j<cks.length;j++){
+				if (!cks[j].checked) {
+					flag=false; 
+					break;
+				}//end if
+			}//enf for
+			ckAll.checked=flag;//要放在for循环的外面
+		};
+	}
+	
+
+</script> -->
+</body>
+
+</html>

@@ -7,11 +7,22 @@
 <title>$不开口的花$</title>
 <script src="./jquery-1.12.1.js"></script>
 <script>
-    
+    //页面加载事件
+    $(function () {
+        //点击按钮
+        $("#btn").click(function () {
+            //点一下选中,再点就不选中
+            if($("#ck").prop("checked")){
+                $("#ck").prop("checked",false);
+            }else{
+                $("#ck").prop("checked",true);
+            }
+          });
+      });
 </script>
 </head>
 <body>
     <input type="button" value="按钮" id="btn" >
-    <input type="checkbox" name="1" id="ck">男/女
+    <input type="checkbox" name="play" value="1" id="ck">玩游戏
 </body>
 </html>
