@@ -91,6 +91,17 @@
 
     4-jQuery中元素样式的操作有两种方式:
     1.对象.css();
+    元素的宽和高,jQuery中封装了方法
+    .css()中获取的元素的宽和高是字符串类型的
+    .width()可以获取也可以设置元素的宽
+    .height()可以获取也可以设置元素的高
+
+    .offset()该方法获取的是一个对象,该对象有两个属性,left和top
+    left和top中包含left和margin-left好top和margin-top的值
+    !!!也可以直接用offset({"属性1":值,"属性2":值})直接设置
+
+    
+
     2.类样式的方式:
     addClass();添加
     removeClass();移除
