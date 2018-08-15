@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>$不开口的花$</title>
+    <script src="./jquery-1.12.1.js"></script>
+    <script>
+        function Person(age) {
+            this.age=age;
+            this.sayHi=function (text) {
+                if(text){
+                    console.log("您好呀"+txt);
+                    return this;
+                }else{
+                    console.log("您好呀");
+                    return this;
+                }
+              };
+              this.eat=function(){
+                  console.log("中午吃什么好呢");
+                  return this;  
+              };
+        };
+        var per=new Person(10);
+        per.sayHi().eat();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
