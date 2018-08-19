@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$不开口的花$</title>
+    <script src="./jquery-1.12.1.js"></script>
+    <script>
+        1-AJAX
+        浏览器提供的一套API,可以通过javascript调用,从而实现通过代码请求与控制,实现网络编程.A
+
+        2-快速上手
+        //创建一个XMLHttpRequest类型的对象--相当于打开了一个浏览器
+        var xhr = new XMLHttpRequest();
+        //打开与一个网址之间的连接--相当于在地址栏上输入访问地址
+        xhr.open("get","./time.php");
+        //通过链接发送一次请求--相当于回车或者点击访问发送请求
+        xhr.send(null);
+        //指定xhr状态变化事件处理函数-相当于处理网页呈现后的操作
+        xhr.onreadystatechange = function(){
+            //通过xhr的readyState判断此次请求的相应是否接收完成
+            if (this.readyState===4){
+                //通过xhr的responseText 获取到响应的响应体
+                console.log(this);
+            }
+        };       
+
+        3-readyState
+        由于readystatechange 事件是在xhr对象状态变化时触发(不单是在得到响应时),也就意味着这个事件会被触发多次,所以我们有必要了解每一个状态值代表的含义
+        0---UNSEND---代理(XHR)被创建,但尚未调用open()方法
+        1---OPENED---open()方法已经被调用,建立了连接
+        2---HEADERS_RECEIVED ---send()方法已经被调用,并且已经可以获取状态行和响应头
+        3---LOADING---响应体瞎子啊中,responseText 属性可能已经包含部分数据
+        4---DONE---响应体下载完成,可以直接使用responseText
+
+        时间轴
+        UNSENT----OPENED----HEADERS_RECEIVED----LOADING---DONE
+        初始化-----建立连接---接收到响应头---------响应体加载中--加载完成
+        
+        var xhr=XMLHttpRequest();
+        console.log(xhr.readyState);
+        结果为 0 ------初始化,请求代理对象
+
+        xhr.open("get","time.php");
+        console.log(xhr.readyState);
+        结果为 1 ------open方法已经调用,建立一个与服务器特定端口的连接
+
+        xhr.send();
+
+        xhr.addEventListener("readystatechange",function(){
+            switch (this.readyState){
+                case 2:
+                    // =>2
+                    // 已经接收到了响应报文的响应头
+
+                    // 可以拿到头 
+                    //console.log(this.getAllResponseHeaders())
+                    console.log(this.getResponseHeader("sever"));
+                    //但是还没有拿到体
+                    console.log(this.responseText);
+                    break
+                case 3:
+                    // =>3
+                    //正在下载响应报文的响应体,有可能响应体为空,也有可能不完整
+
+                    //在这里处理响应体不保险(不可靠)
+                    console.log(this.responseText);
+                    break
+                case 4:    
+                    //=> 4
+                    //一切ok(整个响应报文已经完整下载下来了)
+
+                    //在这里处理响应体
+                    console.log(this.responseText);
+                    break
+                
+            }
+        });
+
+        通过理解每一个状态值的含义得出一个结论:一般我们都是在readyState的值为4时,执行响应的后续逻辑
+        xhr.onreadystatechange=function(){
+            if(this.ready.state ===4){
+                //后续逻辑
+                }
+        };
+        
+        
+        
+        
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+</body>
+</html>
