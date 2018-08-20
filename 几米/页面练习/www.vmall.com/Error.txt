@@ -1,2 +1,0 @@
-﻿文件下载网址  =>  文件保存路径
-https://res.vmallres.com/pimages/{#item.photoPath}78_78_{#item.photoName}  =>  F:\工具\扒网页的小工具\单页扒站小工具\www.vmall.com\images\{#item.photopath}78_78_{#item.photoname}
