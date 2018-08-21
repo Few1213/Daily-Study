@@ -1,53 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>$不开口的花$</title>
     <script src="./jquery-1.12.1.js"></script>
     <script>
-        1-AJAX
-        浏览器提供的一套API,可以通过javascript调用,从而实现通过代码请求与控制,实现网络编程.
+        1 - AJAX
+        浏览器提供的一套API, 可以通过javascript调用, 从而实现通过代码请求与控制, 实现网络编程.
 
-        2-快速上手
+        2 - 快速上手
         //创建一个XMLHttpRequest类型的对象--相当于打开了一个浏览器
         var xhr = new XMLHttpRequest();
         //打开与一个网址之间的连接--相当于在地址栏上输入访问地址
-        xhr.open("get","./time.php");
+        xhr.open("get", "./time.php");
         //通过链接发送一次请求--相当于回车或者点击访问发送请求
         xhr.send(null);
         //指定xhr状态变化事件处理函数-相当于处理网页呈现后的操作
-        xhr.onreadystatechange = function(){
+        xhr.onreadystatechange = function () {
             //通过xhr的readyState判断此次请求的相应是否接收完成
-            if (this.readyState===4){
+            if (this.readyState === 4) {
                 //通过xhr的responseText 获取到响应的响应体
                 console.log(this);
             }
-        };       
+        };
 
-        3-readyState
-        由于readystatechange 事件是在xhr对象状态变化时触发(不单是在得到响应时),也就意味着这个事件会被触发多次,所以我们有必要了解每一个状态值代表的含义
-        0---UNSEND---代理(XHR)被创建,但尚未调用open()方法
-        1---OPENED---open()方法已经被调用,建立了连接
-        2---HEADERS_RECEIVED ---send()方法已经被调用,并且已经可以获取状态行和响应头
-        3---LOADING---响应体瞎子啊中,responseText 属性可能已经包含部分数据
-        4---DONE---响应体下载完成,可以直接使用responseText
+        3 - readyState
+        由于readystatechange 事件是在xhr对象状态变化时触发(不单是在得到响应时), 也就意味着这个事件会被触发多次, 所以我们有必要了解每一个状态值代表的含义
+        0-- - UNSEND-- - 代理(XHR) 被创建, 但尚未调用open() 方法
+        1-- - OPENED-- - open() 方法已经被调用, 建立了连接
+        2-- - HEADERS_RECEIVED-- - send() 方法已经被调用, 并且已经可以获取状态行和响应头
+        3-- - LOADING-- - 响应体瞎子啊中, responseText 属性可能已经包含部分数据
+        4-- - DONE-- - 响应体下载完成, 可以直接使用responseText
 
         时间轴
-        UNSENT----OPENED----HEADERS_RECEIVED----LOADING---DONE
-        初始化-----建立连接---接收到响应头---------响应体加载中--加载完成
-        
-        var xhr=XMLHttpRequest();
-        console.log(xhr.readyState);
-        结果为 0 ------初始化,请求代理对象
+        UNSENT-- --OPENED-- --HEADERS_RECEIVED-- --LOADING-- - DONE
+        初始化-- -- - 建立连接-- - 接收到响应头-- -- -- -- - 响应体加载中--加载完成
 
-        xhr.open("get","time.php");
+        var xhr = XMLHttpRequest();
         console.log(xhr.readyState);
-        结果为 1 ------open方法已经调用,建立一个与服务器特定端口的连接
+        结果为 0-- -- --初始化, 请求代理对象
+
+        xhr.open("get", "time.php");
+        console.log(xhr.readyState);
+        结果为 1-- -- --open方法已经调用, 建立一个与服务器特定端口的连接
 
         xhr.send();
 
-        xhr.addEventListener("readystatechange",function(){
-            switch (this.readyState){
+        xhr.addEventListener("readystatechange", function () {
+            switch (this.readyState) {
                 case 2:
                     // =>2
                     // 已经接收到了响应报文的响应头
@@ -65,37 +66,95 @@
                     //在这里处理响应体不保险(不可靠)
                     console.log(this.responseText);
                     break
-                case 4:    
+                case 4:
                     //=> 4
                     //一切ok(整个响应报文已经完整下载下来了)
 
                     //在这里处理响应体
                     console.log(this.responseText);
                     break
-                
+
             }
         });
 
-        通过理解每一个状态值的含义得出一个结论:一般我们都是在readyState的值为4时,执行响应的后续逻辑
-        xhr.onreadystatechange=function(){
-            if(this.ready.state ===4){
+        通过理解每一个状态值的含义得出一个结论: 一般我们都是在readyState的值为4时, 执行响应的后续逻辑
+        xhr.onreadystatechange = function () {
+            if (this.ready.state === 4) {
                 //后续逻辑
-                }
+            }
         };
+        4 - 遵循HTTP
+        本质上XMLHttpRequest 就是jacascript 在Web平台中发送HTTP请求的手段, 所以我们发送出去的请求任然是HTTP请求, 同样符合HTTP约定的格式
+
+        //设置请求报文的请求行
+        xhr.open('get', './time.php');
+        //设置请求头
+        xhr.setQuestHeader('Accept', 'text/plain');
+        //设置请求体
+        xhr.send(null);
+
+        xhr.onreadystatechange = function () {
+            if (this.readyState === 4 ){
+                //获取响应状态码
+                console.log(this.status);
+                //获取响应状态描述
+                console.log(this.statusText);
+                //获取响应头的信息
+                console.log(this.getResponseHeader('Content-Type'));//指定响应头
+                console.log(this.getAllResponseHeaders);//全部响应头
+                //获取响应体
+                console.log(this.responseText);//文本形式
+                console.log(this.responseText);//XML形式,了解即可
+            }
+        }
+
+        5-get 请求
+        通常在一次GET请求过程中,参数都是通过URL地址中的?参数传递
+
+        var xhr =new XMLHttpRequest();
+        //GET请求传递参数通常使用的是问号传参
+        //这里可以在请求地址的后面地址加上参数,从而传递数据到服务器
+        xhr.open('GET','./login.php');
+        //一般在GET请求是无需设置响应体,可以传null或者干脆不传
+        xhr.send(null);
+        xhr.onreadystatechange=function(){
+            if(this.readyState===4){
+                console.log(this.responseText);
+                
+            }
+        }
+
+        //一般情况下URL传递的都是参数性质的数据,二post一般都是业务数据
+
+        6-POST请求
+        POST请求过程中,都是采用请求体承载所需要提交的问题
+        var xhr = new XMLHttpRequest();
+        //open方法的第一个参数的作用就是设置请求的method
+        xhr.open('POST','./users.php');
+        !!!//设置请求头中的Centent-Type 为application/x-www-form-urlencoded
+        !!!//表示此次请求的请求格式体为urlencoded以便于服务端接收数据
+        xhr.setReauestHeader('Content-Type','application/x-www-fprm-urlencoded');
+        //需要提交到服务器的数据可以通过send方法传递参数
+        //格式:key1=value1&key2=value2
+        xhr.send('key1=value1&key2=value2');
+        xhr.onreadystatechange=function(){
+            if (this.readyState===4){
+                console.log(this.responseText);
+            }
+        };
+        7-同步与异步
+        同步:相当于一个人在同一时刻只能做一件事情,并执行一些耗时的操作(不需要看管)不去做别的事情,只是等待.
+        异步:在执行一些耗时的操作(不需要看管)去做别的事情,而不是等待
+
+        !!!一定在发送请求send()和之前注册readystatechange(不管同步还是异步)
         
-        
-        
-        
-
-
-
-
-
-
-
+        7-兼容方案
+        XMLHttpRequest在老版本浏览器(IE5/6)中兼容有问题,通过另一种方式替代
+        var xhr=window.XMLHttpRequest?new XMLHttpRequest():new ActiveXObject('Microsoft.XMLHTTP');
     </script>
 </head>
 
 <body>
 </body>
+
 </html>
