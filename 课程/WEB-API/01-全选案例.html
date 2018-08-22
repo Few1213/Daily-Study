@@ -96,10 +96,22 @@
         </table>
     </div>
     <script>
-    
-    
-    
-    
+        //获取元素
+        var all = document.getElementById("j_cbAll");
+        var bd = document.getElementById("j_tb");
+        var inputs = bd.getElementsByTagName("input");
+        //设置全选和全不选
+        //给all注册点击事件
+        all.onclick = function () {
+
+                for (var i = 0; i < inputs.length; i++) {
+                    inputs[i].checked =this.checked
+                }
+            }
+          
+
+            
+
     </script>
     <script>
         // //设置全选和全不选
