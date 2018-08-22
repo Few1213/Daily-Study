@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+  
+    .nodeSmall {
+      width: 50px;
+      height: 50px;
+      background: url(images/bgs.png) no-repeat -159px -51px;
+      position: fixed;
+      right: 10px;
+      top: 40%;
+    }
+    
+    .erweima {
+      position: absolute;
+      top: 0;
+      left: -150px;
+    }
+    
+    
+    .hide {
+      display: none;
+    }
+    
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="nodeSmall" id="node_small">
+  <div class="erweima hide" id="er">
+    <img src="images/456.png" alt=""/>
+  </div>
+</div>
+
+<script>
+
+
+    // 思路 : 
+    // 点击 : onclick 当点击的时候
+    // onmouseover 当鼠标经过的时候
+    // onmouseout 当鼠标离开的时候
+
+    //1. 获取a
+    var node_small = document.getElementById('node_small');
+    var erweima = document.getElementById('er');
+
+    //2. 触摸经过显示
+    node_small.onmouseover =  function () {
+      // body...
+      erweima.className = 'erweima show';
+    }
+
+    node_small.onmouseout = function (){
+      erweima.className = 'erweima hide';
+    }
+
+
+
+ 
+
+
+</script>
+
+</body>
+</html>
