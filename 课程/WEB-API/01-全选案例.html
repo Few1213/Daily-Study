@@ -95,7 +95,37 @@
             </tbody>
         </table>
     </div>
-    <script>
+    <!-- <script>
+        //获取元素
+        var all = document.getElementById("j_cbAll");
+        var bd = document.getElementById("j_tb");
+        var inputs = bd.getElementsByTagName('input');
+
+        //设置全选和全不选的点击事件
+        all.onclick = function () {
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].checked = this.checked;
+            }
+        };
+        //遍历循环input注册点击事件
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].onclick = function () {
+                var flag = true;
+                for (var i = 0; i < inputs.length; i++) {
+                    if(inputs[i].checked ==""){
+                        flag = false;
+                        break
+                    }//end if
+                }//end for
+                if (flag) {
+                    all.checked = true;
+                } else {
+                    all.checked = false;
+                }
+              };
+        }
+    </script> -->
+    <!-- <script>
         //获取元素
         var all = document.getElementById("j_cbAll");
         var bd = document.getElementById("j_tb");
@@ -104,15 +134,33 @@
         //给all注册点击事件
         all.onclick = function () {
 
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].checked = this.checked
+            }
+        }
+
+        //循环遍历,给input注册点击事件
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].onclick = function () {
+                //每一个input的点击时间里 先默认所有的input都勾选上了为true
+                var flag = true;
+                // 循环遍历所有的input  如果有一个的checked为空,则设置flag为false并打破循环
                 for (var i = 0; i < inputs.length; i++) {
-                    inputs[i].checked =this.checked
+                    if (inputs[i].checked == "") {
+                        flag = false;
+                        break
+                    }
+                }
+                //在这里判断 是否全部都勾选上了 ,全部都勾选上了的话为true  否则为false
+                if (flag) {
+                    all.checked = true;
+                } else {
+                    all.checked = false;
                 }
             }
-          
 
-            
-
-    </script>
+        }
+    </script> -->
     <script>
         // //设置全选和全不选
         // var thead = document.getElementById("j_cbAll");

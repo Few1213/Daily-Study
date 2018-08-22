@@ -13,9 +13,26 @@
 	<input type="button" value="第五张" title="5">
 	<br>
 	<img id="img" src="images/1.jpg" alt="">
-
-
+	<script src="../../jquery-1.12.1.js"></script>
 	<script>
+		
+		$("input").each(function () {
+			// console.log($(this).attr("title"));		
+			$(this).click(function () {
+				$("img").attr("src","images/"+$(this).attr("title")+".jpg");
+			  });
+		  });
+		  //!!!注意的是 标签属性用attr设置和获取
+		  //!!!注意的是 this为DOM对象,在jQuery中必须使用$(this)转换为jQuery对象
+		  //!!!注意的是  对象.each(); 为数组的遍历
+			
+	
+	
+	
+	
+	</script>
+
+	<!-- <script>
 			
 			var img =  document.getElementById('img');
 			var btns =  document.getElementsByTagName('input')
@@ -31,7 +48,7 @@
 					}
 				}	
 
-	</script>
+	</script> -->
 	
 </body>
 </html>
