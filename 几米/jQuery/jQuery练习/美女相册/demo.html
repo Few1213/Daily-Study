@@ -61,7 +61,16 @@
 <p id="des">这是描述信息</p>
 <script src="../../jquery-1.12.1.js"></script>
 <script>
-  
+  $("a").each(function () {
+    $(this).click(function () {
+      // console.log($(this).attr("href"));
+      
+      $("#bigImg").attr("src",$(this).attr("href"));
+      $("p").text($(this).attr("title"));
+      return false;
+      });
+    });
+
 </script>
 <!-- <script>
 
