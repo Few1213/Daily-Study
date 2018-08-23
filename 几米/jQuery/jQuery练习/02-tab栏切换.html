@@ -81,7 +81,31 @@
 
 
     </div>
+    <script src="../jquery-1.12.1.js"></script>
     <script>
+        //循环遍历导航栏,注册点击事件
+        $("ul li").each(function () {
+            $(this).click(function () {  
+                $("ul").children().removeClass();
+                $(that).hasClass("now");
+            });
+          });
+    
+    
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    </script>
+    <!-- <script>
         var lists = document.getElementsByTagName("li");
         var body = document.getElementById('body');
         var divs = body.getElementsByTagName("divs");
@@ -99,7 +123,7 @@
                 divs[this.index].className = "current";
             }
         }
-    </script>
+    </script> -->
     <!-- <script>
         var lists = document.getElementsByTagName("li");
         var bd = document.getElementById("body");
