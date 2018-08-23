@@ -105,16 +105,24 @@
 
 
             //!!!在这里我们使用.prop属性来设置和获取checked属性的值而不是使用attr
-            if ($(this).prop("checked")) {
-                $("#tb input").each(function () {
-                    // console.log($(this));
-                    $(this).prop("checked", true);
-                });
-            } else {
-                $("#tb input").each(function () {
-                    // console.log($(this));
-                    $(this).prop("checked", false);
-                });
+            //第一个版本
+            // if ($(this).prop("checked")) {
+            //     $("#tb input").each(function () {
+            //         // console.log($(this));
+            //         $(this).prop("checked", true);
+            //     });
+            // } else {
+            //     $("#tb input").each(function () {
+            //         // console.log($(this));
+            //         $(this).prop("checked", false);
+            //     });
+            // }
+            //第二个版本
+            if ($(this).prop("checked")){
+                $("#tb tr td").children().prop("checked",true);
+            }else{
+                $("#tb tr td").children().prop("checked",false);
+
             }
 
             //遍历循环input注册点击事件

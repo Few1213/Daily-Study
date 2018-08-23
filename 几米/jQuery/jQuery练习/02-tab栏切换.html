@@ -85,25 +85,23 @@
     <script>
         //循环遍历导航栏,注册点击事件
         $("ul li").each(function () {
-            $(this).click(function () {  
+            //    var index =  $(this).attr("index", $(this).index());//想复杂了
+            var index = $(this).index();
+            // console.log(index);
+
+            $(this).click(function () {
+                // console.log($(this).attr("index"));
+                // console.log($(this));        
                 $("ul").children().removeClass();
-                $(that).hasClass("now");
+                $(this).addClass("now");
+                $("#body div").each(function () {
+                    $(this).removeClass();
+                });
+                // console.log($("#body div:eq($(this).attr('index'))").text());XXX
+                //注意eq的用法  ("++index") 里面的写法一定要注意
+                $("#body div:eq("+index+")").addClass("current");
             });
-          });
-    
-    
-
-
-
-
-
-
-
-
-
-    
-    
-    
+        });
     </script>
     <!-- <script>
         var lists = document.getElementsByTagName("li");
