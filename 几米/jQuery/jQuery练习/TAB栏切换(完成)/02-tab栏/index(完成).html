@@ -108,19 +108,40 @@
             </div>
         </div>
     </div>
+    <script src="../../../jquery-1.12.1.js"></script>
     <script>
-      
+        //遍历nav栏  注册鼠标进入和离开事件
+        $(".tab-item").each(function () {
+            var index = $(this).index();
+            $(this)
+                .mouseover(function () {
+                    $(".tab").children().removeClass("active");
+                    $(this).addClass("active");
+                    $(".main").removeClass("selected")
+                    $(".main:eq(" + index + ")").addClass("selected")
+                })
+
+        });
+    </script>
+    <script>
+        // //获取元素
+        // var lists = document.querySelectorAll(".tab-item");
+        // var divs = document.querySelectorAll(".main");
+        // //为每个li注册鼠标进入事件
+
+        // for (var i = 0; i < lists.length; i++) {
+        //     lists[i].index = i;//这里不用var
+        //     lists[i].onmouseover = function () {
+        //         for (var i = 0; i < lists.length; i++) {
+        //             lists[i].className = "tab-item";
+        //             divs[i].className = "main";
+        //         }
+        //         this.className = "tab-item active";
+        //         divs[this.index].className = "main selected";
+        //     };
 
 
-
-
-
-
-
-
-
-
-      
+        // }
     </script>
     <script>
         //1. 找到4个li和4个div

@@ -125,13 +125,29 @@
 </div>
 <script src="../jquery-1.12.1.js"></script>
 <script>
-    $("##j_tb tr").each(function () {
-        $(this).mouseover(function(){
-            
-        }).mouseout(function () {
+   //获取所有的tr  设置隔行变色  还有经过时候高亮
+   $("#j_tb tr").each(function () {
+      var index =$(this).index();
+      // console.log(index);
+      if (index %2 ==0) {
+        $(this).css("background","red");         
+      } else {
+        $(this).css("background","yellow");      
+      }
+      var oldColor=$(this).css("backgroundColor");
+      console.log(oldColor);
+      
+      $(this)
+      .mouseover(function () { 
+        //进入变色
+        $(this).css("background","green");      
+      })
+      .mouseout(function () { 
+        // 离开恢复原本的颜色
+        $("#j_tb tr:eq("+index+")").css("background",oldColor);      
 
-          });
-      });
+       });
+     });
 
 
 </script>
