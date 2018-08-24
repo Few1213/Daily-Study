@@ -123,37 +123,76 @@
     </tbody>
   </table>
 </div>
+<script src="../jquery-1.12.1.js"></script>
+<script>
+    $("##j_tb tr").each(function () {
+        $(this).mouseover(function(){
+            
+        }).mouseout(function () {
 
+          });
+      });
+
+
+</script>
+<script>
+    //1. tbody中的tr隔行变色
+    //2. 经过时高亮
+    // var tbody = document.querySelector("#j_tb");
+    // var trs = document.querySelectorAll("#j_tb>tr");
+
+    // for (var i = 0; i < trs.length; i++) {
+    //     if (i % 2 == 0) {
+    //         trs[i].style.backgroundColor = "yellow";
+    //     } else {
+    //         trs[i].style.backgroundColor = "red";
+    //     }
+    //     var oldColor;
+    //     trs[i].onmouseover = function () { 
+    //         oldColor = this.style.backgroundColor;
+    //         this.style.backgroundColor="green";
+    //      };
+    //      trs[i].onmouseout= function(){
+    //          this.style.backgroundColor=oldColor;
+    //      };
+    // }
+
+
+
+
+
+
+</script>
 <script>
 
   //思路：
   //1. tbody中的tr隔行变色
   //2. 经过时高亮
 
-  var oldColor;
-  //1. 找到tbody中的所有tr
-  var trs = document.querySelectorAll("#j_tb>tr");
-  for (var i = 0; i < trs.length; i++) {
-    //隔行变色
-    if (i % 2 == 0) {
-      trs[i].style.backgroundColor = "yellowgreen";
-    } else {
-      trs[i].style.backgroundColor = "lime";
-    }
+  // var oldColor;
+  // //1. 找到tbody中的所有tr
+  // var trs = document.querySelectorAll("#j_tb>tr");
+  // for (var i = 0; i < trs.length; i++) {
+  //   //隔行变色
+  //   if (i % 2 == 0) {
+  //     trs[i].style.backgroundColor = "yellowgreen";
+  //   } else {
+  //     trs[i].style.backgroundColor = "lime";
+  //   }
 
-    //注册事件 onmouseover  onmouseout
-    trs[i].onmouseover = function () {
-      oldColor = this.style.backgroundColor;
-      //console.log(oldColor);
-      this.style.backgroundColor = "red";
-    }
+  //   //注册事件 onmouseover  onmouseout
+  //   trs[i].onmouseover = function () {
+  //     oldColor = this.style.backgroundColor;
+  //     //console.log(oldColor);
+  //     this.style.backgroundColor = "red";
+  //   }
 
-    trs[i].onmouseout = function () {
-      //要恢复成原来的颜色
-      this.style.backgroundColor = oldColor;
-    }
+  //   trs[i].onmouseout = function () {
+  //     //要恢复成原来的颜色
+  //     this.style.backgroundColor = oldColor;
+  //   }
 
-  }
+  // }
 
 </script>
 

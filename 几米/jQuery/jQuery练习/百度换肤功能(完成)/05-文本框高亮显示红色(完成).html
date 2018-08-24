@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+
+<script src="../../jquery-1.12.1.js"></script>
+<script>
+$("input").each(function () {
+    $(this).click(function () {
+        $("input").each(function () {
+            $(this).css("backgroundColor","white");
+          });
+        $(this).css("backgroundColor","red");
+      });
+  });
+
+
+</script>
+
+    <!-- <script>
+        var inputs = document.querySelectorAll("input");
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].onclick=function(){
+                for (var i = 0; i < inputs.length; i++) {
+                    inputs[i].style.backgroundColor="";
+                    
+                }
+                this.style.backgroundColor="red";
+            };
+        }
+    </script> -->
+
+    <script>
+        // //1. 获取 input
+        // var inputs = document.querySelectorAll('input');
+
+        // //2. 点击每个input
+        // for ( var i = 0 ; i < inputs.length ; i++) {
+
+        //   inputs[i].onfocus = function(params) {
+        //     this.style.background = 'red';
+        //   }
+
+        //   inputs[i].onblur = function () {
+        //     this.style.background = '';
+        //   }
+
+        // }
+    </script>
+</body>
+
+</html>
