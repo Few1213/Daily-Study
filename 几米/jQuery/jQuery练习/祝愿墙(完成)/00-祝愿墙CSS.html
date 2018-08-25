@@ -133,12 +133,15 @@
         for (var i = 1; i<= 10; i++) {
             $("#content").append($(".tip1").first().clone());
         }
-        var count = 0;
+        var count = 1;
         $(".tip1").each(function () { 
             var index = $(this).index();
             var leftX = parseInt(Math.random() * 731);
             var topY = parseInt(Math.random() * 440);
-            $(this).offset({left:leftX,top:topY}).click(function () {
+            $(this).offset({left:leftX,top:topY});
+            $(this).click(function () {
+                $(".tip:eq("+index+")").css("z-index",count++);
+                console.log(count);
                 
               });
 
