@@ -136,23 +136,16 @@
         var count = 1;
         $(".tip1").each(function () { 
             var index = $(this).index();
+            console.log(index);
+            
             var leftX = parseInt(Math.random() * 731);
             var topY = parseInt(Math.random() * 440);
             $(this).offset({left:leftX,top:topY});
             $(this).click(function () {
-                $(".tip:eq("+index+")").css("z-index",count++);
-                console.log(count);
-                
+                $(".tip:eq('+index+')").css("z-index",count++);     
               });
 
          });
-
-    
-        
-        
-        
-    
-    
     </script>
     <script>
         // //获取元素
