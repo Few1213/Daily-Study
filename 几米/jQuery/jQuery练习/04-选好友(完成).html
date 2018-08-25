@@ -38,21 +38,34 @@
 
     <script src="../jquery-1.12.1.js"></script>
     <script>
+        //为按钮1设置点击事件
         $("#btn1").click(function () {
             $("#source").children().appendTo("#target");
         });
+        //为按钮2设置点击事件
         $("#btn2").click(function () {
             $("#target").children().appendTo("#source");
         });
+        //为按钮3设置点击事件
         $("#btn3").click(function () {
             $("#source").children().each(function () {
-                console.log("hahah");
-                
-
-                
-
+                if ($(this).prop("selected")) {
+                    $(this).appendTo($("#target"));
+                }
             });
         });
+        //为按钮4设置点击事件
+        $("#btn4").click(function () {
+            $("#target").children().each(function () {
+                if ($(this).prop("selected")) {
+                    console.log($(this).prop("selected"));
+                    
+                    $(this).appendTo($("#source"));
+                }
+            });
+
+          });
+       
     </script>
     <!-- <script>
         // 需求:点击按钮移动
