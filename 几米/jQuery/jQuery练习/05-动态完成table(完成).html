@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        table {
+            width: 600px;
+            cursor: pointer;
+        }
+
+        table td {
+            text-align: center;
+        }
+
+        table th {
+            background-color: blueviolet;
+        }
+
+        table tr {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dv">
+        请输入姓名:
+        <input type="text" value="" id="username" />
+        <br/> 请输入邮箱:
+        <input type="text" value="" id="email" />
+        <br/> 请输入手机:
+        <input type="text" value="" id="tel" />
+        <br/> 请输入地址:
+        <input type="text" value="" id="add" />
+        <br/>
+    </div>
+
+    <input type="button" value="添加" id="btn" />
+    <table border="1" cellpadding="0" cellspacing="0" id="tb">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>邮箱</th>
+                <th>手机</th>
+                <th>地址</th>
+            </tr>
+        </thead>
+        <tbody id="tbd">
+            <tr>
+                <td>小黑</td>
+                <td>xiaohei@126.com</td>
+                <td>19999009090</td>
+                <td>北京</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="../jquery-1.12.1.js"></script>
+    <script>
+        //1-设置按钮的点击事件
+        //2-创建tr 和tb 加入到table中
+        //3-设置隔行变色
+        //4-判断输入的内容是否为空,空的话弹窗
+        var index = 0;
+        // $("#dv input").each(function () {
+        //     if ($(this).value == "") {
+        //         alert("请输入完整");
+        //         return
+        //     }
+        // });
+        $("#btn").click(function () {
+            for (var i = 0; i < $("#dv input").length; i++) {
+                if($("#dv input:eq("+i+")").val() ==""){
+                    alert("请输入完整");
+                    return
+                }
+            }   
+            $("<tr></tr>").appendTo($("#tbd"));
+            index++;
+            if (index % 2 == 0) {
+                $("#tbd tr:eq(" + index + ")").css("background", "red");
+            } else {
+                $("#tbd tr:eq(" + index + ")").css("background", "yellow");
+            }
+            $("#dv input").each(function () {
+
+                var tex = $(this).val();
+
+                $("<td>" + tex + "</td>").appendTo($("#tbd tr:eq(" + index + ")"));
+            });
+        });
+    </script>
+
+    <script>
+        // //点击添加收集信息,创建tr和td  并隔行变色  如果为空则提示弹窗
+        // //获取元素
+        // var btn = document.querySelector("#btn");
+        // var tbody = document.querySelector("#tbd");
+        // var inputs = document.querySelectorAll("#dv input");
+        // var index =0;
+
+
+        // //设置按钮的点击事件
+        // btn.onclick = function () {     
+
+        //     //判断input的输入是否为空不为空就弹窗
+        //     for (var i = 0; i < inputs.length; i++) {
+        //         if(inputs[i].value ==""){
+        //             alert("请输入完整");
+        //             return
+        //         }
+        //     }     
+        //     //创建并添加tr
+        //     var tr = document.createElement("tr");
+        //     // 设置tr的内容
+        //     index++
+        //     tr.style.backgroundColor = index%2 ==0?"red":"yellow";
+        //     //在这里先设置隔行变色的颜色
+
+        //     for (var i = 0; i < inputs.length; i++) {
+        //         //创建td
+        //         var td = document.createElement("td");
+        //         //为td添加内容
+        //         td.innerText = inputs[i].value;
+        //         // 把td加入到tr中
+        //         tr.appendChild(td);
+        //     }
+        //     //添加tr到body中
+        //     tbody.appendChild(tr);
+
+        // };
+    </script>
+    <script>
+        // // 需求 : 点击添加收集信息 ,创建tr和td分别添加到table里去,并隔行变色
+
+        // //思路 : 
+        // //1. 获取按钮, 注册事件
+        // //2. 创建tr =>添加tr
+        // //3. 创建td => 添加td
+        // //4. 收集信息 设置td
+        // //5. 隔行变色
+        // //6. 判断不能为空
+
+        // //1. 获取元素
+        // var btn = document.querySelector('#btn');
+        // var tbody = document.querySelector('#tbd');
+        // var inputs = document.querySelectorAll('#dv input');
+        // var index = 0;
+
+        // //2. 注册事件
+        // btn.onclick = function () {
+
+        //     //4. 判断不能为空 
+        //     if(inputs[0].value.length == 0||inputs[1].value.length == 0||inputs[2].value.length == 0||inputs[3].value.length == 0){
+
+        //           alert('不能为空');
+
+        //           return;      
+        //     }
+
+        //    //2.1 创建tr
+        //    var tr = document.createElement('tr');
+
+        //    //3. 隔行变色
+        //    index++;
+        //    if (index%2==0) {
+        //        tr.style.background = 'red';
+        //    } else {
+        //        tr.style.background = 'green';
+        //    }
+
+        //    //2.2 设置tr (创建td)
+        //         for ( var i = 0 ; i < inputs.length ; i++) {
+
+        //             //2.2.1 创建td
+        //             var td = document.createElement('td');
+        //             //2.2.2 设置td
+        //             td.innerText = inputs[i].value;
+        //             //2.2.3 添加td
+        //             tr.appendChild(td);    
+        //         }
+
+        //    //2.3 添加tr  
+        //    tbody.appendChild(tr);    
+        // }
+    </script>
+
+</body>
+
+</html>
