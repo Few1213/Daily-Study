@@ -129,23 +129,26 @@
     </div>
     <script src="../../jquery-1.12.1.js"></script>
     <script>
-        var first=$(".tip1").first();
-        for (var i = 1; i<= 10; i++) {
+        var first = $(".tip1").first();
+        for (var i = 1; i <= 10; i++) {
             $("#content").append($(".tip1").first().clone());
         }
         var count = 1;
-        $(".tip1").each(function () { 
+        $(".tip1").each(function () {
             var index = $(this).index();
             console.log(index);
-            
+
             var leftX = parseInt(Math.random() * 731);
             var topY = parseInt(Math.random() * 440);
-            $(this).offset({left:leftX,top:topY});
+            $(this).offset({
+                left: leftX,
+                top: topY
+            });
             $(this).click(function () {
-                $(".tip:eq('+index+')").css("z-index",count++);     
-              });
+                $(".tip:eq('+index+')").css("z-index", count++);//?????
+            });
 
-         });
+        });
     </script>
     <script>
         // //获取元素
@@ -182,7 +185,7 @@
 
         //     //注册按钮的关闭事件
         //     console.log(close);
-            
+
 
 
 
