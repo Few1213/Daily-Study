@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            margin: 0 auto;
+            padding: 0px;
+            font-size: 12px;
+            background: url(images/bg.gif) repeat center 36px;
+            text-align: center;
+            background-color: #c30230;
+        }
+
+        #content {
+            margin: 0 auto;
+            width: 960px;
+            background: url(images/content_bg.jpg) no-repeat left top;
+            height: 627px;
+            position: relative;
+        }
+
+        #content .tip1 {
+            position: absolute;
+            width: 227px;
+            left: 0px;
+            top: 0px;
+        }
+
+        #content .tip1 .tip_h {
+            background: url(images/tip1_h.gif) no-repeat left top;
+        }
+
+        #content .tip1 .tip_h {
+            width: 227px;
+            padding-top: 45px;
+            height: 23px;
+            text-align: left;
+            cursor: move;
+        }
+
+        #content .tip1 .tip_c {
+            background: url(images/tip1_c.gif) repeat-y;
+        }
+
+        #content .tip1 .tip_c {
+            width: 200px;
+            padding-left: 12px;
+            padding-right: 15px;
+            min-height: 40px;
+            text-align: left;
+            line-height: 20px;
+            max-height: 160px;
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow: hidden;
+        }
+
+        #content .tip1 .tip_f {
+            background: url(images/tip1_f.gif) no-repeat left top;
+        }
+
+        #content .tip1 .tip_f {
+            width: 227px;
+            height: 53px;
+            padding-top: 20px;
+        }
+
+        #content .close {
+            float: left;
+            font-size: 12px;
+            cursor: pointer;
+            color: #000000;
+        }
+
+        .clr {
+            clear: both;
+            overflow: auto;
+            display: block;
+            height: 0px;
+        }
+
+        #content .icon {
+            float: left;
+            width: 35px;
+            padding-left: 15px;
+            height: 35px;
+            text-align: center;
+        }
+
+        #content .name {
+            float: right;
+            padding-right: 15px;
+            text-align: right;
+            font-size: 14px;
+            line-height: 35px;
+            color: #C0F;
+        }
+
+        #content .num {
+            float: left;
+            padding-left: 7px;
+            width: 195px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <div class="tip1">
+            <div class="tip_h" title="双击关闭纸条">
+                <div class="num">第[49568]条 2016-02-17 22:51:52</div>
+                <div class="close" title="关闭纸条">×</div>
+                <div class="clr"></div>
+            </div>
+            <div class="tip_c">
+                每天都要被自己给帅醒，希望以后越来越帅！！！
+            </div>
+            <div class="tip_f">
+                <div class="icon">
+                    <img src="images/bpic_1.gif" alt="" title="">
+                </div>
+                <div class="name">成真的人</div>
+                <div class="clr"></div>
+            </div>
+        </div>
+    </div>
+    <script src="../../jquery-1.12.1.js"></script>
+    <script>
+        var first=$(".tip1").first();
+        for (var i = 1; i<= 10; i++) {
+            $("#content").append($(".tip1").first().clone());
+        }
+        var count = 0;
+        $(".tip1").each(function () { 
+            var index = $(this).index();
+            var leftX = parseInt(Math.random() * 731);
+            var topY = parseInt(Math.random() * 440);
+            $(this).offset({left:leftX,top:topY}).click(function () {
+                
+              });
+
+         });
+
+    
+        
+        
+        
+    
+    
+    </script>
+    <script>
+        // //获取元素
+        // var content = document.querySelector("#content");
+        // var tip1 = document.querySelector(".tip1");
+        // var count = 0;
+        // //遍历循环 克隆元素
+        // for (var i = 1; i <= 10; i++) {
+        //     //克隆一个tip1
+        //     var newDiv = tip1.cloneNode(true);
+        //     //把克隆出来的添加到concent中
+        //     content.appendChild(newDiv);
+        // }
+
+
+        // //设置随机的left和top并设置在每个div上
+        // //遍历循环
+        // var divs = content.children;
+        // for (var i = 0; i < divs.length; i++) {
+        //     var leftX = parseInt(Math.random() * 731);
+        //     var topY = parseInt(Math.random() * 440);
+        //     divs[i].style.left = leftX + "px";
+        //     divs[i].style.top = topY + "px";
+
+        //     //注册一个点击关闭的事件
+        //     // divs[i].children[1].onclick=function(){
+        //     //     content.removeChild(this);
+        //     // }
+        //     divs[i].onclick = function () {
+        //         this.style.zIndex = count++;
+        //     }
+
+        //     var close = document.querySelector(".close");
+
+        //     //注册按钮的关闭事件
+        //     console.log(close);
+            
+
+
+
+        // }
+    </script>
+    <script>
+        // //1. 克隆10份tip1, 添加到content中
+        // var content = document.querySelector("#content");
+        // var tip1 = document.querySelector(".tip1");
+
+        // var count = 0;
+
+        // for(var i = 1; i <= 10; i++) {
+        //   //克隆一个tip1
+        //   var newDiv = tip1.cloneNode(true);
+        //   //把克隆出来的添加到content
+        //   content.appendChild(newDiv);
+        // }
+
+
+
+        // //2. 给所有的tip1随机left和top
+        // //先获取到content内的所有tip1
+        // var divs = content.children;
+        // for(var i = 0; i < divs.length; i++) {
+
+        //   var randomX = parseInt(Math.random() * 731);
+        //   var randomY = parseInt(Math.random() * 440);
+
+        //   divs[i].style.left = randomX + "px";
+        //   divs[i].style.top = randomY + "px";
+
+        //   divs[i].onclick = function () {
+        //     this.style.zIndex = ++count;
+        //   }
+
+        // }
+
+        // //3. 给所有的tip1注册一个点击事件， 让当前tip1的层级+1
+    </script>
+
+</body>
+
+</html>
