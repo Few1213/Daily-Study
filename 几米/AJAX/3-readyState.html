@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>$小几米$</title>
+    <script>
+        var xhr = new XMLHttpRequest();
+        console.log(xhr.readyState);
+        // 0 初始化 请求代理对象
+        
+
+        xhr.open('GET', './time.php');
+        // 1 建立与服务器特定端口的连接
+
+        xhr.send();
+
+        xhr.addEventListener('readtstatechange', function () {
+            switch (this.readyState) {
+                case 2:
+                    //2 已经接收到了响应报头的响应头 
+                    // 可以拿到头但是还没拿到体 
+                    //console.log(this.getAllResponseHeaders())
+                    console.log(this.getResponseHeader('sever'));
+                    //但是还没有拿到体
+                    console.log(this.responseText);
+                    break
+                case 3:
+                    // 3 正在下载响应报文的响应体,有可能响应体为空,也有可能不完整
+                    //在这里处理响应体不保险不可靠
+                    console.log(this.responseText);
+                    break
+                case 4:
+                    // 4 在这个阶段一切准备就绪(整个响应报文已经完整下载下来了)
+                    console.log(this.responseText);
+                    break
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

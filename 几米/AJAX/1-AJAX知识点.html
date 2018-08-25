@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>$不开口的花$</title>
+    <script src="./jquery-1.12.1.js"></script>
+    <script>
+        1 - AJAX
+        浏览器提供的一套API, 可以通过javascript调用, 从而实现通过代码请求与控制, 实现网络编程.
+
+        2 - 快速上手
+        //创建一个XMLHttpRequest类型的对象--相当于打开了一个浏览器
+        var xhr = new XMLHttpRequest();
+        //打开与一个网址之间的连接--相当于在地址栏上输入访问地址
+        xhr.open("get", "./time.php");
+        //通过链接发送一次请求--相当于回车或者点击访问发送请求
+        xhr.send(null);
+        //指定xhr状态变化事件处理函数-相当于处理网页呈现后的操作
+        xhr.onreadystatechange = function () {
+            //通过xhr的readyState判断此次请求的相应是否接收完成
+            if (this.readyState === 4) {
+                //通过xhr的responseText 获取到响应的响应体
+                console.log(this);
+            }
+        };
+
+        3 - readyState
+        由于readystatechange 事件是在xhr对象状态变化时触发(不单是在得到响应时), 也就意味着这个事件会被触发多次, 所以我们有必要了解每一个状态值代表的含义
+        0-- - UNSEND-- - 代理(XHR) 被创建, 但尚未调用open() 方法
+        1-- - OPENED-- - open() 方法已经被调用, 建立了连接
+        2-- - HEADERS_RECEIVED-- - send() 方法已经被调用, 并且已经可以获取状态行和响应头
+        3-- - LOADING-- - 响应体瞎子啊中, responseText 属性可能已经包含部分数据
+        4-- - DONE-- - 响应体下载完成, 可以直接使用responseText
+
+        时间轴
+        UNSENT-- --OPENED-- --HEADERS_RECEIVED-- --LOADING-- - DONE
+        初始化-- -- - 建立连接-- - 接收到响应头-- -- -- -- - 响应体加载中--加载完成
+
+        var xhr = XMLHttpRequest();
+        console.log(xhr.readyState);
+        结果为 0-- -- --初始化, 请求代理对象
+
+        xhr.open("get", "time.php");
+        console.log(xhr.readyState);
+        结果为 1-- -- --open方法已经调用, 建立一个与服务器特定端口的连接
+
+        xhr.send();
+
+        xhr.addEventListener("readystatechange", function () {
+            switch (this.readyState) {
+                case 2:
+                    // =>2
+                    // 已经接收到了响应报文的响应头
+
+                    // 可以拿到头 
+                    //console.log(this.getAllResponseHeaders())
+                    console.log(this.getResponseHeader("sever"));
+                    //但是还没有拿到体
+                    console.log(this.responseText);
+                    break
+                case 3:
+                    // =>3
+                    //正在下载响应报文的响应体,有可能响应体为空,也有可能不完整
+
+                    //在这里处理响应体不保险(不可靠)
+                    console.log(this.responseText);
+                    break
+                case 4:
+                    //=> 4
+                    //一切ok(整个响应报文已经完整下载下来了)
+
+                    //在这里处理响应体
+                    console.log(this.responseText);
+                    break
+
+            }
+        });
+
+        通过理解每一个状态值的含义得出一个结论: 一般我们都是在readyState的值为4时, 执行响应的后续逻辑
+        xhr.onreadystatechange = function () {
+            if (this.ready.state === 4) {
+                //后续逻辑
+            }
+        };
+        4 - 遵循HTTP
+        本质上XMLHttpRequest 就是jacascript 在Web平台中发送HTTP请求的手段, 所以我们发送出去的请求任然是HTTP请求, 同样符合HTTP约定的格式
+
+        //设置请求报文的请求行
+        xhr.open('get', './time.php');
+        //设置请求头
+        xhr.setQuestHeader('Accept', 'text/plain');
+        //设置请求体
+        xhr.send(null);
+
+        xhr.onreadystatechange = function () {
+            if (this.readyState === 4) {
+                //获取响应状态码
+                console.log(this.status);
+                //获取响应状态描述
+                console.log(this.statusText);
+                //获取响应头的信息
+                console.log(this.getResponseHeader('Content-Type')); //指定响应头
+                console.log(this.getAllResponseHeaders); //全部响应头
+                //获取响应体
+                console.log(this.responseText); //文本形式
+                console.log(this.responseText); //XML形式,了解即可
+            }
+        }
+
+        5 - GET 请求
+        通常在一次GET请求过程中, 参数都是通过URL地址中的 ? 参数传递
+
+        var xhr = new XMLHttpRequest();
+        //GET请求传递参数通常使用的是问号传参
+        //这里可以在请求地址的后面地址加上参数,从而传递数据到服务器
+        xhr.open('GET', './login.php');
+        //一般在GET请求是无需设置响应体,可以传null或者干脆不传
+        xhr.send(null);
+        xhr.onreadystatechange = function () {
+            if (this.readyState === 4) {
+                console.log(this.responseText);
+
+            }
+        }
+
+        //一般情况下URL传递的都是参数性质的数据,二post一般都是业务数据
+
+        6 - POST请求
+        POST请求过程中, 都是采用请求体承载所需要提交的问题
+        var xhr = new XMLHttpRequest();
+        //open方法的第一个参数的作用就是设置请求的method
+        xhr.open('POST', './users.php');
+        !!! //设置请求头中的Centent-Type 为application/x-www-form-urlencoded
+        !!! //表示此次请求的请求格式体为urlencoded以便于服务端接收数据
+        xhr.setReauestHeader('Content-Type', 'application/x-www-fprm-urlencoded');
+        //需要提交到服务器的数据可以通过send方法传递参数
+        //格式:key1=value1&key2=value2
+        xhr.send('key1=value1&key2=value2');
+        xhr.onreadystatechange = function () {
+            if (this.readyState === 4) {
+                console.log(this.responseText);
+            }
+        };
+        7 - 同步与异步
+        同步: 相当于一个人在同一时刻只能做一件事情, 并执行一些耗时的操作(不需要看管) 不去做别的事情, 只是等待.
+        异步: 在执行一些耗时的操作(不需要看管) 去做别的事情, 而不是等待
+
+            !!!一定在发送请求send() 和之前注册readystatechange(不管同步还是异步)
+
+        响应数据格式
+        在javascript中解析的时候的格式
+        XML: 一种数据描述手段
+        JSON: 也是一种数据描述手段, 类似于javascript字面量的方式
+        服务端采用JSON格式返回数据, 客户端按照JSON格式解析数据
+
+        8 - 处理相应数据渲染 模板引擎
+        1--artTemplate
+        模板引擎实际上就是一个API, 模板引擎有很多种, 使用的方式大同小异, 目的是为了可以更容易的将数据渲染到HTML中
+
+
+        9 - 兼容方案
+        //估计基本上用不到这个东西
+        XMLHttpRequest在老版本浏览器(IE5 / 6) 中兼容有问题, 通过另一种方式替代
+        var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+
+        10 - AJAX请求封装
+        函数就可以理解为一个想要做的事情, 函数体中约定了这件事情做得过程, 直到调用才开始工作, 将函数作为参数传递就像是将一个事情交给别人, 就是委托的概念
+
+        function ajax(method, url, params, done) {
+            //统一转换为大写以便用于判断后续
+            method = method.toUpperCase();
+
+            //将对象形式的参数转换为urlencoded格式
+            var pairs = [];
+            for (var key in parans)(
+                pairs.push(key + "+" + params[key])
+            )
+
+            var querystring = pair.join("&");
+
+            var xhr = window.XMLHttprequeat ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+
+            xhr.addEventListener("readtstatechange", function () {
+                if (this.readyState !== 4) return
+
+                //尝试通过 JSON格式解析响应体
+                try {
+                    done(JSON.prase(this.responseText))
+                } catch (e) {
+                    done(this.responseText);
+                }
+
+                //如果是 GET 请求就设置 URL 地址 问号参数
+                if (method === "GET") {
+                    url += "?" + querystring;
+                }
+
+                xhr.open(method, url);
+
+                //如果是 POST 请求就设置请求体
+
+                var data = null;
+                if (method === "POST") {
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+                }
+                xhr.send(data);
+            }); //上述代码有错误
+
+            11 - jQuery中的AJAX
+            $.ajax({
+                
+                url: "./users.php",//请求地址
+                type: "get",//请求方法 默认为get
+                dataType: "json",//服务端响应的数据类型
+                //concentType:请求体内容类型,默认application/x-www-form-urlencoded
+                data: {
+                    id: 1//data 是传送到服务器端的数据,如果GET则通过url传递,如果是POST则通过请求体传递
+                },
+                //timeout请求超时时间
+                beforeSend: function (xhr) {
+                    console.log("before send");
+
+                },//请求发起前触发
+                success: function (data) {
+                    console.log(data);
+
+                },//请求成功之后触发(响应状态码200)
+                error: function (err) {
+                    console.log(err);
+
+                },//请求失败后触发
+                complete: function () {
+                    console.log("request completed");
+
+                }//请求完成触发,无论成功与否
+            });
+
+            $.get(地址)
+            $.post(地址)
+
+             12-跨域
+             同源策略是浏览器的一种安全策略,所谓的同源是指域名,协议端口完全相同,只有 同源的地址才可以相互通过AJAX的方式请求
+
+             同源或者不同元说的是两个地址之间的关系,不同于源地址之间的骑牛我们称之为跨域请求
+
+             13-JSONP
+             JSON with Padding 是一种借助于 script 标签发送跨域请求的技巧
+             其原理就是在客户端借助 script 标签请求服务器端的一个动态网页(PHP文件),服务端的这个动态网页放回一段带有函数调用的javascript全局对象调用的脚本,将原本需要返回给客户端的数据传递进去
+
+             以后绝大多数的情况都是采用JSONP的手段完成不同地址之间的跨域请求
+
+             14-CORS
+             Cross Origin Resource Share 跨域资源共享 
+             //允许远端访问
+             header("Access-Control-Allow-Origin: *");
+
+             这种方案无需客户端做出任何变化(客户端不用改代码),只是在被请求的服务端响应的时候添加一个Access-Control-Allow-Origin 的响应头,表示这个资源是否允许指定域的请求
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            width: 300px;
+            margin: 100px auto 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+            width: 300px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+        tbody tr {
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="all" />
+                    </th>
+                    <th>菜名</th>
+                    <th>饭店</th>
+                </tr>
+            </thead>
+            <tbody id="tb">
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>红烧肉</td>
+                    <td>田老师</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>西红柿鸡蛋</td>
+                    <td>田老师</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>红烧狮子头</td>
+                    <td>田老师</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>日式肥牛</td>
+                    <td>田老师</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="../jquery-1.12.1.js"></script>
+    <script>
+        $("#all").click(function () {
+            // $("#tb input").each(function () { 
+            //     $(this).attr("checked","$('#all').attr('checked')");
+            //  });    
+
+
+
+            //!!!在这里我们使用.prop属性来设置和获取checked属性的值而不是使用attr
+            //第一个版本
+            // if ($(this).prop("checked")) {
+            //     $("#tb input").each(function () {
+            //         // console.log($(this));
+            //         $(this).prop("checked", true);
+            //     });
+            // } else {
+            //     $("#tb input").each(function () {
+            //         // console.log($(this));
+            //         $(this).prop("checked", false);
+            //     });
+            // }
+            //第二个版本
+            if ($(this).prop("checked")){
+                $("#tb tr td").children().prop("checked",true);
+            }else{
+                $("#tb tr td").children().prop("checked",false);
+
+            }
+
+            //遍历循环input注册点击事件
+            $("#tb input").each(function () {
+                $(this).click(function () {
+                    
+                    // console.log($(this));
+                    var flag = true;
+                    $("#tb input").each(function () {
+                        if ($(this).prop("checked")==false) {
+                            flag = false;
+                            return 
+                            //!!!因为each的调用是一个函数,所以跳出循环应该使用return而不是break
+                        }
+                    });
+                    if (flag) {
+                        $("#all").prop("checked", true);
+                    } else {
+
+                        $("#all").prop("checked", false);
+                    }
+
+
+                });
+            });
+
+
+
+
+
+
+
+            // $("#tb input").each(function () {
+            //     $(this).attr("checked", false);
+
+            // });
+
+        });
+    </script>
+    <!-- <script>
+        //获取元素
+        var all = document.getElementById("j_cbAll");
+        var bd = document.getElementById("j_tb");
+        var inputs = bd.getElem entsByTagName('input');
+
+        //设置全选和全不选的点击事件
+        all.onclick = function () {
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].checked = this.checked;
+            }
+        };
+        //遍历循环input注册点击事件
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].onclick = function () {
+                var flag = true;
+                for (var i = 0; i < inputs.length; i++) {
+                    if (inputs[i].checked == "") {
+                        flag = false;
+                        break
+                    } //end if
+                } //end for
+                if (flag) {
+                    all.checked = true;
+                } else {
+                    all.checked = false;
+                }
+            };
+        }
+        <script>
+        //获取元素
+        var all = document.getElementById("j_cbAll");
+        var bd = document.getElementById("j_tb");
+        var inputs = bd.getElementsByTagName("input");
+        //设置全选和全不选
+        //给all注册点击事件
+        all.onclick = function () {
+
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].checked = this.checked
+            }
+        }
+
+        //循环遍历,给input注册点击事件
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].onclick = function () {
+                //每一个input的点击时间里 先默认所有的input都勾选上了为true
+                var flag = true;
+                // 循环遍历所有的input  如果有一个的checked为空,则设置flag为false并打破循环
+                for (var i = 0; i < inputs.length; i++) {
+                    if (inputs[i].checked == "") {
+                        flag = false;
+                        break
+                    }
+                }
+                //在这里判断 是否全部都勾选上了 ,全部都勾选上了的话为true  否则为false
+                if (flag) {
+                    all.checked = true;
+                } else {
+                    all.checked = false;
+                }
+            }
+
+        }
+    </script> -->
+    <script>
+        // //设置全选和全不选
+        // var thead = document.getElementById("j_cbAll");
+        // var tbody = document.getElementById("j_tb");
+        // var inputs = tbody.getElementsByTagName("input");
+
+        // thead.onclick = function () {
+        //     for (var i = 0; i < inputs.length; i++) {
+        //         //这里的this指的是thead
+        //         inputs[i].checked = this.checked;
+        //     }
+        // };
+        // //遍历循环
+        // for (var i = 0; i < inputs.length; i++) {
+        //     //注册点击事件
+        //     inputs[i].onclick = function () {
+        //         //假定所有的input都已经勾选上了
+        //         var flag = true;
+        //         //遍历循环,判定其他的input是否已经勾选上
+        //         for (var i = 0; i < inputs.length; i++) {
+        //             if (inputs[i].checked == "") {
+        //                 flag = false;
+        //                 break;
+        //             }
+        //         }
+
+
+        //         //判断
+        //         if (flag) {
+        //             thead.checked = true;
+        //         } else {
+        //             thead.checked = false;
+        //         }
+
+
+        //     };
+
+        // }
+
+
+
+
+
+
+
+        // //思路：
+        // //找对象
+
+
+        // //功能1：点击全选的checkbox，控制所有的checkbox
+        // //获取的全选input
+        // var all = document.getElementById("j_cbAll");
+        // //获取tbody
+        // var tbody = document.getElementById("j_tb");
+        // //获取tbody下所有的input
+        // var inputs = tbody.getElementsByTagName("input");
+
+        // //给all注册点击事件
+        // all.onclick = function () {
+
+        //   //遍历inputs，让所有的input都跟all一样
+        //   //var isChecked = all.checked;
+        //   for (var i = 0; i < inputs.length; i++) {
+        //     inputs[i].checked = all.checked
+        //   }
+
+        // };
+
+
+        // //功能2：点击下面的checkbox，控制全选的checkbox
+        // //1. 给所有inputs注册点击事件
+        // //2. 判断是否都选中了，如果都选中了，让all选中，否则让all不选中
+        // for (var i = 0; i < inputs.length; i++) {
+        //   inputs[i].onclick = function () {
+
+        //     //判断是否都选中
+        //     //假设选中
+        //     var flag = true;
+        //     for (var j = 0; j < inputs.length; j++) {
+        //       if (inputs[j].checked === false) {
+        //         //有人没选中
+        //         flag = false;
+        //         break;
+        //       }
+        //     }
+
+        //     //最后判断flag
+        //     if (flag) {
+        //       all.checked = true;
+        //     } else {
+        //       all.checked = false;
+        //     }
+        //   }
+        // }
+    </script>
+
+
+
+    <script>
+        // //设置全选和全不选
+        // var thead = document.getElementById("j_cbAll");
+        // var tbody = document.getElementById("j_tb");
+        // var inputs = tbody.getElementsByTagName("input");
+
+        // thead.onclick = function () {
+        //     for (var i = 0; i < inputs.length; i++) {
+        //         //这里的this指的是thead
+        //         inputs[i].checked = this.checked;
+        //     }
+        // };
+        // //遍历循环
+        // for (var i = 0; i < inputs.length; i++) {
+        //     //注册点击事件
+        //     inputs[i].onclick = function () {
+        //         //假定所有的input都已经勾选上了
+        //         var flag = true;
+        //         //遍历循环,判定其他的input是否已经勾选上
+        //         for (var i = 0; i < inputs.length; i++) {
+        //             if (inputs[i].checked == "") {
+        //                 flag = false;
+        //                 break;
+        //             }
+        //         }
+
+
+        //         //判断
+        //         if (flag) {
+        //             thead.checked = true;
+        //         } else {
+        //             thead.checked = false;
+        //         }
+
+
+        //     };
+
+        // }
+
+
+
+
+
+
+
+        // //思路：
+        // //找对象
+
+
+        // //功能1：点击全选的checkbox，控制所有的checkbox
+        // //获取的全选input
+        // var all = document.getElementById("j_cbAll");
+        // //获取tbody
+        // var tbody = document.getElementById("j_tb");
+        // //获取tbody下所有的input
+        // var inputs = tbody.getElementsByTagName("input");
+
+        // //给all注册点击事件
+        // all.onclick = function () {
+
+        //   //遍历inputs，让所有的input都跟all一样
+        //   //var isChecked = all.checked;
+        //   for (var i = 0; i < inputs.length; i++) {
+        //     inputs[i].checked = all.checked
+        //   }
+
+        // };
+
+
+        // //功能2：点击下面的checkbox，控制全选的checkbox
+        // //1. 给所有inputs注册点击事件
+        // //2. 判断是否都选中了，如果都选中了，让all选中，否则让all不选中
+        // for (var i = 0; i < inputs.length; i++) {
+        //   inputs[i].onclick = function () {
+
+        //     //判断是否都选中
+        //     //假设选中
+        //     var flag = true;
+        //     for (var j = 0; j < inputs.length; j++) {
+        //       if (inputs[j].checked === false) {
+        //         //有人没选中
+        //         flag = false;
+        //         break;
+        //       }
+        //     }
+
+        //     //最后判断flag
+        //     if (flag) {
+        //       all.checked = true;
+        //     } else {
+        //       all.checked = false;
+        //     }
+        //   }
+        // }
+    </script>
+
+
+</body>
+
+</html>

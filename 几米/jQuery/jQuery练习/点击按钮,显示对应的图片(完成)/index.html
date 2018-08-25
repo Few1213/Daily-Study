@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<input type="button" value="第一张" title="1">
+	<input type="button" value="第二张" title="2">
+	<input type="button" value="第三张" title="3">
+	<input type="button" value="第四张" title="4">
+	<input type="button" value="第五张" title="5">
+	<br>
+	<img id="img" src="images/1.jpg" alt="">
+	<script src="../../jquery-1.12.1.js"></script>
+	<script>
+		
+		$("input").each(function () {
+			// console.log($(this).attr("title"));		
+			$(this).click(function () {
+				$("img").attr("src","images/"+$(this).attr("title")+".jpg");
+			  });
+		  });
+		  //!!!注意的是 标签属性用attr设置和获取
+		  //!!!注意的是 this为DOM对象,在jQuery中必须使用$(this)转换为jQuery对象
+		  //!!!注意的是  对象.each(); 为数组的遍历
+			
+	
+	
+	
+	
+	</script>
+
+	<!-- <script>
+			
+			var img =  document.getElementById('img');
+			var btns =  document.getElementsByTagName('input')
+
+			for (var i = 0; i < btns.length; i++) {
+					btns[i].onclick = function () {
+						// body...
+
+								console.log(this.title);
+						console.log("images/"+ this.title+".jpg");	
+						
+					img.src = 		"images/"+ this.title+".jpg";
+					}
+				}	
+
+	</script> -->
+	
+</body>
+</html>

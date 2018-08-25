@@ -1,0 +1,53 @@
+!
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>$小几米$</title>
+    <script>
+    </script>
+</head>
+
+<body>
+    <ul id="list"></ul>
+    <script>
+        var listElement = document.getElementById("list");
+        //发送请求获取数据列表呈现在页面
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "./users.php");
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            //如果这个准备就绪的状态值不等于4就不执行
+            if (this.readyState !== 4) return;
+            var data = JSON.parse(this.responseText);
+            //data 为数据的意思,把数据用json数据的格式返回
+
+            //循环遍历数据中的内容
+            for (var i = 0; i < data.length; i++) {
+                //创建li并加入到父元素中
+                var liElement = document.creatElement("li");
+                //设置li 的内容和id
+                liElement.innerHTML = data[i].name;
+                liElement.id = data[i].id;
+                listElement.appendChind(liElement);
+                // 为每个li注册点击事件
+                liElement.addEventListener("click",function () {
+                    //通过AJAX操作获取服务端对应的数据信息
+                    var xhr1 = new XMLHttpRequest();
+                    xhr1.open("GET", "users.php?id=" + this.id);
+                    xhr1.send();
+                    xhr1.onreadystatechange = function (){
+                        if (readyState !== 4)return;
+                        var obj = JSON.parse(this.responseText);
+                        alert(obj.name);
+                    };
+                  });
+            }
+        };
+    </script>
+</body>
+
+</html>

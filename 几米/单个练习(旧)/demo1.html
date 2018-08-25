@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //将字符串xu-fang-wei转换为XuFangWei
+        var str = "xu-fang-wei";
+        //将字符串切割成一个数组
+        var arr = str.split("-");
+        //设置一个空的字符串
+        var str1 = "";
+        // console.log(arr);
+        //遍历数组
+        for (var i = 0; i < arr.length; i++) {
+            var ele = arr[i];
+            var e = ele[0].toUpperCase()+ ele.slice(1);
+            // console.log(e);
+            
+            str1 += e;
+        }
+        console.log(str1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

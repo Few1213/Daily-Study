@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <button>按钮</button>
+  <script src="../../jquery-1.12.1.js"></script>
+  <script>
+    $("button").click(function () {
+      var r = parseInt(Math.random() * 256);
+      var g = parseInt(Math.random() * 256);
+      var b = parseInt(Math.random() * 256);
+      $("body").css("background","rgb("+r+","+g+","+b+")");
+    });
+  </script>
+  <!-- <script>
+    var btn = document.querySelector("button");
+    btn.onclick=function(){
+      var r = parseInt(Math.random()*256);
+      var g = parseInt(Math.random()*256);
+      var b = parseInt(Math.random()*256);
+      document.body.style.backgroundColor="rgb("+r+","+g+","+b+")";
+    };
+   
+   </script> -->
+
+
+
+  <script>
+    // //1. 获取按钮
+    // var btn =  document.querySelector('button');
+
+    // //2. 点击按钮,随机生成一个颜色,设置给背景
+    // btn.onclick = function () {
+
+    //   var red = parseInt( Math.random() * 266 );
+    //   var green = parseInt( Math.random() * 266 );
+    //   var blue = parseInt( Math.random() * 266 );
+
+    //   document.body.style.backgroundColor = 'rgb('+red+','+green+','+blue+')';
+    // }
+  </script>
+</body>
+
+</html>

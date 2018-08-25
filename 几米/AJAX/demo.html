@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>$不开口的花$</title>
+    <script src="./jquery-1.12.1.js"></script>
+    <script>
+        //2-一道this的问题
+        // var num = 10;
+        // var obj = {
+        //     num: 8,
+        //     inner: {
+        //         num: 6,
+        //         print: function () {
+        //             console.log("num: " + num + " , this.num: " + this.num);
+        //         }
+        //     }
+        // }
+        // num = 888;
+        // obj.inner.print(); //num: 888 , this.num: 6
+        // var fn = obj.inner.print;
+        // fn(); //num: 888 , this.num: 888, this: Window
+        // (obj.inner.print)(); //num: 888 , this.num: 6
+        // (obj.inner.print = obj.inner.print)(); //num: 888 , this.num: 888 , this: Window
+
+        // 3. var和function的预解析问题,以及变量和function的先后顺序的问题
+        // 以下代码执行输出结果是什么
+        // function b() {
+        //     console.log(a);
+        //     var a = 10;
+
+        //     function a() {};
+        //     a = 100;
+        //     console.log(a);
+        // }
+        // b();
+
+        // function c() {
+        //     console.log(a);
+
+        //     function a() {};
+        //     var a = 10;
+        //     a = 100;
+        //     console.log(a);
+        // }
+        // c();
+
+        // (function d(num) {
+        //     console.log(num);
+        //     var num = 10;
+        // }(100))
+
+        // (function e(num) {
+        //     console.log(num);
+        //     var num = 10;
+
+        //     function num() {};
+        // }(100))
+
+        // (function f(num) {
+        //     function num() {};
+        //     console.log(num);
+        //     var num = 10
+        //     console.log(num);
+        // }(100))
+
+        // //仍然是预解析(在与解析过程中还要考虑一下当前变量的作用于)
+        // function m() {
+        //     console.log(a1); // underfined
+        //     console.log(a2); // underfined
+        //     console.log(b1); // underfined
+        //     console.log(b2); // underfined
+        //     if (false) {
+        //         function b1() {};
+        //         var a1 = 10;
+        //     }
+        //     if (true) {
+        //         function b2() {};
+        //         var a2 = 10;
+        //     }
+        //     console.log(a1); // underfined
+        //     console.log(a2); // 10
+        //     console.log(b1); // underfined
+        //     console.log(b2); // function
+        // }
+        // m();
+
+        // function n() {
+        //     if (2 > 1) {
+        //         arr = 10;
+        //         brr = 10;
+        //         let arr;
+        //         var brr;
+        //         console.log(arr);
+        //         console.log(brr);
+        //     }
+        // }
+        // n(); // ReferenceError
+
+
+        //ƒ a() {}
+        //10:39:10.654 VM1688:7 100
+        //10:39:10.654 VM1688:12 ƒ a() {}
+        //10:39:10.655 VM1688:16 100
+        //10:39:10.655 VM1688:21 100
+        //10:39:10.655 VM1688:26 ƒ num() {}
+        //Uncaught TypeError: (intermediate value)(intermediate value)(...) is not a function
+        // for (var i = 1; i <= 9; i++) {
+        //     for (var j = 1; j <= i; j++) {
+        //         document.write(j + "*" + i + "=" + j * i + " ")
+        //     }
+        //     document.write("<br />")
+        // }
+        var arr = [1, 4, 6, 9, 11, 15, 18]
+
+        function arrIndexOf(arr, val) {
+            var mid,
+                min = 0,
+                max = arr.length - 1
+            while (min <= max) {
+                mid = (min + max) >> 1
+                if (val > arr[mid]) {
+                    min = mid + 1
+                } else if (val < arr[mid]) {
+                    max = mid - 1
+                } else {
+                    return mid
+                }
+            }
+            return min
+        }
+
+        function insert(arr, val) {
+            if (arr[0] === val) {
+                arr.unshift(val)
+            } else if (arr[arr.length - 1] === val) {
+                arr.push(val)
+            } else {
+                arr.splice(arrIndexOf(arr, val), 0, val)
+            }
+            return arr
+        }
+        console.log(insert(arr, 17))
+
+        //10:41:47.972 VM1742:31 (8) [1, 4, 6, 9, 11, 15, 17, 18]
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

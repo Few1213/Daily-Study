@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    body {
+      padding-left: 100px;
+    }
+
+    #imgs {
+      overflow: hidden;
+      margin: 50px 0;
+    }
+
+    #imgs li {
+      float: left;
+      margin-right: 10px;
+    }
+
+
+  </style>
+</head>
+<body>
+
+<h1>美女相册</h1>
+
+<ul id="imgs">
+  <li>
+    <a href="images/1.jpg" title="美女A">
+      <img src="images/1-small.jpg" alt="">
+    </a>
+  </li>
+  <li>
+    <a href="images/2.jpg"  title="美女B">
+      <img src="images/2-small.jpg" alt="">
+    </a>
+  </li>
+  <li>
+    <a href="images/3.jpg"  title="美女C">
+      <img src="images/3-small.jpg" alt="">
+    </a>
+  </li>
+  <li>
+    <a href="images/4.jpg"  title="美女D">
+      <img src="images/4-small.jpg" alt="">
+    </a>
+  </li>
+</ul>
+<img src="images/placeholder.png" width="400" height="250" alt="" id="bigImg">
+
+
+<!--标签的内容-->
+<p id="des">这是描述信息</p>
+<script src="../../jquery-1.12.1.js"></script>
+<script>
+  $("a").each(function () {
+    $(this).click(function () {
+      // console.log($(this).attr("href"));
+      
+      $("#bigImg").attr("src",$(this).attr("href"));
+      $("p").text($(this).attr("title"));
+      return false;
+      });
+    });
+
+</script>
+<!-- <script>
+
+    //1. 获取所有的a
+    var as = document.getElementsByTagName('a');
+    var bidImg = document.getElementById('bigImg');
+    var  des = document.getElementById('des');
+
+    //2. 遍历
+    for ( var i = 0 ; i < as.length ; i++) {
+    
+        as[i].onclick = function() {
+
+          des.innerText = this.title;
+          bidImg.src = this.href;
+
+          // alert(1);
+          return false;
+        }
+    } 
+ 
+
+
+</script> -->
+
+</body>
+</html>

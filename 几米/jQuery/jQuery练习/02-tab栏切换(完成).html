@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            border: 1px solid #000;
+            height: 400px;
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        .box ul {
+            height: 60px;
+        }
+
+        .box ul li {
+            list-style: none;
+            float: left;
+            width: 20%;
+            height: 60px;
+            background: pink;
+            line-height: 60px;
+            text-align: center;
+        }
+
+        .box ul li.now {
+            background: green;
+        }
+
+        .body {
+            width: 100%;
+            height: 340px;
+            ;
+        }
+
+        .body div {
+            width: 400px;
+            height: 340px;
+            background: #ccc;
+            text-align: center;
+            line-height: 340px;
+            display: none;
+            font-size: 100px;
+        }
+
+        .body div.current {
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+        <!--  导航区 -->
+        <ul>
+            <li class="now">导航1</li>
+            <li>导航2</li>
+            <li>导航3</li>
+            <li>导航4</li>
+            <li>导航5</li>
+        </ul>
+        <!-- 内容区 -->
+        <div id="body" class="body">
+            <div class="current">内容1</div>
+            <div>内容2</div>
+            <div>内容3</div>
+            <div>内容4</div>
+            <div>内容5</div>
+        </div>
+
+
+    </div>
+    <script src="../jquery-1.12.1.js"></script>
+    <script>
+        //循环遍历导航栏,注册点击事件
+        $("ul li").each(function () {
+            //    var index =  $(this).attr("index", $(this).index());//想复杂了
+            var index = $(this).index();
+            // console.log(index);
+
+            $(this).click(function () {
+                // console.log($(this).attr("index"));
+                // console.log($(this));        
+                $("ul").children().removeClass();
+                $(this).addClass("now");
+                $("#body div").each(function () {
+                    $(this).removeClass();
+                });
+                // console.log($("#body div:eq($(this).attr('index'))").text());XXX
+                //注意eq的用法  ("++index") 里面的写法一定要注意
+                $("#body div:eq("+index+")").addClass("current");
+            });
+        });
+    </script>
+    <!-- <script>
+        var lists = document.getElementsByTagName("li");
+        var body = document.getElementById('body');
+        var divs = body.getElementsByTagName("divs");
+
+        for (var i = 0; i < lists.length; i++) {
+            lists[i].index = i;
+            lists[i].onclick = function () {
+                for (var i = 0; i < lists.length; i++) {
+                    lists[i].className = "";
+                }
+                this.className = "now";
+                for (var i = 0; i < divs.length; i++) {
+                    divs[i].className = "";
+                }
+                divs[this.index].className = "current";
+            }
+        }
+    </script> -->
+    <!-- <script>
+        var lists = document.getElementsByTagName("li");
+        var bd = document.getElementById("body");
+        var divs = bd.getElementsByTagName("div");
+
+        for (var i=0 ; i< lists.length; i++){
+            lists[i].index = i;
+            lists[i].onclick=function(){
+                for (var i = 0; i < lists.length; i++) {
+                    lists[i].className="";
+                }
+                this.className="now";
+                for (var i = 0; i < divs.length; i++) {
+                    divs[i].className="";
+                }
+                divs[this.index].className="current";
+            }
+        }
+    </script> -->
+    <script>
+        // //获取元素
+        // var lists = document.getElementsByTagName("li");
+        // var bd = document.getElementById("body");
+        // var divs = bd.getElementsByTagName("div"); //document获取和element获取
+        // //注册点击事件
+        // for (var i = 0; i < lists.length; i++) {
+        //     lists[i].index = i;
+        //     //设置点击事件
+        //     lists[i].onclick = function () {
+
+        //         for (var i = 0; i < lists.length; i++) {
+        //             lists[i].className = "";
+
+        //         }
+        //         this.className = "now";
+        //         for (var i = 0; i < divs.length; i++) {
+        //             divs[i].className = "";
+        //         }
+        //         divs[this.index].className="current";
+        //     }
+
+        // }
+    </script>
+
+    <script>
+        // //1. 获取上面四个
+        // //2. 获取下面四个
+        // var lis = document.getElementsByTagName('li');
+        // var body = document.getElementById('body');
+        // var  divs = body.getElementsByTagName('div');
+
+        // //3. 给所有的lis注册点击事件
+        // for ( var i = 0 ; i < lis.length ; i++) {
+
+        //    lis[i].index = i;
+        //     lis[i].onclick = function () {
+        //       //3.1 排他
+        //       for ( var i = 0 ; i < lis.length ; i++) {
+
+        //           lis[i].className = ''
+        //       } 
+
+        //       this.className = 'now';
+
+        //       //3.2 获取上面点击对应的索引,,拿到对应的div显示
+        //       for ( var i = 0 ; i < divs.length ; i++) {
+
+        //         divs[i].className = '';
+        //       }
+        //       divs[this.index].className = 'current';
+
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

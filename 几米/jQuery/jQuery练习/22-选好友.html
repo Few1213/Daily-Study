@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        select {
+            width: 150px;
+            height: 400px;
+            font-size: 20px;
+            background-color: teal;
+        }
+    </style>
+</head>
+
+<body>
+
+    <select id="source" multiple>
+        <option>马哥</option>
+        <option>飞飞</option>
+        <option>芹芹</option>
+        <option>燕哥</option>
+        <option>方方</option>
+        <option>阁阁</option>
+        <option>健健</option>
+        <option>玉玉</option>
+        <option>军军</option>
+    </select>
+
+    <button id="btn1"> &gt;&gt; </button>
+    <button id="btn2"> &lt;&lt; </button>
+    <button id="btn3"> &gt; </button>
+    <button id="btn4"> &lt; </button>
+    <select id="target" multiple>
+
+    </select>
+
+    <script src="../jquery-1.12.1.js"></script>
+    <script>
+        $("#btn1").click(function () {
+            $("#source").children().appendTo("#target");
+        });
+        $("#btn2").click(function () {
+            $("#target").children().appendTo("#source");
+        });
+        $("#btn3").click(function () {
+            $("#source").children().each(function () {
+                console.log("hahah");
+                
+
+                
+
+            });
+        });
+    </script>
+    <!-- <script>
+        // 需求:点击按钮移动
+        //获取元素
+        var btn1 = document.querySelector("#btn1");
+        var btn2 = document.querySelector("#btn2");
+        var btn3 = document.querySelector("#btn3");
+        var btn4 = document.querySelector("#btn4");
+        var source = document.querySelector("#source");
+        var target = document.querySelector("#target");
+
+        //设置btn1的点击事件 全部到右边
+        btn1.onclick = function () {
+            var options = source.children;
+            // console.log(options);     
+            for (var i = options.length - 1; i >= 0; i--) {
+                target.appendChild(options[i]);
+            }
+        };
+        btn2.onclick = function () {
+            var options = target.children;
+            for (var i = options.length - 1; i >= 0; i--) {
+                source.appendChild(options[i]);
+            }
+        };
+        btn3.onclick = function () {
+            var options = source.children;
+            for (var i = options.length - 1; i >= 0; i--) {
+                if (options[i].selected == true) {
+                    target.appendChild(options[i]);
+                }
+            }
+        };
+        btn4.onclick=function(){
+            var options =target.children;
+            for (var i = 0; i < options.length; i++) {
+                if (options[i].selected) {
+                    source.appendChild(options[i]);
+                }
+            }   
+        };
+    </script> -->
+
+    <!-- <script>
+
+  var target = document.getElementById("target");
+  var source = document.getElementById("source");
+  var btn1 = document.getElementById("btn1");
+  var btn2 = document.getElementById("btn2");
+  var btn3 = document.getElementById("btn3");
+  var btn4 = document.getElementById("btn4");
+
+  //1. 全部到右边
+  //  给btn1注册点击事件
+  //  获取到左边所有的option
+  //  遍历，添加到右边
+  btn1.onclick = function () {
+    //左边所有的option
+    var options = source.children;
+    for(var i = 0; i < options.length; i++) {
+      target.appendChild(options[i]);
+      i--;
+    }
+  }
+
+  //2. 全部到左边
+  btn2.onclick = function () {
+    //找到右边所有的option
+    var options = target.children;
+    for(var i = 0; i < options.length; i++) {
+      //添加到左边
+      source.appendChild( options[i] );
+      i--;
+    }
+  }
+
+
+  //3. 选中的到右边
+  btn3.onclick = function () {
+
+    var options = source.children;
+    for(var i = 0; i < options.length; i++) {
+      //选中的到右边,判断options[i]是否选中
+      if(options[i].selected) {
+
+        //appendChilld才会导致个数-1，才需要i--
+        target.appendChild(options[i]);
+        i--;
+      }
+    }
+  }
+
+
+  btn4.onclick = function () {
+    //找到右边所有的option
+    var options = target.children;
+    for(var i = 0; i < options.length; i++) {
+     if(options[i].selected) {
+       //添加到左边
+       source.appendChild( options[i] );
+       i--;
+     }
+    }
+  }
+
+
+</script> -->
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>$小几米$</title>
+    <script>
+        //点击登录按钮不刷新页面
+        //找一个合适的时机,做一件合适的事情
+        var btn = document.getElementById("btn");
+        //获取上面元素的value
+        var textUsername = document.getElementById("username");
+        var textPassword = document.getElementById("password");
+        var loading = document.getElementById("loading");
+
+        btn.addEventListener("click",function () {
+            loading.style.display = "block";
+            var username = textUsername.value;
+            var userword = textPassword.value;
+
+            //通过XHR发送一个 POST请求
+            var xhr = new XMLHttpRequest();
+            xhr.open ("POST", "login.php");
+            //!!!在这里一定要注意的事情是  ,如果请求体是urleanconcoded 格式,必须设置这个请求头!!!
+            xhr.send("Content-Type","application/x-www-form-urlencoded");
+            xhr.send(`uesrname=${username}&password=${password}`);
+            //根据服务器的反馈 做出页面提示
+            xhr.onreadystatechange = function (){
+                if(this.readyState !== 4 )return ;
+                console.log(this.responseText);
+                loading.style.display= "none";
+            };
+          });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
