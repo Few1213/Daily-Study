@@ -129,70 +129,70 @@
     </div>
     <script src="../../jquery-1.12.1.js"></script>
     <script>
-        var first = $(".tip1").first();
-        for (var i = 1; i <= 10; i++) {
-            $("#content").append($(".tip1").first().clone());
-        }
-        var count = 1;
-        $(".tip1").each(function () {
-            var index = $(this).index();
-            // console.log(index);
-
-            var leftX = parseInt(Math.random() * 731);
-            var topY = parseInt(Math.random() * 440);
-            $(this).offset({
-                left: leftX,
-                top: topY
-            });
-            $(this).click(function () {
-               
-                alert(1);
-                $(this).css("z-index", ++count);//this的问题
-                //相信爱这里使用 ++count++而不是使用 count++
-            });
-
-        });
-    </script>
-    <script>
-        // //获取元素
-        // var content = document.querySelector("#content");
-        // var tip1 = document.querySelector(".tip1");
-        // var count = 0;
-        // //遍历循环 克隆元素
+        // var first = $(".tip1").first();
         // for (var i = 1; i <= 10; i++) {
-        //     //克隆一个tip1
-        //     var newDiv = tip1.cloneNode(true);
-        //     //把克隆出来的添加到concent中
-        //     content.appendChild(newDiv);
+        //     $("#content").append($(".tip1").first().clone());
         // }
+        // var count = 1;
+        // $(".tip1").each(function () {
+        //     var index = $(this).index();
+        //     // console.log(index);
 
-
-        // //设置随机的left和top并设置在每个div上
-        // //遍历循环
-        // var divs = content.children;
-        // for (var i = 0; i < divs.length; i++) {
         //     var leftX = parseInt(Math.random() * 731);
         //     var topY = parseInt(Math.random() * 440);
-        //     divs[i].style.left = leftX + "px";
-        //     divs[i].style.top = topY + "px";
+        //     $(this).offset({
+        //         left: leftX,
+        //         top: topY
+        //     });
+        //     $(this).click(function () {
+               
+        //         alert(1);
+        //         $(this).css("z-index", ++count);//this的问题
+        //         //相信爱这里使用 ++count++而不是使用 count++
+        //     });
 
-        //     //注册一个点击关闭的事件
-        //     // divs[i].children[1].onclick=function(){
-        //     //     content.removeChild(this);
-        //     // }
-        //     divs[i].onclick = function () {
-        //         this.style.zIndex = count++;
-        //     }
+        // });
+    </script>
+    <script>
+        //获取元素
+        var content = document.querySelector("#content");
+        var tip1 = document.querySelector(".tip1");
+        var count = 0;
+        //遍历循环 克隆元素
+        for (var i = 1; i <= 10; i++) {
+            //克隆一个tip1
+            var newDiv = tip1.cloneNode(true);
+            //把克隆出来的添加到concent中
+            content.appendChild(newDiv);
+        }
 
-        //     var close = document.querySelector(".close");
 
-        //     //注册按钮的关闭事件
-        //     console.log(close);
+        //设置随机的left和top并设置在每个div上
+        //遍历循环
+        var divs = content.children;
+        for (var i = 0; i < divs.length; i++) {
+            var leftX = parseInt(Math.random() * 731);
+            var topY = parseInt(Math.random() * 440);
+            divs[i].style.left = leftX + "px";
+            divs[i].style.top = topY + "px";
+
+            //注册一个点击关闭的事件
+            // divs[i].children[1].onclick=function(){
+            //     content.removeChild(this);
+            // }
+            divs[i].onclick = function () {
+                this.style.zIndex = count++;
+            }
+
+            var closes = document.querySelector(".close");
+
+            //注册按钮的关闭事件 和双击头部关闭词条
+            // console.log(close);
 
 
 
 
-        // }
+        }
     </script>
     <script>
         // //1. 克隆10份tip1, 添加到content中
