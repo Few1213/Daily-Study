@@ -6,29 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>$小几米$</title>
-    <script>
-        1-HTML5新增的标签
-        常用的语义标签
-        nav 导航
-        header 页眉(可用作多个容器)
-        footer 文档或者页的页脚
-        main 文档主要内容
-        article 文章
-        aside 主题内容之外
-        
-        语义标签和div的使用没有本质化的差别但是有兼容性的问题,IE9以上支持H5(在IE9中将语义标签解析为行级元素 没有款高)
-        IE8以下的解决方法:
-        1-在js里手动创建这些标签,并转换为块级元素
-        2-引入第三方插件 引入第三方js文件正常显示H5标签
-        解决方法 :在样式中添加 display:block
-        !!!注意多个使用时样式的调用重复问题
 
-        2- HTML5 新增的表单type属性
-        
-        
-    </script>
+
 </head>
+
 <body>
-        
+    1-HTML5新增的标签 
+    常用的语义标签 
+    nav 导航 
+    header 页眉(可用作多个容器) 
+    footer 文档或者页的页脚 
+    main 文档主要内容 
+    article 文章 
+    aside 主题内容之外 
+    语义标签和div的使用没有本质化的差别但是有兼容性的问题,IE9以上支持H5(在IE9中将语义标签解析为行级元素
+    没有款高) 
+    IE8以下的解决方法: 
+        1-在js里手动创建这些标签,并转换为块级元素 
+        2-引入第三方插件 引入第三方js文件正常显示H5标签 解决方法 :在样式中添加 display:block 
+    !!!注意多个使用时样式的调用重复问题
+
+
+
+    2- HTML5 新增的表单type属性 
+    email 提供了默认的哟电子邮箱的完整验证,要求必须包含@字符,同时必须包含服务器名称,如果不能满足验证,则会阻止当前的数据提交 
+    tel 并不是用来验证,本质的目的是为了能在移动端打开数字键盘,意味着数字键盘限制了用户只能输入数字(验证方法,在手机端打开这个页面)
+    url 网址 必须包含 http:// number 只能输入数字不能包含字符 max 最大值 min 最小值 value 默认值 search 可以提供更人性化的输入体验 
+    range 范围 max min value 
+    color 颜色拾取
+    可以选择颜色 
+    -----日期时间相关----- 
+    时间: time 时间 时分秒 
+    date 日期 年月日 点开之后会有日历控件 
+    datetime 大多数浏览器都不能使用,苹果下的safari支持 
+    datetime-local 年月日时间
+    month 
+    week 
+
+
+
+    3-HTML5 新增的其他属性
+    <input type="text" placeholder="hhh" autofocus autocomplete="on"> 
+    text placeHolder 提示文本,提示占位 
+    autofocus 自动获取焦点 
+    autocomplete 自动完成 on 打开 off 关闭 
+        1-必须成功提交过 
+        2-当前添加的autocomplete必须要有name属性
+    <input type="tel" required pattern="^(\+86)?1\d{10}$"> 
+    required 是必须输入,如果没有输入则会阻止当前的数据提交 
+    pattern 正则表达式验证 
+        *代表任意 ?代表0个或者1个 +代表1个或者多个
+
+    <input type="file" multiple>
+    multiple 可以选择多个文件,在email中允许输入多个邮箱地址,中间要以逗号分隔  
+
+
+    4-表单新增元素
+    datalist 创建选择列表 兼容性较差
+    option 可以使单标签也可以是双标签 
+
+    5-新增的表单事件
+    oninput 监听当前指定元素内容的改变,只要内容改变(添加内容,删除内容),会触发这个事件
+        onkeyup 键盘弹起时候触发,每弹起一次触发一次  
+    oninvalid 当验证不通过时候触发
+
+    6-元素样式
+    classlist.item()能获取元素添加的样式
+    classlist.add() 一次只能增加一个
+    classlist.remove()  一次只能去除一个
+    classlist.toggle() 切换元素样式,如果有则移除 
+    classlist.contain() 判断是否包含某个样式 true/false
+
+   
+
+    
 </body>
+
 </html>

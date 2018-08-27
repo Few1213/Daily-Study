@@ -27,7 +27,13 @@
     
 
     apply和call方法实际上并不在函数的这个实例对象中,而是在Function的prototype中
+    
     */
+    var index = 3;
+    var timeId = setInterval(function () { 
+        index--;
+     },1000);
+     console.log(index); 
     </script>
 </body>
 </html>
