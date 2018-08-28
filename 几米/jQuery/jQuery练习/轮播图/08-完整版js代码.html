@@ -150,7 +150,7 @@
 
 	</div>
 
-
+	<script src="../../jquery-1.12.1.js"></script>
 	<script>
 		//获取元素
 		var box = document.querySelector(".box");
@@ -253,6 +253,9 @@
 			oLists[index].className = "now";
 
 		}
+
+		//jQuery的方法
+		// $(selector).animate(styles,speed,easing,callback)
 		//封装匀速动画函数
 		function animate(element, target, step) {
 			//清除定时器
