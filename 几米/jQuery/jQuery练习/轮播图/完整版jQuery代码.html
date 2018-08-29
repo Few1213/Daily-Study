@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		/* 初始化 */
+
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+
+
+		/* box 部分 */
+
+		.box {
+			width: 500px;
+			height: 300px;
+			background: red;
+			position: relative;
+			overflow: hidden;
+		}
+
+		/* ul 部分 */
+
+		ul {
+			width: 3000px;
+			height: 300px;
+			position: absolute;
+		}
+
+		ul li {
+			float: left;
+		}
+
+		ul li img {
+			width: 500px;
+			height: 300px;
+		}
+
+		/* ol 部分*/
+
+		ol {
+			/* width: 180px; */
+			height: 20px;
+			background: rgba(255, 255, 255, 0.5);
+			position: absolute;
+			left: 50%;
+			bottom: 10px;
+			transform: translateX(-50%);
+			border-radius: 10px;
+		}
+
+		ol li {
+			float: left;
+			width: 12px;
+			height: 12px;
+			margin: 0 8px;
+			margin-top: 4px;
+			background: #fff;
+
+			text-align: center;
+			line-height: 12px;
+			font-size: 10px;
+
+			/* 不让文本选中 */
+			user-select: none;
+			/* 小手 */
+			cursor: pointer;
+			border-radius: 50%;
+		}
+
+		ol li.now {
+			background: red;
+		}
+
+		/* 箭头部分 */
+
+		.arrow {
+			display: none;
+		}
+
+		.box:hover .arrow {
+			display: block;
+		}
+
+
+		.left,
+		.right {
+
+			width: 30px;
+			height: 60px;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			background: rgba(0, 0, 0, 0.3);
+			text-align: center;
+			line-height: 60px;
+			font-size: 32px;
+
+			user-select: none;
+			cursor: pointer;
+		}
+
+		.left {
+			left: 0;
+		}
+
+		.right {
+			right: 0;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="box">
+		<!-- ul 部分  -->
+		<ul>
+			<li>
+				<img src="./images/1.jpg" alt="">
+			</li>
+			<li>
+				<img src="./images/2.jpg" alt="">
+			</li>
+			<li>
+				<img src="./images/3.jpg" alt="">
+			</li>
+			<li>
+				<img src="./images/4.jpg" alt="">
+			</li>
+			<li>
+				<img src="./images/5.jpg" alt="">
+			</li>
+		</ul>
+		<!-- ol部分 -->
+		<ol>
+		</ol>
+		<!-- 箭头部分 -->
+		<div class="arrow">
+			<span class="left">&lt;</span>
+			<span class="right">&gt;</span>
+		</div>
+
+	</div>
+
+	<script src="../../jquery-1.12.1.js"></script>
+	<script>
+		//思路
+		$(function () {
+			// 动态创建li并设置点击事件	
+			$("ul li").each(function () {
+				var index = $(this).index() + 1;
+				//  console.log(index);			 
+				$("<li>" + index + "</li>").appendTo($("ol"));
+			});
+			// 左右按钮的点击事件
+
+		});
+
+
+
+
+
+
+
+
+
+
+
+		// //获取元素
+		// var box = document.querySelector(".box");
+		// var ul = document.querySelector("ul");
+		// var liObjs = document.querySelectorAll("ul li");
+		// var ol = document.querySelector("ol");
+		// var imgWidth = box.offsetWidth;
+		// var index = 0;
+
+		// // 根据里li的个数动态的创建ol里的里个数
+		// for (var i = 0; i < liObjs.length; i++) {
+		// 	var li = document.createElement("li");
+		// 	li.innerHTML = i + 1;
+		// 	ol.appendChild(li)
+		// }
+
+		// //设置ol的li的默认样式
+		// var oLists = ol.children;
+		// oLists[0].className = "now";
+
+		// // 克隆一个li添加到ul中
+		// var lis = liObjs[0].cloneNode(true);
+		// ul.appendChild(lis);
+
+		// //设置自动播放
+		// var timeId = setInterval(function () {
+		// 	arrow_right.onclick();
+		// }, 1000);
+
+		// //设置鼠标进入和鼠标离开事件
+		// var dv = document.querySelector(".arrow");
+		// box.onmouseover = function () {
+		// 	// console.log(1);
+
+		// 	dv.style.display = "block";
+		// 	clearInterval(timeId);
+		// }
+		// box.onmouseout = function () {
+		// 	dv.style.display = "none";
+		// 	timeId = setInterval(function () {
+		// 		arrow_right.onclick();
+		// 	}, 1000);
+		// }
+
+
+		// //设置点击ol中的li,并移动图片的事件
+		// for (var i = 0; i < oLists.length; i++) {
+		// 	//设置li的点击事件
+		// 	oLists[i].index = i;
+		// 	oLists[i].onclick = function () {
+		// 		// console.log(this.index);
+		// 		index = this.index;
+		// 		for (var i = 0; i < oLists.length; i++) {
+		// 			oLists[i].className = "";
+		// 		}
+		// 		this.className = "now";
+		// 		animate(ul, -index * imgWidth);
+		// 		// ul.style.left = -index * imgWidth + "px";
+		// 		// console.log(index);
+
+		// 	}
+		// }
+
+		// //左右按钮的点击事件
+		// var arrow_left = document.querySelector(".left");
+		// var arrow_right = document.querySelector(".right");
+
+		// arrow_right.onclick = function () {
+		// 	// ul.style.left = -index * imgWidth + "px";
+		// 	if (index == 4) {
+		// 		index = 0;
+		// 		ul.style.left = 0;
+		// 	} else {
+		// 		index++;
+		// 		animate(ul, -index * imgWidth);
+
+		// 	}
+		// 	for (var i = 0; i < oLists.length; i++) {
+		// 		oLists[i].className = "";
+		// 	}
+		// 	oLists[index].className = "now";
+		// 	// console.log(index);
+
+		// }
+		// arrow_left.onclick = function () {
+		// 	if (index == 0) {
+		// 		index = 4;
+		// 		ul.style.left = -index * imgWidth + "px";
+
+		// 	} else {
+		// 		index--;
+		// 		animate(ul, -index * imgWidth);
+		// 		// ul.style.left = -index * imgWidth + "px";
+
+		// 	}
+		// 	// console.log(index);
+		// 	for (var i = 0; i < oLists.length; i++) {
+		// 		oLists[i].className = "";
+		// 	}
+		// 	oLists[index].className = "now";
+
+		// }
+
+		// //jQuery的方法
+		// // $(selector).animate(styles,speed,easing,callback)
+		// //封装匀速动画函数
+		// function animate(element, target, step) {
+		// 	//清除定时器
+		// 	clearInterval(element.timeId)
+		// 	//设置定时器
+		// 	element.timeId = setInterval(function () {
+		// 		//设置步数
+		// 		var step = step || 20;
+		// 		//获取当前的位置
+		// 		var current = element.offsetLeft;
+		// 		// 计算每走的距离
+		// 		step = target - current > 0 ? step : -step;
+		// 		current += step;
+		// 		if (Math.abs(target - current) >= Math.abs(step)) {
+		// 			current += step;
+		// 			element.style.left = current + "px";
+		// 		} else {
+		// 			element.style.left = target + "px";
+		// 			clearInterval(element.timeId);
+		// 		}
+		// 	}, 15);
+		// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		//   //1. 获取元素
+		//   var ul = document.querySelector('ul');
+		//   var ulis = ul.children;
+		//   var ol = document.querySelector('ol');
+		//   var  box = document.querySelector('.box');
+		//   var imgWidth = box.offsetWidth;
+
+
+		//   //2. 动态添加小圆点
+		//   for ( var i = 0 ; i < ulis.length ; i++) {
+
+		//       //1. 创建li
+		//       var li =  document.createElement('li');
+		//       //2. 设置li
+		//       li.innerText = i+1;
+		//       //3. 添加li
+		//       ol.appendChild(li);
+		//   }
+
+		//   // 获取所有的小圆点
+		//   var olis =  ol.children;
+		//   olis[0].className = 'now';
+
+		//   //3. 克隆第一张图片添加到最后面去
+		//   ul.appendChild(ulis[0].cloneNode(true));
+
+
+		//   var arr_left = document.querySelector('.left');
+		//   var arr_right = document.querySelector('.right');
+		//   //4. 点击右键 + 无缝滚动 + 同步小圆点
+		//   var index = 0;
+		//   arr_right.onclick = function () {
+
+		//     // 处理无缝滚动 : 在index++ 之前打印index ,看哪个有问题
+		//     // console.log(index);// 有问题的是5
+
+		//     if (index == ulis.length-1) {
+		//       index = 0;
+		//       ul.style.left = 0;
+		//     }
+
+
+		//     //++
+		//     index++;
+
+		//     // 动画移动
+		//     animate(ul,-index*imgWidth);
+
+		//     // 处理同步小圆点 , 在index++ 之后打印index
+		//     console.log(index);
+		//     // 排他
+		//     for ( var i = 0 ; i < olis.length ; i++) {
+
+		//         olis[i].className = '';
+		//     }
+
+		//     // 处理最后一个点
+		//     if (index == ulis.length-1) {
+
+		//       olis[0].className = 'now';
+		//     }else {
+
+		//       olis[index].className = 'now';
+		//     }
+
+
+		//   }
+
+		//   //5. 点击左键
+		//   arr_left.onclick = function () {
+
+		//     // console.log(index);
+
+		//     if (index == 0) {
+
+		//       index =  ulis.length-1;
+		//       ul.style.left = - index * imgWidth + 'px';
+		//     }
+
+		//     index--;
+		//     animate(ul,-index*imgWidth);
+
+		//     // console.log(index);
+		//     for ( var i = 0 ; i < olis.length ; i++) {
+
+		//         olis[i].className = '';
+		//     }
+		//     olis[index].className = 'now';
+
+		//   }
+
+		//   //6. 自动播放  定时点击右键
+		//   // 6.1 开启定时器
+		//  var  timerID =  setInterval(function () {
+
+		//     arr_right.onclick();
+		//   },1000)
+		//   //6.2 停 触摸 box
+		//   box.onmouseover = function () {
+		//     clearInterval(timerID);
+		//   }
+
+		//   //6.3 离开盒子 继续走
+		//   box.onmouseout = function () {
+
+		//     timerID =   setInterval(function () {    
+		//         arr_right.onclick();
+		//       },1000)
+		//   }
+
+		//   //7. 点击小圆点
+		//   for ( var i = 0 ; i < olis.length ; i++) {
+
+		//       olis[i].index = i;
+		//       olis[i].onclick = function () {
+
+		//         //功能1 : 颜色变化 
+		//         for ( var i = 0 ; i < olis.length ; i++) {
+
+		//             olis[i].className = '';
+		//         }
+		//         this.className = 'now';
+
+		//         // 处理bug
+		//         if (index == ulis.length-1) {
+		//           // 归0
+		//           index = 0;
+		//           ul.style.left = 0;
+		//         }
+
+		//         //功能2 : 移动
+		//         index = this.index; // 同步下标
+		//         animate(ul,- index * imgWidth);
+		//         // ul.style.left =  - index.imgWidth + 'px';
+		//       }
+		//   }
+	</script>
+</body>
+
+</html>

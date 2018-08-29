@@ -199,6 +199,7 @@
 		//设置点击ol中的li,并移动图片的事件
 		for (var i = 0; i < oLists.length; i++) {
 			//设置li的点击事件
+			//把索引的下标值赋值给index
 			oLists[i].index = i;
 			oLists[i].onclick = function () {
 				// console.log(this.index);
@@ -207,6 +208,10 @@
 					oLists[i].className = "";
 				}
 				this.className = "now";
+				if (index == 5) {
+					index =0;
+					ul.style.left =0;
+				}
 				animate(ul, -index * imgWidth);
 				// ul.style.left = -index * imgWidth + "px";
 				// console.log(index);
@@ -220,37 +225,48 @@
 
 		arrow_right.onclick = function () {
 			// ul.style.left = -index * imgWidth + "px";
-			if (index == 4) {
+			if (index == 5) {
 				index = 0;
 				ul.style.left = 0;
-			} else {
-				index++;
-				animate(ul, -index * imgWidth);
-
 			}
+			index++;
+			animate(ul, -index * imgWidth);
+
+
 			for (var i = 0; i < oLists.length; i++) {
 				oLists[i].className = "";
 			}
-			oLists[index].className = "now";
-			// console.log(index);
+			if (index == 5) {
+
+				oLists[0].className = "now";
+			} else {
+				oLists[index].className = "now";
+
+			}
+			console.log(index);
 
 		}
 		arrow_left.onclick = function () {
 			if (index == 0) {
-				index = 4;
+				index = 5;
 				ul.style.left = -index * imgWidth + "px";
 
-			} else {
-				index--;
-				animate(ul, -index * imgWidth);
-				// ul.style.left = -index * imgWidth + "px";
-
 			}
+			index--;
+
+			animate(ul, -index * imgWidth);
+			// ul.style.left = -index * imgWidth + "px";
+
 			// console.log(index);
 			for (var i = 0; i < oLists.length; i++) {
 				oLists[i].className = "";
 			}
+		
 			oLists[index].className = "now";
+				
+			
+			// console.log(index);
+
 
 		}
 
