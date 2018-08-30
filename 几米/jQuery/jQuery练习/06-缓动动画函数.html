@@ -7,8 +7,94 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>$小几米$</title>
     <script>
-        //缓动动画函数
-        
+        //封装的缓动动画函数
+        function animate(element, obj, callback) {
+            //在执行之前先清除一次定时器
+            clearInterval(element.timeId);
+            // 设置定时器
+            element.timeId = setInterval(function () {
+                //假设所有的操作都执行完毕
+                var flag = true;
+                // 遍历对象
+                for (var attr in obj) {
+                    //把设置的属性的值赋值给target
+                    var target = obj[attr];
+                    // 获取计算后的属性的值
+                    var current = window.getComputedStyle(element)[attr];
+                    //!!!忘了这一步
+                    current = parseInt(current);
+
+                    // 设置走的步数
+                    step = (target - current) / 10;
+                    //步数向上取整和向下取整
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    current += step;
+                    //移动后的位置
+                    element.style[attr] = current + "px";
+                    if (current != target) {
+                        flag = false;
+                    }
+                }
+                if (flag) {
+                    clearInterval(element.timeId);
+                    callback && callback();
+                }
+            }, 20);
+        }
+
+
+
+        function animate(element, obj, callback) {
+            clearInterval(timeId);
+            element.timeId = setInterval(function () {
+                var flag = true;
+                for (var attr in obj) {
+                    var target = obj[attr];
+                    var current = window.getComputedStyle(element)[attr];
+                    //因为在这里计算得到的当前位置的距离可能是小数,所以要取整
+                    current = parseInt(current);
+                    var step = (target - current) / 10;
+                    //在这里要判断step的正负,用来判断向上取整还是向下取整
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    current += step;
+                    element.style[attr] = current + "px";
+                    if (current != target) {
+                        flag = false;
+                    }
+                }
+                if (flag) {
+                    clearInterval(element.timeId);
+                    callback && callback();
+                }
+            }, 20);
+        }
+
+
+
+
+
+        function animate(element, obj, callback) {
+            clearInterval(element.timeId);
+            element.timeId = serInterval(function () {
+                var flag =true ;
+                for(var attr in obj){
+                    var target = obj[attr];
+                    var current = window.getComputedStyle(element)[attr];
+                    current = parseInt(current);
+                    var step = (target -current)/10;
+                    step = step>0?Math.ceil(step):Math.floor(step);
+                    current+=step;
+                    element.style[attr] = current+"px";
+                    if (target != current) {
+                        flag = false;
+                    }
+                }
+                if (flag) {
+                    clearInterval(element.timeId);
+                    callback && callback();
+                }
+            }, 20);
+        }
     </script>
 </head>
 

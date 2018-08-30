@@ -1,101 +1,140 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    
-    #accordion {
-      width: 1200px;
-      height: 400px;
-      margin: 100px auto;
-      border: 2px solid pink;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    #accordion li {
-      width: 1200px;
-      height: 400px;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #accordion {
+            width: 1200px;
+            height: 400px;
+            margin: 100px auto;
+            border: 2px solid pink;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #accordion li {
+            width: 1200px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
 </head>
+
 <body>
 
-<div id="accordion">
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
-</div>
+    <div id="accordion">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
 
-<script src="animate.js"></script>
-<script>
-  var accordion = document.getElementById("accordion");
-  var lis = accordion.getElementsByTagName("li");
-  
-  for (var i = 0; i < lis.length; i++) {
-    //给每一个li设置背景图片
-    lis[i].style.backgroundImage = "url(images/" + (i + 1) + ".jpg)";
-    
-    //给每一个li设置left值
-    lis[i].style.left = 240 * i + "px";
-    
-    lis[i].index = i;
-    //给每个li注册鼠标经过事件
-    lis[i].onmouseover = function () {
-      
-      //对于自己前面的那些li，只显示100， 自己：显示800   后面显示：100
-      for (var i = 0; i < lis.length; i++) {
-        if (i <= this.index) {
-          animate(lis[i], {left: i * 100});
-        } else {
-          animate(lis[i], {left: i * 100 + 700});
+    <script src="./animate.js"></script>
+    <script>
+        var lis = document.querySelectorAll("li");
+        for (var i = 0; i < lis.length; i++) {
+            //先动态的添加图片
+            lis[i].style.background = "url(images/" + (i + 1) + ".jpg)";
+            //然后为每个图片设置left的值
+            lis[i].style.left = i * 240 + "px";
+
+            lis[i].index = i;
+            //设置鼠标进入事件
+            lis[i].onmouseover = function () {
+                for (var i = 0; i < lis.length; i++) {
+                    if (i <= this.index) {
+                        animate(lis[i], {
+                            left: i * 100
+                        });
+                    } else {
+                        animate(lis[i], {
+                            left: i * 100 + 700
+                        })
+                    }
+                }
+            };
+            //设置鼠标离开事件
+            lis[i].onmouseout = function () {
+                for (var i = 0; i < lis.length; i++) {
+                    animate(lis[i], {left:i*240});
+                }
+            }
         }
-      }
-    }
-    lis[i].onmouseout = function () {
-      for (var i = 0; i < lis.length; i++) {
-        animate(lis[i], {left: i * 240});
-      }
-    }
-    
-    
-    //index=0
-    //i:0   0
-    //i:1   800
-    //i:2   900
-    //i:3   1000
-    //i:4   1100
-    
-    //index=2   目的：让index为2的这个li能显示出来800
-    //i:0   0
-    //i:1   100
-    //i:2   200
-    //i:3   300
-    //i:4   400
-    
-    //index=4
-    //i:0   0
-    //i:1   100
-    //i:2   200
-    //i:3   1000
-    //i:4   1100
-    
-  }
-</script>
+    </script>
+
+
+
+
+
+    <script>
+        // var accordion = document.getElementById("accordion");
+        // var lis = accordion.getElementsByTagName("li");
+
+        // for (var i = 0; i < lis.length; i++) {
+        //   //给每一个li设置背景图片
+        //   lis[i].style.backgroundImage = "url(images/" + (i + 1) + ".jpg)";
+
+        //   //给每一个li设置left值
+        //   lis[i].style.left = 240 * i + "px";
+
+        //   lis[i].index = i;
+        //   //给每个li注册鼠标经过事件
+        //   lis[i].onmouseover = function () {
+
+        //     //对于自己前面的那些li，只显示100， 自己：显示800   后面显示：100
+        //     for (var i = 0; i < lis.length; i++) {
+        //       if (i <= this.index) {
+        //         animate(lis[i], {left: i * 100});
+        //       } else {
+        //         animate(lis[i], {left: i * 100 + 700});
+        //       }
+        //     }
+        //   }
+        //   lis[i].onmouseout = function () {
+        //     for (var i = 0; i < lis.length; i++) {
+        //       animate(lis[i], {left: i * 240});
+        //     }
+        //   }
+
+
+        //index=0
+        //i:0   0
+        //i:1   800
+        //i:2   900
+        //i:3   1000
+        //i:4   1100
+
+        //index=2   目的：让index为2的这个li能显示出来800
+        //i:0   0
+        //i:1   100
+        //i:2   200
+        //i:3   300
+        //i:4   400
+
+        //index=4
+        //i:0   0
+        //i:1   100
+        //i:2   200
+        //i:3   1000
+        //i:4   1100
+
+        // }
+    </script>
 
 
 </body>
+
 </html>
