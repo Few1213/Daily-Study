@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        .main {
+            margin: 0 auto;
+            width: 1000px;
+            margin-top: 10px;
+
+        }
+
+        .fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top" id="topPart">
+        <img src="images/top.png" alt="" />
+    </div>
+    <div class="nav" id="navBar">
+        <img src="images/nav.png" alt="" />
+    </div>
+    <div class="main" id="mainPart">
+        <img src="images/main.png" alt="" />
+    </div>
+
+
+    <script>
+        var topPart = document.querySelector(".top");
+        var navBar = document.querySelector(".nav");
+        var mainPart = document.querySelector(".main");
+        //文档的卷曲事件
+        document.onscroll = function(){
+            //获取浏览器卷曲出去的距离
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop ||document.body.scrollTop;
+            //当卷曲出去的距离大于top的高度时固定
+            if (scrollTop > topPart.offsetHeight) {
+                navBar.style.position = "fixed";
+                navBar.style.top = "0";
+                mainPart.style.marginTop =navBar.offsetHeight+10 +"px";
+            } else {
+                navBar.style.position = null;
+                navBar.style.top = "0";
+                mainPart.style.marginTop =10 +"px";
+                
+            }
+        };
+
+
+
+
+        //1. 获取被浏览器滚去的部分 scrollTop
+        //2. 当scrollTop  > topPart的高度的时候 =>navBar 固定
+        //3. 当           <                    =>navBar 取消固定
+
+        // //1. 获取元素
+        // var topPart = document.querySelector('#topPart');
+        // var  navBar = document.querySelector('#navBar');
+        // var  mainPart = document.querySelector('#mainPart');
+
+        // //2. 注册事件
+        // document.onscroll = function() {
+
+        //     //2.1 获取被卷去部分 的高度
+        //     var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+
+        //     //2.2 判断
+        //     // 被浏览器卷去的部分 > top的高度
+        //     if (scrollTop > topPart.offsetHeight ) {
+        //       // navBar 固定
+        //       navBar.style.position = 'fixed';
+        //       navBar.style.top = 0;
+        //       // 给mainPart 给一个margin-top
+        //       mainPart.style.marginTop = navBar.offsetHeight + 10  + 'px';
+
+        //     } else {
+        //       // navBar 取消固定
+        //       navBar.style.position = '';
+
+        //        // 给mainPart 取消刚才设置的 margin-top
+        //        mainPart.style.marginTop = '10px';
+
+        //     }
+
+        // }
+    </script>
+
+
+</body>
+
+</html>
