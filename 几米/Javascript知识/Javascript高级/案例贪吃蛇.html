@@ -42,7 +42,7 @@
             // 为原型添加初始化的方法(作用:在页面上显示这个食物)
             //因为食物要在地图上显示,所以需要这个地图的参数(map----就是页面上的,class=map这个div)
             Food.prototype.init = function (map) {
-                //先删除这个小食物
+                    //先删除这个小食物
                 remove();
                 // 创建div
                 var div = document.createElement("div");
@@ -299,7 +299,7 @@
 
         //开始游戏
         gm.init();
-
+        
 
 
 

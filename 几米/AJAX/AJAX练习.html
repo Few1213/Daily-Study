@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>$小几米$</title>
+    <script>
+        //AJAX 的请求封装
+        function ajax(method, url, params, done) {
+            //统一转换为大写以便判断后续
+            method = method.toUpperCase();
+
+            //将对象形式的参数转换为urlencoded格式
+            var pairs = [];
+            for (var key in params) {
+                pairs.push(key + "+" + params[key])
+            }
+
+            var querystring = pair.join("&");
+
+            var xhr = window.XMLHttpRequest? new XMLHttpRequest():new ActiveXObject("Microsoft.XMLHTTP");
+
+        
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -142,16 +142,72 @@
 
 
     11.0 正则
-    
 
 
+    补充
+
+    1 - 逻辑中断 
+    &&:从左到右,找假值,如果找到了,逻辑就中断,返回假值(返回值是布尔类型为 false 的那个值得本身)
+    ||:从左到右找真值(布尔类型为true),如果找到了,逻辑就中断,返回真值
+
+    2 - 值类型和引用类型
+    值类型在赋值的时候,是把值的本身赋值给了变量,传递的是值本身
+    引用类型在赋值的时候,赋值的是地址,传递的是地址
+
+    3 - 相等转换原则(往下匹配,一条一条匹配,匹配到了就直接运用)(重要)
+        1. NaN 与任何值不相等,包括他自己
+        2. null 与任何值不相等,除了 null 和 undefined
+        3. undefined 与任何值不相等,除了 null 和 undefined
+        4. 如果操作数两边有数字或者是布尔,都转成数字进行比较
+        5. 如果操作数两边有字符串,都转成字符串进行比较
+        6. 如果操作数两边都是复杂数据类型,那就比较地址
 
 
+    总结: NaN与任何值不相等, null 和 undefined 和任何值不相等,除了 null 和 undefined ,转换的时候, 数字 > 字符串 > 复杂数据类型
 
+    4 - 原型
+    访问原型对象有两种方式
+        1 - 构造函数的prototype
+        2 - 实例对象的__proto__
+    使用注意点:
+        不要通过实例对象来修改原型上的东西,__开头的东西,是浏览器的私有属性,不希望被修改,而且存在浏览器兼容性的问题
 
+    constructor 属性: 是原型中默认自带的属性,指向了当前的构造函数
 
+    原型链:任何对象都有__proto__属性,指向了原型对象,原型对象也是对象,原型对象也有__proto__属性,指向了原型对象的原型对象,所以说,原型对象也有自己的原型对象,这样形成的一条链式结构,就叫原型链
 
+    5 - Object.prototype 成员介绍
+    任何对象的原型链上都有 Object.prototype
+    constructor : 指向了构造函数的 Object
+    hasOwnProperty :  有自己的属性 (和 in 运算符有差别)
+        语法: 对象.hasOwnProperty("属性");
+        作用; 判断该属性是否是对象自身的(!!!对象自身),如果是则返回true,不然就返回false
 
+        in 运算符: 判断属性能否被对象访问到,不管属性是对象自身的,还是原型链上的,只要能够访问到,就返回true,如果不能访问到就返回false
+
+    isPrototypeOf: 是否是原型归属
+    propertyIsEnumerable : 属性是否枚举(遍历)
+        语法: 对象.propertyIsEnumerable("属性")
+        作用: 判断属性是否可遍历
+            1 - 判断属性是否是对象自身的
+            2 - 判断属性是否可以遍历
+            只要满足了上面两个条件才返回true
+            !!!说明Object.prototype上自带的成员默认都是不可遍历的
+            !!!手动给对象添加的属性默认是可以遍历的
+
+            给对象添加一个不可枚举(遍历)的属性 Object.defineProperty()
+            语法: Object.defineProperty(obj, prop, desc);
+            参数说明:
+            obj: 都给对象添加属性,指定是哪个对象
+            prop: 给对象添加什么属性,是个字符串
+            desc: 属性描述符,是个对象
+            例子 Object.defineProperty(obj, "gender",{
+                value: "female",    //value 给这个对象的该属性设置默认值
+                enumerable: true,   //enumerable 设置属性是否可以遍历,true 可以遍历
+                writable: false     //writable 设置属性是否可以修改,true可修改
+            })
+            
+    toLocaleString toString valueOf
 
 
 

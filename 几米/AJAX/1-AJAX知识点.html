@@ -173,15 +173,15 @@
 
             //将对象形式的参数转换为urlencoded格式
             var pairs = [];
-            for (var key in parans)(
+            for (var key in params) {
                 pairs.push(key + "+" + params[key])
-            )
+            }
 
             var querystring = pair.join("&");
 
-            var xhr = window.XMLHttprequeat ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+            var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
 
-            xhr.addEventListener("readtstatechange", function () {
+            xhr.addEventListener("readystatechange", function () {
                 if (this.readyState !== 4) return
 
                 //尝试通过 JSON格式解析响应体
@@ -209,53 +209,53 @@
 
             11 - jQuery中的AJAX
             $.ajax({
-                
-                url: "./users.php",//请求地址
-                type: "get",//请求方法 默认为get
-                dataType: "json",//服务端响应的数据类型
+
+                url: "./users.php", //请求地址
+                type: "get", //请求方法 默认为get
+                dataType: "json", //服务端响应的数据类型
                 //concentType:请求体内容类型,默认application/x-www-form-urlencoded
                 data: {
-                    id: 1//data 是传送到服务器端的数据,如果GET则通过url传递,如果是POST则通过请求体传递
+                    id: 1 //data 是传送到服务器端的数据,如果GET则通过url传递,如果是POST则通过请求体传递
                 },
                 //timeout请求超时时间
                 beforeSend: function (xhr) {
                     console.log("before send");
 
-                },//请求发起前触发
+                }, //请求发起前触发
                 success: function (data) {
                     console.log(data);
 
-                },//请求成功之后触发(响应状态码200)
+                }, //请求成功之后触发(响应状态码200)
                 error: function (err) {
                     console.log(err);
 
-                },//请求失败后触发
+                }, //请求失败后触发
                 complete: function () {
                     console.log("request completed");
 
-                }//请求完成触发,无论成功与否
+                } //请求完成触发,无论成功与否
             });
 
             $.get(地址)
             $.post(地址)
 
-             12-跨域
-             同源策略是浏览器的一种安全策略,所谓的同源是指域名,协议端口完全相同,只有 同源的地址才可以相互通过AJAX的方式请求
+            12 - 跨域
+            同源策略是浏览器的一种安全策略, 所谓的同源是指域名, 协议端口完全相同, 只有 同源的地址才可以相互通过AJAX的方式请求
 
-             同源或者不同元说的是两个地址之间的关系,不同于源地址之间的骑牛我们称之为跨域请求
+            同源或者不同元说的是两个地址之间的关系, 不同于源地址之间的骑牛我们称之为跨域请求
 
-             13-JSONP
-             JSON with Padding 是一种借助于 script 标签发送跨域请求的技巧
-             其原理就是在客户端借助 script 标签请求服务器端的一个动态网页(PHP文件),服务端的这个动态网页放回一段带有函数调用的javascript全局对象调用的脚本,将原本需要返回给客户端的数据传递进去
+            13 - JSONP
+            JSON with Padding 是一种借助于 script 标签发送跨域请求的技巧
+            其原理就是在客户端借助 script 标签请求服务器端的一个动态网页(PHP文件), 服务端的这个动态网页放回一段带有函数调用的javascript全局对象调用的脚本, 将原本需要返回给客户端的数据传递进去
 
-             以后绝大多数的情况都是采用JSONP的手段完成不同地址之间的跨域请求
+            以后绝大多数的情况都是采用JSONP的手段完成不同地址之间的跨域请求
 
-             14-CORS
-             Cross Origin Resource Share 跨域资源共享 
-             //允许远端访问
-             header("Access-Control-Allow-Origin: *");
+            14 - CORS
+            Cross Origin Resource Share 跨域资源共享
+            //允许远端访问
+            header("Access-Control-Allow-Origin: *");
 
-             这种方案无需客户端做出任何变化(客户端不用改代码),只是在被请求的服务端响应的时候添加一个Access-Control-Allow-Origin 的响应头,表示这个资源是否允许指定域的请求
+            这种方案无需客户端做出任何变化(客户端不用改代码), 只是在被请求的服务端响应的时候添加一个Access - Control - Allow - Origin 的响应头, 表示这个资源是否允许指定域的请求
     </script>
 </head>
 
