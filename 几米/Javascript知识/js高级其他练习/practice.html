@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>$小几米$</title>
+    <style>
+        #map {
+            width: 800px;
+            height: 600px;
+            background-color: #ccc;
+            margin: 50px auto;
+            position: relative;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+
+            var map = document.querySelector("#map");
+            //案例分析
+            //贪吃蛇游戏,需要地图,事物,小蛇
+    
+            //地图就是map这个div
+            //食物: 食物有宽,高,背景颜色,left,top  这些食物的属性应该在食物的构造函数上存在 通过实例化对象创造出这个食物
+            //食物要在地图上不断的显现 ,所以为了共享数据节省内存空间,让食物显现的方法应该在食物的原型对象上
+    
+            //食物的构造函数
+            function Food(options) {
+                //在这里的逻辑运算符的意思是如果真则返回真
+                options = options || {};
+                this.width = options.width || 20;
+                this.height = options.height || 20;
+                this.color = options.color || "green";
+                this.x = options.x || 20;
+                this.y = options.y || 20;
+            }
+            //在食物的原型中添加让它显现的方法
+            Food.prototype.init = function (map) {
+                //食物要在地图上显示需要创建一个div并赋予它相应的属性
+                var div = document.createElement("div");
+                div.style.width = this.width + "px";
+                div.style.height = this.height + "px";
+                div.style.backgroundColor = this.color;
+                //因为食物的横纵坐标值是随机的,
+                //在设置left和top之前必须要改变其定位属性
+                div.style.position ="absolute";
+                div.style.left = parseInt(Math.random()*(map.offsetWidth/this.width))*this.width + "px";
+                div.style.top = parseInt(Math.random()*(map.offsetHeight/this.height))*this.height + "px";
+                map.appendChild(div);
+            };
+            
+
+
+
+
+
+            
+    
+            //实例化食物  
+            //因为有可能不传参数或者修改某个属性的值 ,所以在Food的构造函数中传入一个参数对象
+            //在这里的new Food()的参数中可以传入一个对象{} 对象可以为空也可以是特定的属性的值{color:"green"}
+            var food = new Food();
+            food.init(map);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="map"></div>
+</body>
+
+</html>
