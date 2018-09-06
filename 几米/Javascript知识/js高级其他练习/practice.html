@@ -16,16 +16,16 @@
         }
     </style>
     <script>
-        window.onload=function(){
+        window.onload = function () {
 
             var map = document.querySelector("#map");
             //案例分析
             //贪吃蛇游戏,需要地图,事物,小蛇
-    
+
             //地图就是map这个div
             //食物: 食物有宽,高,背景颜色,left,top  这些食物的属性应该在食物的构造函数上存在 通过实例化对象创造出这个食物
             //食物要在地图上不断的显现 ,所以为了共享数据节省内存空间,让食物显现的方法应该在食物的原型对象上
-    
+
             //食物的构造函数
             function Food(options) {
                 //在这里的逻辑运算符的意思是如果真则返回真
@@ -37,7 +37,7 @@
                 this.y = options.y || 20;
             }
             //在食物的原型中添加让它显现的方法
-            Food.prototype.init = function (map) {
+            Food.prototype.init = function (target) {
                 //食物要在地图上显示需要创建一个div并赋予它相应的属性
                 var div = document.createElement("div");
                 div.style.width = this.width + "px";
@@ -45,24 +45,142 @@
                 div.style.backgroundColor = this.color;
                 //因为食物的横纵坐标值是随机的,
                 //在设置left和top之前必须要改变其定位属性
-                div.style.position ="absolute";
-                div.style.left = parseInt(Math.random()*(map.offsetWidth/this.width))*this.width + "px";
-                div.style.top = parseInt(Math.random()*(map.offsetHeight/this.height))*this.height + "px";
-                map.appendChild(div);
+                div.style.position = "absolute";
+                div.style.left = parseInt(Math.random() * (target.offsetWidth / this.width)) * this.width +
+                    "px";
+                div.style.top = parseInt(Math.random() * (target.offsetHeight / this.height)) * this.height +
+                    "px";
+                target.appendChild(div);
             };
-            
+
+            //小蛇身体的每个部分有宽,高,颜色,left的值,top的值,小蛇整体为多个span或者div组成的整体,可以用一个有序的数组表示
+            //小蛇的构造函数
+            function Snakes(options) {
+                //不能用this.options
+                options = options || {};
+                this.width = options.width || 20;
+                this.height = options.height || 20;
+                this.headColor = options.headColor || "red";
+                this.bodyColor = options.bodyColor || "orange";
+                this.direction = options.direction || "right";
+                this.body = options.body || [{
+                        x: 2,
+                        y: 0
+                    },
+                    {
+                        x: 1,
+                        y: 0
+                    },
+                    {
+                        x: 0,
+                        y: 0
+                    }
+                ];
+            };
+            //为小蛇的原型添加初始化的方法
+            Snakes.prototype.init = function (target) {
+                for (var i = 0; i < this.body.length; i++) {
+                    var span = document.createElement("span");
+                    span.style.width = this.width + "px";
+                    span.style.height = this.height + "px";
+                    span.style.backgroundColor = i === 0 ? this.headColor : this.bodyColor;
+                    span.style.position = "absolute";
+                    span.style.left = this.body[i].x * this.width + "px";
+                    span.style.top = this.body[i].y * this.height + "px";
+                    target.appendChild(span);
+                }
+            }
+            //现在小蛇已经在地图上显示了 ,之后需要为小蛇添加移动的方法
+            Snakes.prototype.move = function (target, food) {
+                //小蛇移动的方法其实是改变每个身体的left和top值
+                //具体的方法是复制头部的坐标 x+1 或者 y+1 删除尾部的左边
+                // 判断小蛇前进的方向
+                var newHead = {
+                    x: this.body[0].x,
+                    y: this.body[0].y
+                };
+                switch (this.direction) {
+                    case "up":
+                        newHead.y--;
+                        break;
+                    case "down":
+                        newHead.y++;
+                        break;
+                    case "left":
+                        newHead.x--;
+                        break;
+                    case "right":
+                        newHead.x++;
+                        break;
+                };
+                // console.log(food.x);
+
+                //在这里判断小蛇有没有吃到食物,又吃到食物就不删除最后的蛇尾,当小蛇头的x,y坐标 和食物的x,y坐标相同的时候
+                if (newHead.x === food.x && newHead.y === food.y) {
+                    //如果小蛇吃到食物,就删除食物这个div并重新创建一个食物的div
+                    var dv = target.querySelector("div");
+                    map.removeChild(dv)
+                    food.init(target);
+                } else {
+                    //如果没有吃到就删除最后一个部分的身体
+                    this.body.pop();
+                }
+
+                this.body.unshift(newHead);
+                var spans = map.querySelectorAll("span");
+                // console.log(spans);
+
+                for (var i = 0; i < spans.length; i++) {
+                    map.removeChild(spans[i]);
+
+                }
+
+                //这里的this
+                this.init(target);
+            }
+
+
+
+
+            //封装一个游戏函数 用来进行游戏的初始化和控制小蛇前进的方向
+            function Game(target) {
+                // 食物和小蛇的初始化
+                this.food = new Food();
+                this.snake = new Snakes();
+                this.map = target;
+
+            }
+            Game.prototype.init = function () {
+                var that = this;
+                this.food.init(this.map);
+                this.snake.init(this.map);
+                var timeId = setInterval(function () {
+                    that.snake.move(that.map, that.food);
+                    //判断游戏停止的条件,撞到墙和撞到自己
+
+                }, 500);
+                //添加游戏的键盘判断事件
+                document.addEventListener("keyup", function (e) {
+                    console.log(e.keyCode);
+
+                    switch (e.keycode) {
+                        case 37:  //左
+
+                            break;
+
+
+                    }
+                })
+            }
+
+
+            var game = new Game(map);
+            game.init(map);
 
 
 
 
 
-            
-    
-            //实例化食物  
-            //因为有可能不传参数或者修改某个属性的值 ,所以在Food的构造函数中传入一个参数对象
-            //在这里的new Food()的参数中可以传入一个对象{} 对象可以为空也可以是特定的属性的值{color:"green"}
-            var food = new Food();
-            food.init(map);
         }
     </script>
 </head>
