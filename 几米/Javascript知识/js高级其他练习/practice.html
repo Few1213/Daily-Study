@@ -14,6 +14,7 @@
             margin: 50px auto;
             position: relative;
         }
+       
     </style>
     <script>
         window.onload = function () {
@@ -33,8 +34,8 @@
                 this.width = options.width || 20;
                 this.height = options.height || 20;
                 this.color = options.color || "green";
-                this.x = options.x || 20;
-                this.y = options.y || 20;
+                this.x = options.x || 0;
+                this.y = options.y || 0;
             }
             //在食物的原型中添加让它显现的方法
             Food.prototype.init = function (target) {
@@ -46,10 +47,10 @@
                 //因为食物的横纵坐标值是随机的,
                 //在设置left和top之前必须要改变其定位属性
                 div.style.position = "absolute";
-                div.style.left = parseInt(Math.random() * (target.offsetWidth / this.width)) * this.width +
-                    "px";
-                div.style.top = parseInt(Math.random() * (target.offsetHeight / this.height)) * this.height +
-                    "px";
+                this.x = parseInt(Math.random() * (target.offsetWidth / this.width));
+                this.y = parseInt(Math.random() * (target.offsetHeight / this.height));
+                div.style.left = this.x * this.width + "px";
+                div.style.top = this.y * this.height + "px";
                 target.appendChild(div);
             };
 
@@ -113,13 +114,17 @@
                         newHead.x++;
                         break;
                 };
-                // console.log(food.x);
+                // console.log(newHead.x,newHead.y);
+                // console.log(food.x, food.y);
+
 
                 //在这里判断小蛇有没有吃到食物,又吃到食物就不删除最后的蛇尾,当小蛇头的x,y坐标 和食物的x,y坐标相同的时候
                 if (newHead.x === food.x && newHead.y === food.y) {
+                    // console.log("撞到了");
+
                     //如果小蛇吃到食物,就删除食物这个div并重新创建一个食物的div
                     var dv = target.querySelector("div");
-                    map.removeChild(dv)
+                    target.removeChild(dv)
                     food.init(target);
                 } else {
                     //如果没有吃到就删除最后一个部分的身体
@@ -157,19 +162,57 @@
                 var timeId = setInterval(function () {
                     that.snake.move(that.map, that.food);
                     //判断游戏停止的条件,撞到墙和撞到自己
+                    var head = that.snake.body[0];
+                    if (head.x < 0 ||head.y <0 ||head.x > map.offsetWidth/that.snake.width - 1 ||head.y >map.offsetHeight/that.snake.height -1  ) {
+                        alert("你这个辣鸡!");
+                        clearInterval(timeId);
+                    }
+                    //小蛇撞到自己的时候游戏结束
+                    
+                    for (var i = 4; i < that.snake.body.length; i++) {
+                        if (head.x ===  that.snake.body[i].x && head.y === that.snake.body[i].y) {
+                            alert("你这个辣鸡!");
+                            clearInterval(timeId);
+                        }
+                    }
 
-                }, 500);
+
+                }, 200);
                 //添加游戏的键盘判断事件
                 document.addEventListener("keyup", function (e) {
-                    console.log(e.keyCode);
 
-                    switch (e.keycode) {
-                        case 37:  //左
+                    switch (e.keyCode) {
+                        case 37: //左
+                            //判断不能返回掉头
 
+                            if (that.snake.direction === "right") {
+                                return
+                            }
+                            that.snake.direction = "left";
                             break;
-
-
+                        case 38: //上
+                            //判断不能返回掉头
+                            if (that.snake.direction === "down") {
+                                return
+                            }
+                            that.snake.direction = "up";
+                            break;
+                        case 39: //右
+                            //判断不能返回掉头
+                            if (that.snake.direction === "left") {
+                                return
+                            }
+                            that.snake.direction = "right";
+                            break;
+                        case 40: //下
+                            //判断不能返回掉头
+                            if (that.snake.direction === "up") {
+                                return
+                            }
+                            that.snake.direction = "down";
+                            break;
                     }
+
                 })
             }
 
