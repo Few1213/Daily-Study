@@ -6,6 +6,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>$小几米$</title>
+    <style>
+        CSS3的新增属性
+        1 - 边框 
+        border-radius 圆角:5px 4px 3px 2px; 四个半径值分别是左上角、右上角、右下角和左下角，顺时针 
+        box-shadow 边框阴影 box-shadow: 10px 10px 5px #888888;
+        border-image 边框图片 border-image:url(border.png) 30 30 round;
+
+        2- 背景 
+        background-size 背景图片尺寸 background-size:63px 100px; background-size:40% 100%;
+        background-origin 背景图片的定位区域 背景图片可以放置于 content-box、padding-box 或 border-box 区域。
+
+        3- 文本
+        text-shadow 文本阴影 水平阴影、垂直阴影、模糊距离，以及阴影的颜色
+        word-wrap   自动换行
+
+        4- 2D转换
+        通过 CSS3 转换，我们能够对元素进行移动、缩放、转动、拉长或拉伸。
+        translate() 元素从当前位置移动,根据给定的x坐标和y坐标 transform: translate(50px,100px);
+        rotate() 元素顺时针旋转给定的角度,可以是负值transform: rotate(30deg);
+        scale() 元素的尺寸增加或者减少,根据给定的宽度和高度 transform: scale(2,4) 值 scale(2,4) 把宽度转换为原始尺寸的 2 倍，把高度转换为原始高度的 4 倍。
+        skew() 元素翻转给定的角度,根据水平线和垂直线 ransform: skew(30deg,20deg); 值 skew(30deg,20deg) 围绕 X 轴把元素翻转 30 度，围绕 Y 轴翻转 20 度。
+        matrix() 把所有的2d转换方式组合在一起 需要6个参数transform:matrix(0.866,0.5,-0.5,0.866,0,0);
+        div{
+        transform: rotate(30deg);
+        -ms-transform: rotate(30deg);		/* IE 9 */
+        -webkit-transform: rotate(30deg);	/* Safari and Chrome */
+        -o-transform: rotate(30deg);		/* Opera */
+        -moz-transform: rotate(30deg);		/* Firefox */
+        }
+        
+        5 - 3D 转换
+        rotateX() 元素围绕其 X 轴以给定的度数进行旋转 transform: rotateX(120deg);
+        rotateY() 元素围绕其 Y 轴以给定的度数进行旋转
+        transform: rotateY(130deg);
+        
+        6 - CSS3过渡
+        transition:简写属性,用于在同一个属性中设置四个过渡属性
+        transition-property: 固定用于过渡的CSS属性名称
+        transition-duration: 定义过渡效果花费时间,默认是0
+        transition-timing-function: 规定过渡效果的事件曲线 默认是ease
+        transition-delay: 规定过渡效果何时开始 默认是0 
+        
+        ransition-property: width;
+        transition-duration: 1s;
+        transition-timing-function: linear;
+        transition-delay: 2s;
+
+        上面的可以简写为 transition: width 1s linear 2s;
+
+
+
+        7 - CSS3 动画 @keyframes规则
+        @keyframes 规定动画
+        animation 所有动画的属性简写 除了animation-play-state
+        animation-name: myfirst; 规定@keyframes 的名称
+        animation-duration: 5s; 规定一个动画完成一个周期所花费的秒或者是毫秒,默认是0
+        animation-timing-function: linear;规定动画的速度曲线 默认是ease
+        animation-delay: 2s; 规定动画何时开始默认是0
+        animation-iteration-count: infinite; 对顶动画被播放的此时 默认是1
+        animation-direction: alternate; 规定动画是否在下一周期逆向的播放,默认是normal
+        animation-play-state: running;规定动画是否正在运行或者是暂停 默认是running
+
+        以上可以简写为 animation: myfirst 5s linear 2s infinite alternate;
+
+
+
+
+
+
+        @keyframes
+        animation: myfirst 5s;
+        @keyframes myfirst
+        {
+        from {background: red;}
+        to {background: yellow;}
+        }   
+
+        另一种写法
+        {
+        0%   {background: red;}
+        25%  {background: yellow;}
+        50%  {background: blue;}
+        100% {background: green;}
+        }
+
+        8 - 多列
+        column- 列数
+        column-gap 间隔
+        column-rule 属性设置列之间的宽度、样式和颜色规则。 column-rule:3px outset #ff0000;
+    
+    </style>
 
 
 </head>
@@ -99,6 +190,9 @@
     chrome:webkit firefox:moz ie:ms opera:o
     2.cancelFullScreen() 退出全屏显示
     3.fullScreenElement 是否全屏状态
+
+    
+
 
 
 
