@@ -48,15 +48,21 @@
         transition-timing-function: 规定过渡效果的事件曲线 默认是ease
         transition-delay: 规定过渡效果何时开始 默认是0 
         
-        ransition-property: width;
+        transition-property: width;
         transition-duration: 1s;
         transition-timing-function: linear;
         transition-delay: 2s;
 
         上面的可以简写为 transition: width 1s linear 2s;
 
+        transition-timing-function ： ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(<number>, <number>, <number>, <number>) [, ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(<number>, <number>, <number>, <number>)]*
 
-
+        ease:默认值,元素样式从初始状态过渡大终止状态时候的速度由快到慢,逐渐变慢
+        linear:元素样式从初始状态到终止状态速度是恒速
+        ease-in: 元素样式从初始状态过渡到终止状态时,速度越来越快,呈一种加速状态,常称这种效果为渐显
+        ease-out:元素样式从初始状态过渡到终止状态时,速度越来越慢,是一种减速状态,这种效果称之为渐隐效果
+        easy-in-out:元素样式从初始状态到终止状态时,先加速再减速,常称这种效果为渐显渐隐效果
+        
         7 - CSS3 动画 @keyframes规则
         @keyframes 规定动画
         animation 所有动画的属性简写 除了animation-play-state
@@ -148,8 +154,8 @@
     pattern 正则表达式验证 
         *代表任意 ?代表0个或者1个 +代表1个或者多个
 
-    <input type="file" multiple>
-    multiple 可以选择多个文件,在email中允许输入多个邮箱地址,中间要以逗号分隔  
+        <input type="file" multiple>
+        multiple 可以选择多个文件,在email中允许输入多个邮箱地址,中间要以逗号分隔  
 
 
     4-表单新增元素
