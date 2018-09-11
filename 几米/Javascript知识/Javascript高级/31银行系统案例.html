@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>$小几米$</title>
+    <script>
+        function kaihu(name,num){
+            var money = 0;
+            return {
+                saveMoney:function(name,num){
+                    money+=num;
+                    console.log("尊敬的"+name+",您当前存入"+num+",您的余额为"+money);
+                },
+                getMoney:function(name,num){
+                    money-=num;
+                    console.log("尊敬的"+name+",您当前取出"+num+",您的余额为"+money);
+                    
+                }
+            }
+        }
+        var xiaoming = kaihu();
+        xiaoming.saveMoney("小明",12000);
+        xiaoming.getMoney("小明",2000);
+    </script>
+</head>
+<body>
+        
+</body>
+</html>

@@ -82,8 +82,48 @@
     
     1.通过原型实现继承 ,改变原型的指向,属性在初始化的时候就已经固定了,如果是多个对象实例化 ,name每个实例化对象的属性的值在初始化的时候都是一样的
     2.借用构造函数继承,不能继承方法
+    function Person(name, age, gender){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+
+
+        function Chinese(name, age, gender, skin){
+            // 借用Person构造函数
+            // this  ==> Chinese构造函数的实例
+            Person.call(this, name, age, gender);
+
+            this.skin = skin;
+        }
+
+        /*function Chinese(name, age, gender, skin){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+
+            this.skin = skin;
+        }*/
+
+        var xiaoming = new Chinese("小明", 20, "male", "yellow");
+        console.log(xiaoming);
+
+
+        function African(name, age, gender, skin, teeth){
+            Person.apply(this, [name, age, gender]);
+
+            this.skin = skin;
+            this.teeth = "白";
+        }
+
+        var boerte = new African("博尔特", 29, "male", "黑");
+        console.log(boerte);
+
+
     3.组合继承,可以解决属性和方法继承的问题
     4.拷贝继承,就是把一个对象中的原型中的所有的属性和方法复制给另一个对象
+
+
 
 
     4.0 函数中的this的指向
@@ -117,6 +157,39 @@
     函数作为参数使用的时候,这个函数可以是匿名函数也可以是命名函数
 
     7.0 作用域及作用域链及预解析
+    预解析:预先解析
+    预解析的规则;
+    优先提升函数,再是提升变量 
+    如果遇到重名的变量声明,就会被忽略 
+
+    作用域: 变量声明后,能够在哪个范围内起作用
+
+    在编程语言里
+    1 块级作用域: JS不支持块级作用域
+    2 词法作用域
+
+
+    在JS中 ,只有函数才能形成作用域,座椅此法作用域也叫函数作用域
+    全局变量: 在函数外部声明的额变量就是全局变量,在任意位置都能够访问到
+    局部变量: 在函数内部声明的变量就是局部变量,只能在函数中使用
+    自由变量: 对于一个函数来说,如果这个变量不是在这个函数内部声明的,但是却使用了这个变量,对于这个函数来说这个变量就是自由变量
+
+    !!!函数的作用域在函数定义的时候就已经确定下来了,也就是说,函数作用域和函数在哪调用是没有关系的,以及和函数如何被调用也是没有关系的
+        也就是说: 函数作用域的查找是如何查找到的
+        1  如果变量是在函数内部声明的,直接在当前作用域里就找到了
+        2  如果变量是自由变量,去创建这个函数的作用域中去找
+
+        this  在函数被调用的时候才确定,函数是如何调用的 
+
+    !!!作用域链:函数能够形成作用域,如果函数被嵌套在另一个函数中,嵌套的函数也有自己的作用域,从这个函数的作用域往外形成的一条链,这个链就叫作用域链
+
+
+    作用域链 :  变量搜索规则
+    1 - 首先在当前的作用域内查找手否有声明该变量,如果有,直接返回
+    2 - 如果没有 向上一级作用域查找,如果有直接返回
+    3 - 如果没有,沿着作用域链向上查找,直到全局作用域,如果有直接返回
+    4 - 如果还没有,就直接报错了
+
 
     8.0 闭包
     函数中有另一个函数,或者是行数中有另一个对象,里面的函数或者是对象都可以使用外面函数中定义的变量或者数据,此时形成闭包
@@ -131,6 +204,44 @@
     闭包模式:函数模式闭包,对象模式闭包
     闭包的作用:缓存数据,延长作用域链,同时也是缺点,函数中的变量不能及时的释放
 
+    !!!!闭包补充
+        闭包的概念:(closure)
+        闭包是函数和声明该函数的词法环境的组合
+        函数: 内部函数
+        声明该函数: 外部函数
+        词法环境: 作用域(作用域链)
+        组合: 以上形成的综合体
+
+        闭包形成的添加:
+        有两个函数,是嵌套关系,内部函数还访问了外部函数声明的变量
+        闭包的基本类型
+        function outside(){
+            var num = 1;
+            function inner(){
+                console.log(num);
+            }
+            return inner;
+        }
+        var ret = outside();
+        ret();
+
+        闭包的作用:
+        1 - 私有变量,保护数据安全
+        2 - 持久化维持数据
+        (函数在调用的时候,会在内存里面去开辟一块空间来执行函数内部的代码,当函数调用结束的时候,函数开辟的空间会被销毁掉)闭包占用的内存是释放不了的
+
+        内存泄露:闭包占用的内存是不会被释放的,造成内存泄露的问题,一块内存空间被占用了,一直得不到回收,别的对象就使用不了这块空间
+
+        解决闭包有两个算法:
+            引用计数算法
+            js会自动分配内存,存储对象
+            把对象的地址赋值给变量,这个对象就被引用了,这个对象的引用计数为1(此时不会被辣鸡回收掉)
+            存在的问题:循环引用
+
+            标记-清除
+            从window上开始找,不能从window这个根对象上找不到的对象
+
+
 
     9.0 沙箱
     沙箱就是一个环境也可以叫黑盒,在这个环境中模拟外面真实的开发环境,完成需求,效果和外面真实的开发环境是一样的
@@ -139,6 +250,17 @@
 
     函数中调用函数自己,递归一定要有结束的条件,不然就是死循环
     递归一般应用在遍历上递归不要轻易使用,效率很低
+    递归主要使用了划归的思想,把一个复杂问题转换成简单问题
+    把未知问题转换成已知问题 
+    !!!!一定要有结束条件
+
+    解决递归效率低下的问题   缓存
+    关于缓存的思路
+    首先去缓存容器中查找有没有对应的数据,如果有直接取出来使用
+    如果没有,先去计算结果,把结果储存到缓存中 
+
+    递归的作用: 计算大量需要计算的问题
+    缓存的作用: 储存数据
 
 
     11.0 正则
@@ -339,11 +461,69 @@
         bind会创建并返回一个新的函数 新的函数和借用的函数是一模一样的,但是新函数内的this指向被固定为bind参数的thisArg
         var fn2 = fn.bind(thisArg)
         创建并返回函数,并不会调用函数
-
-
             
+        !!!!原型链补充
+        函数fn的原型链:任何函数都是 new Function 的实例对象,Function.prototype 是函数的原型对象
+        Function.prototype 的原型介绍
+        1. arguements :是原型上的属性,函数的实参列表,这个属性已经被废弃了,通过函数内部的arguements 来获取
+        2. caller: 获取函数是在哪个函数内被调用的,废弃
+        3. constructor: 指向了构造函数Function 
+        4. length: 函数的形参的个数
+        5. name: 函数的名字,不可以通过这个属性修改函数的名字
+        6. tostring 转字符串
+            
+        !!!封装获取数据类型的方法
+        function getType(obj){
+            return Object.prototype.toString.call(obj).slice(8,-1);
+        }
+        
+        原型链: !!!!重要
+        绘制原型三角关系
+        1   构造函数: Fn
+            实例对象: fn
+            原型对象: Fn.prototype
+
+        2   Fn是函数,是内部new Function创建出来的,Fn是Function的实例对象,在这里可以把Fn这个构造函数当成是实例对象 Fn = new Function();
+            构造函数: Function
+            实例对象: Fn
+            原型对象: Function.prototype
+        
+        3   构造函数Object  
+            构造函数: Object
+            实例对象: obj
+            原型对象: Object.prototype
+
+        4   把Object 当做是实例对象,内部是由Function创建出来的 Object = new Function();
+            构造函数: Function
+            实例对象: Object
+            原型对象: Function.prototype
+
+        5   Function 任何函数都是Function创建出来的,自己创建了自己 Function = new Function();
+            构造函数: Function
+            实例对象: Function
+            原型对象: Function.prototype
+
+        小结:
+        1 - 只要是函数 就有prototype 属性
+            只要是对象,就有__proto__属性
+            函数即是函数也是对象,所以函数既有prototype属性也有__proto__属性
+        2 - 函数的原型链上都有Function.prototype
+        3 - Function.prototype 的原型Object.prototytpe
+        4 - 对象的原型链上都有Object.prototype
+         // 判断： 构造函数Object.prototype 是否在 实例对象Object 的原型链上
+         console.log(Object instanceof Object); // true
+ 
+        console.log(Object instanceof Function); // true
+
+        console.log(Function instanceof Function); // true
+
+         console.log(Function instanceof Object); // true
 
 
+         // 
+        console.log(Array.isPrototypeOf([])); // false    
+
+        
 
 
 
