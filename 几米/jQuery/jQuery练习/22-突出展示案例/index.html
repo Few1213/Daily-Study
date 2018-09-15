@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    body {
+        background: #000;
+    }
+
+    .wrap {
+        margin: 100px auto 0;
+        width: 630px;
+        height: 394px;
+        padding: 10px 0 0 10px;
+        background: #000;
+        overflow: hidden;
+        border: 1px solid #fff;
+    }
+
+    .wrap li {
+        float: left;
+        margin: 0 10px 10px 0;
+    }
+
+    .wrap img {
+        display: block;
+        border: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul>
+            <li><a href="#"><img src="images/01.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/02.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/03.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/04.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/05.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/06.jpg" alt=""/></a></li>
+        </ul>
+    </div>
+
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+        
+        $(function(){
+            // 思路：
+            // 1. 获取li元素
+            // 2. 给li注册 mouseenter
+            // 3. 让当前的li的opacity =1，   让其他的li的opacity  变成 0.4
+            // 4. 获取.wrap
+            // 5. 给wrap 注册mouseleave
+            // 6. 让所有的li的opacity = 1；
+
+            // 1.
+            var $lis = $(".wrap li");
+
+            // 2.
+            $lis.mouseenter(function(){
+                // 3.
+                $(this).css("opacity", 1);
+                $(this).siblings().css("opacity", .4);
+            })
+
+
+            // 4.
+            $(".wrap").mouseleave(function(){
+                // $lis.css("opacity", 1);
+
+                // find():  找当前元素的后代元素,可以传参，参数来筛选出指定的后代
+                // console.log($(this).find("li"));
+
+                $(this).find("li").css("opacity", 1);
+            })
+        })
+
+        // 小结：
+        // 筛选选择器：
+        //  1. children() : 找子代
+        //  2. find():     找后代
+        //  3. siblings() : 找兄弟，不包含自己
+        
+    </script>
+</body>
+
+</html>

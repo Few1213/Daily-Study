@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="../jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+    x = 0;
+    y = 0;
+    $(document).ready(function() {
+        // mouseover事件： 该事件不仅能在当前元素上触发，还可以在子元素上触发，原因是事件冒泡
+        // mouseout
+        // 以上是一对事件
+        // 
+        // 
+
+
+        // mousenter事件： 只能在当前元素上触发
+        // mouseleave  鼠标离开
+
+
+        // 建议： 注册鼠标移入事件用mouseenter，因为mouseover事件会频繁触发，会影响网页性能
+
+        // 注册鼠标移入移除推荐使用mouseenter、mouseleave
+
+
+        $("div.over").mouseover(function() {
+            $(".over span").text(x += 1);
+        });
+        $("div.enter").mouseenter(function() {
+            $(".enter span").text(y += 1);
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div class="over" style="background-color:lightgray;padding:20px;width:40%;float:left">
+        <h2 style="background-color:white;">被触发的 Mouseover 事件：<span></span></h2>
+    </div>
+
+    <div class="enter" style="background-color:lightgray;padding:20px;width:40%;float:right">
+        <h2 style="background-color:white;">被触发的 Mouseenter 事件：<span></span></h2>
+    </div>
+</body>
+
+</html>

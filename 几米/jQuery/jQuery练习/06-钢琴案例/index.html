@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .nav {
+        width: 700px;
+        height: 60px;
+        background-color: black;
+        margin: 0 auto;
+    }
+
+    .maps {
+        width: 700px;
+        text-align: center;
+    }
+
+    .maps button {
+        display: block;
+        padding: 5px 10px;
+        margin: 10px auto;
+    }
+
+    .maps img {
+        width: 80%;
+    }
+
+    .nav li {
+        width: 100px;
+        height: 60px;
+        /*border: 1px solid yellow;*/
+        float: left;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav a {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font-size: 24px;
+        color: blue;
+        text-align: center;
+        line-height: 60px;
+        text-decoration: none;
+        z-index: 2;
+    }
+
+    .nav span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: yellow;
+        top: 60px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li>
+                <a href="javascript:void(0);">导航1</a>
+                <span></span>
+            </li>
+            <li><a href="javascript:void(0);">导航2</a><span></span></li>
+            <li><a href="javascript:void(0);">导航3</a><span></span></li>
+            <li><a href="javascript:void(0);">导航4</a><span></span></li>
+            <li><a href="javascript:void(0);">导航5</a><span></span></li>
+            <li><a href="javascript:void(0);">导航6</a><span></span></li>
+            <li><a href="javascript:void(0);">导航7</a><span></span></li>
+        </ul>
+        <div class="maps">
+            <button class="change">切换图片</button>
+            <img src="1.jpg" alt="">
+        </div>
+        <div class="mp3">
+            <audio src="mp3/1.mp3"></audio>
+            <audio src="mp3/2.mp3"></audio>
+            <audio src="mp3/3.mp3"></audio>
+            <audio src="mp3/4.mp3"></audio>
+            <audio src="mp3/5.mp3"></audio>
+            <audio src="mp3/6.mp3"></audio>
+            <audio src="mp3/7.mp3"></audio>
+        </div>
+    </div>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            var $mapImg = $(".maps img");
+            var index = 0;
+            var imgArr = ["1.jpg", "2.jpg", "3.jpg"];
+
+            // 1. 切换图片
+            $(".change").click(function(){
+                index++;
+                if(index === imgArr.length){
+                    index = 0;
+                }
+
+                $mapImg.attr("src", imgArr[index]);
+            })
+
+
+            // 2. 
+            //  2.1 获取所有的导航li
+            //  2.2 给li 注册 mouseenter
+            //  2.3 让当前li下的span做animate，top = 0
+            //  2.4 获取当前li的下标
+            //  2.5 找到对应的audio， 进行播放
+
+            // 2.1
+            var $lis = $(".nav li");
+            var $audios = $(".mp3 audio");
+
+            // 2.2
+            $lis.mouseenter(function(){
+                // 2.3
+                $(this).children("span").stop().animate({top: 0})
+
+                // 2.4
+                var idx = $(this).index();
+
+                // 2.5
+                // play() ==> 是H5提供的，由于jQuery没有对该方法进行封装，所以只能是dom对象调用的，jq对象无法调用该方法。播放资源文件
+                // load() ==> 是H5提供的，由于jQuery没有对该方法进行封装，所以只能是dom对象调用的，jq对象无法调用该方法。  重新加载该资源文件
+
+                // 先进行重新加载，在去播放。
+                $audios[idx].load();
+                $audios[idx].play();
+            })
+
+
+            // 3. 
+            //   3.1 给li注册mouseleave
+            //   3.2 让当前li下的span做animate，top = 60
+
+            $lis.mouseleave(function(){
+                $(this).children("span").stop().animate({top: 60})
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>

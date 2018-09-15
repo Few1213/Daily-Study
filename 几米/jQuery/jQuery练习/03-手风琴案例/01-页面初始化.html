@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        list-style: none;
+        width: 1300px;
+    }
+
+    #box {
+        width: 1200px;
+        height: 400px;
+        border: 2px solid red;
+        margin: 100px auto;
+    }
+
+    #box li {
+        width: 240px;
+        height: 400px;
+        /*border: 1px solid #000;*/
+        float: left;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            // 1. 给li设置背景图片
+
+            var $lis = $("#box li");
+
+            // 这样设置的时候，所有的li都是同一张背景图片
+            // $lis.css("backgroundImage", "url(./images/.jpg)");
+
+
+            // 需要给每个li设置上不同的背景图片，遍历即可
+            for(var i = 0; i < $lis.length; i++){
+                $lis.eq(i).css("backgroundImage", "url(./images/"+ (i+1) +".jpg)");
+            }
+
+
+            // 2. 给li注册mouseenter
+            //    让当前的li做animate，width = 800
+            //    其他的li做animate， width = 100
+
+            $lis.mouseenter(function(){
+                $(this).stop().animate({width: 800}).siblings().stop().animate({width: 100});
+            });
+
+
+            // 3. 给父盒子注册mouseleave事件，
+            //      让所有的li做animate，width = 240
+            $("#box").mouseleave(function(){
+                $lis.stop().animate({width: 240});
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>
