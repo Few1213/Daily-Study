@@ -48,7 +48,21 @@
     <script src="../../jquery-1.12.1.js"></script>
     <script>
         $(function () {
-            
+            var $lis = $("li");
+            for (var i = 0; i < $lis.length; i++) {
+                $lis.eq(i).css("backgroundImage","url(./images/"+(i+1)+".jpg)")
+                .mouseenter(function () { 
+                    $(this).stop().animate({width:800}).siblings().stop().animate({width:100});
+                 })
+                .mouseout(function () { 
+                    $(this).stop().animate({width:240}).siblings().stop().animate({width:240});
+                });
+            }
+
+
+
+
+
           });
     
     
