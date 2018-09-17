@@ -95,8 +95,21 @@
         </div>
     </div>
 
-    <script src="../jquery-1.12.4.js"></script>
+    <script src="../../jquery-1.12.1.js"></script>
     <script>
+        $(".tab-item").mouseenter(function () {
+            var idx = $(this).index();
+            // console.log(idx);
+            
+            $(this).addClass("active").siblings().removeClass("active");
+            $(".main").eq(idx).addClass("selected").siblings().removeClass("selected");
+          });
+    
+    
+    
+    
+    </script>
+    <!-- <script>
         $(function(){
             // 思路：
             // 1. 获取 .tab-item
@@ -123,7 +136,7 @@
                 $(".main").eq(idx).addClass("selected").siblings().removeClass("selected");
             })
         })
-    </script>
+    </script> -->
 </body>
 
 </html>

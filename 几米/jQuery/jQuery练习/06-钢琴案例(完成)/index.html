@@ -5,62 +5,62 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-    * {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
 
-    .nav {
-        width: 700px;
-        height: 60px;
-        background-color: black;
-        margin: 0 auto;
-    }
+        .nav {
+            width: 700px;
+            height: 60px;
+            background-color: black;
+            margin: 0 auto;
+        }
 
-    .maps {
-        width: 700px;
-        text-align: center;
-    }
+        .maps {
+            width: 700px;
+            text-align: center;
+        }
 
-    .maps button {
-        display: block;
-        padding: 5px 10px;
-        margin: 10px auto;
-    }
+        .maps button {
+            display: block;
+            padding: 5px 10px;
+            margin: 10px auto;
+        }
 
-    .maps img {
-        width: 80%;
-    }
+        .maps img {
+            width: 80%;
+        }
 
-    .nav li {
-        width: 100px;
-        height: 60px;
-        /*border: 1px solid yellow;*/
-        float: left;
-        position: relative;
-        overflow: hidden;
-    }
+        .nav li {
+            width: 100px;
+            height: 60px;
+            /*border: 1px solid yellow;*/
+            float: left;
+            position: relative;
+            overflow: hidden;
+        }
 
-    .nav a {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        font-size: 24px;
-        color: blue;
-        text-align: center;
-        line-height: 60px;
-        text-decoration: none;
-        z-index: 2;
-    }
+        .nav a {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            font-size: 24px;
+            color: blue;
+            text-align: center;
+            line-height: 60px;
+            text-decoration: none;
+            z-index: 2;
+        }
 
-    .nav span {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: yellow;
-        top: 60px;
-    }
+        .nav span {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: yellow;
+            top: 60px;
+        }
     </style>
 </head>
 
@@ -92,7 +92,33 @@
             <audio src="mp3/7.mp3"></audio>
         </div>
     </div>
-    <script src="../jquery-1.12.4.js"></script>
+    <script src="../../jquery-1.12.1.js"></script>
+    <script>
+        $(function () {
+            var arr= ["1.jpg","2.jpg","3.jpg"];
+            var index = 0;
+            //切换图片
+            $(".change").click(function () {
+                index++;
+                if (index === arr.length) {
+                    index=0;
+                };
+                $(".maps img").attr("src",arr[index]);
+            });
+            
+            $(".nav li").mouseenter(function () {
+                var idx = $(this).index();
+            
+                $(this).children("span").stop().animate({top:0}).end().siblings().children("span").stop().animate({top:60});
+                $(".map3 audio").eq(idx).load().play();
+
+              }).mouseout(function () {
+                $(this).children("span").stop().animate({top:60});
+              });
+
+        });
+    </script>
+    <!-- <script src="../jquery-1.12.4.js"></script>
     <script>
         $(function(){
             var $mapImg = $(".maps img");
@@ -148,7 +174,7 @@
             })
 
 
-        })
+        }) -->
     </script>
 </body>
 
