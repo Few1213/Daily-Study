@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body {
+        height: 8000px;
+    }
+
+    a {
+        color: #FFF;
+    }
+
+    .actGotop {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        width: 150px;
+        height: 195px;
+        display: none;
+        z-index: 100;
+    }
+
+    .actGotop a,
+    .actGotop a:link {
+        width: 150px;
+        height: 195px;
+        display: inline-block;
+        background: url(images/gotop.png) no-repeat;
+        outline: none;
+    }
+
+    .actGotop a:hover {
+        width: 150px;
+        height: 195px;
+        background: url(images/gotop.gif) no-repeat;
+        outline: none;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 返回顶部小火箭 -->
+    <div class="actGotop"><a href="javascript:;" title="Top"></a></div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            // 1. 控制小火箭的显示与隐藏
+            // 思路：
+            //  1. 监听页面滚动事件
+            //  2. 获取到页面垂直方向的卷曲距离  scrollTop
+            //  3. scrollTop  >= 1000  ,, 小火箭显示
+            //      scrollTop  < 1000  ,, 小火箭隐藏
+            $(window).scroll(function () {
+                var $scrollTop = $(window).scrollTop();
+                if ($scrollTop >= 1000) {
+                    $(".actGotop").fadeIn(1000);
+                } else {
+                    $(".actGotop").fadeOut(1000);                   
+                }
+              });
+              $(".actGotop").click(function () {
+                  $("html,body").animate({scrollTop:0},200);
+                });
+
+
+
+
+
+
+
+
+
+
+
+
+            // var $Gotop = $(".actGotop");
+
+            // $(window).scroll(function(){
+            //     var scrollTop = $(window).scrollTop();
+
+            //     if(scrollTop >= 1000){
+            //         $Gotop.fadeIn(1000);
+            //     }else{
+            //         $Gotop.fadeOut(1000);
+            //     }
+            // })
+
+            // // 2. 点击小火箭返回顶部(缓慢的)
+            // $Gotop.click(function(){
+            //     // 瞬间
+            //     // $(window).scrollTop(0);
+
+            //     // 配合animate去使用,没效果
+            //     // $(window).animate({
+            //     //     scrollTop: 0
+            //     // });
+
+
+            //     // $(window).scrollTop(0);
+            //     // 原生js： window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+
+            //     // window.pageYOffset 是只读的，修改没反应
+
+            //     // 修改 document.documentElement 的 scrollTop  或者是 document.body 的 scrollTop
+
+
+            //     // document.documentElement  ==> html
+            //     // document.body             ==> body
+
+            //     /*$(document.documentElement, document.body).animate({
+            //         scrollTop: 0
+            //     }, 1000)*/
+
+            //     // 上面的简写形式
+            //     // 两个都写上，为了更好的兼容更多浏览器
+            //     $("html, body").animate({
+            //         scrollTop: 0
+            //     }, 200)
+            // })
+        })
+
+    </script>
+</body>
+
+</html>

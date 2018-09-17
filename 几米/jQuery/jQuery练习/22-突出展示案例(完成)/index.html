@@ -54,7 +54,13 @@
     <script src="../../jquery-1.12.1.js"></script>
     <script>
         $(function () {
-            
+            var $lis = $("ul li");
+            $lis.mouseenter(function () {
+                $(this).css("opacity",1).siblings().css("opacity",.6);
+              });
+            $(".wrap").mouseout(function () {
+                $lis.css("opacity",1);
+              });
 
 
 

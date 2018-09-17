@@ -41,14 +41,64 @@
     </div>
     <script src="../../jquery-1.12.1.js"></script>
     <script>
-    $(function () {
-        
-      });
-    
-    
-    
-    
-    
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() >= $("#topPart").height()) {
+                    $("#navBar").addClass("fixed");
+                    $("#mainPart").css("marginTop",10+$("#navBar").height());
+                }else{
+                    $("#navBar").removeClass("fixed");
+                    $("#mainPart").css("marginTop",10);
+                }
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // var $topPart = $("#topPart");
+            // var $navBar = $("#navBar");
+            // var $mainPart = $("#mainPart");
+
+            // // 1. 
+            // $(window).scroll(function () {
+            //     // 2.
+            //     // var scrollTop = $(window).scrollTop();
+
+            //     // 3.
+            //     if ($(this).scrollTop() >= $("#topPart").height()) {
+            //         console.log(1);
+
+            //         $navBar.addClass("fixed");
+
+            //         $mainPart.css("marginTop", 10 + $navBar.height());
+            //     } else {
+            //         $navBar.removeClass("fixed");
+
+            //         $mainPart.css("marginTop", 10);
+            //     }
+            // })
+        });
     </script>
 
     <!-- <script>
