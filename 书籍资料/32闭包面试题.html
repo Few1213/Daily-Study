@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>$小几米$</title>
+    <script>
+        // 闭包面试题,给十个按钮设置点击事件,打印出各自的下标,使用闭包
+        window.onload=function(){
+            var btns = document.querySelectorAll("button");
+            for (var i = 0; i < btns.length; i++) {
+                //  btns[i].onclick = function (){
+                //      console.log(i);
+                //  }
+                // 第一种
+                // (function (j) {
+                //     btns[j].onclick = function () {
+                //         console.log(j);             
+                //       }
+                //   })(i);
+
+                // 第二种
+                btns[i].onclick = function (j) {
+                    return function () {
+                        console.log(j);
+                        
+                      }
+                  }(i)
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+    <button>按钮6</button>
+    <button>按钮7</button>
+    <button>按钮8</button>
+    <button>按钮9</button>
+    <button>按钮10</button>    
+</body>
+</html>
