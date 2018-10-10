@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>$小几米$</title>
+    <script>
+        
+    </script>
+</head>
+<body>
+    1- get请求和post请求的差别
+    get请求
+        不安全
+        数据量大小,4kb左右
+        不能上传文件
+        速度快
+    post请求
+        相对安全
+        数据量大小没有限制,可以上传文件和大量数据
+    
+    2-http协议构成
+    请求
+        请求行      请求方式 请求地址 协议版本  xhr.open('get','地址');
+        请求头      记录了浏览器的相关信息,发送给服务器     xhr.requestHeader('contengt-type','text/html');
+        请求主体    浏览器发送给服务器的核心数据 xhr.send(null);
+    响应
+        状态行      协议版本 状态码 状态文本ok
+        响应头      记录了服务器的相关信息,发送给浏览器
+        响应主体    服务器发送给浏览器的核心数据
+
+    30 AJAX
+    前端向后台发送请求的途径
+        表单提交
+        地址栏输入地址
+        a标签连接
+        (以上的方式请求服务器,都会让原页面丢失,出现一个新的页面)
+
+        AJAX
+        AJAX可以在页面不刷新的情况下,请求服务器,局部更新页面的数据,用户体验比较好
+        本质:在http协议的基础上通过js的服务器进行通信
+        前段后台交互
+
+</body>
+</html>
