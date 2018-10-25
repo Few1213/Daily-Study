@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 320px;
+      height: 320px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* 
+      before和after
+      1. content属性
+      2. 默认是行内
+     */
+    div:before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0);
+      /* 过渡时间 1秒 */
+      transition: all 1s;
+    }
+
+    div:hover:before {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    /* 伪元素不是真实存在的元素, 不能添加hover, 也不能通过 js 获取 */
+
+  </style>
+</head>
+<body>
+
+  <div>
+    <img src="./images/pic.jpg" alt="">
+  </div>
+  
+</body>
+</html>

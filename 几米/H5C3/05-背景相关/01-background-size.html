@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 600px;
+      height: 400px;
+      border: 1px solid #000;
+      margin: 100px auto;
+      background: url("./images/1.jpg") no-repeat;
+
+      /* css3中 background-size可以调整背景图片的大小 */
+      /* 1. 直接传数值, 好处:简单, 缺点: 有可能会失真 */
+      /* background-size: 200px 400px; */
+
+      /* 2. 传百分比, 好处: 可维护性更好, 缺点: 可能会失真 */
+      /* background-size: 100% 100%; */
+
+      /* 3. 传专有名词, contain 包含
+            特点: (1) 尽可能等比例缩放
+                 (2) 可以完整显示图片
+            缺点: 会留白
+      */
+      /* background-size: contain; */
+
+      /* 4. 专有名词 cover 覆盖
+            特点: (1) 尽可能等比例缩放
+                  (2) 完整将盒子铺满为止
+                  (3) 不会留白
+            缺点: 图片有可能不完整显示
+      */
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div></div>
+  
+</body>
+</html>
