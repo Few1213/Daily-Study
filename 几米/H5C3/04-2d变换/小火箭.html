@@ -5,9 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        html ,body{
+            width: 100%;
+            height: 100%;
+            background-color: #ccc;
+            background-image: radial-gradient(200px at right top,red,yellow,skyblue);
+            position: relative;
+        } 
+       
+        div img{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        body:hover img{
+            transform:  translate(1400px,-900px) scale(0.5) rotate(45deg);
+            transition: all 4s;
+        }
+    </style>
     
 </head>
 <body>
-    
+    <div>
+        <img src="./images/rocket.png" alt="">
+    </div>
 </body>
 </html>
