@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      margin: 100px auto;
+      transition: all 1s;
+      /* transform: translate(x, y)
+         transform: translateX( 100px )
+         transform: translateY( 100px )
+         注意点:
+          1. 相对于自身原来位置进行位移的
+          2. 如果是百分比, 相对于自身宽高计算  (重点)
+
+         水平往右 为 x 正方向
+         垂直向下 为 y 正方向
+      */
+    }
+    div:hover {
+      /*transform: translateX( 100px );*/
+      /*transform: translateY( 100px );*/
+      transform: translateX(50%);
+    }
+  </style>
+</head>
+<body>
+
+<div></div>
+
+
+</body>
+</html>

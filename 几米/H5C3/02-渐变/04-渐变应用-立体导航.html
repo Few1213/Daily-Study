@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul {
+      list-style: none;
+    }
+    li {
+      float: left;
+      width: 100px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background-color: hotpink;
+      border-radius: 5px;
+      margin: 30px;
+
+      /* 线性渐变
+         background-image: linear-gradient( 方向, 颜色 范围, 颜色 范围, ..... )
+      */
+      background-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0.4)
+      );
+    }
+    li:hover {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0.7)
+      );
+    }
+    li a {
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<ul>
+  <li><a href="#">导航1</a></li>
+  <li><a href="#">导航2</a></li>
+  <li><a href="#">导航3</a></li>
+  <li><a href="#">导航4</a></li>
+  <li><a href="#">导航5</a></li>
+</ul>
+
+</body>
+</html>

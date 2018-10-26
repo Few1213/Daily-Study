@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      /*
+         过渡注意点:
+         1. 必须有两个状态的改变, 就可以实现过渡动画 (无论 hover 还是 js 控制)
+         2. 过渡加给 A 或者 B 状态都可以, 但是具体加给谁, 看需求
+         3. 过渡实现动画效果的效率 比 js 高很多
+      */
+    }
+    div:hover {
+      width: 400px;
+      height: 400px;
+      background-color: green;
+      transition: all 1s;
+    }
+  </style>
+</head>
+<body>
+
+<div></div>
+
+</body>
+</html>

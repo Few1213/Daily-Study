@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        div::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -250px;
+            width: 30px;
+            height: 100%;
+            /* background-color: pink; */
+            background-image: linear-gradient(
+                to right,
+                rgba(255,255,255,0),
+                rgba(255,255,255,1),
+                rgba(255,255,255,0)
+            );
+           transform: skewX(-45deg) ;
+           transition: all 2s;
+        }
+        div:hover::before{
+            left:1000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="./images/ll.jpg" alt="">
+    </div>
+</body>
+
+</html>

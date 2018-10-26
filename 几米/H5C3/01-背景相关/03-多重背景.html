@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 400px;
+      height: 400px;
+      border: 1px solid #000;
+      /* 所谓多重背景: 就是可以给一个盒子设置多个背景图片
+         注意点:
+         1. 多个背景之间通过 , 隔开  且前面的层级高
+         2. 多重背景如果要加颜色, 要放在最后面
+      */
+      background: url("./images/mn1.jpg") no-repeat left top,
+                  url("./images/mn2.jpg") no-repeat right top,
+                  orange;
+    }
+  </style>
+</head>
+<body>
+
+<div></div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      margin: 100px auto;
+      transition: transform 1s;
+    }
+    div:hover {
+      /* 所有的变换属性名都是 transform */
+      /* 1. transform: scale(x, y);
+            x 表示横向的缩放比
+            y 表示纵向的缩放比
+
+         2. transform: scale(2)
+            对 x, y 都进行缩放 2 倍, 等比例缩放
+
+         3. transform: scaleX(2);   横向放大两倍
+
+         4. transform: scaleY(0.5); 纵向缩小成 1/2
+      */
+      /*transform: scaleX(2);*/
+      /*transform: scaleY(0.5);*/
+
+      transform: scale(2, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+<div>我是文本</div>
+
+</body>
+</html>

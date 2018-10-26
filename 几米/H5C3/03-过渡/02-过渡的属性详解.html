@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      /* 让变化的所有属性, 在 2s 内实现过渡动画 */
+      /*transition: all 2s;*/
+
+      /* 1. 过渡属性 transition-property */
+      /*    多个属性间, 用逗号隔开 */
+      /*    特殊值: all, 对所有属性实现过渡, all会损耗多一点的性能
+            所以如果只是单一属性变化, 一般直接配置该属性即可
+       */
+      /*transition-property: width, height;*/
+      /*transition-property: all;*/
+
+      /* 2. 过渡时间 transition-duration */
+      /*transition-duration: 2s;*/
+
+      /* 3. 过渡效果 transition-timing-function
+            (1) ease   缓动, 从慢到快再到慢
+            (2) linear 匀速
+            (3) ease-in-out (了解)缓动, 从慢到快再到慢, 变化曲线比较大
+            (4) steps(5) 让动画分几步执行, 一般用于实现帧动画
+      */
+      /*transition-timing-function: steps(5);*/
+
+      /* 4. 过渡延迟 transition-delay */
+      /*transition-delay: 1s;*/
+
+
+      transition: all 5s 1s linear;
+
+    }
+    div:hover {
+      width: 400px;
+      height: 400px;
+      background-color: yellow;
+    }
+
+
+    /*
+      过渡四大属性
+        1. transition-property 过渡属性
+           all
+           width, height
+
+        2. transition-duration 过渡时间
+
+        3. transition-timing-function 过渡效果
+           (1) ease  缓动
+           (2) linear 匀速
+           (3) ease-in-out 缓动, 更缓动一点
+           (4) steps(5) 让动画分几步执行
+
+        4. transition-delay 过渡延迟
+
+      合写注意点:
+        没有特别的顺序要求, 唯一的要求, 过渡时间要在延迟时间的前面
+        transition: all 2s 1s linear;
+    */
+
+
+
+    
+  </style>
+</head>
+<body>
+
+<div></div>
+
+</body>
+</html>

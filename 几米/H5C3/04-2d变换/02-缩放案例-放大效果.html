@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 500px;
+      height: 384px;
+      margin: 100px auto;
+      border: 1px solid #000;
+      overflow: hidden;
+    }
+    div img {
+      transition: transform 2s;
+
+      /* transform-origin 设置转换的基准点 默认值 center center
+         (1) 支持方位词, left right bottom top center
+         (2) 支持坐标 x y
+      */
+      /*transform-origin: left top;*/
+      transform-origin: 80px 90px;
+    }
+    div:hover img{
+      transform: scale(5);
+    }
+  </style>
+</head>
+<body>
+
+<div>
+  <img src="./images/ml.jpg" alt="">
+</div>
+
+</body>
+</html>

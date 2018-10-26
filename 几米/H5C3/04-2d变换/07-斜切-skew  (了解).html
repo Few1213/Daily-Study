@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      margin: 100px auto;
+      /* transform: skewX  倾斜, 斜切*/
+      /* transform: skewY  倾斜, 斜切*/
+      transition: all 2s;
+    }
+    div:hover {
+      /* skewX 指让 y轴向 x轴正方向旋转 30deg */
+      /*transform: skewX(-30deg);*/
+
+      /* skewY 指让 x轴向 y轴正方向旋转 */
+      /*transform: skewY(30deg);*/
+
+      /* 可以让整个盒子消失, 了解, 一般只设置一个轴的斜切, 让盒子倾斜即可 */
+      transform: skew(45deg, 45deg);
+    }
+  </style>
+</head>
+<body>
+
+
+<div></div>
+
+
+</body>
+</html>

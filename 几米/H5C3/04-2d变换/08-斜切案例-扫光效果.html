@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      background-color: #000;
+    }
+    .box {
+      width: 670px;
+      height: 419px;
+      margin: 100px auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .box:before {
+      content: '';
+      position: absolute;
+      left: -300px;
+      top: 0;
+      width: 30px;
+      height: 100%;
+      /* 背景线性渐变 */
+      /*background-image: linear-gradient( 方向, 颜色 范围, 颜色 范围, ...)*/
+      background-image: linear-gradient(
+        to right,
+        rgba( 255, 255, 255, 0 ),
+        rgba( 255, 255, 255, 1 ),
+        rgba( 255, 255, 255, 0 )
+      );
+      /* skewX 设置水平方向的倾斜 */
+      /* skewY 设置垂直方向的倾斜 */
+      transform: skewX(-30deg);
+    }
+
+
+    .box:hover:before {
+      left: 800px;
+      transition: all 2s;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <img src="./images/ll.jpg" alt="">
+</div>
+
+</body>
+</html>

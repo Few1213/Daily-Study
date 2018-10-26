@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+    /* 全屏容器 */
+    .box {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+
+      /* 红太阳 */
+      /*background-image: radial-gradient( 半径 at 圆心坐标, 颜色 范围, 颜色 范围,... )*/
+      background-image: radial-gradient( 200px at right top, red, yellow, skyblue );
+    }
+    .box img {
+      position: absolute;
+      left: -101px;
+      bottom: -190px;
+      transition: all 6s;
+    }
+    /* 平移 + 旋转 + 缩放 */
+    /* 合写注意点:
+       1. 多个transform设置, 后面会将前面的覆盖
+          所以多个属性合写, 需要通过空格隔开
+       2. 旋转会改变坐标系, 解决方案, 将旋转的属性放在最后编写
+    */
+    .box:hover img {
+      transform: translate(1500px, -800px) scale(0) rotate(45deg);
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  
+  <img src="./images/rocket.png" alt="">
+  
+</div>
+
+
+
+</body>
+</html>
