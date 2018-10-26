@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul {
+      list-style: none;
+    }
+    .box {
+      width: 560px;
+      height: 380px;
+      border: 1px solid #000;
+      margin: 100px auto;
+      position: relative;
+    }
+    .box ul {
+      width: 20%;
+      height: 100%;
+      position: relative;
+
+      transform: rotateX(0deg);
+
+      /* 辅助布局的 近大远小的效果 */
+      /*perspective: 1000px;*/
+
+      /* 真3d 让子元素在三维空间布局 */
+      transform-style: preserve-3d;
+  
+      float: left;
+    }
+    .box ul li {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    /* 正面 */
+    .box li:nth-child(1) {
+      background: url("./images/01.jpg");
+      transform: translateZ(190px);
+    }
+    /* 上面 */
+    .box li:nth-child(2) {
+      background: url("./images/02.jpg");
+      transform: rotateX(90deg) translateZ(190px);
+    }
+    /* 后面 */
+    .box li:nth-child(3) {
+      background: url("./images/03.jpg");
+      transform: rotateX(180deg) translateZ(190px);
+    }
+    /* 下面 */
+    .box li:nth-child(4) {
+      background: url("./images/04.jpg");
+      transform: rotateX(270deg) translateZ(190px);
+    }
+
+    /* 左右按钮 */
+    .box .icon_left,
+    .box .icon_right {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      color: #fff;
+      text-align: center;
+      line-height: 100px;
+      border-radius: 10px;
+      text-decoration: none;
+
+      /* 垂直居中 */
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .box .icon_left {
+      left: -100px;
+    }
+    .box .icon_right {
+      right: -100px;
+    }
+
+
+    /* 控制第二个 ul 下面的 li 的背景定位 */
+    .box ul:nth-child(2) li {
+      background-position: -112px 0;
+    }
+    .box ul:nth-child(3) li {
+      background-position: -224px 0;
+    }
+    .box ul:nth-child(4) li {
+      background-position: -336px 0;
+    }
+    .box ul:nth-child(5) li {
+      background-position: -448px 0;
+    }
+
+
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <!-- 四个面 -->
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <!-- 两个按钮 -->
+  <a href="#" class="icon_left">上一页</a>
+  <a href="#" class="icon_right">下一页</a>
+</div>
+
+<script>
+
+  /* 思路: 点击按钮, 让 ul 绕 x 轴旋转
+  *  点击左按钮, 显示上一页, 让 ul 绕 x 轴旋转 90deg
+  *  点击右按钮, 显示下一页, 让 ul 绕 x 轴旋转 -90deg
+  * */
+
+  // 找对象
+  var left = document.querySelector(".icon_left");
+  var right = document.querySelector(".icon_right");
+  var uls = document.querySelectorAll("ul");
+
+
+  var index = 0; // 计数器
+
+  left.onclick = function() {
+    index++;
+
+    // 遍历 ul 让每个ul都旋转
+    uls.forEach(function( v, i ) {
+      // 添加过渡动画, 让每个ul 添加不同的延迟
+      v.style.transition = "transform 1s "+ i * 0.2 +"s";
+      // 让 ul 绕 x 轴旋转 90deg
+      v.style.transform = "rotateX(" + index * 90 + "deg)";
+    })
+
+  }
+
+
+  right.onclick = function() {
+    index--;
+
+    // 遍历 ul
+    uls.forEach(function( v, i ) {
+      // 添加过渡动画
+      v.style.transition = "transform 1s "+ i * 0.2 +"s";
+      // 让 ul 绕 x 轴旋转 90deg
+      v.style.transform = "rotateX(" + index * 90 + "deg)";
+    })
+
+
+  }
+
+</script>
+
+</body>
+</html>

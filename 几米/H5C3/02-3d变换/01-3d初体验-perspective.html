@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /*
+      perspective
+      1. 给父元素添加, 可以让子元素有近大远小的透视效果
+      2. 1000px 指观察者 到目标元素的距离
+
+      perspective注意点:
+      (1) perspective 不能太小, 近大远小的效果 太夸张了
+      (2) perspective 不能太大, 近大远小的效果 不明显了
+      (3) 所以一般设置 1000px
+
+    */
+    body {
+      /* 打脸的效果 */
+      /*perspective: 100px;*/
+      /*perspective: 1000000px;*/
+      perspective: 800px;
+    }
+    img {
+      display: block;
+      margin: 100px auto;
+      transition: all 3s;
+    }
+    img:hover {
+      /* 看不出来才是对的 */
+      transform: rotateX(-45deg);
+    }
+  </style>
+</head>
+<body>
+
+<img src="./01.jpg" alt="">
+
+</body>
+</html>

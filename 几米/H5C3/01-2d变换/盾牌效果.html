@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      background-color: green;
+    }
+    .box {
+      width: 450px;
+      margin: 50px auto;
+    }
+    .box img {
+      transition: all 1s;
+    }
+  </style>
+</head>
+<body>
+
+<input type="button" value="打散">
+<input type="button" value="合并">
+<!-- 思路: 所谓打散, 就是 随机的平移 + 随机的旋转-->
+<div class="box">
+  <img src="./images/shield_1_01.png" alt="">
+  <img src="./images/shield_1_02.png" alt="">
+  <img src="./images/shield_1_03.png" alt="">
+  <img src="./images/shield_1_04.png" alt="">
+  <img src="./images/shield_1_05.png" alt="">
+  <img src="./images/shield_1_06.png" alt="">
+  <img src="./images/shield_1_07.png" alt="">
+  <img src="./images/shield_1_08.png" alt="">
+  <img src="./images/shield_1_09.png" alt="">
+</div>
+
+<script>
+  // 添加点击事件
+  var btn1 = document.querySelectorAll("input")[0];  // 打散
+  var btn2 = document.querySelectorAll("input")[1];  // 合并
+  var imgs = document.querySelectorAll("img");
+
+
+  // 打散 = 随机位移 + 随机旋转
+  btn1.onclick = function() {
+
+    // 遍历 imgs
+    imgs.forEach(function( v, i ) {  // v 表示每一项 i 表示下标
+
+      // 随机位移 x, y
+      // -400,400
+      // Math.random() [0,1) * 800 - 400
+      var randX = Math.random() * 800 - 400;
+      // -200,200
+      var randY = Math.random() * 400 - 200;
+
+      // 随机旋转, 求角度
+      var randDeg = Math.random() * 360;
+
+      // 设置给 img
+      v.style.transform = "translate("+ randX +"px, "+ randY +"px) rotate("+ randDeg +"deg)";
+    })
+  };
+
+
+  // 合并, 所谓合并就是将 所有的img 的 transform重置
+  btn2.onclick = function() {
+    imgs.forEach(function( v, i ) {  // v 表示每一项, i 表示下标索引
+      // 将元素的 transform 重置
+      v.style.transform = "none";
+    })
+  }
+
+
+</script>
+
+</body>
+</html>

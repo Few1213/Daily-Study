@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      transition: all 1s;
+    }
+    div:hover {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+
+<div></div>
+
+<script>
+
+  var div = document.querySelector("div");
+  // transitionend 在过渡动画执行完成时, 调用
+
+  //  div.addEventListener("事件名称", function)
+  div.addEventListener("transitionend", function() {
+    console.log( "呵呵" ) ;
+  })
+
+
+</script>
+
+
+</body>
+</html>

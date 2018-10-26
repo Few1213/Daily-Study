@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #000;
+      /* 让子元素有近大远小的透视效果 */
+      perspective: 1000px;
+    }
+    ul {
+      width: 300px;
+      height: 200px;
+      margin: 250px auto;
+      background-color: #fff;
+      list-style: none;
+      position: relative;
+      transition: all 1s;
+
+      /* 设置变换基点准, 让 ul 绕底边转 */
+      transform-origin: center bottom;
+
+      /* 真3d */
+      transform-style: preserve-3d;
+    }
+    ul li {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      /* 等 ul 推倒后, li 才起飞 */
+      transition: all 1s 1s;
+    }
+    /*
+      思路:
+      1. 推倒  让 ul 绕 x 轴 正方向旋转, transform: rotateX(70deg)
+      2. 起飞  让 ul 里面的 li, 调整 translateZ
+    */
+    ul:hover {
+      transform: rotateX(70deg);
+    }
+    ul:hover li:nth-child(1) {
+      transform: translateZ(20px);
+    }
+    ul:hover li:nth-child(2) {
+      transform: translateZ(40px);
+    }
+    ul:hover li:nth-child(3) {
+      transform: translateZ(60px);
+    }
+    ul:hover li:nth-child(4) {
+      transform: translateZ(80px);
+    }
+    ul:hover li:nth-child(5) {
+      transform: translateZ(100px);
+    }
+    ul:hover li:nth-child(6) {
+      transform: translateZ(120px);
+    }
+  </style>
+</head>
+<body>
+
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+</body>
+</html>

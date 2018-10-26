@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /*
+      过渡需要触发, 且要有两个不同的状态
+      动画不需要触发, 且能一直执行下去
+    */
+    div {
+      width: 200px;
+      height: 200px;
+      border: 10px solid blue;
+      margin: 100px auto;
+
+      /* 使用动画 */
+      /* animation: 动画名称 动画时间 动画次数 动画效果 */
+      /* 动画次数特殊值: infinite 无限次 */
+      /* 动画效果 linear 匀速 */
+      /*animation: rotate 4s infinite linear;*/
+
+      animation: play 5s infinite;
+    }
+    /*
+      动画的使用:
+      1. 声明动画序列
+         语法: @keyframes 动画名称 { .... }
+         (1) from 表示起始状态
+             to 表示结束状态
+             from 和 to 只能设计 两个状态, 不能满足复杂动画的需求
+         (2) 支持百分比
+
+      2. 使用动画
+    */
+
+    /* 设计动画要一一对应 */
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+        border-radius: 0px;
+        background-color: pink;
+      }
+      to {
+        transform: rotate(360deg);
+        border-radius: 50%;
+        background-color: green;
+      }
+    }
+    
+    
+    /* 定义复杂动画 */
+    /* 200 => 400 => 200 => 600 => 200 */
+    @keyframes play {
+      0% {
+        width: 200px;
+      }
+      25% {
+        width: 400px;
+      }
+      50% {
+        width: 200px;
+      }
+      75% {
+        width: 600px;
+      }
+      100% {
+        width: 200px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<div></div>
+
+</body>
+</html>

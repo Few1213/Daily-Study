@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: green;
+        }
+        div{
+            width: 500px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="打散">
+    <input type="button" value="合并">
+    <div>
+        <img src="./images/shield_1_01.png" alt="">
+        <img src="./images/shield_1_02.png" alt="">
+        <img src="./images/shield_1_03.png" alt="">
+        <img src="./images/shield_1_04.png" alt="">
+        <img src="./images/shield_1_05.png" alt="">
+        <img src="./images/shield_1_06.png" alt="">
+        <img src="./images/shield_1_07.png" alt="">
+        <img src="./images/shield_1_08.png" alt="">
+        <img src="./images/shield_1_09.png" alt="">
+    </div>
+    <script>
+        document.querySelectorAll('input')[0].onclick=function(){
+            // alert(1);
+            var randX = Math.random() * 800 - 400;
+            var randY = Math.random() * 200 - 100;
+            var randDeg = Math.random() * 360;
+            
+        }
+        
+    </script>
+</body>
+</html>
