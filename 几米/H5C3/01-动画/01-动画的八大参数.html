@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+
+    div {
+      width: 200px;
+      height: 200px;
+      margin: 100px auto;
+      background-color: red;
+      /* 使用动画 */
+      /* animation: 动画名称 动画时间 动画次数 动画效果 */
+      /* animation: scale 1s infinite linear; */
+
+      /* 1. animation-name 动画名称 */
+      /*animation-name: scale;*/
+
+      /* 2. animation-duration 动画持续时间  0%-100% */
+      /*animation-duration: 2s;*/
+
+      /* 3. animation-iteration-count 动画次数, 一次指的就是一个 0%=>100%
+            动画次数特殊值: infinite 无限次
+      */
+      /*animation-iteration-count: infinite;*/
+
+      /* 4. animation-timing-function 动画效果
+            (1) ease  缓动(默认值)  由慢 到快 再慢
+            (2) linear 匀速
+            (3) ease-in-out 缓动, 更明显一点的缓动
+            (4) steps(步数)  (将来用于实现帧动画)
+      */
+      /*animation-timing-function: steps(5);*/
+
+      /* 5. animation-direction 动画方向
+            (1) normal,    默认正常,  从from到to, 0%=100%
+            (2) alternate  交替的     从from到to, 再从to到from
+      */
+      /*animation-direction: alternate;*/
+
+
+      /* 6. animation-delay 动画延迟 */
+      /* animation-delay: 3s; */
+
+
+      /* 7. animation-fill-mode 动画结束的盒子的最终状态
+            forwards: 作用: 让盒子停留在 动画结束的 最终状态
+      */
+      /*animation-fill-mode: forwards;*/
+
+
+      /* 合写   animation: 动画名称  动画时间; */
+      animation: scale 2s infinite linear alternate;
+    }
+
+
+    /* 8. animation-play-state  动画状态
+          (1) running  动画运行
+          (2) paused   动画暂停
+    */
+    div:hover {
+      /*animation-play-state: paused;*/
+    }
+
+
+    /*
+      使用动画
+      1. 定义动画序列
+      2. 使用动画
+    */
+    @keyframes scale {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.5);
+      }
+    }
+
+    /*
+      动画八大参数
+      1. animation-name            动画名称
+
+      2. animation-duration        动画时间
+
+      3. animation-iteration-count 动画次数
+         特殊值: infinite 无限次
+
+      4. animation-timing-function 动画效果
+         (1) ease
+         (2) linear
+         (3) ease-in-out
+         (4) steps(步数)
+
+      5. animation-direction 动画方向
+         (1) normal    普通(默认值)   从from 到 to
+         (2) alternate 交替           from->to,  to->from;   (2次)
+
+      6. animation-delay  动画延迟
+
+      7. animation-fill-mode 动画结束的最终状态
+         forwards: 让盒子停留在 动画结束的 最终状态
+
+      8. animation-play-state 动画状态
+         (1) running 运行动画
+         (2) paused  动画暂停
+
+      合写: 里面没有特别的顺序要求, 唯一注意 动画时间 在 延迟时间的前面
+
+    */
+
+  </style>
+</head>
+<body>
+
+<div></div>
+
+</body>
+</html>

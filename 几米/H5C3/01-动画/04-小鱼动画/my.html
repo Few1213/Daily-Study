@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: skyblue;
+        }
+        div{
+            width: 174px;
+            height: 126px;
+            background-image: url('./fish-12-126.png');
+            overflow: hidden;
+            animation: run 1s infinite steps(12),swim 6s infinite ;
+        }
+        @keyframes run{
+            from{
+                /* transform: translate(0,0); */
+                background-position: 0 0;
+
+            }
+            to{
+                background-position: 0 1512px;
+                /* transform: translate(0,1512px); */
+            }   
+
+        }
+        @keyframes swim{
+            0%{
+                transform:  translate(0,0) rotate(0deg); 
+            }
+            25%{
+                transform:  translate(800px,0) rotate(0deg);
+            }
+            50%{
+                transform:  translate(800px,0) rotate(180deg);
+            }
+            75%{
+                transform:  translate(0,0) rotate(180deg);
+            }
+            100%{
+                transform: translate(0,0) rotate(0deg) ;
+            }
+        }
+        div:nth-child(1),
+        div:nth-child(5){
+            animation-duration: 1s,8s;
+        }
+        div:nth-child(2),
+        div:nth-child(4){
+            animation-duration: 1s,7s;
+        }
+
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

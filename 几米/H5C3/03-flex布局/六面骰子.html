@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: pink;
+        }
+
+        ul {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            border-radius: 20px;
+            background-color: #fff;
+            /* display: inline-block; */
+            float: left;
+            list-style: none;
+        }
+        li{
+            width: 20px;
+            height: 20px;
+            display: block;
+            border-radius: 10px;
+            background-color: #000;
+        }
+        ul:first-child{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        ul:nth-child(2){
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        ul:nth-child(3){
+            display: flex;
+            justify-content: space-around;
+            /* align-content: space-around; */
+            align-items: center;
+            box-sizing: border-box;
+            padding: 20px 0;
+        }
+        ul:nth-child(3) li:first-child{
+            align-self: flex-start;
+        }
+        ul:nth-child(3) li:nth-child(3){
+            align-self: flex-end;
+        }
+        ul:nth-child(4){
+            display: flex;
+            justify-content: space-around;
+            align-content: space-around;
+            padding: 20px 0;
+            /* margin: 20px 0; */
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+        ul:nth-child(4) li{
+            margin: 0 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <!-- <script>
+      var demo = document.querySelector('.demo');
+      demo.onclick = function () {
+        //   alert(1);
+          this.style.background = 'red';
+        }
+    </script> -->
+</body>
+
+</html>

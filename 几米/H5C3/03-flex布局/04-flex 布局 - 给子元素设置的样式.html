@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box {
+      width: 600px;
+      height: 400px;
+      border: 3px solid #000;
+      margin: 100px auto;
+      display: flex;
+      /* 让单行的子元素的, 在侧轴上居中对齐 */
+      align-items: center;
+    }
+    .box .son {
+      height: 100px;
+      border: 1px solid red;
+      box-sizing: border-box;
+      background-color: pink;
+    }
+    /* 应用: 两侧固定, 中间自适应 */
+    .box .son:first-child {
+      width: 50px;
+      /*order: 2;*/
+
+      align-self: flex-start;
+    }
+    .box .son:nth-child(2) {
+      flex: 1;
+      /*order: 3;*/
+    }
+    .box .son:nth-child(3) {
+      width: 50px;
+      /*order: 1;*/
+
+
+      align-self: flex-end;
+    }
+    /*
+       给子元素设置的属性
+       1. flex 用于按照份数分配父元素的剩余空间  (重点)
+          在分配空间时, 会先将设置好宽高的元素进行空间分布, 再将剩余宽度, 进行按份数平均分配
+       2. order  可以用来给元素排序 (了解)
+          数值越小, 排序越靠前
+       3. align-self 设置子元素自己的侧轴方向的对齐方式  (是用来覆盖 align-items的)
+          属性值和 align-items 一样
+          (1) flex-start
+          (2) flex-end
+          (3) center
+          (4) stretch
+    */
+
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <div class="son">1</div>
+  <div class="son">2</div>
+  <div class="son">3</div>
+</div>
+
+</body>
+</html>

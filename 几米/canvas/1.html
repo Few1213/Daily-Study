@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #canvas {
+            width: 1024px;
+            height: 768px;
+            border: 1px solid #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"> </canvas>
+    <script>
+        var canvas =document.querySelector("#canvas");
+        // 设置宽
+        canvas.width = 1024;
+        // 设置高
+        canvas.height = 768;
+        var ctx = canvas.getContext('2d'); 
+    </script>
+</body>
+
+</html>

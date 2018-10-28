@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box {
+      width: 600px;
+      height: 400px;
+      border: 3px solid #000;
+      margin: 100px auto;
+
+      display: flex;
+      /* 在伸缩布局中, 默认是单行排布元素的, 如果子元素的宽度总和溢出父元素,
+         会自动压缩 子元素的 空间, 进行适配显示
+      */
+      /* 设置换行
+         flex-wrap (1) nowrap;  默认值, 不换行
+                   (2) wrap;    换行
+      */
+      flex-wrap: wrap;
+
+      /* 控制主轴方向的对齐方式 */
+      justify-content: flex-start;
+
+
+      /* 控制侧轴方向的对齐方式
+         1. 控制侧轴单行的对齐方式 align-items
+         2. 控制侧轴多行的对齐方式 align-content
+            (1) flex-start
+            (2) flex-end
+            (3) center
+            (4) stretch  拉伸
+            (5) space-between   空白在盒子中间平分, 两侧没有
+            (6) space-around    空白在盒子两边环绕
+            (7) space-evenly    空白平均分配 (了解)
+      */
+      align-content: space-evenly;
+    }
+    .box .son {
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+      box-sizing: border-box;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <div class="son">1</div>
+  <div class="son">2</div>
+  <div class="son">3</div>
+  <div class="son">4</div>
+  <div class="son">5</div>
+  <div class="son">6</div>
+  <div class="son">7</div>
+  <div class="son">8</div>
+  <div class="son">9</div>
+</div>
+
+<!--
+  flex 布局整合
+  1. display: flex; 让当前盒子成为一个弹性盒子, 只要成为弹性盒子, 就拥有主轴和侧轴
+
+  2. flex-direction 控制主轴方向  (了解)
+     (1) row   主轴水平往右
+     (2) row-reverse  水平往左
+     (3) column       主轴垂直往下
+     (4) column-reverse  垂直往上
+
+  3. justify-content 控制主轴方向的对齐方式
+     (1) flex-start
+     (2) flex-end
+     (3) center
+     (4) space-between  空白在盒子间分布, 两侧没有
+     (5) space-around   空白在盒子两边环绕
+     (6) space-evenly   空白在盒子间平均分配了  (了解)
+
+  4. 侧轴对齐方式
+     4.1 单行侧轴对齐方式  align-items
+         (1) flex-start
+         (2) flex-end
+         (3) center
+         (4) stretch 拉伸,  不能设置高度  (了解)
+
+     4.2 多行侧轴对齐方式  align-content
+         (1) flex-start
+         (2) flex-end
+         (3) center
+         (4) stretch
+         (5) space-between
+         (6) space-around
+         (7) space-evenly
+
+  5. 设置换行不换行
+     flex-wrap
+     (1) nowrap 不换行, 子元素宽度总和溢出父元素, 会自动压缩子元素空间进行显示
+     (2) wrap   换行
+-->
+
+</body>
+</html>
