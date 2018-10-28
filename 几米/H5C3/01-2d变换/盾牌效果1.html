@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +14,12 @@
             width: 500px;
             margin: 100px auto;
         }
+        img{
+            transition: all 1s;
+        }
     </style>
 </head>
+
 <body>
     <input type="button" value="打散">
     <input type="button" value="合并">
@@ -30,14 +35,28 @@
         <img src="./images/shield_1_09.png" alt="">
     </div>
     <script>
-        document.querySelectorAll('input')[0].onclick=function(){
-            // alert(1);
-            var randX = Math.random() * 800 - 400;
-            var randY = Math.random() * 200 - 100;
-            var randDeg = Math.random() * 360;
-            
+        //获取元素
+        var btn1 = document.querySelectorAll('input')[0];
+        var btn2 = document.querySelectorAll('input')[1];
+        var imgs = document.querySelectorAll('img');
+
+        btn1.onclick = function () {
+            imgs.forEach(function (v, i) {
+                var randX = Math.random() * 800 - 400;
+                var randY = Math.random() * 400 - 200;
+                var ranDeg = Math.random() * 360;
+                // v.style.transition = "all 1s";
+                v.style.transform = "translate(" + randX + "px," + randY + "px) rotate(" + ranDeg + "deg)";
+            })
         }
-        
+        btn2.onclick = function () {
+            imgs.forEach(function (v,i) {
+                // v.style.transition = "all 1s";
+                v.style.transform = "none";
+              })
+          }
+
     </script>
 </body>
+
 </html>

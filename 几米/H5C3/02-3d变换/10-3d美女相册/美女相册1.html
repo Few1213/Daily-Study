@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            perspective: 1000px;
+        }
+        div{
+            transform-style: preserve-3d;
+            position: relative;
+            width: 300px;
+            height: 400px;
+            margin: 200px auto;
+            transition: all 1s;
+            transform-origin: center bottom;
+        }
+        img{
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            width: 300px;
+            height: 400px;
+            border: 3px solid yellow;
+            transform-origin: left center;
+            transition: all 1s ;
+        }
+        div:hover{
+            transform: rotateX(45deg);
+        }
+        div:hover img:nth-child(5){
+            transform: rotateY(-150deg);
+            transition-delay: 1s;
+        }
+        div:hover img:nth-child(4){
+            transform: rotateY(-120deg);
+            transition-delay: 2s;
+        }
+        div:hover img:nth-child(3){
+            transform: rotateY(-90deg);
+            transition-delay: 3s;
+        }
+        div:hover img:nth-child(2){
+            transform: rotateY(-60deg);
+            transition-delay: 4s;
+        }
+        div:hover img:nth-child(1){
+            transform: rotateY(-10deg);
+            transition-delay: 5s;
+        }
+    
+    </style>
+</head>
+<body>
+    <div>
+        <img src="./images/01.jpg" alt="">
+        <img src="./images/02.jpg" alt="">
+        <img src="./images/03.jpg" alt="">
+        <img src="./images/04.jpg" alt="">
+        <img src="./images/05.jpg" alt="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            /* perspective: 1000px;; */
+        }
+
+        ul {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            /* border: 1px solid red; */
+            list-style: none;
+            position: relative;
+            transition: all 5s;
+            transform-style: preserve-3d;
+            box-sizing: border-box;
+        }
+
+        ul:hover {
+            transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+        }
+
+        li {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        li:nth-child(1) {
+            transform: rotateX(90deg) translateZ(100px);
+            background-color: #ccc;
+        }
+
+        li:nth-child(2) {
+            transform: rotateX(90deg) translateZ(-100px);
+            background-color: orange;
+        }
+
+        li:nth-child(3) {
+            transform: rotateY(90deg) translateZ(100px);
+            background-color: red;
+        }
+
+        li:nth-child(4) {
+            transform: rotateY(90deg) translateZ(-100px);
+            background-color: yellow;
+        }
+
+        li:nth-child(5) {
+            transform: translateZ(-100px);
+            background-color: blue;
+        }
+
+        li:nth-child(6) {
+            transform: translateZ(100px);
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+</html>
