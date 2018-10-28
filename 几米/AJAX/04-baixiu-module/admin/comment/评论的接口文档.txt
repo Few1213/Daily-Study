@@ -1,0 +1,16 @@
+1-根据页面和每页数据条数 返回对应数据接口：
+    请求方式： get  
+    请求地址： './comment/comGet.php'
+    请求参数： 
+        page:  页码
+        pageSize:  每页数据条数
+    返回数据格式： json
+        示例： ...
+
+2- 返回数据库中有效的评论总数 
+    请求方式： get post 
+    请求地址： './comment/comTotal.php'
+    请求参数： 
+            无
+    返回数据格式： json
+        示例： {"total":"498"}
