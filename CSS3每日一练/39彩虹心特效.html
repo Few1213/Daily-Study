@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at center, navy, black);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 14em;
+            height: 11em;
+            /* background-color: #fff; */
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+
+        .box span {
+            width: 1em;
+            background-color: lightblue;
+            border-radius: 0.5em;
+        }
+
+        /* 设置颜色 */
+        .box span:nth-child(1),
+        .box span:nth-child(9) {
+            background-color: orangered;
+            height: 3em;
+            top: 2.2em;
+            position: relative;
+            animation: jump1 1s infinite;
+        }
+
+        .box span:nth-child(2),
+        .box span:nth-child(8) {
+            background-color: gold;
+            height: 6em;
+            top: 0.6em;
+            position: relative;
+            animation: jump2 1s infinite;
+        }
+
+        .box span:nth-child(3),
+        .box span:nth-child(7) {
+            background-color: limegreen;
+            height: 8em;
+            top: 0em;
+            position: relative;
+            animation: jump3 1s infinite;
+        }
+
+        .box span:nth-child(4),
+        .box span:nth-child(6) {
+            background-color: dodgerblue;
+            height: 9em;
+            top: 0.8em;
+            position: relative;
+            animation: jump4 1s infinite;
+        }
+
+        .box span:nth-child(5) {
+            background-color: mediumpurple;
+            position: relative;
+            height: 9.4em;
+            top:1.6em;
+            animation: jump5 1s infinite;
+        }
+
+
+        @keyframes jump1 {
+
+            0%,
+            30% {
+                height: 3em;
+                top: 2.2em;
+                filter: blur(0);
+                width: 1em;
+            }
+
+            60%,
+            70% {
+                top: 25%;
+                height: 50%;
+                filter: blur(5px);
+                width: 0.5em;
+            }
+        }
+
+        @keyframes jump2 {
+
+            0%,
+            30% {
+                height: 6em;
+                top: 0.6em;
+                filter: blur(0);
+                width: 1em;
+            }
+
+            60%,
+            70% {
+                top: 25%;
+                height: 50%;
+                filter: blur(5px);
+                width: 0.5em;
+            }
+        }
+
+        @keyframes jump3 {
+
+            0%,
+            30% {
+                height: 8em;
+                top: 0em;
+                filter: blur(0);
+                width: 1em;
+            }
+
+            60%,
+            70% {
+                top: 25%;
+                height: 50%;
+                filter: blur(5px);
+                width: 0.5em;
+            }
+        }
+
+        @keyframes jump4 {
+
+            0%,
+            30% {
+                height: 9em;
+                top: 0.8em;
+                filter: blur(0);
+                width: 1em;
+            }
+
+            60%,
+            70% {
+                top: 25%;
+                height: 50%;
+                filter: blur(5px);
+                width: 0.5em;
+            }
+        }
+
+        @keyframes jump5 {
+
+            0%,
+            30% {
+                height: 9.4em;
+                top: 1.6em;
+                filter: blur(0);
+                width: 1em;
+            }
+
+            60%,
+            70% {
+                top: 25%;
+                height: 50%;
+                filter: blur(5px);
+                width: 0.5em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</body>
+
+</html>
