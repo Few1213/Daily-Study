@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="./css/jquery.fullPage.css">
+  <style>
+    .section {
+      overflow: hidden;
+    }
+    /* --------------------- 第 1 屏 ----------------------*/
+    .one .logo {
+      width: 251px;
+      height: 186px;
+      background-image: url("./images/1_logo.png");
+      margin: 80px auto;
+    }
+    .one .info {
+      width: 772px;
+      height: 49px;
+      background-image: url("./images/1_info.png");
+    }
+    .one .text {
+      text-align: center;
+    }
+    .one .info {
+      margin: 20px auto;
+    }
+
+    /* 实现过渡动画需要两个状态 */
+    /* 第一个状态 */
+    .one .text img {
+      margin: 0 30px;
+      opacity: 0.2;
+    }
+    /* 第二个状态 */
+    .one.now .text img {
+      margin: 0;
+      opacity: 1;
+      transition: all 1s;
+    }
+
+
+    /* --------------------- 第 2 屏 ----------------------*/
+    .two {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .two .info {
+      width: 635px;
+      height: 309px;
+      background-image: url("./images/2_info_2.png");
+    }
+    .two .shield {
+      width: 450px;
+      min-width: 450px;
+    }
+    /* 第一个状态 */
+    .two img:nth-child(1) {
+      transform: translate(35px, 78px) rotate(45deg);
+    }
+    .two img:nth-child(2) {
+      transform: translate(135px, 282px) rotate(15deg);
+    }
+    .two img:nth-child(3) {
+      transform: translate(187px, 62px) rotate(15deg);
+    }
+    .two img:nth-child(4) {
+      transform: translate(10px, 162px) rotate(30deg);
+    }
+    .two img:nth-child(5) {
+      transform: translate(465px, 522px) rotate(30deg);
+    }
+    .two img:nth-child(6) {
+      transform: translate(480px, 62px) rotate(90deg);
+    }
+    .two img:nth-child(7) {
+      transform: translate(180px, -305px) rotate(80deg);
+    }
+    .two img:nth-child(8) {
+      transform: translate(300px, -22px) rotate(70deg);
+    }
+    .two img:nth-child(9) {
+      transform: translate(280px, -322px) rotate(60deg);
+    }
+
+    /* 加上 now 的状态 */
+    .two.now .shield img {
+      transform: none;
+      transition: all 1s;
+    }
+
+
+
+    /* --------------------- 第 3 屏 ----------------------*/
+    .three {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .three .info {
+      width: 631px;
+      height: 278px;
+      background-image: url("./images/3_info_3.png");
+    }
+    .three .circle {
+      width: 453px;
+      height: 449px;
+      background-image: url("./images/3_circle.png");
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .three .circle .rokect {
+      width: 203px;
+      height: 204px;
+      background-image: url("./images/3_rocket.png");
+      /* 默认状态, 应该让火箭在外面 */
+      transform: translate(-1800px, 1000px);
+    }
+    /* 添加上 now 类的状态 */
+    .three.now .circle .rokect {
+      transform: none;
+      transition: all 1s;
+    }
+
+
+
+    /* --------------------- 第 4 屏 ----------------------*/
+    .four {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .four .movie {
+      width: 529px;
+      height: 500px;
+      /*background-color: pink;*/
+    }
+    .four .search {
+      width: 529px;
+      height: 66px;
+      background-image: url("./images/4_search.png");
+      display: flex;
+      align-items: center;
+      /* 让搜索框飞出去 */
+      transform: translateX(-1000px);
+    }
+    .four .search .key {
+      /*width: 99px; 最终状态 */
+      width: 0;
+      height: 22px;
+      background-image: url("./images/4_key.png");
+      margin-left: 20px;
+    }
+    .four .result {
+      width: 529px;
+      height: 0;
+      /*height: 372px;  最终状态 */
+      background-image: url("./images/4_result.png");
+      margin-top: -15px;
+    }
+
+    .four .info {
+      width: 612px;
+      height: 299px;
+      background-image: url("./images/4_info_4.png");
+    }
+
+    /* 分析动画
+       1. 搜索框飞进来
+       2. 文字蹦出来
+       3. 图片搜索结果 滑出来
+    */
+    .four.now .search {
+      transform: none;
+      transition: all 1s;
+    }
+    .four.now .search .key {
+      width: 99px;
+      /* 在搜索框飞进来后, 执行动画, 添加延迟 */
+      transition: all 2s 1s steps(5);
+    }
+    .four.now .result {
+      height: 372px;
+      transition: all 1s 3.5s;
+    }
+
+
+  </style>
+</head>
+<body>
+<!--
+  fullpage的使用
+  1. 引包, css/js, 先引入 jquery
+  2. 准备结构 section 表示一个屏幕
+  3. 进行插件初始化
+-->
+<div class="box">
+  <div class="section one">
+    <div class="logo"></div>
+    <div class="text">
+      <img src="./images/1_text_1.png" alt="">
+      <img src="./images/1_text_2.png" alt="">
+      <img src="./images/1_text_3.png" alt="">
+      <img src="./images/1_text_4.png" alt="">
+      <img src="./images/1_text_5.png" alt="">
+      <img src="./images/1_text_6.png" alt="">
+      <img src="./images/1_text_7.png" alt="">
+      <img src="./images/1_text_8.png" alt="">
+    </div>
+    <div class="info"></div>
+  </div>
+  <div class="section two">
+    <div class="shield">
+      <img src="./images/2_shield_1.png" alt="">
+      <img src="./images/2_shield_2.png" alt="">
+      <img src="./images/2_shield_3.png" alt="">
+      <img src="./images/2_shield_4.png" alt="">
+      <img src="./images/2_shield_5.png" alt="">
+      <img src="./images/2_shield_6.png" alt="">
+      <img src="./images/2_shield_7.png" alt="">
+      <img src="./images/2_shield_8.png" alt="">
+      <img src="./images/2_shield_9.png" alt="">
+    </div>
+    <div class="info"></div>
+  </div>
+  <div class="section three">
+    <div class="info"></div>
+    <div class="circle">
+      <div class="rokect"></div>
+    </div>
+  </div>
+  <div class="section four active">
+    <div class="movie">
+      <!-- 搜索框 -->
+      <div class="search">
+        <!-- 搜索关键字 -->
+        <div class="key"></div>
+      </div>
+      <!-- 搜索结果 -->
+      <div class="result"></div>
+    </div>
+    <div class="info"></div>
+  </div>
+  <div class="section five">第5屏</div>
+</div>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery.fullPage.min.js"></script>
+<script>
+  $(function() {
+
+    // 需求: 当进入对应屏幕时, 要给当前屏加上 now 类, 让过渡动画触发执行
+
+    $('.box').fullpage({
+      // 配置每一个屏幕的颜色
+      sectionsColor: ['#0DA5D6', '#2AB561', '#DE8910', '#16BA9D', '#0DA5D6'],
+      // 配置内容不默认垂直居中
+      verticalCentered: false,
+      // 导航, 小圆点
+      navigation: true,
+
+      // 这个回调函数, 在完全加载了某一个屏幕时, 触发 (滚动结束时触发)
+      // 给当前的屏幕加上 now 类, 让其他的屏幕移除 now 类, 动态的维护了一个 now 类
+      afterLoad: function( a, index ) {
+        // index 用于标记当前加载的是第几屏,  index 从 1 开始
+        // 当进入对应屏幕时, 要给当前屏加上 now 类
+
+        // eq 中索引是从 0 开始的, 给自己添加 now 类的同时, 移除其他屏幕的 now 类
+        $('.section').eq( index - 1 ).addClass("now").siblings().removeClass("now");
+
+      }
+    });
+
+  })
+
+
+</script>
+
+</body>
+</html>

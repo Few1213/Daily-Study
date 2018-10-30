@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="./fullpage/css/jquery.fullPage.css">
+</head>
+<body>
+<!--
+  fullpage的使用步骤
+  1. 引包 css/js  注意依赖问题, 先引入jquery
+  2. 准备结构, 每个 section 表示一屏
+     如果想要调试, 控制哪一屏幕, 默认显示, 加上 active 即可
+
+  3. 进行插件初始化
+-->
+
+<div class="box">
+  <div class="section">第一屏</div>
+  <div class="section">
+    <!-- 了解: slide 横向的轮播屏幕 -->
+    <div class="slide">横向的第1屏</div>
+    <div class="slide">横向的第2屏</div>
+    <div class="slide">横向的第3屏</div>
+  </div>
+  <div class="section">第三屏</div>
+  <div class="section">第四屏</div>
+</div>
+
+<!-- 引入的至少版本要高于 1.7 -->
+<script src="./fullpage/js/jquery.min.js"></script>
+<script src="./fullpage/js/jquery.fullPage.min.js"></script>
+<script>
+
+  $(function() {
+
+    // 进行插件初始化
+    $('.box').fullpage({
+      // 给每一个屏幕设置背景颜色
+      sectionsColor: [ "pink", "skyblue", "cyan", "gray" ],
+
+      // 设置垂直居中, false 表示不居中
+      verticalCentered: false,
+
+      // 调整页面滚动速度
+      scrollingSpeed: 700,
+
+      // 设置是否循环滚动
+      continuousVertical: true,
+
+      // 配置小圆点
+      navigation: true
+    });
+
+  })
+
+
+</script>
+</body>
+</html>

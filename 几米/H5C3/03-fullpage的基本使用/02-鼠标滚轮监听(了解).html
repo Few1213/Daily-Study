@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+  window.addEventListener("mousewheel", function( e ) {
+    console.log( e.wheelDelta );
+    if (e.wheelDelta > 0) {
+      console.log( "往上滚动" + e.wheelDelta )
+    }
+    else {
+      console.log( "往下滚动" + e.wheelDelta )
+    }
+  })
+
+
+</script>
+
+</body>
+</html>

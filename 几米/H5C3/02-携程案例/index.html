@@ -1,0 +1,183 @@
+√<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- meta:vp + tab键, 作用: 设置视口, 用于移动端适配 -->
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul {
+      list-style: none;
+    }
+    img {
+      width: 100%;
+      /* 解决下边缝隙问题 */
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      /*height: 2000px;*/
+      /* background-color: pink; */
+      /* 最大宽 */
+      max-width: 640px;
+      /* 最小宽 */
+      min-width: 320px;
+      margin: 0 auto;
+    }
+    .nav_item {
+      height: 90px;
+      background-color: red;
+      border-radius: 5px;
+      margin-top: 10px;
+      display: flex;
+    }
+    .nav_item .title {
+      flex: 1;
+    }
+    .nav_item .content {
+      flex: 2;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .nav_item .content a {
+      width: 50%;
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+      color: #fff;
+      text-decoration: none;
+      box-sizing: border-box;
+
+      border-bottom: 1px solid #fff;
+      border-left: 1px solid #fff;
+    }
+    /* 需求: 找到最后两个 a 去掉下边框 */
+    .nav_item .content a:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+
+    /* 找到第 4 个 nav_item 单独定制样式 */
+    .nav_item:nth-child(4) .content a {
+      width: 33.3%;
+    }
+    /* 去掉第一个 a 的左边框, 去掉第4个 a 的所有边框 */
+    .nav_item:nth-child(4) .content a:nth-child(1) {
+      border-left: none;
+    }
+    .nav_item:nth-child(4) .content a:nth-child(4) {
+      border: none;
+    }
+
+
+    .nav_item:nth-child(1) {
+      background-color: #FF697A;
+    }
+    .nav_item:nth-child(2) {
+      background-color: #3D98FF;
+    }
+    .nav_item:nth-child(3) {
+      background-color: green;
+    }
+    .nav_item:nth-child(4) {
+      background-color: #FF9911;
+    }
+    
+    
+    
+    .xc_product {
+      display: flex;
+    }
+    .xc_product a {
+      flex: 1;
+    }
+
+    .xc_footer ul {
+      display: flex;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+    }
+    .xc_footer li {
+      height: 30px;
+      line-height: 30px;
+      flex: 1;
+      text-align: center;
+    }
+    .xc_footer li a {
+      text-decoration: none;
+      color: #000;
+    }
+    .xc_footer p {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="xc_banner">
+    <a href="#">
+      <img src="./images/banner.jpg" alt="">
+    </a>
+  </div>
+  <div class="xc_nav">
+    <div class="nav_item">
+      <div class="title"></div>
+      <div class="content">
+        <a href="#">海外酒店</a>
+        <a href="#">团购</a>
+        <a href="#">特价酒店</a>
+        <a href="#">民宿客栈</a>
+      </div>
+    </div>
+    <div class="nav_item">
+      <div class="title"></div>
+      <div class="content">
+        <a href="#">海外酒店</a>
+        <a href="#">团购</a>
+        <a href="#">特价酒店</a>
+        <a href="#">民宿客栈</a>
+      </div>
+    </div>
+    <div class="nav_item">
+      <div class="title"></div>
+      <div class="content">
+        <a href="#">海外酒店</a>
+        <a href="#">团购</a>
+        <a href="#">特价酒店</a>
+        <a href="#">民宿客栈</a>
+      </div>
+    </div>
+    <div class="nav_item">
+      <div class="content">
+        <a href="#">海外酒店</a>
+        <a href="#">团购</a>
+        <a href="#">特价酒店</a>
+        <a href="#">民宿客栈</a>
+        <a href="#">民宿客栈</a>
+        <a href="#">民宿客栈</a>
+      </div>
+    </div>
+  </div>
+  <div class="xc_product">
+    <a href="#"><img src="./images/extra_1.png" alt=""></a>
+    <a href="#"><img src="./images/extra_2.png" alt=""></a>
+  </div>
+  <div class="xc_footer">
+    <ul>
+      <li><a href="#">电话预订</a></li>
+      <li><a href="#">下载客户端</a></li>
+      <li><a href="#">我的</a></li>
+    </ul>
+    <p>网站地图 | ENGLISH | 电脑版</p>
+    <p>©2015 携程旅行</p>
+  </div>
+</div>
+
+</body>
+</html>
