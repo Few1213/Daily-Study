@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+
+<div class="aa bb cc dd">盒子</div>
+
+
+<script>
+
+  // 使用原生操作类名 - 太麻烦
+  //  var div = document.querySelector("div");
+  //  div.className = div.className + " pp";
+
+
+  // html5 新增了 类名操作  classList
+  // 1. dom.classList.add("类名")   添加类
+  // 2. dom.classList.remove("类名")  移除类
+  // 3. dom.classList.toggle("类名")  切换类
+  // 4. dom.classList.contains("类名") 判断类, 返回boolean值
+
+
+
+
+
+
+  var div = document.querySelector("div");
+  div.classList.add("pp");  // 添加类
+  div.classList.remove("cc"); // 移除类
+  div.classList.toggle("aa"); // 切换类
+  div.classList.toggle("aa"); // 切换类   
+
+  // 判断类
+  console.log( div.classList.contains("zz") ) // false 判断类
+  console.log( div.classList.contains("bb") ) // true 判断类
+
+
+
+</script>
+
+</body>
+</html>

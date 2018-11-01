@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+
+  /*
+  * html5中新增对于网络的判断, 一个属性, 两个事件
+  * 1. 一个属性
+  *    navigator.onLine 可以返回一个 boolean, 标记当前用户的网络状态
+  *    (1) true  联网 (互联网和局域网都算联网),  不一定连接了互联网
+  *    (2) false 离线    返回false一定断网了, 可以给用户提示
+  *
+  * 2. 两个事件
+  *    online   切换到联网状态时触发
+  *    offline  切换到离线状态时触发
+  *    这两个事件注册给 window
+  * */
+
+  console.log( navigator.onLine );
+
+  window.addEventListener("online", function() {
+    console.log( "切换到联网状态时触发" );
+  })
+  window.addEventListener("offline", function() {
+    console.log( "切换到离线状态时触发" );
+  })
+
+
+</script>
+
+</body>
+</html>

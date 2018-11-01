@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<!--
+  早期, web端存储只有 cookie, cookie是浏览器端的存储空间, 可以存取数据
+  cookie的特点:
+    1. 大小 4k
+    2. cookie中的数据可以在多个页面间共享
+    3. cookie的中数据在请求时, 会进行携带
+    4. 生命周期默认是会话级别的 (关闭浏览器就销毁了)
+       可以设置生命周期
+
+  cookie的缺点: 大小 4k 太小了, 操作起来很麻烦
+  html5新增了 sessionStorage 和 localStorage 专门解决 cookie 存储空间小, 操作麻烦的问题
+
+  sessionStorage(鸡肋)
+    1. 大小 5M
+    2. 生命周期为会话级别, 一旦关闭浏览器, 就销毁了
+    3. 多个窗口之间数据不能共享
+
+  localStorage (重点)
+    1. 大小 5M
+    2. 生命周期永久存储, 只要用户不手动删除
+    3. 多个窗口之间可以共享
+
+
+  api:
+    1. localStorage.setItem(key,value);  设置
+    2. localStorage.getItem(key);        获取
+    3. localStorage.removeItem(key);     删除单个
+    4. localStorage.clear();             清空所有, (慎用, 破坏性比较大, 也会将队友的localStorage清空)
+-->
+
+</body>
+</html>

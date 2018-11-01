@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    header {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      display: block;
+    }
+    span {
+      background-color: skyblue;
+    }
+    /*
+      现象: 对于 ie8 以及 ie8以下版本, 不支持 html5 语义化标签
+      解决方案: (1) 在浏览器解析前, 动态创建 html5 新标签元素
+                (2) 动态创建出来的新标签元素, 默认是行内, 需要转换显示模式
+
+      将来有很多 html5 语义化标签都需要兼容, header, nav, footer, section, aside, ...
+      一般使用插件兼容, html5shiv.js
+    */
+  </style>
+  <script>
+
+    document.createElement("header");
+
+  </script>
+</head>
+<body>
+
+<header>我是块级的header标签</header>
+<span>我是行内的 span </span>
+
+</body>
+</html>

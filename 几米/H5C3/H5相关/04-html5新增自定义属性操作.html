@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<!-- html5 规范: 所有自定义属性, 加上 data- 前缀 -->
+<div data-id="123" data-name="促销商品" data-desc="双十一大促">我是商品盒子</div>
+
+<script>
+
+  // 早期, 我们操作自定义属性  getAttribute  setAttribute
+  // html5 新增了一个 dataset 对象, 可以统一进行管理所有的 自定义属性
+
+  var div = document.querySelector("div");
+  // console.log(div.dataset);
+
+  // (1) 获取操作, 直接访问 dom.dataset 对象属性即可
+  console.log(div.dataset.name);
+  console.log(div.dataset["desc"]);
+
+  // (2) 设置操作, 直接操作 dom.dataset 对象即可
+  div.dataset.name = "小盒子";
+  div.dataset.id = "888";
+
+  // (3) 新增操作, 直接新增 dom.dataset 对象的属性即可
+  div.dataset.pp = "鹏鹏";
+
+
+
+//  var obj = {
+//    name: "pp",
+//    age: 18
+//  };
+//  obj.desc = "帅";
+
+
+
+
+</script>
+
+</body>
+</html>

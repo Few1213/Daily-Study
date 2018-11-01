@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+  // 经度 121.60817161746483
+  // 纬度 31.037132379201946
+
+  // navigator.geolocation.getCurrentPosition( success, error )
+  // navigator.geolocation.getCurrentPosition( 成功的回调函数, 失败的回调函数 )
+  // 参数1: 成功的回调, 可以接受一个 position 对象, 这个对象中就有用户的地理位置
+  // 参数2: 失败的回调, 可以接受一个 error 对象, 返回的是错误信息
+
+
+  // chrome 和 火狐等浏览器有安全策略, 要求必须是 https 协议, 才允许获取当前用户位置
+  // IE 可以获取, 暂时使用 IE 调试
+
+  navigator.geolocation.getCurrentPosition(function( location ) {
+    console.log( location );
+    console.log( "成功的回调函数" );
+
+    console.log( "经度:" + location.coords.longitude ); // 经度
+    console.log( "纬度" + location.coords.latitude );  // 纬度
+
+  }, function( error ) {
+    console.log( "失败的回调函数" );
+  })
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    header {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+    span {
+      background-color: skyblue;
+    }
+  </style>
+  <!--
+    html5shiv 底层原理:
+    (1) 在浏览器解析标签前, 动态创建 html5 新标签元素
+    (2) 默认创建的是行内元素, 转换显示模式
+
+    问题: 对于chrome或者高版本 ie 其实没必要兼容 html5 语义化标签
+    解决方案: 可以利用条件注释(ie认识), 专门做 IE 兼容
+
+    条件注释, 是一种兼容ie的方式, 这个注释语法, 只有 IE9及 IE9以下版本认识
+             其他所有浏览器都会将条件注释当成普通注释
+
+  -->
+
+<!-- 条件注释 -->
+<!--[if lte IE 8]>
+   <script src="./html5shiv.js"></script> 
+  <![endif]-->
+  <!--
+    lte 小于等于
+    lt  小于
+    gt  大于
+    gte 大于等于
+  -->
+
+  <!--[if lte IE 8]>
+    <script src="./html5shiv.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+
+<header>我是块级的header标签</header>
+<span>我是行内的 span </span>
+
+<!--普通注释-->
+
+<!-- 在小于等于 IE 8 执行 -->
+<!--[if lte IE 8]>
+
+<script>
+//  alert("呵呵, 小于等于 IE8 会执行这句话")
+</script>
+
+<![endif]-->
+
+</body>
+</html>
