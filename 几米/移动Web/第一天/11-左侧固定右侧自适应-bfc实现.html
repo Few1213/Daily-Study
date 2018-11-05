@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .father {
+      height: 500px;
+      width: 100%;
+      background-color: pink;
+    }
+    .left {
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+      float: left;
+    }
+    .right {
+      height: 250px;
+      /* overflow:hidden 触发了 bfc */
+      overflow: hidden;
+      background-color: green;
+    }
+    /*
+      利用 bfc 实现左侧固定右侧自适应
+      1. 让左侧的盒子 左浮动
+      2. 让右侧的盒子 overflow:hidden; 触发bfc
+      注意点: 右侧盒子不能设置 width: 100%;
+    */
+
+
+    /*
+       bfc: 块级格式化上下文
+       特点:
+       1. 成为了bfc的盒子, 就成为了一个独立的渲染区域, 子元素的布局不会影响到 外部盒子的布局
+          应用: (1) 清除浮动
+                (2) 解决塌陷问题
+       2. 成为了bfc的盒子, 不与浮动的元素重叠
+          应用: 实现左侧固定右侧自适应/圣杯布局(两侧固定中间自适应等)
+
+
+       怎么触发bfc ?
+       1. float: left/right;
+       2. display: table/table-cell
+          所有的表格和单元格都是独立的渲染区域, 所以转成table会触发bfc
+       3. postion: fixed/absolute;
+       4. overflow 非 visiable, (hidden/auto/scroll)
+       ...
+    */
+  </style>
+</head>
+<body>
+
+<div class="father">
+  <div class="left"></div>
+  <div class="right"></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 第一种方法 */
+        /* .box {
+            display: flex;
+            justify-content: space-between;
+            height: 500px;
+            background-color: #ccc;
+        }
+        .left{
+            width: 100px;
+            background-color: pink;
+        }
+        .right{
+            width: 100px;
+            background-color: green;
+        }
+        .center{
+            flex: 1;
+            background-color: blue;
+        } */
+
+
+        /* 第二种方法 */
+        .box {
+            height: 500px;
+        }
+
+        .left {
+            float: left;
+            width: 100px;
+            height: 400px;
+            background-color: pink;
+        }
+
+        .right{
+            float: right;
+            width: 100px;
+            height: 400px;
+            background-color: blue;
+        }
+
+        .center{
+            height: 100%;
+            overflow: hidden;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="center"></div>
+    </div>
+</body>
+
+</html>

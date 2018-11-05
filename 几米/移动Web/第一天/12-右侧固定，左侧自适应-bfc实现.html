@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .father {
+      height: 500px;
+      background-color: pink;
+    }
+
+    .right {
+      float: right;
+      height: 200px;
+      width: 200px;
+      background-color: blue;
+    }
+    .left {
+      height: 250px;
+      background-color: orange;
+      overflow: hidden;
+    }
+
+    /*
+      思路:
+      1. 先让右侧的元素右浮动, 先占位置
+      2. 再让左侧的元素设置 overflow: hidden;
+    */
+  </style>
+</head>
+<body>
+
+<div class="father">
+  <div class="right"></div>
+
+  <div class="left"></div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,350 @@
+@charset "UTF-8";
+/* 进行样式初始化, 完成浏览器的样式统一 */
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a {
+  background-color: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+/* 在normalize重置完的基础上, 重置ul,li list-style等我们不需要的样式,
+   并且还添加一些我们自定义的 样式类 (clearfix, .fl, .fr)
+*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+  font-family: 'Microsoft YaHei', sans-serif;
+  background-color: #f5f5f5;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+input[type="text"],
+input[type="search"],
+textarea {
+  border: none;
+  outline: none;
+  resize: none;
+  -webkit-appearance: none;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+  clear: both;
+}
+img {
+  display: block;
+  width: 100%;
+}
+/*
+  进行 rem 布局:
+  1. 使用 rem 为单位
+  2. 动态设置不同屏幕 html font-size
+*/
+.sn_container {
+  width: 100%;
+  height: 2000px;
+  background-color: pink;
+  padding-top: 1.2rem;
+}
+.sn_header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 1.2rem;
+  background-color: orange;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  z-index: 999;
+}
+.sn_header .icon_left,
+.sn_header .icon_right {
+  position: absolute;
+  top: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: blue;
+}
+.sn_header .icon_left {
+  left: 0;
+  background: url("../images/icon_category.png") no-repeat center;
+  background-size: 0.58666667rem 0.93333333rem;
+}
+.sn_header .icon_right {
+  right: 0;
+  background: url("../images/icon_cart.png") no-repeat center;
+  background-size: 0.84rem 0.90666667rem;
+}
+.sn_header .search {
+  padding-top: 0.2rem;
+  position: relative;
+}
+.sn_header .search i {
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  width: 0.66666667rem;
+  height: 0.8rem;
+  background: url("../images/icon_search.png") no-repeat center;
+  background-size: 0.36rem 0.37333333rem;
+}
+.sn_header .search input {
+  height: 0.8rem;
+  width: 100%;
+  border-radius: 0.13333333rem;
+  padding-left: 0.66666667rem;
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 0.32rem;
+}
+.sn_nav {
+  background-color: #fff;
+}
+.sn_nav li {
+  float: left;
+  width: 20%;
+}
+.sn_nav li a {
+  display: block;
+  padding: 0.13333333rem;
+}
+.sn_nav li img {
+  width: 1.06666667rem;
+  height: 1.06666667rem;
+  margin: 0 auto;
+}
+.sn_nav li p {
+  text-align: center;
+  height: 0.53333333rem;
+  line-height: 0.53333333rem;
+  font-size: 0.29333333rem;
+}
+.sn_footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.33333333rem;
+  background-color: #fff;
+  z-index: 999;
+}
+.sn_footer li {
+  float: left;
+  width: 20%;
+}
+.sn_footer li a {
+  display: block;
+  padding-top: 0.13333333rem;
+}
+.sn_footer li img {
+  width: 0.66666667rem;
+  height: 0.66666667rem;
+  margin: 0 auto;
+}
+.sn_footer li p {
+  text-align: center;
+  font-size: 0.26666667rem;
+  line-height: 0.4rem;
+}
+.sn_banner .swiper-pagination {
+  text-align: right;
+}
+.sn_banner .swiper-pagination-bullet {
+  background-color: #fff;
+  opacity: 1;
+  width: 0.16rem;
+  height: 0.16rem;
+}
+.sn_banner .swiper-pagination-bullet-active {
+  background-color: #FFA500;
+}

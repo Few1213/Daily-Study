@@ -1,0 +1,226 @@
+/*--------------首页---------------------  */
+
+$pink:pink;
+.container {
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto; // background-color: $pink;
+}
+
+/*---------头部开始---------*/
+
+.header {
+    position: fixed;
+    z-index: 333;
+    width: 100%;
+    height: 40px;
+    max-width: 640px;
+    padding-left: 80px;
+    padding-right: 60px;
+    // background-color: rgba(222, 24, 27, 0.9);
+    .logo {
+        position: absolute;
+        left: 7px;
+        top: 7px;
+        width: 57px;
+        height: 21px;
+        background-position: 0 -109px;
+    }
+    .search {
+        position: relative;
+        i {
+            position: absolute;
+            left: 8px;
+            top: 9px;
+            width: 20px;
+            height: 20px;
+            background-position: -60px -109px;
+        }
+        input {
+            width: 100%;
+            height: 30px;
+            border-radius: 15px;
+            padding-left: 30px;
+            margin-top: 5px;
+        }
+    }
+    &>a {
+        position: absolute;
+        right: 16px;
+        top: 12px;
+    }
+}
+
+/*---------banner开始---------*/
+
+.banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    ul {
+        width: 1000%;
+        transform: translateX(-10%);
+        li {
+            width: 10%;
+            float: left;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    ol{
+        position: absolute;
+        left: 50%;
+        bottom: 10px;
+        transform: translateX(-50%);
+        li{
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            float: left;
+        }  
+        li.active{
+            background-color: #fff;
+        }     
+    }
+}
+
+/*---------nav开始---------*/
+
+.nav {
+    width: 100%;
+    height: 156px;
+    padding: 10px;
+    li {
+        float: left;
+        width: 20%;
+        height: 72px;
+        text-align: center; // padding: 10px;
+        img {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto;
+        }
+    }
+}
+
+/*---------new开始---------*/
+
+.news {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    padding-left: 100px;
+    padding-right: 60px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #fff;
+    .logo {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 82px;
+        height: 30px;
+    }
+    ul {
+        li {
+            height: 30px;
+            line-height: 30px;
+        }
+    }
+    >a {
+        position: absolute;
+        right: 11px;
+        top: 7px;
+    }
+}
+
+/*---------seckill开始---------*/
+
+.seckill {
+    position: relative;
+    width: 100%;
+    overflow: scroll;
+    i {
+        position: absolute;
+        left: 8px;
+        top: 3px;
+        width: 22px;
+        height: 22px;
+        background-position: -82px -109px;
+    }
+    .title {
+        height: 30px;
+        line-height: 30px;
+        padding-left: 30px;
+        margin: 5px;
+        border-radius: 5px;
+        background-color: #fff;
+        span:first-child {
+            letter-spacing: 2px;
+            color: red;
+        }
+        span:nth-child(2n) {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            border-radius: 2px;
+            color: #fff;
+            background-color: #000;
+        }
+    }
+    .concent {
+        width: 100%;
+        text-align: center;
+        ul {
+            width: 1000%;
+            li {
+                float: left;
+                width: 87px;
+                height: 106px;
+                img {
+                    width: 60px;
+                    height: 60px;
+                    margin: 5px auto;
+                }
+                p:nth-of-type(1) {
+                    font-weight: 700;
+                    color: red;
+                }
+                p:nth-of-type(2) {
+                    text-decoration: line-through;
+                }
+            }
+        }
+    }
+}
+
+.major {
+    width: 100%;
+    img {
+        width: 33%;
+        float: left;
+    }
+   
+}
+
+.jd_concent{
+    width: 100%;
+    ul{
+        li{
+            width: 33.3%;
+            float: left;
+            img{
+                width: 100%;
+            }
+        }
+        li:nth-last-child(-n+4){
+            width: 50%;
+        }
+    }
+}

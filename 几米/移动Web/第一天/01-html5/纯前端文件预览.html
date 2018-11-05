@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div></div>
+<input type="file" id="fileInp" multiple>
+
+<script>
+
+  // 纯前端预览
+  var fileInp = document.querySelector("#fileInp");
+  var div = document.querySelector("div");
+
+  // 监听change事件
+  fileInp.addEventListener("change", function() {
+
+    // 1. 获取文件对象
+    var file = fileInp.files[ 0 ];
+
+    // 2. 创建fileReader实例, (FileReader读取器, 可以读取文件)
+    var fileReader = new FileReader();
+
+    // 3. 调用实例的方法, 读取文件
+    fileReader.readAsDataURL( file );
+
+    // 4. 监听文件的读取, 只要文件读取完成, 就会触发 onload 事件
+    fileReader.onload = function() {
+      // console.log( "文件读取完成了" );
+
+      // 获取结果
+      var result = fileReader.result;
+
+      // 将结果设置给 img 的 src
+      div.innerHTML = '<img src="'+ result +'">';
+    }
+
+  })
+
+
+</script>
+
+
+</body>
+</html>

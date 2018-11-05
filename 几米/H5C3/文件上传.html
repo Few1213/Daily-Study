@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+    </div>
+    <!-- multiple指的是多文件上传 -->
+    <input id="fileInp" type="file" multiple>
+    <script>
+        //纯前端预览
+        // var fileInp = document.querySelector("#fileInp");
+        // var div = document.querySelector("div");
+
+        // //监听文件的change事件
+        // fileInp.addEventListener("change", function () {
+        //     //获取文件对象
+        //     var file = fileInp.files[0];
+        //     //创建FileReader读取器的实例对象
+        //     var fileReader = new FileReader();
+        //     // 调用实例的方法,读取文件
+        //     fileReader.readAsDataURL(file);
+        //     //监听文件的读取 只要读取完毕就会触发onload事件
+        //     fileReader.onload = function () {
+        //         var result = fileReader.result;
+        //         div.innerHTML = '<img src="' + result + '">';
+        //     }
+        // })
+
+
+
+        // //纯前端预览的实现
+        // var fileInp = document.querySelector("#fileInp");
+        // var div = document.querySelector("div");
+
+        // // console.log(fileInp);
+
+        // fileInp.addEventListener("change",function () {
+        //     // console.log(this);
+        //     var file = fileInp.files[0];
+        //     console.log(file);
+        //     //创建一个文件读取的实例对象
+        //     var fileReader = new FileReader();
+        //     //调用该实例的方法
+        //     fileReader.readAsDataURL(file);
+        //     fileReader.onload = function () {
+        //         var result = fileReader.result;
+        //         div.innerHTML = '<img src="'+result+'">';
+        //       }           
+        //   })
+
+
+        //纯前端预览的实现
+        var fileInp = document.querySelector("#fileInp");
+        var div = document.querySelector("div");
+
+        fileInp.addEventListener("change", function () {
+            var file = fileInp.files[0];
+            var fileReader = new FileReader();
+            fileReader.readAsDataURL(file);
+            fileReader.onload = function () {
+                var result = fileReader.result;
+                div.innerHTML = '<img src="'+result+'">';
+              }
+        })
+    </script>
+</body>
+
+</html>

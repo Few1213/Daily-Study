@@ -1,0 +1,247 @@
+@charset "utf-8";
+$pink:pink;
+@mixin position($left, $top) {
+    position: absolute;
+    left: $left;
+    top: $top;
+}
+
+@mixin fix($jusitify-content, $align-items) {
+    display: flex;
+    justify-content: $jusitify-content;
+    align-items: $align-items;
+}
+
+@mixin fixs($jusitify-content, $align-content) {
+    display: flex;
+    justify-content: $jusitify-content;
+    align-content: $align-content;
+}
+
+.jd_container {
+    max-width: 640px;
+    min-width: 320px;
+    width: 100%;
+    margin: 0 auto; // background-color: $pink;
+    // height: 2000px;
+}
+
+/*-------------头部开始----------------*/
+
+.jd_header {
+    @include fix(space-between, center);
+    position: fixed;
+    z-index: 999;
+    max-width: 640px;
+    // min-width: 320px;
+    width: 100%;
+    height: 40px;
+    .logo {
+        width: 57px;
+        height: 21px;
+        margin: 7px;
+        background-position: 0 -109px;
+    }
+    .search {
+        flex: 1;
+        position: relative;
+        i {
+            display: block;
+            @include position(8px, 5px);
+            width: 20px;
+            height: 20px;
+            background-position: -60px -109px;
+            cursor: pointer;
+        }
+        input {
+            width: 100%;
+            height: 30px;
+            border-radius: 15px;
+            padding-left: 30px;
+        }
+    }
+    .login {
+        display: block;
+        width: 50px;
+        text-align: center;
+        color: #ffffff; // height: 40px;
+    }
+}
+
+/*-------------banner开始----------------*/
+
+.banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    ul {
+        width: 1000%;
+        transform: translateX(-10%);
+        // background-color: $pink;
+        li {
+            width: 10%;
+            // overflow: hidden;
+            float: left;
+        }
+    }
+    ol{
+        position: absolute;
+        left: 50%;
+        bottom: 0;;
+        transform: translate(-50%,-50%);
+        
+        li{
+            float: left;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            border-radius: 5px;
+            border: 1px solid white;
+            
+        }
+        li.active{
+            background-color:rgba(255,255,255,.5);
+
+        }
+    }
+}
+
+/*-------------nav开始----------------*/
+
+.jd_nav {
+    width: 100%;
+    background-color: #f5f5f5;
+    li {
+        @include fix(center, center);
+        float: left;
+        width: 20%;
+        padding: 10px 0;
+        img {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto;
+        }
+        p {
+            color: black;
+        }
+    }
+}
+
+/*-------------new开始----------------*/
+
+.jd_news {
+    position: relative; // width: 100%;
+    height: 30px;
+    margin: 0 5px;
+    padding-left: 100px;
+    padding-right: 40px;
+    border-radius: 5px; // background-color: $pink; // font-size: 10px;
+    overflow: hidden;
+    background-color: #ffffff;
+    .logo {
+        @include position(11px, 6px);
+        width: 82px;
+        height: 30px;
+    }
+    .info {
+        li {
+            height: 30px;
+            line-height: 30px;
+            a {
+                color: black;
+            }
+        }
+    }
+    &>a {
+        position: absolute;
+        right: 6px;
+        top: 6px;
+        color: black;
+    }
+}
+
+/*-------------seckill开始----------------*/
+
+.jd_seckill {
+    position: relative;
+    height: 136px;
+    margin-top: 10px;
+    .seckill_title {
+        height: 30px;
+        line-height: 30px;
+        padding-left: 35px;
+        background-color: #ffffff;
+        .jd_sprite {
+            display: block;
+            @include position(10px, 3px);
+            width: 22px;
+            height: 22px;
+            background-position: -82px -109px;
+        }
+        span:first-child {
+            color: #f23030;
+            letter-spacing: 2px;
+        }
+        span:nth-child(2n) {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            line-height: 16px;
+            text-align: center;
+            border-radius: 5px;
+            background-color: #000;
+            color: #ffffff;
+        }
+        a {
+            margin-right: 10px;
+        }
+    }
+    .seckill_content {
+        overflow: scroll;
+        background-color: #fff;
+        ul {
+            // width: 2000px;
+            li {
+                float: left;
+                width: 87px;
+                height: 106px;
+                text-align: center;
+                img {
+                    width: 60px;
+                    height: 60px;
+                    margin: 5px auto;
+                }
+                .now_price{
+                    color: #f23030;
+                    font-weight: 700;
+                }
+
+                .old_price{
+                    text-decoration: line-through;
+                }
+            }
+        }
+    }
+}
+
+/*-------------major开始----------------*/
+.jd_major{
+    img{
+        float: left;
+        width: 33.3%;
+    }
+}
+/*-------------product开始----------------*/
+.jd_product{
+    li:first-child{
+        img{
+            width: 33.3%;
+            float: left;
+        }
+    }
+    li:nth-child(2),
+    li:nth-child(3){
+        width: 50%;
+        float: left;
+    }
+}
