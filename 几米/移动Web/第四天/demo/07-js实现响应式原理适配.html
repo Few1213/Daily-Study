@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 1200px;
+      height: 500px;
+      background-color: #ccc;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+
+<div class="container"></div>
+<!--
+  1. 超小屏幕: 0-768px      需求: 背景绿色  宽度 100%
+  2. 小屏设备: 768px-992px  需求: 背景蓝色  版心: 750px
+  3. 中屏设备: 992px-1200px 需求: 背景黄色, 版心: 970px
+  4. 大屏设备: 1200~        需求: 背景粉色, 版心: 1170px
+
+  要求: 通过 js 实现
+-->
+<script>
+  // 思路:
+  // (1) 找对象, 获取 container
+  // (2) 动态根据不同的屏幕, 给 container 设置不同的背景颜色 和 版心
+  var container = document.querySelector(".container");
+
+  function responsive() {
+    // 获取屏幕宽度
+    var width = window.innerWidth;  // 获取可视区域的宽度
+
+    if ( width < 768 ) {
+      // 超小屏幕  0-768  背景绿色  宽度 100%
+      container.style.backgroundColor = "green";
+      container.style.width = "100%";
+    }
+    else if ( width < 992 ) {
+      // 小屏幕  768-992  背景蓝色  版心: 750px
+      container.style.backgroundColor = "blue";
+      container.style.width = "750px";
+    }
+    else if ( width < 1200 ) {
+      // 中屏 992-1200  背景黄色, 版心: 970px
+      container.style.backgroundColor = "yellow";
+      container.style.width = "970px";
+    }
+    else {
+      // 大屏 >1200  背景粉色, 版心: 1170px
+      container.style.backgroundColor = "pink";
+      container.style.width = "1170px";
+    }
+  }
+
+  // 监听屏幕的变化
+  responsive();
+  window.addEventListener("resize", responsive)
+
+</script>
+
+</body>
+</html>

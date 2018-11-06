@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+<div>我是盒子</div>
+
+<script src="./zepto.min.js"></script>
+<script>
+  /*
+   只在移动端触发
+   swipe //手指滑动时触发
+   swipeLeft  //左滑
+   swipeRight  //右滑
+   swipeUp    //上滑
+   swipeDown   //下滑
+  * */
+  $('div').on("swipe", function() {
+//    console.log( "手指滑动时触发" );
+  })
+
+  // 底层是使用 touchstart 和 touchend 进行封装的
+  $('div').on("swipeLeft", function() {
+    console.log( "左滑" );
+  })
+  $('div').on("swipeRight", function() {
+    console.log( "右滑" );
+  })
+  $('div').on("swipeUp", function() {
+    console.log( "上滑" );
+  })
+  $('div').on("swipeDown", function() {
+    console.log( "下滑" );
+  })
+
+
+</script>
+
+</body>
+</html>

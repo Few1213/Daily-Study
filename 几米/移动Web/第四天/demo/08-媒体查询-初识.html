@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 1200px;
+      height: 500px;
+      background-color: #ccc;
+      margin: 0 auto;
+    }
+    /*
+      媒体查询的基础语法:
+      @media screen and (条件) and (条件) ...
+      1. min-width  样式生效的最小宽度,   当宽度大于等于这个最小宽的时候, 样式生效
+      2. max-width  样式生效的最大宽度,   当宽度小于等于这个宽度的时候, 样式生效
+      3. width      样式生效的宽度,       当宽度完全等于这个宽度的时候, 生效
+    */
+
+    /* >= 800 样式生效 */
+    @media screen and (min-width: 800px) {
+      /* 1. 媒体查询, 不会增加 权重
+         2. 在媒体查询中, 可以任意进行 css 样式设置
+      */
+      .container {
+        /*width: 600px;*/
+        /*background-color: blue;*/
+      }
+    }
+
+    /* <= 800 时样式生效 */
+    @media screen and (max-width: 800px) {
+      .container {
+        /*width: 400px;*/
+        /*background-color: purple;*/
+      }
+    }
+
+
+    /* 让样式在 400-800 时生效 */
+    @media screen and (min-width: 400px) and (max-width: 800px) {
+      .container {
+        /*width: 200px;*/
+        /*background-color: yellow;*/
+      }
+    }
+
+
+    /* 在宽度等于 801 的时候, 让盒子变成 绿色 */
+    @media screen and (width: 801px) {
+      .container {
+        /*width: 300px;*/
+        /*background-color: green;*/
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container"></div>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 640px;
+  min-width: 320px;
+  padding-top: 44px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 44px;
+  line-height: 40px;
+  padding: 0 44px;
+  background-image: linear-gradient(180deg, #fff, #ccc);
+  overflow: hidden;
+}
+.header a {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  background-clip: content-box;
+  background-origin: content-box;
+}
+.header .header_left {
+  left: 0;
+  background-position: -20px 0;
+}
+.header .header_right {
+  right: 0;
+  background-position: -60px 0;
+}
+.header input {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+}
+.content .content_left {
+  float: left;
+  width: 90px;
+  height: 100%;
+  overflow: hidden;
+}
+.content .content_left li {
+  width: 90px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: pink;
+  border-right: 1px solid red;
+  border-bottom: 1px solid red;
+}
+.content .content_left li a {
+  color: black;
+}
+.content .content_left li.active {
+  color: red;
+  border-right: 0;
+  background-color: #f7f7f7;
+}
+.content .content_right {
+  height: 100%;
+  padding: 10px;
+  overflow: scroll;
+}
+.content .content_right h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+.content .content_right li {
+  width: 33.3%;
+  float: left;
+  text-align: center;
+}
+.content .content_right li img {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=category.css.map */

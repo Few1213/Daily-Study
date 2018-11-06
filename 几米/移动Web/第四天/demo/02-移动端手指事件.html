@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+<div></div>
+
+<script>
+  /*
+  * 移动端手指事件
+  * touchstart    手指触摸到屏幕时触发
+  * touchmove     手指在屏幕上滑动时触发
+  * touchend      手指离开屏幕时触发
+  * touchcancel(了解)   系统取消touch事件时触发, 比如电话
+  *
+  *
+  * e.changedTouches   表示发生改变的所有手指   (从无到有, 位置变化)
+  * e.targetTouches    表示目标对象上的所有手指
+  * e.touches          表示屏幕上的所有手指
+  *
+  * screenX, screenY    相对于显示器屏幕的坐标位置
+  * clientX, clientY    相对于浏览器可视区域的坐标位置  (用这个即可)
+  * pageX,   pageY      相对于整个页面左顶点的坐标位置
+  *
+  * */
+
+  var div = document.querySelector("div");
+
+  div.addEventListener("touchstart", function( e ) {
+    // console.log( "手指触摸到屏幕" );
+
+    // console.log( e.changedTouches[0].clientX );
+    // console.log( e.targetTouches[0].clientX );
+    // console.log( e.touches[0].clientX );
+  })
+  div.addEventListener("touchmove", function( e ) {
+    // console.log( "手指滑动" );
+     // console.log( e.changedTouches[0].clientX );
+     // console.log( e.targetTouches[0].clientX );
+     // console.log( e.touches[0].clientX );
+  });
+
+
+  // 手指离开屏幕时触发
+  // touchend 中只能通过 changedTouches 才能获取手指
+  div.addEventListener("touchend", function( e ) {
+    // console.log( "手指离开屏幕" )
+    console.log( e.changedTouches[0].clientX );
+  });
+
+
+  // 指触摸事件, 被系统电话等打断时触发,
+  // 一般可以用于实现单机游戏的暂停功能 (了解)
+  div.addEventListener("touchcancel", function() {
+    console.log( "被系统打断了" );
+  })
+
+
+
+</script>
+
+</body>
+</html>

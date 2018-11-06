@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--   <meta name="viewport" content="width=
+    , initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        div {
+            width: 1200px;
+            height: 500px;
+            margin: 0 auto;
+            background-color: pink;
+        }
+
+        @media screen and (max-width:768px){
+            div{
+                width: 100%;
+                background-color: aqua
+            }
+        }
+        @media screen and (min-width:768px) and (max-width:992px){
+            div{
+                width: 750px;
+                background-color: blue;
+            }
+        }
+        @media screen and (min-width:992px) and (max-width:1200px){
+            div{
+                width: 900px;
+                background-color: black;
+            }
+        }
+        @media screen and (min-width:1200px){
+            div{
+                width:1170px;
+                background-color: yellow;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"></div>
+
+
+    <script>
+        // js 实现屏幕
+        //超小屏幕  0px-768px
+        //小屏设备  768px-992px
+        //中屏设备  992px-1200px
+        //大屏设备  >1200px
+
+      /*   var container = document.querySelector(".container");
+
+        function responsive() {
+            var width = window.innerWidth;//获取屏幕可视区域的宽度
+            if (width < 768) {
+                container.style.width = "100%";
+                container.style.backgroundColor = "green";
+            }
+            else if (width < 992) {
+                container.style.width = "750px";
+                container.style.backgroundColor = "blue";
+            }
+            else if (width < 1200) {
+                container.style.width = "970px";
+                container.style.backgroundColor = "yellow";
+            }
+            else {
+                container.style.width = "1170px";
+                container.style.backgroundColor = "pink";
+            }
+
+        }
+        responsive();
+        window.addEventListener("resize", responsive); */
+
+
+     /*    // IScroll 插件使用注意事项 (区域滚动)
+        // 1. 有一个有宽高的父容器
+        // 2. 必须有一个溢出父容器的子容器, 如果有多个子容器, 只会对第一个子容器进行区域滚动
+        //    其他子容器将被忽略
+        // 3. 为了保证计算的准确, 需要在容器子元素渲染完成后进行初始化
+        //    (1) 推荐放在 window.onload 事件中, onload 事件会等待图片等子元素文件的加载
+        //    (2) 如果有 ajax 请求, 子元素是动态渲染的, 在子元素渲染完成后, 再进行初始化
+
+        window.addEventListener("load", function () {
+            // 实现左侧区域滚动
+            new IScroll(".jd_content_left");
+
+            // 实现右侧区域滚动
+            // scrollX  配置横向的区域滚动  默认值 false
+            // scrollY  配置纵向的区域滚动  默认值 true
+            new IScroll(".jd_content_right", {
+                scrollX: false,
+                scrollY: true
+            });
+        })
+ */
+
+
+    </script>
+</body>
+
+</html>

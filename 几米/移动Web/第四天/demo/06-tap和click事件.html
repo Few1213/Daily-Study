@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+<div>盒子</div>
+
+<script src="./zepto.min.js"></script>
+<script>
+
+  // tap 轻触事件
+  // click 单击事件, 在移动端有 300ms 延迟
+  // 历史原因: 为了能够让手机可以访问 pc 网页, 发明了视口, 视口会进行缩放,
+  //          移动端用户需要双击放大, 才能看清
+
+  // click事件会等待 300ms, 如果300ms内没有第二次点击了, 才会认为是单击
+
+  // 300ms延迟解决方案:
+  // (1) 设置视口, 禁用用户缩放  user-scalable=no
+  // (2) 如果希望保留双击缩放的功能, click还是有300ms延迟, 使用 tap 事件代替click注册
+
+  // 有一些特别老的 iphone 机(iphone4), 就算设置了视口, 禁用了缩放, click 还是有 300ms 延迟
+  // 这个时候, 就使用 tap 事件
+
+  $('div').on("click", function() {
+    console.log( "click事件触发" );
+  })
+
+  $('div').on("tap", function() {
+    console.log( "tap事件触发" );
+  })
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <!-- 创建一个400*600的画布 -->
+    <canvas id="canvas" width="400" height="600"></canvas>
+    <!-- 定义一个显示坐标的div -->
+    <div id="put" style="width: 50px; height: 20px;"></div>
+
+    <script>
+        //一个显示坐标的函数
+        function coordinate(e) {
+
+            var x = e.clientX;
+            var y = e.clientY;
+            var put = document.querySelector("#put");
+            put.innerHTML = "X:" + x + " Y:" + y;
+
+        }
+
+        // 然后getContext() 方法返回一个用于在画布上绘图的环境。
+        var context = document.querySelector("#canvas").getContext('2d');
+
+        //以上构建了画布以及画图环境 接着就可以开始画头部了
+        //起始路径
+        context.beginPath();                
+        //设置线的宽度为1
+        context.lineWidth = 1;              
+        //设置笔触的颜色    
+        context.strokeStyle='#000';   
+        //画圆弧    X轴方向为0的方向
+        context.arc(200, 175, 175, Math.PI / 180 * 180*0.7, Math.PI / 180 * 180*0.3);
+        //设置填充的颜色
+        context.fillStyle='#0bb0da';
+        //填充颜色
+        context.fill();
+        //绘制路径
+        context.stroke();
+
+        coordinate(context);
+
+        //描绘脸部
+        //起始路径
+        context.beginPath();
+        // 设置笔触的颜色
+        context.fillStyle = "#fff";
+        //将路径移动到 点 (100,100);
+        context.moveTo(110, 110);
+        //创建二次贝塞尔曲线,控制点(-10,200),结束点(120,315)
+        // context.quadraticCurveTo(cpx, cpy, x, y);
+        context.quadraticCurveTo(-10, 200, 120, 315);
+        
+
+        
+        
+        
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .father {
+      height: 500px;
+      background-color: pink;
+    }
+    .son {
+      float: left;
+      width: 25%;
+      height: 100px;
+      background-color: green;
+      border: 1px solid blue;
+      box-sizing: border-box;
+    }
+    /*
+      移动端注意点:
+      1. 经常使用百分比布局, 要设置 box-sizing: border-box;
+      2. 设置视口  meta:vp + tab
+    */
+  </style>
+</head>
+<body>
+
+
+<div class="father">
+  <div class="son"></div>
+  <div class="son"></div>
+  <div class="son"></div>
+  <div class="son"></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+<div></div>
+
+<script>
+
+  var div = document.querySelector("div");
+  // 需求: 如何根据手指的滑动, 判断滑动的方向
+  // 思路: 用离开时手指的坐标, 减去开始时手指的坐标, 来判断方向
+
+  var startX;
+  div.addEventListener("touchstart", function( e ) {
+    // 记录开始的位置
+    startX = e.touches[0].clientX;
+  })
+  div.addEventListener("touchmove", function( e ) {
+
+  });
+  div.addEventListener("touchend", function( e ) {
+    // 求得手指的位移差
+    var distanceX = e.changedTouches[0].clientX - startX;
+
+    console.log( distanceX );
+    if ( distanceX > 0 ) {
+      console.log( "向右滑动" );
+    }
+    else {
+      console.log( "向左滑动" );
+    }
+
+  });
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 1200px;
+      height: 500px;
+      background-color: #ccc;
+      margin: 0 auto;
+    }
+    /* <=768px 生效 */
+    @media screen and (max-width: 768px) {
+      .container {
+        background-color: green;
+        width: 100%;
+      }
+    }
+    /* 768px-992px 生效 */
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+      .container {
+        background-color: blue;
+        width: 750px;
+      }
+    }
+    /* 992px-1200px 生效 */
+    @media screen and (min-width: 992px) and (max-width: 1200px) {
+      .container {
+        background-color: yellow;
+        width: 970px;
+      }
+    }
+    /* >= 1200 生效 */
+    @media screen and (min-width: 1200px){
+      .container {
+        background-color: pink;
+        width: 1170px;
+      }
+    }
+  </style>
+</head>
+<body>
+<!--
+  1. 超小屏幕: 0-768px      需求: 背景绿色  宽度 100%
+  2. 小屏设备: 768px-992px  需求: 背景蓝色  版心: 750px
+  3. 中屏设备: 992px-1200px 需求: 背景黄色, 版心: 970px
+  4. 大屏设备: 1200~        需求: 背景粉色, 版心: 1170px
+
+  要求: 通过 媒体查询 实现
+-->
+
+<div class="container"></div>
+
+
+</body>
+</html>

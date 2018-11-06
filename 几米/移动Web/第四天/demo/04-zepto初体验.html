@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+<div>我是盒子</div>
+
+<!--<script src="./zepto.js"></script>-->
+<!-- 引入事件处理模块 -->
+<!--<script src="./event.js"></script>-->
+<!-- 引入 animate fx 动画模块 -->
+<!--<script src="./fx.js"></script>-->
+
+<script src="./zepto.min.js"></script>
+
+<script>
+  // 入口函数
+  $(function() {
+    // 修改 div 的宽高和背景颜色
+    // $('div').width(400).height(400).css("backgroundColor", "blue");
+
+    // 点击的时候, 修改样式
+    $('div').on("click", function() {
+      // $('div').width(400).height(400).css("backgroundColor", "blue");
+      $('div').animate({
+        width: 400,
+        height: 400
+      }, 1000);
+    })
+
+  })
+
+</script>
+
+</body>
+</html>

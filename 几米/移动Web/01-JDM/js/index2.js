@@ -125,9 +125,9 @@ window.onload = function () {
             index++;
             addTransition();
             setTransform(-index * width);
-            // console.log(index);
+            console.log("轮播图中的index====="+index);
 
-        }, 2000);
+        }, 3000);
 
         //设置过渡结束后判断 index 的值,完成首尾连接效果
         ul.addEventListener("transitionend", function () {
@@ -159,36 +159,56 @@ window.onload = function () {
         touches         当前屏幕上的手指 */
 
         var stratX = 0;
+        var startTime = 0;
         ul.addEventListener("touchstart", function (e) {
-            //触摸时候获取当前手指坐标
+            //触摸时候获取当前手指坐标 开始触摸的时候需要停止定时器
             startX = e.changedTouches[0].clientX;
+            var startTime = new Date();
             /* console.log(startX);
             console.log(e.changedTouches);
             console.log(e); */
+            clearInterval(timer);
+            console.log("触摸开始时候的index====="+index);
             
             
-                 
+
+
         });
 
         ul.addEventListener("touchmove", function (e) {
-
+            //手指按住移动的时候 需要做拖动的功能
+            var distanceX = e.changedTouches[0].clientX - startX;
+            removeTransition();
+            console.log("触摸移动中的index====="+index);
+            
+            setTransform(-index * width + distanceX);
         });
 
         ul.addEventListener("touchend", function (e) {
-            var distanceX = 
+            console.log("触摸停止后的index====="+index);
+            
+            // 长滑切换 短时间短滑快速切换
+            var time = new Date();
+            time = time - startTime;
+
+            var distanceX = e.changedTouches[0].clientX - startX;
+            if (distanceX >= width / 3 || (distanceX >= 20 && time < 300)) {
+                index--;
+            } else if (distanceX <= -width / 3 || (distanceX <= -20 && time < 300)) {
+                index++;
+            }
+            addTransition();
+            setTransform(-index * width);
+
+            //重新开始定时器
+            timer = setInterval(function () {
+                index++;
+                addTransition();
+                setTransform(-index * width);
+                console.log("轮播图中的index====="+index);
+
+            }, 3000);
         });
-
-
-
-
-
-
-
-
-
-
-
-
 
         //  把经常用到的代码封装以便于复用
         //  添加过渡效果
