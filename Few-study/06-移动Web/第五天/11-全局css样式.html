@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>基础模板</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+</head>
+<body>
+
+
+<span class="h1">我是大标题</span>
+
+
+<!-- text-left 居左 text-right 居有 text-center 居中 -->
+<p class="text-left">我是文本</p>
+<p class="text-center">我是文本</p>
+<p class="text-right">我是文本</p>
+
+
+<!-- pre 标签 了解 -->
+<pre>
+  &lt;p&gt;Sample text here...&lt;/p&gt;
+</pre>
+
+
+<!--
+  1. 添加table类, 就能有表格样式了
+  2. table-bordered 添加边框
+  3. table-hover 添加hover效果
+-->
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- 按钮
+     1. 按钮的颜色
+        btn-success 绿色
+        btn-danger  红色
+        btn-primary  深蓝
+        btn-default  白色
+-->
+<button class="btn btn-success">我是按钮</button>
+<button class="btn btn-danger">我是按钮</button>
+<button class="btn btn-primary">我是按钮</button>
+<button class="btn btn-default">白色按钮</button>
+
+<!-- btn-link (了解)为 按钮 赋予 a链接的样式 -->
+<button class="btn btn-link">（链接）Link</button>
+
+
+<br><br><br>
+
+<!--
+  2 .btn-lg、.btn-sm 或 .btn-xs 控制按钮的大小
+-->
+<button class="btn btn-danger btn-lg">大型按钮</button>
+<button class="btn btn-danger">默认按钮</button>
+<button class="btn btn-danger btn-sm">小型按钮</button>
+<button class="btn btn-danger btn-xs">超小型按钮</button>
+
+<br><br><br>
+
+<!--
+  3. btn-block 可以设置按钮成块级按钮
+     本质上: 1. display: block;
+             2. width: 100%
+-->
+<button class="btn btn-danger btn-lg btn-block">块级大红色按钮</button>
+
+
+
+
+
+
+
+<script src="jquery.min.js"></script>
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>基础模板</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+  <style>
+    .container {
+      height: 500px;
+      border: 1px solid #000;
+    }
+    .box {
+      /*float: left;*/
+      /*width: 50%;*/
+      height: 100px;
+      border: 1px solid red;
+    }
+
+
+    /*
+      栅格系统, 将一行分配成 12列  (主要是为了方便分配空间)
+
+      栅格系统底层原理 = 浮动 + 百分比 + 媒体查询
+
+      语法: col-xx-x
+
+      lg   large   大屏幕以上生效
+      md   middle  中屏以上生效
+      sm   small   小屏以上生效
+      xs   Xsmall  超小屏以上生效, 所有屏幕都生效
+    */
+  </style>
+</head>
+<body>
+
+<!-- 响应式版心 -->
+<div class="container">
+  <!--<div class="box col-md-6 col-lg-4"></div>-->
+  <!--<div class="box col-md-6 col-lg-4"></div>-->
+
+  <div class="box col-md-6"></div>
+  <div class="box col-md-5"></div>
+</div>
+
+
+
+<script src="jquery.min.js"></script>
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <!-- 让 IE 以最优的 内核 来解析页面 (兼容IE)-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- 设置了视口 (适配移动端)-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>基础模板</title>
+
+  <!-- Bootstrap -->
+  <link href="./bootstrap/css/bootstrap.css" rel="stylesheet">
+
+  <!--
+    条件注释 用于兼容 IE
+    1. html5shiv 兼容 html5 语义化标签 (原理: 动态创建新标签元素, 转换显示模式 )
+    2. respond  兼容 媒体查询的        (原理: 本质是上监听 屏幕 resize 变化完成响应式处理的)
+  -->
+  <!-- 以下两个包只在 小于 IE9 的浏览器中会被引入 -->
+  <!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+
+<h1>你好，世界！</h1>
+
+
+<!-- bootstrap 依赖于 jquery -->
+<script src="./jquery.min.js"></script>
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

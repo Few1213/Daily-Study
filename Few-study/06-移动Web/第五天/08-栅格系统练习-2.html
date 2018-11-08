@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>基础模板</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+  <style>
+    .container {
+      border: 1px solid #000;
+    }
+    .son {
+      height: 100px;
+      border: 1px solid blue;
+    }
+  </style>
+</head>
+<body>
+
+<!--
+  需求:
+   1. 大屏幕 一行 3个     lg  大屏以上生效
+   2. 中屏幕 一行 3个     md  中屏以上生效
+   3. 小屏幕 一行 2个     sm  小屏幕以上生效
+   4. 超小屏幕 一行 1个   xs  所有屏幕都生效
+
+  栅格系统布局: 推荐从小往大, 进行空间分配布局
+  栅格系统原理: 浮动 + 百分比 + 媒体查询
+-->
+<div class="container">
+  <div class="son col-sm-6 col-md-4"></div>
+  <div class="son col-sm-6 col-md-4"></div>
+  <div class="son col-sm-6 col-md-4"></div>
+  <div class="son col-sm-6 col-md-4"></div>
+  <div class="son col-sm-6 col-md-4"></div>
+  <div class="son col-sm-6 col-md-4"></div>
+</div>
+
+
+
+<script src="jquery.min.js"></script>
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

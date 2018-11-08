@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>基础模板</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+  <style>
+    .container {
+      height: 500px;
+      background-color: pink;
+    }
+    .container-fluid {
+      height: 300px;
+      background-color: skyblue;
+    }
+  </style>
+</head>
+<body>
+
+
+<!--
+  0 - 768 - 992 - 1200 -
+  响应式容器1:  container
+    特点: 1. 在不同屏幕尺寸下 有着不同的版心
+          2. 有着默认左右 padding 值 15px
+
+  响应式容器2:  container-fluid  (流式布局容器)  (了解)
+    特点: 1. 在任何屏幕尺寸下 宽度都是 100%
+          2. 有着默认的左右 padding 值 15px
+
+  row类: 就是用于抵消父元素的默认左右 padding 值
+         本质上是通过 margin负值实现的
+-->
+
+<div class="container">
+  <div class="row">
+    我是内容
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    我是内容
+  </div>
+</div>
+
+
+
+
+<script src="jquery.min.js"></script>
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

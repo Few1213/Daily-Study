@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>基础模板</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+  <style>
+    .container {
+      border: 1px solid #000;
+    }
+    .son {
+      height: 100px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+
+<!--
+需求:  12 个 div
+    如果是大屏幕设备, 每行放 6 个 div, 两行
+    如果是中屏设备, 每行放 4 个 div, 三行
+    如果是小屏设备, 每行放 3 个 div, 四行
+    如果是超小屏设备, 每行放 2 个 div, 六行
+
+    下面只是极端情况, 下面需要对每个屏幕都要进行适配
+-->
+<!-- 响应式版心 -->
+<div class="container">
+  <div class="son col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+  <div class="son col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+  <div class="son col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+  <div class="son col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+  <div class="son col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+  <div class="son col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+  <div class="son col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+  <div class="son col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+  <div class="son col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+  <div class="son col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+  <div class="son col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+  <div class="son col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+</div>
+
+
+
+<script src="jquery.min.js"></script>
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

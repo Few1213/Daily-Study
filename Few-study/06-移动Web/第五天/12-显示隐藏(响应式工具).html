@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>基础模板</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+
+<!--
+  需求: 让一个盒子在 大屏幕中屏幕显示,
+        在小屏幕 和 超小屏幕 隐藏 (display: none;)
+-->
+<!--
+  0 - 768 - 992 - 1200 -
+   超小   小    中      大
+
+  样式在 <= 992 时生效
+  @media screen and (max-width: 992px) {
+    .box {
+      display: none;
+    }
+  }
+-->
+
+
+
+<!--
+  0 - 768 - 992 - 1200 -
+  响应式工具(控制盒子显示隐藏)
+  1. hidden     隐藏  在所有屏幕都隐藏        底层: display: none;
+  2. hidden-lg  在大屏幕隐藏, 其他屏幕不管    >= 1200     让盒子隐藏
+  3. hidden-md  在中屏幕隐藏, 其他屏幕不管    992 - 1200  让盒子隐藏
+  4. hidden-sm  在小屏幕隐藏, 其他屏幕不管    768 - 992   让盒子隐藏
+  5. hidden-xs  在超小屏幕隐藏, 其他屏幕不管  0 - 768     让盒子隐藏
+-->
+
+<div class="hidden-sm hidden-xs"></div>
+
+
+
+<script src="jquery.min.js"></script>
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

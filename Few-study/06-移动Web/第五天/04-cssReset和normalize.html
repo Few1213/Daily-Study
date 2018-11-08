@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>基础模板</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+  <style>
+    /* 如果不需要, normalize 提倡自己手动重置 */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+<!--
+  cssReset, 特点: 比较暴力, 会将所有的样式都进行重置
+  比如: 将 .... { margin: 0; padding:0 }  重置 h系列标签的字体大小
+       重置 a 标签的颜色, 下划线,  ul标签 list-style....
+
+  normalize.css
+  特点:
+    (1) 不是对所有的样式进行重置, 保留了一些有用的样式
+        (比如: h系列的字体大小/margin,  ul保留了list-style, padding)
+    (2) 统一了各大浏览器的样式, (一旦发现不一样的样式, 都进行了处理重置)
+-->
+
+<h1>我是大标题</h1>
+<h2>我是二标题</h2>
+<h3>我是三标题</h3>
+
+<ul>
+  <li>123</li>
+  <li>123</li>
+  <li>123</li>
+</ul>
+
+
+
+
+
+<script src="jquery.min.js"></script>
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

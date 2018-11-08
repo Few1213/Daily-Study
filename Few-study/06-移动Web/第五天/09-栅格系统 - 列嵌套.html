@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>基础模板</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+  <style>
+    .container {
+      height: 400px;
+      border: 1px solid #000;
+      background-color: ;
+    }
+    .son {
+      height: 100px;
+      border: 1px solid red;
+    }
+    .box {
+      height: 50px;
+      border: 1px solid blue;
+    }
+  </style>
+</head>
+<body>
+
+<!--
+  列嵌套: 就是已经使用栅格系统进行分配空间的区域内, 再次进行空间分配
+
+  可以通过 row类, 抵消父元素的左右padding值, (本质上通过 margin 负值实现的)
+-->
+
+<div class="container">
+  <div class="row">
+    <div class="son col-md-6">
+      <div class="row">
+        <div class="box col-xs-3"></div>
+        <div class="box col-xs-9"></div>
+      </div>
+    </div>
+    <div class="son col-md-6"></div>
+  </div>
+</div>
+
+
+
+<script src="jquery.min.js"></script>
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

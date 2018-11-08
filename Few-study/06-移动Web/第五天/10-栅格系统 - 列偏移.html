@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>基础模板</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+  <style>
+    .container {
+      height: 500px;
+      border: 1px solid #000;
+    }
+    .son {
+      height: 100px;
+      border: 1px solid blue;
+    }
+
+  </style>
+</head>
+<body>
+
+<!--
+  列偏移: 给盒子设置百分比的margin-left
+         结合了媒体查询
+
+  语法: col-xx-offset-x
+-->
+
+<div class="container">
+  <div class="son col-md-3"></div>
+  <!-- col-md-offset-3 百分比的 margin-left 只在 中屏幕以上 生效 -->
+
+  <div class="son col-md-3 col-md-offset-6"></div>
+</div>
+
+
+
+<script src="jquery.min.js"></script>
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
