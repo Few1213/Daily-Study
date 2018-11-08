@@ -51,7 +51,4 @@ ul.addEventListener("touchend", function (e) {
         ul.style.transform = "translateY("+minY+"px)";
     }
 
-
-
-
 });
