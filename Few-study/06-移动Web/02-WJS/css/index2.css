@@ -105,5 +105,60 @@ a:hover {
 }
 
 /* ------------------- 信息模块 ----------------- */
+.wjs_info .item {
+  margin: 20px 0;
+}
+.wjs_info .pull-left {
+  margin: 0 10px;
+}
+.wjs_info .pull-left .wjs_icon_info {
+  font-size: 30px;
+}
+
+/* ==================================
+* 预约模块
+* ================================== */
+.wjs_book {
+  height: 89px;
+  line-height: 89px;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  overflow: hidden;
+}
+.wjs_book i {
+  font-size: 20px;
+}
+.wjs_book .pull- a {
+  color: #e92322;
+  border-bottom: 1px dashed #e92322;
+}
+
+/* ==================================
+* 产品模块
+* ================================== */
+.wjs_product {
+  margin-top: 20px;
+}
+.wjs_product .nav-tabs > li.active > a, .wjs_product .nav-tabs > li.active > a:hover, .wjs_product .nav-tabs > li.active > a:focus {
+  border: 0;
+  background-color: #fff;
+}
+.wjs_product .nav-tabs {
+  border: 0;
+}
+.wjs_product .nav-tabs li > a {
+  border: 0;
+}
+.wjs_product .nav li:hover {
+  background-color: #fff;
+  box-sizing: border-box;
+}
+.wjs_product .nav li:hover a {
+  background-color: #fff;
+  border: 0;
+}
+.wjs_product li.active {
+  border-bottom: 3px solid #e92322;
+}
 
 /*# sourceMappingURL=index2.css.map */
