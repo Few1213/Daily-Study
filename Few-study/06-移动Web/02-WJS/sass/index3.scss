@@ -1,0 +1,365 @@
+body {
+    height: 3000px;
+}
+
+// 以下是基础样式
+i {
+    font-style: normal;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #e92322;
+}
+
+$red:#e92322;
+/* ------------- wjs_header -------------- */
+
+.wjs_header {
+    border-bottom: 1px solid #cccccc;
+    .row {
+        height: 40px;
+        text-align: center;
+        >div {
+            height: 40px;
+            line-height: 40px;
+            border-right: 1px solid #cccccc;
+            &:first-child a {
+                display: block;
+                img {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: 40px;
+                    z-index: 999;
+                    display: none;
+                    border: 1px solid #cccccc;
+                }
+                &:hover img {
+                    display: block;
+                }
+            }
+            &:last-child {
+                border-right: 0;
+                .btn {
+                    padding: 2px 12px;
+                    text-decoration: none;
+                }
+                .btn-link {
+                    color: #000000;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------- wjs_nav --------------------- */
+
+.wjs_nav .navbar {
+    background-color: #fff;
+    margin-bottom: 0;
+}
+
+.wjs_nav .container {
+    background-color: #fff;
+    .navbar-header {
+        a {
+            display: block;
+            height: 80px;
+            line-height: 50px;
+        }
+        .navbar-brand i {
+            &.wjs_icon_logo {
+                font-size: 50px;
+                color: $red;
+                vertical-align: middle;
+            }
+            &.wjs_icon_word {
+                font-size: 30px;
+                color: #000000;
+                vertical-align: middle;
+            }
+        }
+        .navbar-toggle {
+            margin-top: 23px;
+        }
+    }
+    .collapse ul {
+        li {
+            background-color: #fff;
+            a,
+            a:hover,
+            >a:focus {
+                height: 80px;
+                line-height: 50px;
+                background-color: #fff;
+            }
+            a:hover {
+                border-bottom: 3px solid $red;
+            }
+            &.active a {
+                border-bottom: 3px solid $red;
+            }
+        }
+    }
+}
+
+/* ---------------wjs_banner------------------ */
+
+.wjs_banner {
+    // height: 410px;
+    .carousel-inner {
+        position: relative;
+        @media screen and (min-width: 641px) {
+            .item {
+                height: 410px; //图片滚动时候的bug用 overflow hidden 处理
+                overflow: hidden;
+                img {
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: 0;
+                    max-width: none;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+/* -------------------wjs_info--------------------- */
+
+.wjs_info .row {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    >div {
+        margin-top: 10px;
+    }
+    >div:hover,
+    >div:hover i.wjs_icon_info {
+        color: $red;
+    }
+}
+
+.wjs_info .row a {
+    .wjs_icon_info {
+        font-size: 36px;
+    }
+}
+
+/* ----------------wjs_book------------------- */
+
+.wjs_book {
+    height: 89px;
+    line-height: 89px;
+    box-sizing: border-box;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    
+    overflow: hidden;
+    .container {
+        overflow: hidden;
+    }
+    .wjs_icon_clock {
+        font-size: 20px;
+    }
+    .book_now {
+        color: $red;
+        border-bottom: 1px dashed $red;
+    }
+}
+
+/* -------------wjs_product--------------- */
+
+.wjs_product {
+    background-color: #f5f5f5;;
+    .ul-wrap {
+        overflow: hidden;
+        width: 100%;
+    }
+    .container {
+        .nav-tabs {
+            width: 100%;
+            margin-top: 20px;
+            a {
+                border: 0;
+                background-color: #f5f5f5;
+            }
+            li.active a {
+                border: 0;
+                background-color: #f5f5f5;
+                border-bottom: 3px solid $red;
+            }
+        }
+
+
+
+
+        .tab-content{
+                .tab-pane>div:first-child .product_box {
+                   
+                        background-color: $red;
+                        color: #fff;
+                
+                }
+            .col-xs-12 .col-sm-6 .col-md-4{
+                padding: 0 10px;
+                
+            }
+            .product_box{
+                margin-top: 30px;
+                // width: 100%;
+                background-color: pink;
+                padding-right: 80px;
+                box-sizing: border-box;
+                color: #000;
+               
+                .product_left {
+                    width: 100%;          
+                    height: 150px;
+                    overflow: hidden; 
+                    .wjs_icon{
+                        position: absolute;
+                        left: 15px;
+                        top: 22px;
+                        font-size: 40px;
+                        
+                    }
+                    h3{
+                        margin: 10px;
+                        text-align: center;
+                        font-size: 19px;
+                    }
+                    p{
+                        margin-bottom: 5px;
+                    }
+                }
+                .product_right{
+                    position: absolute;
+                    top: 30px;
+                    right: 10px;
+                    width: 80px;
+                    height: 150px;
+                    // background-color: blue
+                    text-align: center;
+                    border-left: 1px dashed blue;
+                    .num{
+                        margin-top: 40px;
+                    }
+                    &:before,
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        background-color: #f5f5f5;
+                    }
+                    &:before{
+                        left: 0;
+                        top: 0;
+                        transform: translate(-50%,-50%);
+                    }
+                    &:after{
+                        left: 0;
+                        bottom: 0;
+                        transform: translate(-50%,50%);
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+/* --------------------wsj_news-------------- */
+.wsj_news{
+    padding: 20px 0;
+    border-bottom: 1px solid #cccccc;
+    .col-md-1{
+        padding: 0;
+    }
+    .news_title{
+        position: relative;
+        text-align: center;
+        padding:10px 0; 
+        border-bottom: 2px solid $red;
+        &::after{
+            content: "";
+            position: absolute;
+            right: -10px;
+            bottom: -5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            border: 2px solid $red;
+        }
+    }
+    .news_ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+        @media screen and (max-width: 992px){
+            li{
+                float: left;
+                width: 25%;
+                margin: 10px 0;
+                
+            }
+            div{
+                display: none;
+            }
+        }
+        div{
+            width: 1px;
+            height: 60px;
+            border:1px dashed #cccccc;
+            margin:  0 auto;
+        }
+        a{
+            display: block;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            margin: 0 auto;
+            border-radius: 50%;
+            background-color: $red;
+            color: #fff;
+            i{
+                font-size: 25px;
+            }
+        }
+    }
+    .tab-content{
+        ul{
+            padding: 0;
+            list-style: none;
+            li{
+                padding: 10px 0px;
+            }
+        }
+    }
+}
+/* ------------partner----------- */
+.partner{
+    text-align: center;
+    ul{
+        list-style: none;
+        text-align: center;
+        li{
+            display: inline-block;
+            margin: 0 30px;
+            a i{
+                font-size: 60px;
+            }
+        } 
+    }
+}

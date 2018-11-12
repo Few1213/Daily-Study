@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/index2.css">
+    <link rel="stylesheet" href="./fonts/wjsfont.css">
+    <link rel="icon" href="./favicon.ico">
+    <title>微金所</title>
+</head>
+
+<body>
+    <!-- 在写页面的时候,先确定结构在书写样式 -->
+    <!-- 头部模块 -->
+    <div class="wjs_header hidden-xs hidden-sm">
+        <div class="container">
+            <div class="col-md-2 item">
+                <a href="#">
+                    <i class="wjs_icon wjs_icon_phone"></i>
+                    <span>手机微金所</span>
+                    <i class="glyphicon glyphicon-menu-down"></i>
+                </a>
+            </div>
+            <div class="col-md-5 item">
+                <i class="wjs_icon wjs_icon_tel"></i>
+                <span>4006-89-4006（服务时间：9:00-21:00）</span>
+            </div>
+            <div class="col-md-2 item">
+                <a href="#">常见问题</a>
+                <a href="#">财富登录</a>
+            </div>
+            <div class="col-md-3 item">
+                <button class="btn btn-danger">免费注册</button>
+                <button class="btn btn-link">登录</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 导航模块 -->
+    <div class="wjs_nav">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- 一下是按钮的样式, icon-bar 类的span 是三根斜杠 -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <i class="wjs_icon wjs_icon_logo"></i>
+                        <i class="wjs_icon wjs_icon_word"></i>
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">我要投资</a></li>
+                        <li><a href="#">我要借贷</a></li>
+                        <li><a href="#">平台介绍</a></li>
+                        <li><a href="#">新手专区</a></li>
+                        <li><a href="#">最新动态</a></li>
+                        <li><a href="#">微平台</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right hidden-sm">
+                        <li><a href="#">个人中心</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+
+    <!-- 广告模块 -->
+    <div class="wjs_banner">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img data-psrc="./images/slide_01_2000x410.jpg" data-msrc="./images/slide_01_640x340.jpg">
+                </div>
+                <div class="item">
+                    <img data-psrc="./images/slide_02_2000x410.jpg" data-msrc="./images/slide_02_640x340.jpg">
+                </div>
+                <div class="item">
+                    <img data-psrc="./images/slide_03_2000x410.jpg" data-msrc="./images/slide_03_640x340.jpg">
+                </div>
+                <div class="item">
+                    <img data-psrc="./images/slide_04_2000x410.jpg" data-msrc="./images/slide_04_640x340.jpg">
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control hidden-xs " href="#carousel-example-generic" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control hidden-xs" href="#carousel-example-generic" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 信息模块 -->
+    <div class="wjs_info hidden-xs">
+        <div class="container">
+            <div class="col-sm-6 col-md-4">
+                <a href="#">
+                    <div class="pull-left">
+                        <i class="wjs_icon wjs_icon_info"></i>
+                    </div>
+                    <div class="pull-left">
+                        <h4 class="media-heading">支付交易保障</h4> 
+                        <p>银联支付全程保证支付安全</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">2</div>
+            <div class="col-sm-6 col-md-4">3</div>
+            <div class="col-sm-6 col-md-4">4</div>
+            <div class="col-sm-6 col-md-4">5</div>
+            <div class="col-sm-6 col-md-4">6</div>
+        </div>
+    </div>
+
+    <!-- 预约模块 -->
+    <div class="wjs_book"></div>
+
+    <!-- 产品模块 -->
+    <div class="wjs_product"></div>
+
+    <!-- 新闻模块 -->
+    <div class="wjs_news"></div>
+
+    <!-- 合作伙伴 -->
+    <div class="wjs_partner"></div>
+
+    <script src="./lib/jquery/jquery-1.12.4.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.js"></script>
+    <script src="./js/index2.js"></script>
+</body>
+
+</html>

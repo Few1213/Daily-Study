@@ -1,0 +1,128 @@
+$mainColor:#e92322;
+$black:#000;
+$white: #fff;
+$ccc: #cccccc;
+%border {
+    border-bottom: 1px solid #cccccc;
+}
+
+/* 基本样式清理 */
+body {
+    height: 2000px;
+}
+
+a:hover,
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: $black; // background-color: $white;
+}
+
+a:hover {
+    color: $mainColor;
+}
+
+/* 头部样式 */
+
+.wjs_header {
+    @extend %border;
+    .container {
+        height: 40px;
+        .item {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-right: 1px solid $ccc;
+            &:last-child {
+                border: 0;
+            }
+            .btn-link {
+                text-decoration: none;
+                color: $black;
+                &:hover {
+                    color: $mainColor;
+                }
+            }
+            .btn-danger {
+                // 在原有的基础上重置 padding 的值
+                padding: 2px 12px;
+            }
+        }
+    }
+}
+
+/* 导航模块 */
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    background-color: $white;
+}
+
+.wjs_nav {
+    .navbar-default {
+        background-color: $white;
+        margin-bottom: 0;
+    }
+    .navbar-header {
+        height: 80px;
+        line-height: 80px;
+        .collapsed {
+            margin-top: 20px;
+        }
+        .navbar-brand{
+            height: 80px;
+            line-height: 40px;
+        }
+        .wjs_icon_logo {
+
+            font-size: 50px;
+            color: $mainColor;
+            // vertical-align: middle;
+        }
+        .wjs_icon_word {
+
+            font-size: 36px;
+            color: $black;
+            // vertical-align: middle;
+        }
+    }
+    .collapse li {
+        a {
+            height: 80px;
+            line-height: 50px;
+            &:hover {
+                border-bottom: 3px solid $mainColor;
+            }
+        }
+        &.active a {
+            border-bottom: 3px solid $mainColor
+        }
+    }
+}
+
+/* ------------------- 广告模块 ----------------- */
+
+.wjs_banner {
+    // height: 410px;
+    overflow: hidden;
+    @media screen and (min-width:641px){
+        
+        .item {
+            // position: relative;
+            height: 410px;
+            overflow: hidden;
+            img {
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+                max-width: none;
+                height: 410px;
+            }
+        }
+    }
+}
+
+/* ------------------- 信息模块 ----------------- */

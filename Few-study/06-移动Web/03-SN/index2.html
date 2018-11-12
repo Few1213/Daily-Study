@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/index2.css">
+    <script src="./lib/flexible/flexible.js"></script>
+    <title>Document</title>
+    <style>
+        /* div {
+            height: 5rem;
+            width: 5rem;
+            background-color: aqua;
+        } */
+    </style>
+    <script>
+        // // 布局实现的原理
+        // window.addEventListener("resize", function () {
+        //     var width = window.innerWidth;
+        //     // console.log(width);
+        //     var base = 100;
+        //     var design = 750;
+        //     // 屏幕当前的尺寸/设计尺寸 =  当前的rem* 基准值
+        //     var size = width / design * base;
+        //     //把得到 的结果赋值给根标签
+        //     document.documentElement.style.fontSize = size + "px";
+        // })
+
+        // 通过 js 实现宽高自适应的效果
+        // rem 和 em 的差别 
+        // 当前页面的根标签字体大小 = 当前页面的宽度/设计图上的宽度 * 基准值
+        // function load() {
+        //     // 获取屏幕当前的宽度
+        //     var width = window.innerWidth;
+        //     // 设置基准值
+        //     var base = 100;
+        //     // 设计图给出的宽度
+        //     var design = 750;
+        //     var size = width / design * base;
+        //     document.documentElement.style.fontSize = size + "px";
+        // }
+        // load();
+        // window.addEventListener("resize", load);
+    </script>
+</head>
+
+<body>
+    <!-- 头部开始 -->
+    <div class="header">
+        <a class="icon_left" href="#"></a>
+        <i></i>
+        <input type="text" placeholder="双十一大促,你剁手了嘛">
+
+        <a class="icon_right" href="#"></a>
+    </div>
+    <!-- 轮播图 -->
+    <div class="banner">
+        <img src="./images/banner01.jpg" alt="">
+    </div>
+    <!-- 导航模块 -->
+    <div class="nav">
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="./images/nav01.png" alt="">
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/nav02.png" alt="">
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/nav03.png" alt="">
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/nav04.png" alt="">
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/nav05.png" alt="">
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/nav06.png" alt="">
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/nav07.png" alt="">
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/nav08.png" alt="">
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/nav09.png" alt="">
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/nav10.png" alt="">
+                    <p>分类</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="./images/tabs01.png" alt="">
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/tabs02.png" alt="">
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/tabs03.png" alt="">
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/tabs04.png" alt="">
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/tabs05.png" alt="">
+                    <p>首页</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
