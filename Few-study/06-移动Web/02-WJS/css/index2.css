@@ -139,7 +139,9 @@ a:hover {
 .wjs_product {
   margin-top: 20px;
 }
-.wjs_product .nav-tabs > li.active > a, .wjs_product .nav-tabs > li.active > a:hover, .wjs_product .nav-tabs > li.active > a:focus {
+.wjs_product .nav-tabs > li.active > a,
+.wjs_product .nav-tabs > li.active > a:hover,
+.wjs_product .nav-tabs > li.active > a:focus {
   border: 0;
   background-color: #fff;
 }
@@ -159,6 +161,35 @@ a:hover {
 }
 .wjs_product li.active {
   border-bottom: 3px solid #e92322;
+}
+.wjs_product .tab-content .tab_item {
+  position: relative;
+  height: 150px;
+  text-align: center;
+  margin-top: 20px;
+  background-color: #e92322;
+}
+.wjs_product .tab-content .tab_right {
+  width: 80px;
+  height: 150px;
+  padding-top: 20px;
+  border-left: 1px dashed blue;
+  color: #fff;
+}
+.wjs_product .tab-content .tab_left {
+  overflow: hidden;
+  color: #fff;
+}
+.wjs_product .tab-content .tab_left h3 {
+  font-size: 20px;
+}
+.wjs_product .tab-content .tab_left p {
+  margin-bottom: 5px;
+}
+.wjs_product .tab-content .tab_left i {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 /*# sourceMappingURL=index2.css.map */
