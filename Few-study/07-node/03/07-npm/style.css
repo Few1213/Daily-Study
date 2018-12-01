@@ -1,0 +1,10 @@
+.box {
+  width: 200px;
+  height: 200px;
+}
+.box p {
+  color: red;
+}
+.box p span {
+  font-size: 200px;
+}

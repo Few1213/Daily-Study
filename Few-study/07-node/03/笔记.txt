@@ -1,0 +1,132 @@
+1-复习
+    node 模块：
+    global全局模块： 
+        可以在任何地方直接使用  
+        console
+        setInterval();
+        setTimeout();
+
+        __dirname
+        __filename  
+
+    fs文件模块：
+        fs.readFile(路径，编码， (err, data) => {})
+        fs.writeFile(路径, 内容， 编码, (err) => { })
+        fs.appendFile(路径, 内容， 编码, (err) => { })
+        fs.rename(路径， 新路径，(err) => {})
+        fs.unlink(路径, (err) => {}) 
+
+        默认的都是异步的 
+
+    路径： 
+        在读写文件时， 写相对路径  相对于 node命令执行位置，而不是js文件的位置 ，建议用绝对路径 
+        __dirname + 'data/index.html';
+
+    path模块： 
+        可以解决不同操作系统，路径分隔符不一致的问题
+        path.join(__dirname, 'data', 'index.html'); 
+    
+    http模块： 
+
+        1-引入
+        const http = require('http');
+        2-创建服务器
+        const server = http.createSever();
+        3-处理请求 
+        server.on('request', (req, res) => {
+            req:
+                req.url
+                req.method
+                req.headers 
+
+            res:
+            状态行
+                res.statusCode
+                res.statusMessage
+            响应头
+                res.setHeader();  //header('content-type', 'text/html');
+            响应主体
+                res.write();   // each 
+                res.end();//告诉浏览器服务器响应完成
+        })
+        4-设置端口，打开服务器
+        server.listen(9999, () =>{ ... })
+
+    
+
+2-根据不同的请求响应不同的页面
+
+3-mime模块 
+    服务器在给浏览器返回数据是，需要告诉浏览器返回的数据MIME类型,就是content-type属性， 
+    浏览器会根据服务器返回MIME类型去解析数据，如果服务器没有设置，浏览器会去猜测对应文件类型，去解析；
+
+    使用：
+    1- 先安装mime模块 npm i mime  
+    2- 引入  const mime  = require('mime');
+    3-  mime.getType(req.url);   获取指定url的mime类型 
+
+4-npm 
+
+    1-什么是npm
+        node的 包 管理工具 
+
+    2-npm的初始化 
+        npm init 
+        npm init -y 快速初始化 
+
+
+        初始化后会得到要给package.json文件， 它是包描述
+
+    3-安装本地包、卸载包
+        npm   install  包名 
+        npm  i  包名 
+        npm  i  包名@版本号   安装指定的版本  
+
+        卸载包
+        npm  uninstall 包名  
+
+        
+    4-package.json的介绍
+        版本介绍
+        "version": "1.0.0"
+        x.y.z 
+        x.y.z 
+        jquery 1.0.0  
+        jquery 1.0.1 
+        jquery 1.1.0
+        jquery 2.0.0
+        
+        如果只是修复bug，需要更新Z位。
+        如果是新增了功能，但是向下兼容，需要更新Y位。
+        如果有大变动，向下不兼容，需要更新X位。
+
+
+    5-安装全局包
+     会得到一个命令行工具
+     npm i -g  包名   
+     可以在任何目录使用 
+
+
+    1- 初始化  
+    npm init -y --> package.json  是项目包描述 
+
+    2- 安装本地包 
+    npm install packagename 
+    npm i packagename 
+
+    npm i packagename@1.12.4 
+
+    //删除包 
+    npm uninstall packagename 
+
+    3- 全局包一个命名行工具 
+    npm i -g packagename; 
+
+    npm i -g nodemon
+    nodemon index.js   自动重启服务器的一个包  
+
+    
+
+5-hackerNews 案例
+
+

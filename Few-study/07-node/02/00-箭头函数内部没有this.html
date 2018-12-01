@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let obj = {
+        //     name: '左右',
+        //     age: 18,
+        //     gender: '男',
+        //     say() {
+        //         // console.log(this);
+        //         setInterval( () => {
+        //             console.log(this);
+        //         },1000);
+        //     }
+        // }
+        // obj.say();
+
+
+
+
+
+
+
+
+        //箭头函数内部没有this
+        // let obj = {
+        //     name: '大翁哥',
+        //     age: 18,
+        //     sex: '女',
+        //     say: function () {
+        //         console.log(this);  //指的是 window
+        //         // let that = this; //缓存this 
+        //         setInterval(function () {
+        //             // console.log(this);          指的是 window          
+        //             console.log(this.sex , this.name);       window 上没有 sex 和 name 属性             
+        //             // console.log(that.sex , that.name);                    
+        //         }, 1000)
+        //     }
+        // }
+
+        let obj = {
+            name: '大翁哥',
+            age: 18,
+            sex: '女',
+            say: function () {
+                // console.log(this);
+                // let that = this;  //缓存this 
+                setInterval(() => {
+                    console.log(this.name);
+                }, 1000)
+            }
+        }
+
+
+
+        obj.say();
+        // 构造函数内部this执行的是当前实例 ，箭头函内部没有this
+        // 箭头函数不能作为构造函数使用
+
+
+        // 构造函数内部 this 指向的是当前实例,箭头函数内部没有 this
+        // 箭头函数不能作为构造函数进行使用
+
+        // 构造函数内部 this 指向的是当前实例,箭头函数内部你没有 this
+        // 箭头函数不能当做构造函数使用
+
+        //  构造函数内部的 this 指向的是当前实例,箭头函数内部没有 this
+        //箭头函数不能当做构造函数使用
+
+
+
+        // let Person = () => {
+        //     this.name = 'zs';
+        // }
+
+        // let p = new Person();
+
+        // console.log(p);
+    </script>
+</body>
+
+</html>

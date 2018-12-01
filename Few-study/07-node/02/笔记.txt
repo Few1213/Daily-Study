@@ -1,0 +1,146 @@
+﻿一 复习：
+    nodejs : 
+        js的运行环境 
+            浏览器  js解析器   chorme  V8引擎 
+            node    js解析器  
+
+    ES6 新语法：
+        1- 变量定义：
+        var   变量会提升， 
+        let   值会改变的情况  {}
+        const 值不发生改变的情况     定义时必须赋值；
+        共同点： 
+            1- 块级作用域
+            2- 变量不能提升 
+            3- 不能重复定义 
+
+        if () {
+            var num = 100; 
+            let num1 = 100;
+        }
+
+
+        2- 字符串方法 
+            startsWith(); 
+            endsWith();
+            includes();   
+            indexOf();
+
+        3- 数组的方法      
+            forEach( function (v, i, arr) );    将数组中每个元素，交给回调函数处理 
+            map();  将数组中每个元素，交给回调函数处理 ,并且会先定义一个空数组，用于存放每次处理结果，最后将这个数组 当前做返回值返回；
+            filter();   返回满足条件所有元素； 
+            some();     判断只是有一个元素符合条件
+            every();    判断数组中所有的元素是否符合条 
+            find();     返回满足条件的第一个元素
+            findIndex();  返回满足条件的第一个元素索引值 
+
+        4- 对象 
+            1- 属性名和变量同名 只写一个就行 
+            2- 方法 可以省略 function 
+
+
+        5- 函数默认参数 ： 备胎  
+        function (n = 1, m = 2 ) {
+           n = n || 1, 
+           m = m || 2, 
+        }
+
+
+        6- 箭头函数  是函数表达式 
+
+        let 函数名 = （参数列表） => { 函数体 }
+        
+
+        let  say = function (name, age) {}
+
+        let say = (name, age) => { ...}
+
+        简写情况
+        1- 如果只有一个参数， （）可以省略 
+        2- 如果 函数体只有一行代码 ，  {} 和 return 都可以省略 
+
+        function say() {
+            log('aaa');    
+        }
+
+        let say = () => log('aaa');
+二 global模块
+    在浏览器中全局变量 window  , 在node中也有一个全局变量global ， 
+    全部变量在任何地方都可以直接使用
+    global提供的相关方法和属性：
+    console.log() 打印信息的
+    setInterval();
+    setIntimeout();
+    clearInterval();
+    claersetTimeout();
+
+    __dirname  获取当前文件的绝对路径
+    __filename  获取当前文件的全名
+
+三 fs模块
+    使用步骤：
+        先引入fs模块
+        在使用fs模块的功能 
+
+    1- fs 读取文件   
+        参数一： 文件路径
+        参数二： 读取文件完成的回调函数
+            err: 错误信息 
+            data: 读取的文件的数据 
+            data中数据默认是二进制的， 是一个buffer对象，  可以读取任何文件，可以通过buffer.toString()将二进制的数据转成字符串 
+        fs.readFile(文件路径， function(err, data) {})
+        fs.readFile(文件路路径， 文件编码, function (err, data) {})
+
+    2-fs 写入文件   
+        fs.writeFile(文件路径， 数据， [编码], function(err) {  })
+        写入内容时，你会覆盖掉之前的内容 
+        如果指定的文件不存在，会创建一个文件，在写入内容 
+
+    3- fs 追加文件内容
+        如果指定的文件不存在，会创建一个文件，在写入内容 
+        fs.appendFile(文件路径, 数据，[编码], function(err) {})
+
+        fs.unlink 删除文件
+        fs.rename 重命名
+
+
+四、 路径问题： 
+    1-操作文件时，写相对路径 是相对于node命令执行的位置， 而不是js所在的位置；
+    建议 操作文件写 绝对路径 ： __dirname + 剩余文件名；
+
+    在不同的操作系统中，路径的表示方式是不一样的 
+    在window  用 \ 
+    在其他操作系统中  /
+    我们希望一份代码可以在不同操作系统运行， node提供了一个path模块来解决路径问题；
+
+    path模块提供一个 path.join() 可以根据操作系统不同使用特定路径分隔符 去拼接路径
+
+    path.join(__dirname, 'data', 'news.txt'); 
+
+五、 在node中并没有现成的服务器， 用我们用js代码开启服务器， 需要用到 http模块  
+  需要先引入 在使用
+
+
+六、req 和 res对象相关属性 
+    req: 获取请求报文数据
+        req.url 请求地址
+        req.method 请求方式
+        req.headers 获取请求头的 
+    res: 设置响应报文数据的
+        状态行
+        res.statusCode  = 404； 
+        res.statusMessage = 'aaa';
+        响应头：
+        res.setHeader(key, value);
+        响应主体： 
+        res.write();
+        res.end(); //表示响应结束  
+
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 10px;
+        }
+        p {
+            font-size: 200px;
+        }
+
+        span {
+            display: none;
+        }
+        .current {
+            background: red;
+            width: 200px;
+            padding: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span></span>
+    </div>
+    <div>
+        <p></p>
+    </div>
+
+    <script>
+        // div.style.background = 'pink'; // 重绘
+        // div.style.width = 200 + 'px';  // 重排  + 重绘 
+        // div.style.padding = 200 + 'px'; // 重排  + 重绘 
+
+        // div.classList.add(current);
+
+        div.style.display = 'none'; //  重排  + 重绘
+        div.style.background = 'pink';
+        div.style.background = 'pink';
+        div.style.background = 'pink';
+        div.style.background = 'pink';
+        div.style.background = 'pink';
+        div.style.background = 'pink';
+        div.style.background = 'pink';
+        div.style.background = 'pink';
+        div.style.background = 'pink';
+        div.style.display = 'block';  //  重排  + 重绘
+    </script>
+</body>
+</html>
