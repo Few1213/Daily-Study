@@ -52,24 +52,51 @@ let data = {
 //     console.log('http://localhost:9999 服务器启动了');
 
 // })
+// const http = require('http');
+// const fs = require('fs');
+// const path = require('path');
+// const mime = require('mime');
+// const template = require('art-template');
+// // const mime = require('mime');
+// const server = http.createServer();
+// server.on('request', (req, res) => {
+//     fs.readFile(path.join(__dirname,'index.html'), (err, data) => {
+//         if (err) {
+//             console.log('读取失败', err);
+//         }
+//         res.setHeader('content-type', mime.getType(req.url));
+//         res.end(data);
+//     });
+//     let str = template(path.join(__dirname,'index.html'),data);
+//     res.end(str);
+// });
+// server.listen(9999, () => {
+//     console.log('http://localhost:9999/index.html 服务器启动了');
+// });
+
+
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const mime = require('mime');
 const template = require('art-template');
-// const mime = require('mime');
+
 const server = http.createServer();
-server.on('request', (req, res) => {
-    fs.readFile(path.join(__dirname,'index.html'), (err, data) => {
+server.on('request',(req,res)=>{
+    fs.readFile(path.join(__dirname,req.url),(err,data)=>{
         if (err) {
-            console.log('读取失败', err);
+            console.log('读取失败',err);
+            
         }
-        res.setHeader('content-type', mime.getType(req.url));
+        res.setHeader('content-type',mime.getType(req.url));
         res.end(data);
     });
     let str = template(path.join(__dirname,'index.html'),data);
     res.end(str);
+
 });
-server.listen(9999, () => {
-    console.log('http://localhost:9999/index.html 服务器启动了');
+server.listen(9999,()=>{
+    console.log('http://localhost:9999 服务器启动了');
+    
 });
+

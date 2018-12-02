@@ -1,0 +1,121 @@
+1- 复习
+    1- 根据不同的请求返回不同页面； 
+    根据req.url  --> 读取对应文件内容--> 返回给浏览器进行解析   静态的；
+
+    后台返回的文件 ：  图片 视频  css ，  设置content-type: *** , 告诉浏览器服务器返回的数据类型 mime类型；
+
+    src = "aa/dd.jpg"    image/jpg     href = "style.css"   text/css 
+
+    mime模块    是第三方模块   
+    需要先安装 在使用     npm i mime;  
+
+    2- npm   node 包管理器 
+
+    npm  init  初始化npm   
+    npm init -y 
+        ---> 得到一个  package.json   包的描述    
+             name : ''
+             version: 1.0.0 
+             dependencies: 依赖项
+
+             npm i  根据package.json 自动安装依赖项；
+
+    本地包：
+        npm i 包名  
+        npm uninstall 包名 
+        当前项目需要的模块 ，使用本地安装；
+
+    全局包：
+        npm i -g 包名  
+        npm uninstall -g  包名 
+        得到一个可以在任何目录使用 命令行工具  less  nrm   nodemon  
+
+
+       npm cache clean -f  //强制清除npm 缓存
+
+
+
+    3- node中的模版引擎 ：
+        模版引擎作用： 根据数据 和模版 生成 结构的 
+        前端： template(id, {数据})
+        后台： template(模版路径， {数据})  --> 模版本身就是一个html文件 
+
+
+
+    4-hackerNews思路： 
+        1- 动态渲染首页 
+            1-先读取数据库中的数据 
+            2-读取模版 index.html 
+            3-通过模版引擎， 绑定数据和模板 ，将生成的结构进行返回； 
+
+        2-详情页
+            1-点击链接，向后台发送对应数据id 
+            2-根据id 去数据库中查找对应id的数据 
+            3-读取详情页的模版 和数据进行绑定 ， 生成结构进行返回  
+
+        3-提交页面： 
+            就是纯静态的页面， 直接读取内容返回即可 
+
+        4-添加新闻思路：
+            1- 获取前端表单的数据,包装成对象
+            2- 获取data.json的json数据，转成数组 
+            3- 将新数据添加到数组中
+            4- 将数组转回json字符串，存入data.json中
+
+            get方式 ： 
+                获取表单数据  url.parse(req.url, true).query; 
+                给新数据加id属性：  info.id = data.list[data.list.length -1].id + 1;
+                格式json字符串 JOSN.stringify(data, null, 2);
+                    参数三： json字符串每一级缩进的空格数量；
+
+
+    3- url模块 node的核心 
+        解析url地址， 协议 域名 端口 href   查询字符串 
+        url.parse(url, true); //解析url地址，并且将查询字符串转成 对象
+
+        querystring模块 用于解析查询字符串的
+        true --> querystring.parse(); 
+
+
+
+    4- get方式 post方式 的区别
+        get 会在url后面拼接字符串 ， 数据量小， 速度快 ， 不安全 
+        post 相对安全， 对上传文件大小没有限制 
+
+
+    8-路由： 
+        根据用户不同请求来执行不同逻辑，给用户返回对应结果；
+        if (req.url.startsWith('/index') || req.url === '/') { //首页
+            res.end('首页');
+        } else if (req.url.startsWith('/details')) { //详情页
+            res.end('详情页')
+        } else if (req.url.startsWith('/submit')) {  //提交页 
+            res.end('提交页');
+        } else if (req.url.startsWith('/assets')) {  //返回静态资源
+            res.end('静态资源');
+        } else {
+            res.end('404');
+        }
+
+6-获取 url中参数 
+    /details?  id = 1
+    /index? name=zs&age=18& sex=m  
+    url: 
+    http: //localhost :9999 /details  ?  id=1&age=18&sex=m 
+
+    id=1&age=18&sex=m  叫做查询字符串 queryString 
+
+    node 中专门提供了一个url模块 ，用于处理获取url的相关数据  
+
+    url 模块时用于解析 url地址， 可以快速获取 域名 端口 协议... 还有 查询字符串 
+        url模块默认不会解析 查询字符串，当设置第二参数为ture 会调用queryString模块的 parse方法 
+        来解析 查询字符串 
+
+    qeurystring模块 用解析查询字符串 ；得到一个对象；
+
+
+
+
+             
+
+
