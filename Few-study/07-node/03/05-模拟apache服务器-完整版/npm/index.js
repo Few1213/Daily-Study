@@ -63,18 +63,45 @@
 //     console.log('http://localhost:9999 服务器启动了');   
 // })
 
+// const http = require('http');
+// const fs = require('fs');
+// const path = require('path');
+// const mime = require('mime');
+// const server = http.createServer();
+// server.on('request', (req, res) => {
+//     fs.readFile(path.join(__dirname,'pages',req.url),(err,data)=>{
+//         if (err) {
+//             console.log('读取失败',err);
+//         }
+//         //动态的设置响应头
+//         res.setHeader('content-type',mime.getType(req.url));
+//         res.end(data);
+//     });
+// });
+// server.listen(9999,()=>{
+//     console.log('http://localhost:9999 服务器启动了');
+    
+// });
+
+
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-
+const mime = require('mime');
 const server = http.createServer();
-server.on('request', (req, res) => {
+server.on('request',(req,res)=>{
+    console.log(req.url);
+    
     fs.readFile(path.join(__dirname,'pages',req.url),(err,data)=>{
         if (err) {
             console.log('读取失败',err);
+            
         }
-        //动态的设置响应头
-        
-
-    })
+        res.setHeader('content-type',mime.getType(req.url));
+        res.end(data);
+    });
 });
+
+server.listen(9999,()=>{
+    console.log('http://localhost:9999/index.html 服务器启动了');
+})
