@@ -1,0 +1,81 @@
+1- 复习
+    1- 获取get方式提交的数据
+        req.url = '/add?url=aa&text=bb&title=cc'
+
+        url模块解析数据
+        url.parse(req.url, true)
+        //设置为true 调用了querystring模块的parse() 转换了  查询字符串 ；
+        let info = url.parse(req.url, true).query;
+        let id = url.parse(req.url, true).query.id;
+
+    2- 获取post方式提交的数据
+        post 数据放在请求主体里面，
+        let info = '';
+        req.on('data', (chunk)=> {
+            info += chunk; 
+        });
+
+        req.on('end', () => {
+            //使用前端传递的数据
+        })
+
+    3- json字符串格式化  
+        JSON.stringify(obj, null, 2);  //设置缩进空格数据
+
+2- 路由
+    路由就是一套匹配的规则：
+    req.url 
+    if (req.url.startsWith('/index') || req.url === '/') { //首页
+        res.end('首页');
+    } else if (req.url.startsWith('/details')) { //详情页
+        res.end('详情页')
+    } else if (req.url.startsWith('/submit')) {  //提交页 
+        res.end('提交页');
+    } else if (req.url.startsWith('/assets')) {  //返回静态资源
+        res.end('静态资源');
+    } else {
+        res.end('404');
+    }
+
+
+一、模块化
+    require.js 
+    定义模块
+        define('模块名称', [依赖项], function () {
+            //模块的功能
+        })
+    引入模块 
+        require(['./a', './b'], function () { 
+
+        })
+
+    <script src="./a.js"></script>
+    <script src="./a.js"></script>
+    <script src="./a.js"></script>
+    <script src="./a.js"></script>
+
+    在服务端使用模块化 commonJS 
+
+
+
+express中 处理路由三种方式：
+    1- app.get(path, (req, res) => {});
+       app.post(path, (req, res) => {});
+       以特定请求方式 监听特定url地址 
+
+    2- app.all(path, (req, res)=>{})
+      以任意请求方式 监听特定url地址
+
+    3- app.use(path, (req, res) => {})
+      以任意请求方式，监听以指定path开头的url请求
+
+
+
+
+
+
+
+
+
+        
+
