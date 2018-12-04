@@ -101,7 +101,7 @@ server.on('request', (req, res) => {
             info.id = data.list[data.list.length - 1].id + 1;
             console.log(info);
             // 将info的数据追加到数组中 
-            data.list.push(info); 
+            data.list.push(info);  
             // 将data转成json字符串
             data = JSON.stringify(data, null, 2);
             // 将data写到data.json中 
