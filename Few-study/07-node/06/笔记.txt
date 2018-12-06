@@ -1,0 +1,75 @@
+复习： 
+    1-模块化 
+        一个js文件 就是模块   
+            每个js文件都有自己独立的作用域， 当前模块的变量，其他的模块的不能使用        
+        分类：      
+            核心模块
+            第三方模块 
+            自定义模块   require('./')
+        
+        引入模块：
+            自定义模块  require('./')
+            先当做核心模块引入，在当做第三方模块引入 
+
+        导出模块的数据： 
+        module.exports.name = 'zs'; 
+        exports.age = 18; 
+        module.exports = {}
+        exports = {}
+
+
+    2-express
+        一个nodejs  一个框架 
+        1-创建服务器的基本步骤
+            先安装 ， 在引入使用  
+
+        2-处理路由的三种方式
+            1- app.method  
+            //用特定请求方式 来监听特定url地址 
+            app.get(url, (req, res) => {});
+            app.post(url, (req, res) => {});
+
+            2-app.all(url, (req, res) => {});
+            //以任意请求方式 监听特定url地址
+
+            3-app.use(url, (req, res) => {})
+            //以任意的请求方式， 监听以指定的url开头的请求 
+
+            app.use((req, res)=> {})
+
+        3-req,res的拓展
+            req.query  :  存放的是get方式提交的数据 
+            req.body   :  存放的是post方式提交的数据
+                req.body 默认请情况下是没有数据的，需要手动赋值
+
+            res: 
+                res.status(200);
+                res.set(k, v);
+                res.send();
+                res.sendFile();
+                res.redirect(url);
+
+    4- 静态资源的托管
+        app.use(express.static(静态文件的目录));
+    5- express 模版引擎的使用
+        npm i express
+        npm i art-template
+        npm i express-art-template  
+
+        1- 配置express使用的模版引擎 
+         app.engine(模版后缀名，模版);
+        2- 模版所在的目录
+         app.set('views', 模板的真实目录);  // 默认目录是views  
+        3- 渲染
+         res.render(模版路径， 对象);
+
+    6-中间件
+        本质上就是一个函数 
+        app.use((req, res, next) =>{
+            //res.send();
+            next(); //将处理结果传递给下一个中间件进行使用 
+        });
+
+
+
+            
