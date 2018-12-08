@@ -1,0 +1,127 @@
+express 实现 hackerNews 
+
+1- req, res拓展
+    req.query   get方式提交的数据 
+    req.body  post方式传递数据   
+
+    app.use(bodyParser.urlencode());
+
+2- 静态资源托管
+    xx.css xx.jpg 
+    app.use(express.static('静态资源目录'))
+
+3- 中间件
+    作用： 给req, res扩展功能的 
+    中间件本质就是一个函数  
+
+    app.use((req, res, next) {
+
+       next();
+    })
+    app.use((req, res, next) {
+
+       next();
+    })
+    app.use((req, res, next) {
+
+       next();
+    })
+
+    //处理逻辑  
+
+4- 外置路由
+    const router = express.Router(); //得到一个路由的实例， 
+    router.get('/index', (req, res) => { })
+    app.use(router);
+
+一、 mongodb数据
+    1-安装  
+        配置环境变量
+    2-启动
+        在磁盘根目录创建 \data\db目录 
+        mongod 启动数据库服务
+    3-连接 
+        mongo 
+        或者 连接指定ip 数据库
+        mongo mongodb://127.0.0.1:27017 
+
+
+    4-数据库命令
+        show dbs  查找所有的数据库
+        use 数据库名   切换或者创建数据库  
+        db  查看当前使用的数据库 
+        db.dropDatabase(); 删除当前使用的数据库 
+
+    5- 增删改查 ：
+        查找 ：
+        db.user.find();
+        db.集合.find();
+        db.集合.find(条件);
+
+        添加数据：
+        db.集合.insert(); 插入一条
+        db.集合.insertMany(); 插入多条
+
+        删除： 
+        db.集合.deleteOne(条件)
+        db.集合.deleteMany(条件)
+
+        //修改
+        db.集合.updateOne(条件，要修改的值)
+        db.集合.updateMany(条件，要修改的值)
+
+        db.user.find({age: {$lt: 20} });
+        db.user.updateMany({age: {$gt:30}}, {$set: {name: '大叔'}});
+
+        less   小于  
+        than   比较
+        great  大于
+        equal  等于
+        not 非
+
+
+        monogdb 很容易实现分布式； 
+
+
+
+    6-node 操作mongodb数据库 
+        1 - 安装 npm i mongodb  
+        2- 引入 
+           const  monogdb = require('mongodb);
+        3- 使用 
+           const mongobClient = mongodb.MongobClient; //得到客户端实例 
+           let  str = 'mongodb://127.0.0.1:27017'; // 连接 字符串 
+
+           mongobClient.connect(str, (err, client) => {
+               err
+               let db = client.db('test');
+
+               db.增删改查
+               client.close(); 关闭数据库
+
+           })
+
+
+
+ 7- ObjectID 和 字符串的转换 
+    ObjectID -->  ObjectId.toString();  得到一个字符串格式的id 
+
+    字符串 --> ObjectID类型 
+    new ObjectID(id);
+
+
+8- 前后端分离 和 不分离 的特点 
+
+    谁渲染？ 
+
+    前后端不分离： 后台就返回拼接好的html格式
+    前后端分离： 后台返回json格式数据 
+
+    <script src ="test.php ?callback=say ></script>
+
+
+    say({name:zs,age:18})
+
+    1W ?
+
+
