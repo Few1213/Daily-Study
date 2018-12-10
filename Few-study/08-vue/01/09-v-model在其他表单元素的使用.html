@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{msg}}</p>
+    <input type="text" v-model="msg">
+
+    <hr>
+    <h3>textarea</h3>
+    <p>{{desc}}</p>
+    <textarea cols="30" rows="10" v-model="desc"></textarea>
+
+    <hr>
+    <h3>select框</h3>
+    <p>{{city}}</p>
+    <select v-model="city">
+      <option value="1">北京</option>
+      <option value="2">上海</option>
+      <option value="3">广州</option>
+      <option value="4">深圳</option>
+    </select>
+
+    <hr>
+    <h3>checkbox</h3>
+    <p>{{isCheck}}</p>
+    <input type="checkbox" v-model="isCheck">
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue',
+        desc: '哈哈',
+        city: 2,
+        isCheck: false
+      }
+    })
+  </script>
+</body>
+</html>

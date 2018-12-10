@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 
+      v-on:指令用于给元素注册事件
+      v-on:事件名="事件函数" 
+
+      简写 @click="事件函数" @mouseenter     
+     -->
+        <!-- <button v-on:click="clickFn" v-on:mouseenter="fn">按钮</button> -->
+        <!-- <button @click="clickFn" @mouseenter="fn">按钮</button> -->
+
+        <!-- <button v-on:click='clickFn' v-on:mouseenter="fn">按钮1</button> -->
+
+        <!-- <button @click='clickFn1'>按钮2</button> -->
+
+        <button v-on:click="clickFn">按钮1</button>
+        <button @click='clickFn1'>按钮2</button>
+
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el:'#app',
+            data:{
+                msg:'hewoo'
+            },
+            methods:{
+                clickFn(){
+                    alert(1);
+                },
+                clickFn1(){
+                    alert(2);
+                }
+            }
+        });
+        
+        // const vm = new Vue({
+        //     el: '#app',
+        //     data:{
+        //         msg:'hello'
+        //     },
+        //     methods:{
+        //         clickFn(){
+        //             // console.log;
+        //             alert(1);
+        //         },
+        //         clickFn1(){
+        //             alert(2);
+        //         },
+        //         fn(){
+        //             console.log(1);
+                    
+        //         }
+        //     }
+        // });
+        // const vm = new Vue({
+        //   el: '#app',
+        //   // data用于提供vue中使用到的数据
+        //   data: {
+        //     msg: 'hello vue'
+        //   },
+        //   // methods用于提供vue中使用到的方法
+        //   methods: {
+        //     // 在vue的内部，为了我们访问vue的数据方便，methods中所有方法内部的this都绑定称为了当前vue实例
+        //     clickFn() {
+        //       console.log(this.msg)
+        //     },
+        //     fn() {
+        //       console.log('mouseenter')
+        //     }
+        //   }
+        // })
+    </script>
+</body>
+
+</html>

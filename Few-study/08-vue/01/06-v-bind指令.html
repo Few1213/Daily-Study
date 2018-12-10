@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <p>{{ msg }}</p>
+    <p>
+      <!-- <img v-bind:src="imgUrl" v-bind:title="title" alt=""> -->
+
+      <!-- <img :src="imgUrl" :title="title + '呵呵'" alt=""> -->
+      <!-- <img :src="imgUrl" :title="title" alt="title"> -->
+      <img v-bind:src="imgUrl"  v-bind:alt="msg">
+      <img :src="imgUrl"  :alt="msg">
+    </p>
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    // vue的指令： vue的指令其实就是html标签的一个特殊的属性 v-开头的属性
+    // v-bind指令
+    // 插值表达式只能出现在标签的内容中，不能出现在标签的属性中。
+    // 如果在属性中想要使用data中的数据，需要使用到v-bind指令。
+
+    // v-bind指令的作用：在标签的属性中使用data中的数据
+    // v-bind指令非常非常常用，可以缩写成 :
+    // const vm = new Vue({
+    //   el: '#app',
+    //   data: {
+    //     imgUrl: '1.jpg',
+    //     msg: '你好',
+    //     title: '这是一个title'
+    //   }
+    // })
+    const vm = new Vue({
+      el: '#app',
+      data:{
+        msg:'啊啊啊',
+        imgUrl:'2.jpg'
+      }
+    });
+  </script>
+</body>
+
+</html>

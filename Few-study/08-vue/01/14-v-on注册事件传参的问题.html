@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- @事件名="事件的函数名" 可以通过e获取到事件对象 -->
+    <!-- @事件名="函数的调用" 如果函数写的是函数的调用的方式，显示的传递事件对象-->
+    <button @click="del">删除1</button>
+    <!-- <button @click="del(3, 'zs', $event)">删除2</button> -->
+    <button @click='del(12,'zs',$event)'>删除2</button>
+    <p>{{msg}}</p>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue'
+      },
+      methods: {
+        del(id, name, e) {
+          console.log(id, name, e)
+        }
+      }
+    })
+  </script>
+</body>
+</html>

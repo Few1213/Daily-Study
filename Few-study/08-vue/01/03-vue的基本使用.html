@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 3. 在页面中使用vue中的数据 -->
+    <h1>{{msg}}</h1>
+    <div>{{msg}}</div>
+    <p>{{msg}}</p>
+  </div>
+  <div id="app2">
+
+  </div>
+  <!-- 1. 引入vue.js文件，注意：不能引入压缩版 -->
+  <script src="vue.js"></script>
+  <script>
+    // 2. 创建一个Vue的实例， 需要指定一些基本参数
+    // el参数和data参数
+    const vm = new Vue({
+      // el用于指定vue管理的范围，一个选择器
+      el: '#app',
+      // data: 用于指定在vue中使用的数据
+      data: {
+        msg: 'hello vue'
+      }
+    })
+  </script>
+</body>
+</html>

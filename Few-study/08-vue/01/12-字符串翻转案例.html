@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- <button @click="reverse">翻转</button>
+    <p>{{msg}}</p> -->
+    <!-- <button @click='fn'>按钮</button>
+    <p>{{msg}}</p> -->
+    <button @click="fn">按钮</button>
+    <p>{{msg}}</p>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el:'#app',
+      data:{
+        msg:'asdfghjkl'
+      },
+      methods:{
+        fn(){
+          this.msg = this.msg.split('').reverse().join('');
+        }
+      }
+    });
+
+
+
+
+
+
+
+
+    // const vm = new Vue({
+    //   el:'#app',
+    //   data:{
+    //     msg:'hellovue'
+    //   },
+    //   methods:{
+    //     fn(){
+    //       console.log(this.msg);
+    //       this.msg= this.msg.split('').reverse().join('');
+    //     }
+
+    //   }
+    // });
+
+
+
+    // // 需求：点击按钮的时候，让msg的值翻转过来
+    // const vm = new Vue({
+    //   el: '#app',
+    //   data: {
+    //     msg: 'hello vue'
+    //   },
+    //   methods: {
+    //     reverse() {
+    //       // 翻转字符串
+    //       this.msg = this.msg.split('').reverse().join('')
+    //     }
+    //   }
+    // })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- <button @click="start">跑</button>
+    <button @click="stop">停</button>
+    <h1>{{msg}}</h1> -->
+    <!-- <button @click='runFn'>跑</button>
+    <button @click='stopFn'>停</button>
+    <p>{{msg}}</p> -->
+
+    <button @click='startFn'>跑</button>
+    <button @click='stopFn'>停</button>
+    <p>{{msg}}</p>
+
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: '你好呀是对的,大三大四大大所第三方士大夫士大夫',
+        timeId:''
+      },
+      methods: {
+        startFn() {
+            if(this.timeId)return
+            this.timeId=setInterval(()=>{
+              let first = this.msg.slice(0,1);
+              this.msg = this.msg.slice(1) + first;
+            },100)
+        },
+        stopFn() {
+          clearInterval(this.timeId);
+          this.timeId='';
+        }
+      }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // const vm = new Vue({
+    //   el: '#app',
+    //   data: {
+    //     msg: "我这样子还好的,是打算大我操大法官是打算大风格的",
+    //     timeId: ''
+    //   },
+    //   methods: {
+    //     runFn() {
+    //       if (this.timeId) return
+    //       this.timeId = setInterval(() => {
+    //         let first = this.msg.slice(0, 1);
+    //         this.msg = this.msg.slice(1) + first;
+    //       }, 100)
+    //     },
+    //     stopFn() {
+    //       clearInterval(this.timeId);
+    //       this.timeId=''
+    //     }
+    //   }
+    // });
+
+
+
+
+    // const vm = new Vue({
+    //   el: '#app',
+    //   data: {
+    //     msg: '萨瓦迪卡，欢迎大家，欢迎大家来到美丽的泰国！',
+    //     timeId: ''
+    //   },
+    //   methods: {
+    //     start() {
+    //       if (this.timeId) return
+    //       console.log('11')
+    //       this.timeId = setInterval(() => {
+    //         // 把msg的第一个字符串放到这个字符串的最后面
+    //         let first = this.msg.slice(0, 1)
+    //         // 字符串除了第一个字符串   +  第一个字符
+    //         this.msg = this.msg.slice(1) + first
+    //       }, 500)
+    //     },
+    //     stop() {
+    //       clearInterval(this.timeId)
+    //       this.timeId = ''
+    //     }
+    //   }
+    // })
+  </script>
+</body>
+
+</html>

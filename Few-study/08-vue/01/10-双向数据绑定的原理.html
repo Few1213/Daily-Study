@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <p></p>
+  <input type="text">
+
+  <script>
+    let data = {
+      msg: '哈哈'
+    }
+
+    let p = document.querySelector('p')
+    let input = document.querySelector('input')
+    p.innerText = data.msg
+    input.value = data.msg
+
+    // 如果input框的value值变了  -------data.msg就要发生改变
+    // 如果data.msg发生改变 -----------p 和 input都需要发生改变
+
+    // change事件  input事件
+    // input: 输入， 只要在输入内容，都会一直触发
+    // change: 需要失去焦点，判断内容是否发生改变，如果改变了就会触发一次
+    // input.addEventListener('change', function() {
+    //   console.log('change')
+    // })
+    input.addEventListener('input', function() {
+      data.msg = input.value
+    })
+
+
+    // 你咋知道data.msg变了？？？？？
+    // angular1.x  脏数据检查机制  （轮询）
+    // vue 数据劫持实现  Object.defineProperty() (ES5)
+    // vue不兼容ie678,无法被shim(兼容)
+    // 劫持data.msg属性
+    let temp = data.msg
+    Object.defineProperty(data, 'msg', {
+      get() {
+        return temp
+      },
+      set(value) {
+        temp = value
+        console.log('你设置data.msg')
+        p.innerText = temp
+        input.value = temp
+      }
+    })
+
+  </script>
+</body>
+</html>

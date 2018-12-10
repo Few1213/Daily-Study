@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <input type="text">
+    <script>
+    //双向数据绑定的原理
+    // 如果 input 框value 值变了  data.msg 就要发生改变
+    // 如果 data.msg 发生改变  --- p 和 input 都要发生改变
+    // change事件和 input 事件
+    // input 是实施触发的
+    // change 事件是在市区焦点时候 如果内容该变了就触发
+    // let data = {
+    //     msg:'Hhh'
+    // }
+    // let p = document.querySelector('p');
+    // let input = document.querySelector('input');
+    // p.innerText = data.msg;
+    // input.value = data.msg;
+
+    // input.addEventListener('input',function () { 
+    //     data.msg = input.value;
+    //  })
+
+    // let temp = data.msg;
+    // Object.defineProperty(data,'msg',{
+    //     // 读取属性时候写入的函数 每一次数据读取都会执行这个函数
+    //     get(){
+    //         return temp
+    //     },
+    //     // 写入属性时候的函数,改变属性的时候重新赋值,属性作为参数传递
+    //     set(value){
+    //         temp = value;
+    //         p.innerText = temp;
+    //         input.value = temp;
+    //     }
+    // })
+    
+    let data = {
+        msg: '还好吧'
+    }
+    let p = document.querySelector('p');
+    let input = document.querySelector('input');
+    p.innerText = data.msg;
+    input.value = data.msg;
+
+    // 给表单注册监听事件
+    input.addEventListener('input',function () {
+        data.msg = input.value;
+      })
+    
+    let temp = data.msg;
+    Object.defineProperty(data,'msg',{
+        get(){
+            return temp;
+        },
+        set(){
+            temp = input.value;
+            p.innerText = temp;
+            input.value = temp;
+        }
+
+    }) 
+
+
+
+    
+    </script>
+</body>
+</html>

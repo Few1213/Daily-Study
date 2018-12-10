@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .father {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <p>{{msg}}</p>
+    <div class="father" @click.once="father">
+      <!-- @事件名.事件修饰符="事件函数" -->
+      <!-- 
+
+        .prevent: 阻止浏览器默认行为
+        .stop:阻止冒泡
+        .capture: 在捕获阶段发生  事件流
+        .self: 只有自己才能触发
+        .once: 事件触发一次
+       -->
+      <a href="http://www.baidu.com" @click.prevent="fn">点我注册事件</a>
+    </div>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue'
+      },
+      methods: {
+        fn() {
+          console.log('哈哈')
+        },
+        father() {
+          console.log('111')
+        }
+      }
+    })
+  </script>
+</body>
+</html>

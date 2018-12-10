@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{msg}}</p>
+    <!-- 
+      v-model: 会创建双向数据绑定
+      input的value值和msg双向绑定
+      input的value值发生了改变， msg就会发生改变  view ====> model
+      msg数据发生了改变     model======>view
+
+
+      v-model为什么只能给表单元素加，为什么不能p加， 我们修表单元素的value
+
+      单向数据绑定： Model====>view
+      双向数据绑定：  Model====>view   view====> Model
+    -->
+    <input type="text" v-model="username">
+    <input type="text" v-model="password">
+    <button>登录</button>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    /* 
+      v-model用在表单元素上，用于创建双向的数据绑定
+    */
+    const vm = new Vue({
+      el: '#app',
+      // vue为了我们访问数据方便，会把data中所有的数据挂到当前实例上
+      data: {
+        msg: 'hello vue',
+        age: 18,
+        username: '',
+        password: ''
+      }
+    })
+  </script>
+</body>
+</html>

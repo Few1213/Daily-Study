@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    在vue中，把 {{}} 叫做插值表达式，作用是用于显示vue的data中的数据
+    {{}} : 插值表达式  小胡子语法  mustache语法
+
+    插值表达式：
+      1. {{}}可以显示data中的数据 
+      2. {{}}中可以出现任意的表达式
+
+      注意点：
+      1. 不能出现不存在的数据
+      2. 不能出现语句
+   -->
+  <div class="app">
+    <p>{{msg}}</p>
+    <p>{{age + 1}}</p>
+    <p>{{car.brand}} ----{{car.price}}</p>
+    <p>{{ age >= 18 ? '成年':'未成年' }}</p>
+    <p>{{ ['张三', '李四'].join('-') }}</p>
+
+    <!-- 不能出现的情况 -->
+    <!-- <p>{{ haha }}</p> -->
+    <p>{{ if(age > 18){} }}</p>
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '.app',
+      data: {
+        msg: 'haha',
+        age: 18,
+        car: {
+          brand: 'forever',
+          price: 500
+        }
+      }
+    })
+  </script>
+</body>
+</html>

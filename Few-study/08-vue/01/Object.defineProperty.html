@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 给对象新增某个属性，或者是给修改某个属性的修饰符
+    // Object.defineProperty
+    var obj = {
+      name: 'chunge',
+      yanzhi: 4
+    }
+
+    // 参数1： 定义哪个对象的属性
+    // 参数2： 属性名字
+    // 参数3： 修饰
+    let temp = obj.yanzhi
+    Object.defineProperty(obj, 'yanzhi', {
+      // enumerable: false, //不予许枚举
+      // writable: false
+      // 劫持这个对象的获取属性的操作， 每次 obj.yanzhi 都会被get劫持
+      get() {
+        console.log('get被我劫持到了')
+        return temp
+      },
+      // 劫持这个对象的设置属性的操作， 设置的值也会劫持
+      set(value){
+        console.log('set被我劫持了', value)
+        temp = value
+      }
+    })
+
+
+  </script>
+</body>
+</html>

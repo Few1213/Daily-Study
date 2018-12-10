@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    {{msg}}
+  </div>
+  <div>
+    {{msg}}
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    // 1. Vue是一个构造函数，首字母大写
+    // 2. Vue必须在vue的管理范围内才能使用
+    // 3. el能不设置为body和html
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: '你好'
+      }
+    })
+  </script>
+</body>
+</html>
