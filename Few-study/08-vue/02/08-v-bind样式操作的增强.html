@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #000;
+    }
+
+    .bg {
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- <p :class="{box: true, bg: true}">{{msg}}</p> -->
+    <p :class="classObj">{{msg}}</p>
+    <div :style="styleObj"></div>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    // 思考：在vue如何操作class属性
+    // v-bind指令对于class属性，允许值不仅仅是一个字符串，还允许是个对象
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue',
+        classStr: 'box bg aa bb',
+        classObj: {
+          box: true,
+          bg: true
+        },
+        styleObj: {
+          width: '100px',
+          height: '100px',
+          backgroundColor: 'pink'
+        }
+      }
+    })
+  </script>
+</body>
+</html>

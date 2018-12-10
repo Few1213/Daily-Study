@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p v-if="isLogin"><a href="#">欢迎尊贵的V12用户</a></p>
+    <!-- v-else: 直接跟在v-if的后面，表示if和else情况 -->
+    <p v-else><a href="#">你好，请登录</a></p>
+
+
+    <p v-if="age >= 18">可以上网了</p>
+    <p v-else-if="age >= 16">可以偷偷上网</p>
+    <p v-else>可以看别人上网</p>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue',
+        isLogin: true,
+        age: 18
+      }
+    })
+  </script>
+</body>
+</html>

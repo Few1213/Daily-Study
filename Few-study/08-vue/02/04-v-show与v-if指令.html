@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 
+      v-show:指令用于控制当前元素的显示和隐藏, 如果值为true,显示  如果值为false，隐藏
+      v-show通过display来控制元素的显示和隐藏
+     -->
+    <p v-show="isShow">{{msg}} v-show</p>
+
+    <!--
+       v-if: 指令也是用于控制当前元素的显示隐藏 如果值为true,显示  如果值为false，隐藏
+       v-if通过创建和删除元素来控制显示和隐藏
+
+       对于需要频繁的显示和隐藏切换的，应该使用v-show指令
+       对于要么显示，要么隐藏的，应该使用v-if指令
+     -->
+    <p v-if="isShow">{{msg}} v-if</p>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue',
+        isShow: false
+      }
+    })
+  </script>
+</body>
+</html>

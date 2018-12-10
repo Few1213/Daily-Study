@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <button @click="fn">修改</button>
+    <p>
+      <span>哈哈哈</span>
+      <span>{{msg}}</span>
+      <span>呵呵</span>
+    </p>
+
+    <ul>
+      <li v-for="(item,index) in list" v-bind:key="item">
+        <input type="checkbox">
+        <span>哈哈哈</span>
+        <span>{{item}}</span>
+        <span>呵呵呵</span>
+      </li>
+    </ul>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    // vue在数据发生改变的时候，页面会跟着进行更新
+    // vue只会更新修改的那部分，性能非常高
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: '张三',
+        list: ['吃饭', '睡觉', '打豆豆']
+      },
+      methods: {
+        fn () {
+          // this.msg = '李四'
+          // 给数组增加一项数据
+          this.list.unshift('敲代码')
+        }
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 
+      v-for指令：用于遍历一个数组或者是一个对象
+      想要重复渲染哪个标签，v-for就给哪个标签。
+      v-for="item in list"
+      获取下标
+      v-for="(item, index) in list"
+    -->
+    <p>{{msg}}</p>
+    <ul>
+      <!-- item: 遍历出来的每一项  list:被遍历的数组 -->
+      <li v-for="v in list">{{v}}</li>
+    </ul>
+
+    <ul>
+      <!-- <li v-for="(item,index) in list">{{item}} ----- {{index}}</li> -->
+      <li v-for="(v,i) in list">{{v}} ----- {{i}}</li>
+    </ul>
+
+
+    <hr>
+    <h3>遍历对象</h3>
+    <ul>
+      <li v-for="(value, key) in pp">{{value}} ---- {{key}}</li>
+    </ul>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    // 我们在使用v-for进行遍历的时候，最好给每个元素提供一个唯一的key属性？？？？
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue',
+        list: ['春哥', '鹏鹏', '老罗', '小马哥', '涛姐'],
+        pp: {
+          name: '鹏鹏',
+          age: 18,
+          desc: '帅'
+        }
+      }
+    })
+  </script>
+</body>
+</html>

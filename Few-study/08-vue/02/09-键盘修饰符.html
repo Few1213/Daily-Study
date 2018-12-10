@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 键盘修饰符用法1：  @事件名.键盘修饰符(数字) = "事件处理" -->
+    <!-- 键盘修饰符用法2：  @事件名.键盘修饰符的别名 = "事件处理" enter esc -->
+    <!-- 键盘修饰符用法3:  自己起别名 -->
+    <input type="text" @keyup.enter="fn">
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    // cc别名代表了13
+    Vue.config.keyCodes.huiche = 13
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue'
+      },
+      methods: {
+        fn() {
+          console.log('哈哈')
+        }
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- v-text: 用于设置当前标签的innerText(textContent)属性-->
+    <!-- v-html: 用于设置当前标签的innerHTML属性, innerHTML:标签能生效 XSS攻击 -->
+    <p v-text="msg">哈哈啊哈</p>
+    <p v-html="msg">哈哈啊哈</p>
+    <!-- v-text和插值表达式对比 -->
+
+    <p>我是{{msg}}</p>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: '<a href="http://www.4399.com">点我看大片</a>'
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 以前遍历： for
+    // 数组增加了很多方法： forEach map filter every some find findIndex
+    // var arr = ['张三', '李四', '王五']
+    // forEach: 会让所有的元素都执行一次function
+    // 参数1： item 当前遍历的元素
+    // 参数2： index: 当前遍历元素的下标
+    // 参数3： 当前数组
+    // arr.forEach(function(item, index){
+    //   console.log(111)
+    // })
+
+    // arr.forEach(item => console.log(item))
+
+
+    // map: 功能和forEach很像， map会返回一个新的数组，这个数组的值是每个function的返回值,  map:映射   可以由一个数组 得到一个新的数组
+    // var arr = [1,2,3,4]  // 1, 4, 9, 16 
+    // var newArr = arr.map(item =>  item * item)
+    // console.log(newArr)
+
+    // filter: 过滤， 功能和map很像， 也会得到一个新的数组，作用是过滤，保留满足条件的那些元素   function要返回true的元素
+    // var arr = [3000, 5000, 10000, 15000, 1500]
+    // var newArr = arr.filter(item => item <= 6000)
+    // console.log(newArr)
+
+
+    // some: 某些  some方法返回的是布尔值， 只有数组中某个元素满足了条件，整个结果就是true, 如果所有都是false，结果就是false
+    // 判断数组是否是否有奇数
+    // var arr = [0, 2, 4, 6, 8]
+    // // 假设都是偶数
+    // var flag = true
+    // for (var i = 0; i < arr.length; i++) {
+    //   if (arr[i] % 2 === 1) {
+    //     flag = false
+    //     break;
+    //   }
+    // }
+
+    // if (flag) {
+    //  console.log('没有奇数')
+    // } else {
+    //   console.log('有奇数')
+    // }
+    // var arr = [1, 2, 4, 6, 8]
+    // var flag = arr.some(item => item%2 === 1)
+    // console.log(flag)
+
+    // every: 结果也是返回布尔值，  要求所有的元素都返回true，结果才是true
+    // 数组中是否全是偶数
+    // var arr = [0, 3, 4, 6, 8]
+    // var flag = arr.every(item => item % 2 === 0)
+    // console.log(flag)
+
+
+    // find : 返回的第一个满足条件的元素
+    // var arr = [0, 2, 3, 6, 8]
+    // var result = arr.find(item => item%2 === 1)
+    // console.log(result)
+
+    // findIndex: 返回第一个满足条件的元素的下标
+    var arr = [0, 2, 3, 6, 8]
+    var result = arr.findIndex(item => item%2 === 1)
+    console.log(result)
+  </script>
+</body>
+</html>
