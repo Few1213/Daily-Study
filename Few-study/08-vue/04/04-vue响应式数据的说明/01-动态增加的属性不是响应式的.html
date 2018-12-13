@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <button @click="add">给car增加一个desc属性</button>
+    <p>{{msg}}</p>
+    <p>{{car.brand}} -----{{car.price}} ----{{car.desc}}</p>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    // vue的响应式数据， 被Object.defineProperty劫持过的数据，响应式
+    // 1. 原则： 需要使用的数据，一定要现在data中进行声明
+    // 2. 给vm中的数据动态增加一个属性，这个属性不是响应式的
+    // 3. $set方法可以给vm动态的增加一个属性，响应式的  
+    // Vue.set vm.$set   只要是vm的方法，添加$开头  $mount  $destroy
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue',
+        car: {
+          brand: '玛莎拉蒂',
+          price: 20000000
+        }
+      },
+      methods: {
+        add() {
+          //this.car.desc = '出生的时候买不起，这辈子就买不起'
+          // 参数1： 给哪个对象加
+          // 参数2： 增加什么属性
+          // 参数3： 什么值
+          // Vue.set(vm.car, 'desc', '出生的时候买不起，这辈子就买不起')
+          this.$set(this.car, 'desc', '出生的时候买不起，这辈子就买不起')
+        }
+      }
+    })
+  </script>
+</body>
+</html>

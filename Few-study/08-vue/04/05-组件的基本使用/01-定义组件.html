@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <hello></hello>
+    <hello></hello>
+    <hello></hello>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+
+    // 我们可以把组件理解为是一个自定义的html标签，有自己的内容，样式和功能
+    // 1. 定义组件 component:组件
+    // 参数1： 组件的名字
+    // 参数2： 组件的配置项
+      // 必须指定一个template属性
+    Vue.component('hello', {
+      template: '<h3>你好啊，我是hello组件</h3>'
+    })
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue'
+      }
+    })
+  </script>
+</body>
+</html>

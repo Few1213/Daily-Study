@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 在使用过滤器的时候，可以直接写过滤器的名字，也可以写成调用的方式 -->
+    <p>{{ n1 | numFilter(2) }}</p>
+    <p>{{ n2 | numFilter(2) }}</p>
+    <p>{{ n3 | numFilter(2) }}</p>
+    <p>{{ n1 | numFilter }}</p>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    // DRY: dont repeat yourself
+    // 定义过滤器, 定义过滤器的时候，可以传递参数
+    Vue.filter('numFilter', (input, num) => {
+      num = num || 2
+      console.log(input, num)
+      return input.toFixed(num)
+    })
+
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        n1: 22.22,
+        n2: 33.3333,
+        n3: 44.444444
+      }
+    })
+  </script>
+</body>
+</html>

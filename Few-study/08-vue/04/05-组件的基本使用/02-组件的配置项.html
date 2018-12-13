@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- <p>{{msg}}</p> -->
+    <hello></hello>
+    <hello></hello>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    // 组件是一个可以复用的vue实例，，，，你可以把vm实例也当成一个组件
+    // 组件都有一个名字
+    // vue实例中能够使用的配置项，在组件中也能用  data methods filters computed watch
+    // 组件中不会指定el，但是会指定template， template必须要指定一个根元素
+
+    // 1. 组件不用指定el，但是要指定template
+    // 2. 组件中的data必须是一个函数， 这个函数还需要返回一个对象
+    Vue.component('hello', {
+      template: `
+        <div>
+          <div @click="fn">哈哈</div>
+          <p>呵呵 ------{{name}}</p>
+        </div>
+      `,
+      data(){
+        return {
+          name: '李四'
+        }
+      },
+      methods: {
+        fn () {
+          console.log('哈哈')
+        }
+      },
+      created() {
+        console.log('我被创建了')
+      }
+    })
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue'
+      }
+    })
+  </script>
+</body>
+</html>

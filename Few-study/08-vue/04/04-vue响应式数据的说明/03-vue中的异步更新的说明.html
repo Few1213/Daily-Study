@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <button @click="fn">修改msg</button>
+    <p>{{msg}}</p>
+    <div>{{name}}</div>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    // vue中的数据如果发生了改变，页面中的内容就会跟着发生改变。
+    // vue中的数据如果发生了改变，页面的内容不是立即改变，这个操作是异步的。
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue',
+        name: 'zs'
+      },
+      methods: {
+        fn() {
+          this.msg = '嘻嘻'
+          // ajax获取到了数据
+          // this.list = res.data
+          // 初始化一个iscroll
+
+          // 我们改完了msg数据之后，我希望能够获取到更新的DOM结构
+          // console.log(document.querySelector('p').innerText)
+          // 这个回调函数会在DOM更新后的第一时间执行
+          // setTimeout(() => {
+          //   console.log(document.querySelector('p').innerText)
+          // }, 1000)
+          Vue.nextTick(() => {
+            console.log(document.querySelector('p').innerText)
+          })
+        }
+      },
+      // updated() {
+      //   console.log(document.querySelector('p').innerText)
+      // }
+    })
+  </script>
+</body>
+</html>

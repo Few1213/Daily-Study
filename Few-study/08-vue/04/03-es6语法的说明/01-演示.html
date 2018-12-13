@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1. let const 
+    // 2. 箭头函数
+    // 3. find findIndex
+    // 4. 字符串startsWith endsWith includes
+
+
+    // 5. 对象的简写
+      // 属性的简写
+      // 方法
+    // var name = 'zs'
+    // var obj = {
+    //   // 1. 对象的属性名和值名字相同的时候，可以省略一个
+    //   name,
+    //   // 2. 对象中的方法可以省略 ： 和 function
+    //   sayHi: function() {
+
+    //   },
+    //   sayHi() {
+
+    //   }
+    // }
+
+
+    // 6. 函数参数的默认值
+    /* 
+      function add (n1 = 0, n2 = 0) {
+        // 函数参数的默认值
+        // n1 = n1 || 0
+        // n2 = n2 || 0
+        console.log(n1 + n2)
+      }
+      add(1, 2)
+      add()
+      add(1) 
+    */
+
+    // 7. 模板字符串
+    // 在ES6中，允许使用 ``来定义一个字符串 ``
+    // 1. 允许换行
+    // 2. 拼串中允许使用插值  ${}
+    // var str = '<div><p>哈哈' + 
+    // '<p></div>'
+    var str = `哈
+      <div>
+        <p>嘻嘻</p>
+      </div>
+    哈哈`
+    console.log(str)
+
+    var name = '喳喳辉'
+    var str = `大家好，我是${name}, 是兄弟，来砍我`
+    console.log(str)
+
+
+    // promise async await (面试)
+  </script>
+</body>
+</html>

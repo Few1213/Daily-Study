@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{msg | bb}}</p>
+  </div>
+  
+  <div id="app2">
+    {{msg | bb}}
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    // 全局过滤器：全局过滤器在所有的vue实例中都能使用
+    Vue.filter('aa', input => {
+      return 'aa'
+    })
+
+    // 局部过滤器，只有在当前vue实例中才能使用
+    const vm = new Vue({
+      // el data methods computed watch  8个钩子
+      el: '#app',
+      data: {
+        msg: 'hello vue'
+      },
+      // filters中定义的都是局部过滤器，只有当前实例能用
+      filters: {
+        bb: function(input) {
+          return input + 'bb'
+        }
+      }
+    })
+
+    const vm2 = new Vue({
+      el: '#app2',
+      data: {
+        msg: 'app2'
+      }
+    })
+  </script>
+</body>
+</html>

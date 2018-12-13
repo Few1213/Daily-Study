@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 2. 过滤器在插值表达式中进行使用，表示对插值表达式的内容进行过滤（格式化） -->
+    <!-- 使用方法 {{ 数据 | 过滤器的名字 }}  linux:管道符 -->
+    <p>{{msg | myFilter | filter}}</p>
+
+    <p>{{msg | filter}}</p>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    // 在js中， 如果一个构造函数，在new的时候，没有参数，()可以省略的
+    // var obj = new Vue
+
+    //1. 定义一个过滤器， 在vue中，默认是没有过滤器
+    // 参数1：过滤器的名字
+    // 参数2： 过滤的逻辑
+      // 参数：需要过滤的内容
+      // 函数必须要有返回值， 表示过滤后的结果
+    Vue.filter('myFilter', function(input){
+      return input.toUpperCase()
+    })
+
+    Vue.filter('filter', input => {
+      return input + '!!!'
+    })
+
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue',
+        time: new Date()
+      }
+    })
+  </script>
+</body>
+</html>
