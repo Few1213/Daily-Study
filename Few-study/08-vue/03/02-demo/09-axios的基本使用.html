@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="axios.js"></script>
+  <script>
+    // 如何增删改查
+
+    // 查询所有数据  http://localhost:3000/todos   get
+    // $.ajax()
+    // 通过.then获取成功的结果
+    // 通过.catch获取失败的结果
+    // axios({
+    //   // 请求方式
+    //   method: 'get',
+    //   // 请求地址
+    //   url: 'http://localhost:3000/todos1'
+    // }).then(function(res) {
+    //   // 服务器返回的数据： res.dat中 
+    //   console.log(res.data)
+    // }).catch(function(err) {
+    //   console.log(err)
+    // })
+
+
+    // 获取id为3的数据
+    // axios({
+    //   method: 'get',
+    //   url: 'http://localhost:3000/todos/3'
+    // }).then(res => {
+    //   console.log(res.data)
+    // })
+
+
+    // 删除一条数据
+    // axios({
+    //   method: 'delete',
+    //   url: 'http://localhost:3000/todos/5'
+    // }).then(res => {
+    //   console.log(res.data)
+    // })
+
+    // 增加
+    // axios({
+    //   method: 'post',
+    //   url: 'http://localhost:3000/todos',
+    //   data: {
+    //     name: '美滋滋',
+    //     completed: false
+    //   }
+    // }).then(res => {
+    //   console.log(res.data)
+    // })
+
+
+    // 修改
+    // axios({
+    //   method: 'put',
+    //   url: 'http://localhost:3000/todos/6',
+    //   data: {
+    //     name: '笑嘻嘻',
+    //     completed: true
+    //   }
+    // }).then(res => {
+    //   console.log(res.data)
+    // })
+    axios({
+      method: 'get',
+      url: 'http://localhost:3000/todos'
+    }).then(function (res) {
+      console.log(res.data)
+    }).catch(function (err) {
+      console.log(err);
+    })
+    
+    axios({
+      method:'delete',
+      url: 'http://localhost:3000/todos/1'
+    }).then(res=>console.log(res.data)
+    )
+    // axios({
+    //   method: 'post',
+    //   url: 'http://localhost:3000/todos',
+    //   data: {
+    //     name: '笑嘻嘻',
+    //     completed: true
+    //   }
+    // }).then(res => console.log(res.data))
+  </script>
+</body>
+
+</html>

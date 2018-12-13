@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{car.brand}} -----{{car.price}}</p>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+
+    // 监视car的变化
+    // watch监听属性默认只能监听简单类型，如果是复杂类型，监听不到复杂类型数据的变化，能监听到地址的变化
+
+    // 如果想要监听复杂类型的数据，需要使用到watch的完整形态
+    // watch的完整写法，不是一个函数，而是一个对象
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue',
+        car: {
+          brand: '玛莎拉蒂',
+          price: 2000000
+        }
+      },
+      watch: {
+        // car: function(value) {
+        //   console.log('car变了吗？')
+        // }
+        // handler 监听的函数
+        // deep: true  是否深度监听，如果为true，还监听对象的属性
+        car: {
+          handler: function(value) {
+            console.log('监听到了变化')
+            console.log(value)
+          },
+          deep: true,
+          // 立即监听
+          immediate: true
+        }
+      }
+    })
+  </script>
+</body>
+</html>

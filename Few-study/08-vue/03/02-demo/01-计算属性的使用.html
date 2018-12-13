@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model="n1">
+    +
+    <input type="text" v-model="n2">
+    =
+    <span>{{n3}}</span>
+    <span>{{n3}}</span>
+    <span>{{n3}}</span>
+    <span>{{n3}}</span>
+    <span>{{n3}}</span>
+    <span>{{n3}}</span>
+    <span>{{n3}}</span>
+    <span>{{n3}}</span>
+    <span>{{n3}}</span>
+
+    {{ reverseMsg }}
+  </div>
+
+
+  <script src="vue.js"></script>
+  <script>
+    // 计算属性：通过计算后才能得到的属性，这也是一个属性，和data中一样
+    // 计算属性：一般来说，根据data中的某些属性通过计算得到一个新的属性，计算属性
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue',
+        n1: '',
+        n2: ''
+      },
+      // 注意computed的作用和data有点像，也是给vue提供属性的
+      // computed中提供的属性，通过data中数据进行计算后得到的。
+      // 计算属性写法： 对应值，应该是一个函数，可以在函数中书写计算的逻辑，计算属性最终的结果是函数的返回值
+
+      // 1. 计算属性是一个属性，写法上是一个函数，因为计算属性需要有逻辑，计算属性对应的是这个函数返回的结果
+      // 2. 计算属性这个值会发生改变，只要依赖的数据发生了改变，计算属性就会重新执行一遍，得到新的值， 如果你多次使用了这个计算属性，只会算一次
+      computed: {
+        n3 () {
+          console.log('1111')
+          return +this.n1 + +this.n2
+        },
+        reverseMsg () {
+          return this.msg.split('').reverse().join('')
+        }
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- copy outerHTML -->
+  <div id="app">
+    <p>{{msg}}</p>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    // vue是一个框架，整体的vue的逻辑vue已经定好了
+    // 为什么要了解vue的生命周期，因为我们需要参与进vue的声明，需要在vue的合适的地方写合适的代码。
+    const vm = new Vue({
+      data: {
+        msg: 'hello vue'
+      },
+      // template: '<h1>哈哈哈{{msg}}</h1>'
+    })
+    vm.$mount('#app')
+  </script>
+</body>
+</html>

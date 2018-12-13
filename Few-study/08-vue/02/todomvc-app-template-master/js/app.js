@@ -32,22 +32,7 @@
 	const vm = new Vue({
 		el: '#todoapp',
 		data: {
-			list: [{
-					id: 1,
-					name: '吃饭',
-					completed: false
-				},
-				{
-					id: 2,
-					name: '睡觉',
-					completed: true
-				},
-				{
-					id: 3,
-					name: '打豆豆',
-					completed: false
-				},
-			],
+			list: [],
 			addName: '',
 			clickId: -1
 		},
@@ -73,7 +58,37 @@
 			},
 			updateTodo(){
 				this.clickId= -1
+			},
+			clearTodo(){
+				this.list = this.list.filter(item=>!item.completed)
 			}
+		},
+		computed:{
+			leftCount(){
+				return this.list.filter(item=>!item.completed).length
+			},
+			isShowfooter(){
+				return this.list.length>0
+			},
+			isShowClear(){
+				// completed : false 未完成
+				return this.list.some(item=>item.completed)
+			}
+		},
+		watch:{
+			list:{
+				// 监听的函数
+				handler:function (value,oldValue) { 
+					// console.log(111);
+					
+					localStorage.setItem('todoList',JSON.stringify(value))
+				 },
+				 // 是否深度监听
+				 deep: true,
+			}
+		},
+		created() {
+			this.list = JSON.parse(localStorage.getItem('todoList')) || []
 		}
 	})
 	window.vm = vm

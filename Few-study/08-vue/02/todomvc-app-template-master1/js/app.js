@@ -8,22 +8,7 @@
 		el: '#todoapp',
 		data: {
 			// list 存放数据 completed代表完成 false 代表未完成
-			list: [{
-					id: 1,
-					name: '铁蛋',
-					completed: false
-				},
-				{
-					id: 2,
-					name: '狗蛋',
-					completed: true
-				},
-				{
-					id: 3,
-					name: '傻蛋',
-					completed: false
-				}
-			],
+			list: [],
 			addName: '',
 			clickId: -1
 		},
@@ -49,10 +34,35 @@
 			showTodo(id) {
 				this.clickId = id
 			},
-			updateTodo(){
+			updateTodo() {
 				this.clickId = -1
+			},
+			clearTodo() {
+				this.list = this.list.filter(item => !item.completed)
 			}
-
+		},
+		// 计算属性
+		computed: {
+			isShowFooter() {
+				return this.list.length > 0
+			},
+			leftCount() {
+				return this.list.filter(item => !item.completed).length
+			},
+			isShowClear() {
+				return this.list.some(item => item.completed)
+			}
+		},
+		watch: {
+			list: {
+				handler: function (value) {
+					localStorage.setItem('todolists',JSON.stringify(value))
+				},
+				deep: true
+			}
+		},
+		created(){
+			this.list = JSON.parse(localStorage.getItem('todolists')) ||[]
 		}
 	});
 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{msg}}</p>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    // 钩子函数, 直接写在vue实例
+    //  beforexxx
+    //  xxxed
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue'
+      },
+      beforeCreate() {
+        console.warn('beforeCreate在数据初始化之前执行')
+        console.warn(this.msg)
+      },
+      created() {
+        console.warn('created在数据初始化之后执行')
+        console.warn(this.msg)
+      },
+      beforeMount() {
+        console.warn('beforeMount在el替换之前执行')
+        console.warn(document.querySelector('p').innerText)
+      },
+      mounted() {
+        console.warn('mounted在el替换之后执行')
+        console.warn(document.querySelector('p').innerText)
+      },
+      beforeUpdate() {
+        console.warn('beforeUpdate在数据更新之前执行')
+        console.warn(document.querySelector('p').innerText)
+      },
+      updated() {
+        console.warn('updated在数据更新之后执行')
+        console.warn(document.querySelector('p').innerText)
+      },
+      beforeDestroy() {
+        console.warn('在销毁之前执行')
+        console.warn(document.querySelector('p').innerText)
+      },
+      destroyed() {
+        console.warn('在销毁之后执行')
+        console.warn(document.querySelector('p').innerText)
+      },
+    })
+  </script>
+</body>
+</html>

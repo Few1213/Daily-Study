@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{msg}}</p>
+    <input type="text" v-model="msg"> <span>{{tips}}</span>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    const vm = new Vue({
+      // el: data: computed methods watch
+      el: '#app',
+      data: {
+        msg: 'hello vue',
+        tips: ''
+      },
+      // 作用：监视某个数据的变化
+      watch: {
+        // msg:表示监视的是msg属性
+        // function: 只要数据发生了改变，这个对应函数就会执行
+        // 参数1：改变后的值
+        // 参数2： oldValue: 改变之前的值
+        msg: function(value, oldValue) {
+          console.log(value, oldValue)
+          if (value.length < 6 || value.length > 12) {
+            this.tips = '不合法'
+          } else {
+            this.tips = '合法'
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>

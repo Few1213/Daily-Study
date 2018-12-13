@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{msg}}</p>
+
+
+
+    <!-- 提高性能：明确知道某一个段落不需要被vue渲染 -->
+    <!-- 作用：当前元素会被vue跳过，vue就不会渲染这个元素 -->
+    <p v-pre>{{msg}}</p>
+    <!-- 作用：当前元素只会渲染一次，后续数据发生改变，不会重新渲染 -->
+    <p v-once>{{msg}}</p>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue'
+      }
+    })
+  </script>
+</body>
+</html>

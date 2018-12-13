@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- v-cloak指令的作用：当vue在渲染完成的时候，自动移除掉v-cloak属性 -->
+    <!-- 插值表达式还用不用？？ -->
+    <!-- 插值表达式闪烁这个问题，只会出现通过script标签引入vue的这种情况 -->
+    <!-- 后期我们开发vue,而是在单位件组件，.vue结合webpack -->
+    <p v-cloak>{{msg}}</p>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    // cloak: 斗篷 披风
+    // 作用：解决插值表达式闪烁的问题
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue'
+      }
+    })
+  </script>
+</body>
+</html>
