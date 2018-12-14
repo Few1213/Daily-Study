@@ -49,7 +49,7 @@
 					</li>
 				</ul>
 				<!-- Hidden if no completed items are left ↓ -->
-				<button class="clear-completed" v-show="isShowClear">Clear completed</button>
+				<button class="clear-completed" v-show="isShowClear" @click="clearTodo">Clear completed</button>
 			</footer>
 		</section>
 		<footer class="info">
