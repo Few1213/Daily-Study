@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <modal>
+      <template slot="title">提示</template>
+      <template slot="main">内容1</template>
+    </modal>
+    <modal>
+        <template slot="title">温馨提示</template>
+        <template slot="main">内容2</template>
+    </modal>
+    <modal>
+        <template slot="title">温馨提示3</template>
+        <template slot="main">内容22</template>
+        <template slot="main">内容22</template>
+    </modal>
+  </div>
+
+
+  <script src="vue.js"></script>
+  <script>
+    Vue.component('modal', {
+      template: `
+      <div>
+      <h3><slot name="title">标题</slot></h3>
+      <div><slot name="main">内容</slot></div>
+      <button>按钮</button>
+      </div>
+      `
+    })
+    const vm = new Vue({
+      el: '#app',
+      components: {
+        hello: {
+          template: `<div>你好</div>`
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

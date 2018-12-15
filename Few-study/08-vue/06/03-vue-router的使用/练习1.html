@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 第六步 设置路由入口 -->
+         <router-link to="/home">首页</router-link>
+         <router-link to="/category">分类页</router-link>
+         <router-link to="/person">个人页</router-link>
+        <!-- 第五步 设置路由出口 -->
+         <router-view></router-view>
+    </div>
+    <!-- 第一步 引包 -->
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/vue-router/dist/vue-router.js"></script>
+    <script>
+        // 第二步 准备一些组件(非全局)
+        const Home = {
+            template: `<div>首页</div>`
+        }
+        const Category = {
+            template: `<div>分类页</div>`
+        }
+        const Person = {
+            template: `<div>个人</div>`
+        }
+        // 第三步 创建一个路由对象
+        const router = new VueRouter({
+            routes: [
+                {
+                path: '/home',
+                component: Home
+            }, 
+                {
+                path: '/category',
+                component: Category
+            }, 
+                {
+                path: '/person',
+                component: Person
+            } 
+        ]
+        })
+        
+        // 第四步 绑定在当前实例上
+        const vm = new Vue({
+            el:'#app',
+            router
+        })
+    </script>
+</body>
+
+</html>
