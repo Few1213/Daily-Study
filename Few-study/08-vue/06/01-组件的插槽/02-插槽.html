@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 如果定义的组件内部没有slot(插槽),传给组件的内容是会被抛弃 -->
+    <!-- <slot></slot> 插槽,在定义组件的时候，如果希望内容是通过组件传进来，指定<slot> -->
+    <modal>
+      <template slot="title">提示</template>
+      <template slot="content">你确定要删除吗</template>
+    </modal>
+    <modal>
+      <template slot="title">温馨提示</template>
+      <template slot="content">你确定要删除吗？</template>
+    </modal>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    // <slot></slot>如果没有name属性，默认插槽，，，内容默认替换默认插槽
+    // 具名插槽  
+    Vue.component('modal', {
+      template: `
+        <div>
+          <h3><slot name="title"></slot></h3>
+          <div><slot name="content"></slot></div>
+          <button>确定</button>
+        </div>
+      `
+    })
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue'
+      }
+    })
+  </script>
+</body>
+</html>

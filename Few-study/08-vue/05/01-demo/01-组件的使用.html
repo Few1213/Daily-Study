@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <hello></hello>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    // 什么是组件？
+    // 组件是一个可以复用的vue实例，组件都会有一个名字
+    // 组件可以有和vue相同的配置项
+      //1. 组件中不会有el,指定template
+      //2. 组件中的data必须是一个函数，内部需要返回一个对象（保证每个组件的数据独立的）
+
+    // 一个组件就是一个独立的个体，一个组件就是一个完整的vue实例，组件就会有自己的结构，有自己的数据，自己的方法
+    Vue.component('hello', {
+      template: `
+        <div>
+          <p>{{msg}}</p>
+        </div>
+      `,
+      data() {
+        return {
+          msg: '我是hello组件'
+        }
+      }
+    })
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue'
+      }
+    })
+  </script>
+</body>
+</html>

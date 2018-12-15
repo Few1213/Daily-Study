@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <hello :msg="msg" :car="car"></hello>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    // 父组件给子组件传值  子组件使用props接收
+    // 特点： 只要父组件的数据发生了更新， 通过props接收的这些子组件的数据也会跟着就更新
+    // props是只读的，不允许修改
+    Vue.component('hello', {
+      template: `
+        <div>
+          <button @click="fn">修改msg</button>
+          {{msg}} ----{{car.brand}}
+        </div>
+      `,
+      props: ['msg', 'car'],
+      methods: {
+        fn() {
+          // 视图使用子组件把父组件传递过来的数据修改掉
+          // this.msg = "嘻嘻"
+          this.car.brand = '宝骏'
+        }
+      }
+    })
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue',
+        car: {
+          brand: '宝马',
+          price: 200000
+        }
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 6. 路由的入口 -->
+    <ul>
+      <li><router-link to="/home">首页</router-link></li>
+      <li><router-link to="/music">音乐</router-link></li>
+      <li><router-link to="/friend">朋友</router-link></li>
+    </ul>
+    <!-- 5. 指定路由的出口，，，，根据地址可以匹配到对应的组件 -->
+    <router-view></router-view>
+  </div>
+
+  <!-- 1. 引包 -->
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script src="./node_modules/vue-router/dist/vue-router.js"></script>
+  <script>
+    // vue router: 功能： 构建单页面应用程序
+    // 根据地址（锚点值）不一样，对应显示不同的组件
+    // 页面只有一个，，，，，组件可以有很多
+
+    // 2. 定义一些组件  Vue.component: 全局注册一个组件
+    // 组件一般首字母大写 
+    const Home = {
+      template: `
+        <div>这是home组件</div>
+      `
+    }
+    const Music =  {
+      template: `
+        <div>这是music组件</div>
+      `
+    }
+    const Friend = {
+      template: `
+        <div>这是friend组件</div>
+      `
+    }
+
+    //3. 创建一个vueRouter对象，，，，路由对象
+    const router = new VueRouter({
+      // 指定路由的规则  地址-----> 不同的组件
+      routes: [
+        { path: '/home', component:  Home},
+        { path: '/music', component:  Music},
+        { path: '/friend', component:  Friend}
+      ]
+    })
+
+    const vm = new Vue({
+      // el data  router: 指定路由对象
+      el: '#app',
+      data: {
+        msg: 'hello vue'
+      },
+      // 4. 把路由对象和vm实例绑定
+      router: router
+    })
+  </script>
+</body>
+</html>

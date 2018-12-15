@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <jack></jack>
+    <rose></rose>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    // bus其实就是一个空的实例
+    const bus = new Vue()
+
+    Vue.component('jack', {
+      template: `
+        <div>
+          这是jack组件
+          <button @click="fn">对rose说：</button>
+        </div>
+      `,
+      data() {
+        return {
+          msg: 'you jump, i jump'
+        }
+      },
+      methods: {
+        fn() {
+          // 把数据发送给rose
+          // 触发公交车的sb事件
+          bus.$emit('sb', this.msg)
+        }
+      }
+    })
+    Vue.component('rose', {
+      template: `
+        <div>
+          这是rose组件
+        </div>
+      `,
+      // 1. rose提供方法，给bus注册事件
+      methods: {
+        getMsg(msg) {
+          console.log('jack的消息', msg)
+        }
+      },
+      mounted() {
+        // rose只要渲染的时候，就给bus注册一个事件
+        // @sb="getMsg"
+        bus.$on('sb', this.getMsg)
+      }
+    })
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue'
+      }
+    })
+  </script>
+</body>
+</html>

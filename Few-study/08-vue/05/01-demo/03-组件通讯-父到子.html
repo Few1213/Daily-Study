@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{msg}}</p>
+    <!-- 
+      父组件给子组件传值
+      1. 父组件在子组件的身上增加一个自定义的属性
+      2. 在子组件中使用 props 属性进行接收即可
+    -->
+    <son :msg="msg" money="100"></son>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    // 如何形成父子组件: 需要在父组件的template中使用了子组件才能形成父子组件
+    Vue.component('son', {
+      // data computed watch
+      template: `
+        <div>我是son组件-----{{msg}} ----- {{money}}</div>
+      `,
+      // props和data一样，也是给组件提供数据
+      // data提供的是自己的数据
+      // props: 接收到父组件传递过来的数据
+      props: ['msg', 'money']
+    })
+
+    // Vue.component('father', {
+    //   template: `
+    //     <div>
+    //       我是father组件
+    //       <son></son>
+    //     </div>
+    //   `
+    // })
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue'
+      }
+    })
+  </script>
+</body>
+</html>

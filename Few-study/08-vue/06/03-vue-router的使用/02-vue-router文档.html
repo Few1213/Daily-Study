@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 2. 路由的入口（导航链接） -->
+    <router-link to="/home">首页</router-link>
+    <router-link to="/music">音乐</router-link>
+    <router-link to="/friend">朋友</router-link>
+
+    <!-- 3.路由的出口 -->
+    <router-view></router-view>
+  </div>
+
+  <!-- 1. 引包 -->
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script src="./node_modules/vue-router/dist/vue-router.js"></script>
+  <script>
+    // 4. 定义一些组件
+    const Home = { template: `<div>首页</div>` }
+    const Music = { template: `<div>音乐</div>` }
+    const Friend = { template: `<div>朋友</div>` }
+    // 5. 创建一个路由对象
+    const router = new VueRouter({
+      // 路由的规则
+      routes: [
+        // 路由的重定向
+        { path: '/', redirect: '/home' },
+        { path: '/home', component: Home },
+        { path: '/music', component: Music },
+        { path: '/friend', component: Friend },
+      ]
+    })
+    const vm = new Vue({
+      el: '#app',
+      // 6. 把路由对象和vue实例关联
+      router
+    })
+  </script>
+</body>
+</html>

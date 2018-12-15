@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 2. 父组件给子组件注册一个自定义的事件（把方法传递给子组件） -->
+    <hello @sb="getMoney"></hello>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    Vue.component('hello', {
+      template: `
+        <button @click="fn">把值传给父元素</button>
+      `,
+      data() {
+        return {
+          money: 100,
+          car: '凤凰'
+        }
+      },
+      methods: {
+        fn() {
+          // 点击子组件要值传递给父组件
+          // 子组件如何触发自己的事件
+          this.$emit('sb', this.money, this.car)
+        }
+      }
+    })
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello vue'
+      },
+      methods: {
+        // 1. 父组件提供一个方法
+        getMoney(money, car) {
+          console.log('哈哈，我接收到了我孩子的'+ money, car)
+        }
+      }
+    })
+  </script>
+</body>
+</html>
