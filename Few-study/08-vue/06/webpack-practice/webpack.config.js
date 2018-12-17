@@ -10,5 +10,5 @@ module.exports = {
         // 设置输出文件
         filename: 'bundle.js'
     },
-    "mode":"production"
+    mode:"production"
 }
