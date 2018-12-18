@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "2638b546ee624596c9d5";
+/******/ 	var hotCurrentHash = "6836009073862d76b8ad";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -880,7 +880,7 @@ eval("\nvar content = __webpack_require__(/*! !../node_modules/css-loader/dist/c
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main.css */ \"./src/main.css\");\n/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_main_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _main1_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./main1.less */ \"./src/main1.less\");\n/* harmony import */ var _main1_less__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_main1_less__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\njquery__WEBPACK_IMPORTED_MODULE_0___default()(function () { \n    jquery__WEBPACK_IMPORTED_MODULE_0___default()('li:odd').css('color','red')\n    jquery__WEBPACK_IMPORTED_MODULE_0___default()('li:even').css('color','green')\n    console.log('输出成功了12');\n })\n\n//# sourceURL=webpack:///./src/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main.css */ \"./src/main.css\");\n/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_main_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _main1_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./main1.less */ \"./src/main1.less\");\n/* harmony import */ var _main1_less__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_main1_less__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\njquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {\n  jquery__WEBPACK_IMPORTED_MODULE_0___default()('li:odd').css('color', 'red');\n  jquery__WEBPACK_IMPORTED_MODULE_0___default()('li:even').css('color', 'green');\n  console.log('输出成功了12112');\n});\n\n//# sourceURL=webpack:///./src/main.js?");
 
 /***/ }),
 
