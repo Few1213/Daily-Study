@@ -1,13 +1,19 @@
-*{
+* {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 html,
-body{
+body {
   height: 100%;
 }
 
-#app{
+#app {
   height: 100%;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
 }

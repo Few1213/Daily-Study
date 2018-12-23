@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <modal>
+        <template slot="content">
+          你确定要退出吗
+        </template>
+      </modal> -->
+      <todo-list>
+        <!-- scope:表示的是整个作用域 -->
+        <template slot-scope="scope">
+          <button>{{ scope.item }}</button>
+        </template>
+      </todo-list>
+    </div>
+
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+      // 默认插槽，匿名插槽  <slot></slot>  将来组件的内容会替换掉默认插槽
+      // 具名插槽  <slot name="content"></slot>   <template slot="content">你确定要退出吗</template>
+
+      // 作用域插槽 ： 带数据的插槽  <slot :desc="desc"></slot>
+      //  <template slot-scope="scope"> </template> 通过scope可以获取到该插槽上所有的数据
+
+      Vue.component('todo-list', {
+        template: `
+          <ul>
+            <li v-for="(item,index) in cars">
+              <slot :item="item" :index="index"></slot>
+            </li>
+          </ul>
+        `,
+        data() {
+          return {
+            cars: ['宝马', '宝骏', 'ofo', '摩拜', 'hello', '小蓝']
+          }
+        }
+      })
+
+      Vue.component('modal', {
+        template: `
+          <div>
+            <h3>标题</h3>
+            <div><slot name="content"></slot></div>
+            <button>关闭</button>
+          </div>
+        `
+      })
+
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          msg: 'hello vue'
+        }
+      })
+    </script>
+  </body>
+</html>

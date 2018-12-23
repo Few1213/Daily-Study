@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <list :data="users">
+        <template slot-scope="scope">
+          <button v-for="item in scope.data">{{ item.name }}</button>
+        </template>
+      </list>
+    </div>
+
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+      // list组件可以接受一个数组，数组的内容给显示出来
+      Vue.component('list', {
+        template: `
+          <div>
+            <h1>列表</h1>
+            <slot :data="data"></slot>
+          </div>
+        `,
+        props: ['data']
+      })
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          msg: 'hello vue',
+          users: [
+            { id: 1, name: 'pp', desc: '帅' },
+            { id: 2, name: '春哥', desc: '萌' },
+            { id: 3, name: 'cc', desc: '怂' }
+          ]
+        }
+      })
+    </script>
+  </body>
+</html>
