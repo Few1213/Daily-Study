@@ -8,7 +8,12 @@
         <el-input v-model="form.username" placeholder="请输入用户名"></el-input>
       </el-form-item>
       <el-form-item label="密码:" prop="password">
-        <el-input type="password" v-model="form.password" placeholder="请输入密码"></el-input>
+        <el-input
+          type="password"
+          v-model="form.password"
+          placeholder="请输入密码"
+          @keyup.enter.native="login"
+        ></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="login">登录</el-button>
@@ -46,28 +51,30 @@ export default {
   methods: {
     login() {
       // 在这里对输入数据发送请求进行验证
-      this.$refs.form.validate(valid => {
-        if (valid) {
-          // 成功后发送 axios 请求跳转页面
-          this.$axios({
-            method: 'post',
-            baseURL: 'http://localhost:8888/api/private/v1/',
-            url: 'login',
-            data: this.form
-          }).then(res => {
-            // console.log(res.data)
-            if (res.data.meta.status === 200) {
-              // 登录成功 跳转到首页 并记录下 token 运用 this.$router.push 进行跳转
-              this.$message.success(res.data.meta.msg)
-              localStorage.setItem('token', res.data.data.token)
-              this.$router.push('/home')
-            } else {
-              this.$message.error(res.data.meta.msg)
-            }
-          })
+      this.$refs.form.validate(async valid => {
+        if (!valid) return false
+        // 成功后发送 axios 请求跳转页面
+        let res = await this.$axios({
+          method: 'post',
+          url: 'login',
+          data: this.form
+        })
+
+        // console.log(res)
+        // 解构
+        let {
+          meta: { status, msg }
+        } = res
+        if (status === 200) {
+          // 登录成功 跳转到首页 并记录下 token 运用 this.$router.push 进行跳转
+          let {
+            data: { token }
+          } = res
+          this.$message.success(msg)
+          localStorage.setItem('token', token)
+          this.$router.push('/home')
         } else {
-          // console.log('error submit!!')
-          return false
+          this.$message.error(msg)
         }
       })
     },

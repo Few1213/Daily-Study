@@ -28,6 +28,7 @@
           text-color="#fff"
           active-text-color="#ffd04b"
           router
+          unique-opened
         >
           <!-- el-submenu 菜单 -->
           <el-submenu index="1">
@@ -47,11 +48,11 @@
               <i class="el-icon-location"></i>
               <span>权限管理</span>
             </template>
-            <el-menu-item index="2-1">
+            <el-menu-item index="/roles">
               <i class="el-icon-menu"></i>
               <span slot="title">角色列表</span>
             </el-menu-item>
-            <el-menu-item index="2-2">
+            <el-menu-item index="/rights">
               <i class="el-icon-menu"></i>
               <span slot="title">权限列表</span>
             </el-menu-item>

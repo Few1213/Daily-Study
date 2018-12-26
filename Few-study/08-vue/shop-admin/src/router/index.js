@@ -1,15 +1,17 @@
 // 这个是路由文件 在这里分发各种模块的路由
 import Vue from 'vue'
 import Router from 'vue-router'
-// import HelloWorld from '@/components/HelloWorld'
 import Login from '@/components/Login'
 import Home from '@/components/Home'
 import Users from '@/components/Users.vue'
+import Rights from '@/components/Rights'
+import Roles from '@/components/Roles'
 
 Vue.use(Router)
 const router = new Router({
+  mode: 'history',
+  // 配置路由路径
   routes: [
-
     {
       path: '/',
       redirect: '/login'
@@ -21,10 +23,20 @@ const router = new Router({
     {
       path: '/home',
       component: Home,
-      children: [{
-        path: '/users',
-        component: Users
-      }]
+      children: [
+        {
+          path: '/users',
+          component: Users
+        },
+        {
+          path: '/rights',
+          component: Rights
+        },
+        {
+          path: '/roles',
+          component: Roles
+        }
+      ]
     }
   ]
 })

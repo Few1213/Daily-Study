@@ -17,6 +17,31 @@ import axios from 'axios'
 
 // 使用 element-ui 框架
 Vue.use(ElementUI)
+// 设置 axios 的默认配置
+axios.defaults.baseURL = 'http://localhost:8888/api/private/v1/'
+// 设置 axios 的请求拦截器
+axios.interceptors.request.use(
+  function(config) {
+    config.headers.Authorization = localStorage.getItem('token')
+    return config
+  },
+  function(err) {
+    // 对请求错误做些什么
+    return Promise.reject(err)
+  }
+)
+// 设置 axios 的响应拦截器
+axios.interceptors.response.use(
+  function(config) {
+    // 响应成功时候需要做的事情
+    // console.log(config)
+    return config.data
+  },
+  function(error) {
+    // 响应失败后要做的事情
+    return Promise.reject(error)
+  }
+)
 // 将 axios 挂载到实例上,让全局可以使用
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false
