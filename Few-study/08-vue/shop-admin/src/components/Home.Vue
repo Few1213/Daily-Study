@@ -22,7 +22,7 @@
           router: 是否使用 vue-router 模式,该模式在激活导航的时候会以 index 作为 path 作为路由跳转
         -->
         <el-menu
-          default-active="1"
+          :default-active="$route.path.slice(1)"
           class="el-menu-vertical-demo"
           background-color="#545c64"
           text-color="#fff"
@@ -31,30 +31,16 @@
           unique-opened
         >
           <!-- el-submenu 菜单 -->
-          <el-submenu index="1">
+          <el-submenu :index="list.path" v-for="list in menu" :key="list.id">
             <!-- 具名插槽 -->
             <template slot="title">
               <i class="el-icon-location"></i>
-              <span>用户管理</span>
+              <span>{{list.authName}}</span>
             </template>
             <!-- 导航项 -->
-            <el-menu-item index="/users">
+            <el-menu-item :index="item.path" v-for="item in list.children" :key="item.id">
               <i class="el-icon-menu"></i>
-              <span slot="title">用户列表</span>
-            </el-menu-item>
-          </el-submenu>
-          <el-submenu index="2">
-            <template slot="title">
-              <i class="el-icon-location"></i>
-              <span>权限管理</span>
-            </template>
-            <el-menu-item index="/roles">
-              <i class="el-icon-menu"></i>
-              <span slot="title">角色列表</span>
-            </el-menu-item>
-            <el-menu-item index="/rights">
-              <i class="el-icon-menu"></i>
-              <span slot="title">权限列表</span>
+              <span slot="title">{{item.authName}}</span>
             </el-menu-item>
           </el-submenu>
         </el-menu>
@@ -71,7 +57,9 @@
 <script>
 export default {
   data() {
-    return {}
+    return {
+      menu: []
+    }
   },
   methods: {
     // 退出框 退出功能
@@ -96,7 +84,17 @@ export default {
             message: '已取消'
           })
         })
+    },
+    async getList() {
+      let res = await this.$axios.get('menus')
+      // let { meta: status, data } = res
+      if (res.meta.status === 200) {
+        this.menu = res.data
+      }
     }
+  },
+  created() {
+    this.getList()
   }
 }
 </script>

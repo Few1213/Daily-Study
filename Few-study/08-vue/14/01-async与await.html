@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // await： 用于等待一个promise成功的结果  resolve, 在等待结果之前，阻止async函数的执行
+      // 如果promise对象reject了，promise会抛出异常
+      // await一定要在async函数中使用  async function(){}
+
+      // try .. catch
+      var p = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          var num = Math.random()
+          if (num > 0.5) {
+            resolve(num)
+          } else {
+            reject(num)
+          }
+        }, 2000)
+      })
+      async function fn() {
+        try {
+          let num = await p
+          console.log(num)
+        } catch (e) {
+          console.log('报错了')
+        }
+      }
+      fn()
+      console.log(222)
+    </script>
+  </body>
+</html>
