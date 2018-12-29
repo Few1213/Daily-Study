@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="node_modules/vue/dist/vue.js"></script>
+  <script src="./node_modules/vuex/dist/vuex.js"></script>
+
+  <script>
+    // 需要修改vuex中的数据
+    const store = new Vuex.Store({
+      strict: true,
+      // 状态
+      state: {
+        count: 1
+      },
+      // 指定mutation, mutation是用于修改state中的数据的
+      // mutations中所有的方法，第一个参数都是state
+      mutations: {
+        add(state) {
+          state.count++
+        }
+      }
+    })
+
+    // 修改count
+    // 提交了一个add的mutation
+    store.commit('add')
+    console.log(store.state.count)
+    
+  </script>
+</body>
+</html>

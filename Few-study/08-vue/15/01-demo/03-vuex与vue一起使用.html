@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <button @click="changeMsg">修改msg</button>
+    <button @click="fn">让count+1</button>
+    {{ msg }} ----- {{ count }} 
+  </div>
+
+  <script src="node_modules/vue/dist/vue.js"></script>
+  <script src="node_modules/vuex/dist/vuex.js"></script>
+  <script>
+    const store = new Vuex.Store({
+      strict: true,
+      state: {
+        msg: '你好',
+        count: 0
+      },
+      mutations: {
+        changeMsg(state, msg) {
+          state.msg = msg
+        },
+        add(state, payload) {
+          state.count += payload.n
+        }
+      }
+    })
+    // 1. vuex与vue进行绑定  
+    const vm = new Vue({
+      el: '#app',
+      // store: 绑定一个vuex对象 $store
+      // router: 绑定路由对象  $router
+      store,
+      computed: {
+        msg() {
+          return this.$store.state.msg
+        },
+        count() {
+          return this.$store.state.count
+        }
+      },
+      methods: {
+        changeMsg() {
+          this.$store.commit('changeMsg', '你好11111')
+        },
+        fn() {
+          // 提交一个mutations
+          this.$store.commit('add', {n:5})
+        }
+      }
+    })
+  </script>
+</body>
+</html>
